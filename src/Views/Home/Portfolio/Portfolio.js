@@ -9,44 +9,40 @@ import GSection from "../../../Components/GComponents/GSpacing";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import $ from "jquery";
+import { Cursor } from "react-creative-cursor";
+import "react-creative-cursor/dist/styles.css";
 
 const Portfolio = () => {
   useEffect(() => {
-    $(".arrowLink > span").mouseenter(function(){
-      $(".cursor").css("transform", "scale(1.5)");
-    });
-    $(".arrowLink > span").mouseleave(function(){
-      $(".cursor").css("transform", "scale(0.75)");
-    });
-
-    (function () {
-      const links = document.querySelectorAll(".hover-me");
-      const cursor = document.querySelector(".cursor");
-
-      const animateMe = function (e) {
-        const span = this.querySelector("span");
-        const { offsetX: x, offsetY: y } = e,
-          { offsetWidth: width, offsetHeight: height } = this;
-        let move;
-        move = 20;
-        let xMove = (x / width) * (move * 2) - move;
-        let yMove = (y / height) * (move * 2) - move;
-
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
-        if (e.type === "mouseleave") span.style.transform = "";
-      };
-
-      const editCursor = (e) => {
-        const { clientX: x, clientY: y } = e;
-        cursor.style.left = x + "px";
-        cursor.style.top = y + "px";
-      };
-
-      links.forEach((link) => link.addEventListener("mousemove", animateMe));
-      links.forEach((link) => link.addEventListener("mouseleave", animateMe));
-      window.addEventListener("mousemove", editCursor);
-    })();
+    // $(".arrowLink > span").mouseenter(function () {
+    //   $(".cursor").css("transform", "scale(1.5)");
+    // });
+    // $(".arrowLink > span").mouseleave(function () {
+    //   $(".cursor").css("transform", "scale(0.75)");
+    // });
+    // (function () {
+    //   const links = document.querySelectorAll(".hover-me");
+    //   const cursor = document.querySelector(".cursor");
+    //   const animateMe = function (e) {
+    //     const span = this.querySelector("span");
+    //     const { offsetX: x, offsetY: y } = e,
+    //       { offsetWidth: width, offsetHeight: height } = this;
+    //     let move;
+    //     move = 20;
+    //     let xMove = (x / width) * (move * 2) - move;
+    //     let yMove = (y / height) * (move * 2) - move;
+    //     span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+    //     if (e.type === "mouseleave") span.style.transform = "";
+    //   };
+    //   const editCursor = (e) => {
+    //     const { clientX: x, clientY: y } = e;
+    //     cursor.style.left = x + "px";
+    //     cursor.style.top = y + "px";
+    //   };
+    //   links.forEach((link) => link.addEventListener("mousemove", animateMe));
+    //   links.forEach((link) => link.addEventListener("mouseleave", animateMe));
+    //   window.addEventListener("mousemove", editCursor);
+    // })();
   });
   return (
     <section>
@@ -74,23 +70,27 @@ const Portfolio = () => {
                   <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
                     Everyday services <br /> for peace of mind.
                   </h3>
-
-                  <div className="mb15">
-                    <Link
-                      to="#"
-                      className="arrowLink colorWhite d-flex align-items-center hover-me "
-                    >
-                      <span className="d-flex align-items-center">
-                        <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                          View the project
-                        </span>
-                        <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                          {Svg.arrowRight}
-                        </span>
-                      </span>
-                    </Link>
-                  </div>
                 </Slide>
+                <div className="magnetWrapper">
+                  <Link
+                    to="/contactus"
+                    className="arrowLink colorWhite hover-me "
+                  >
+                    <Cursor isGelly={true} />
+                    <div data-cursor-magnetic>
+                      <div className="mb15">
+                        <span className="d-flex align-items-center">
+                          <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
+                            View the project
+                          </span>
+                          <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
+                            {Svg.arrowRight}
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </Col>
 
@@ -109,11 +109,16 @@ const Portfolio = () => {
                       Daily needs,
                       <br /> seamless ordering.
                     </h3>
-                    <div className="">
-                      <Link
-                        to="#"
-                        className="arrowLink colorWhite d-flex align-items-center hover-me "
-                      >
+                  </div>
+                </Slide>
+                <div className="magnetWrapper">
+                  <Link
+                    to="/contactus"
+                    className="arrowLink colorWhite hover-me "
+                  >
+                    <Cursor isGelly={true} />
+                    <div data-cursor-magnetic>
+                      <div className="mb15">
                         <span className="d-flex align-items-center">
                           <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
                             View the project
@@ -122,10 +127,10 @@ const Portfolio = () => {
                             {Svg.arrowRight}
                           </span>
                         </span>
-                      </Link>
+                      </div>
                     </div>
-                  </div>
-                </Slide>
+                  </Link>
+                </div>
               </GSection>
               <GSection mb="0px">
                 <Slide bottom>
@@ -158,23 +163,27 @@ const Portfolio = () => {
                     <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
                       Easy service bookings <br /> for more freedom.
                     </h3>
-
-                    <div className="d-inline-block">
-                      <Link
-                        to="#"
-                        className="arrowLink colorWhite d-flex align-items-center hover-me "
-                      >
-                        <span className="d-flex align-items-center">
-                          <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                            View the project
-                          </span>
-                          <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                            {Svg.arrowRight}
-                          </span>
-                        </span>
-                      </Link>
-                    </div>
                   </Slide>
+                  <div className="magnetWrapper">
+                    <Link
+                      to="/contactus"
+                      className="arrowLink colorWhite hover-me "
+                    >
+                      <Cursor isGelly={true} />
+                      <div data-cursor-magnetic>
+                        <div className="mb15">
+                          <span className="d-flex align-items-center">
+                            <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
+                              View the project
+                            </span>
+                            <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
+                              {Svg.arrowRight}
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </GSection>
 
@@ -196,23 +205,27 @@ const Portfolio = () => {
                       Making real-estate <br />
                       dealings simple.
                     </h3>
-
-                    <div className="d-inline-block ">
-                      <Link
-                        to="#"
-                        className="arrowLink colorWhite d-flex align-items-center hover-me "
-                      >
-                        <span className="d-flex align-items-center">
-                          <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                            View the project
-                          </span>
-                          <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                            {Svg.arrowRight}
-                          </span>
-                        </span>
-                      </Link>
-                    </div>
                   </Slide>
+                  <div className="magnetWrapper">
+                    <Link
+                      to="/contactus"
+                      className="arrowLink colorWhite hover-me "
+                    >
+                      <Cursor isGelly={true} />
+                      <div data-cursor-magnetic>
+                        <div className="mb15">
+                          <span className="d-flex align-items-center">
+                            <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
+                              View the project
+                            </span>
+                            <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
+                              {Svg.arrowRight}
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </GSection>
             </Col>
@@ -228,12 +241,16 @@ const Portfolio = () => {
                       <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
                         Truck hiring services, <br /> completely simplified.
                       </h3>
-
-                      <div className="">
-                        <Link
-                          to="#"
-                          className="arrowLink colorWhite d-flex align-items-center hover-me "
-                        >
+                    </div>
+                  </Slide>
+                  <div className="magnetWrapper">
+                    <Link
+                      to="/contactus"
+                      className="arrowLink colorWhite hover-me "
+                    >
+                      <Cursor isGelly={true} />
+                      <div data-cursor-magnetic>
+                        <div className="mb15">
                           <span className="d-flex align-items-center">
                             <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
                               View the project
@@ -242,10 +259,10 @@ const Portfolio = () => {
                               {Svg.arrowRight}
                             </span>
                           </span>
-                        </Link>
+                        </div>
                       </div>
-                    </div>
-                  </Slide>
+                    </Link>
+                  </div>
                 </GSection>
                 <GSection mb="0px">
                   <Slide bottom>
@@ -267,12 +284,16 @@ const Portfolio = () => {
                         Financial suite for <br />
                         managed economies.
                       </h3>
-
-                      <div className="d-inline-block">
-                        <Link
-                          to="#"
-                          className="arrowLink colorWhite d-flex align-items-center hover-me hover-me"
-                        >
+                    </div>
+                  </Slide>
+                  <div className="magnetWrapper">
+                    <Link
+                      to="/contactus"
+                      className="arrowLink colorWhite hover-me "
+                    >
+                      <Cursor isGelly={true} />
+                      <div data-cursor-magnetic>
+                        <div className="mb15">
                           <span className="d-flex align-items-center">
                             <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
                               View the project
@@ -281,10 +302,10 @@ const Portfolio = () => {
                               {Svg.arrowRight}
                             </span>
                           </span>
-                        </Link>
+                        </div>
                       </div>
-                    </div>
-                  </Slide>
+                    </Link>
+                  </div>
                 </GSection>
                 <GSection mb="0px">
                   <div className="protfolioWrapper pBgOrg  radius24 overflow-hidden">
@@ -298,10 +319,9 @@ const Portfolio = () => {
 
         <div>
           <GSpacing mt="0px" mb="60px">
-          <Fade bottom>
-            <Row>
-              <Col lg={8}>
-               
+            <Fade bottom>
+              <Row>
+                <Col lg={8}>
                   <p className="mb20 colorWhite fs22 tabFs18 tabLgFs18 mobFs16 ">
                     It’s simple. At Pix Brand, you get not one and two, but a
                     complete suite of requisites that come backed with
@@ -309,28 +329,27 @@ const Portfolio = () => {
                     product that’s robust, functional, and delivers
                     out-of-the-world capabilities.
                   </p>
-            
-              </Col>
-            </Row>
-
-            <div className="d-inline-block">
-              <Fade bottom>
-                <Link
-                  to="#"
-                  className="arrowLink colorWhite d-flex align-items-center hover-me "
-                >
-                  <span className="d-flex align-items-center">
-                    <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                      View the project
-                    </span>
-                    <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                      {Svg.arrowRight}
-                    </span>
-                  </span>
-                </Link>
-              </Fade>
-            </div>
+                </Col>
+              </Row>
             </Fade>
+
+            <div className="magnetWrapper">
+              <Link to="/contactus" className="arrowLink colorWhite hover-me ">
+                <Cursor isGelly={true} />
+                <div data-cursor-magnetic>
+                  <div className="mb15">
+                    <span className="d-flex align-items-center">
+                      <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
+                        View the project
+                      </span>
+                      <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
+                        {Svg.arrowRight}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </GSpacing>
         </div>
       </Container>

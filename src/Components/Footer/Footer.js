@@ -20,7 +20,7 @@ const Footer = (props) => {
       )} */}
 
       {!props.footer && (
-        <section className="bgWhite pt120 pb30 mobPt40">
+        <section className="bgWhite pt120 pb30 mobPt40 height100vh">
           <Container className="mb30 ">
           
             <Row>

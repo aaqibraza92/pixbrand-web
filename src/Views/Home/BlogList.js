@@ -16,6 +16,7 @@ import Img from "../../Assets/Img/Img";
 import { Link } from "react-router-dom";
 import Svg from "../../Assets/Svg/Svg";
 import Fade from "react-reveal/Fade";
+import { Cursor } from "react-creative-cursor";
 
 const WrapperBlog = styled.div`
   background: #191919;
@@ -137,22 +138,26 @@ const BlogList = () => {
         </Swiper>
 
 
-        <div className="d-inline-block mt30">
-        <Fade bottom cascade>
-          <Link
-            to="#"
-            className="arrowLink colorWhite d-flex align-items-center "
-          >
-            <span className="mr10 fs14 tabFs12 tabLgFs12 mobFs12">
+        </Fade>
+
+        <div className="magnetWrapper">
+                  <Link
+                    to="/contactus"
+                    className="arrowLink colorWhite hover-me "
+                  >
+                    <Cursor isGelly={true} />
+                    <div data-cursor-magnetic>
+                      <div className="mb15 d-flex align-items-center">
+                      <span className="mr10 fs14 tabFs12 tabLgFs12 mobFs12">
               See all work
             </span>{" "}
             <span className="circleArrow d-flex align-items-center radius100 justify-content-center">
               {Svg.arrowRight}
             </span>
-          </Link>
-          </Fade>
-        </div>
-        </Fade>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
       </Container>
     </WrapperBlog>
   );

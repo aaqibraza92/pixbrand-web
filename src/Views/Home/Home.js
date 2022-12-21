@@ -12,6 +12,9 @@ import Skills from "./Skills";
 import Marque from "../Marque/Marque";
 import { Helmet } from "react-helmet";
 import Slide from "react-reveal/Slide";
+import { Cursor } from "react-creative-cursor";
+import 'react-creative-cursor/dist/styles.css';
+import { Container } from "reactstrap";
 
 const Home = (props) => {
   return (
@@ -22,6 +25,10 @@ const Home = (props) => {
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
       <div className="overflow-hidden">
+  <Container>
+ 
+
+  </Container>
         <HomeBanner />
         <Slide bottom>
           <Services />

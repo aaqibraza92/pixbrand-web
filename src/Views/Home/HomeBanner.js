@@ -7,6 +7,14 @@ import Slide from "react-reveal/Slide";
 
 const HomeBanner = () => {
   const [videoPlay,setvideoPlay]=useState(false);
+
+  const togglePlay=()=>{
+    if (window.video.paused || window.video.ended) {
+      window.video.play();
+    } else {
+      window.video.pause();
+    }
+  }
   return (
     <div>
       <div className="bannerArea position-relative">
@@ -43,6 +51,10 @@ const HomeBanner = () => {
           <video  poster="placeholder.png" controls>
     <source src={Img?.bannerVideo} type="video/mp4"/>
 </video>
+
+<button onClick={()=>togglePlay()}>
+  Play 
+</button>
 
             <div className="wrappervideo d-flex align-items-center justify-content-center">
               <img className="img-fluid radius " src={Img.videoThumb} alt="" />
