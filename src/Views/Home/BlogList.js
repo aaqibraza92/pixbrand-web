@@ -17,14 +17,56 @@ import { Link } from "react-router-dom";
 import Svg from "../../Assets/Svg/Svg";
 import Fade from "react-reveal/Fade";
 import { Cursor } from "react-creative-cursor";
+import { useEffect } from "react";
+import axios from "axios";
+import { allposts } from "../../Helpers/Api/Endpoint";
+import { useState } from "react";
 
 const WrapperBlog = styled.div`
   background: #191919;
 `;
 const BlogList = () => {
+const [postData,setPostData]=useState("");
+  useEffect(()=>{
+    getAllPosts();
+  },[]);
+
+  const getAllPosts = async() => {
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    };
+
+    await axios.get(allposts, options).then((res) => {
+      if (res && res.status === 200) {
+        setPostData(res?.data)
+      }
+    });
+  };
+
   return (
     <WrapperBlog className="pt100 pb100 mobPb40 mobPt40">
       <Container>
+      {/* {
+            postData.length > 0 && postData?.map((item,ind)=>{
+              return  <div key={ind}>
+              <div className="mb15">
+                <GImage radius="24px" src={Img.b1} />
+              </div>
+              <p>
+                <Link
+                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
+                  to="#"
+                >
+                  {item.title}
+                </Link>
+              </p>
+              </div>  
+            })
+           } */}
+
       <Fade bottom cascade>
           <GSpacing mb="40px" mobmb="0px">
           
@@ -78,20 +120,15 @@ const BlogList = () => {
           }}
         >
            <Fade bottom cascade>
+{
+  console.log('postData',postData)
+}
+
+
+       
+
            <div className="bloggerList">
-            <SwiperSlide>
-              <div className="mb15">
-                <GImage radius="24px" src={Img.b1} />
-              </div>
-              <p>
-                <Link
-                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to="#"
-                >
-                  Smart way to create mobile-friendly content
-                </Link>
-              </p>
-            </SwiperSlide>
+        
             <SwiperSlide>
               <div className="mb15">
                 <GImage radius="24px" src={Img.b2} />
