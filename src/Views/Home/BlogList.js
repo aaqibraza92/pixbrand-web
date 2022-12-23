@@ -46,7 +46,7 @@ const [postData,setPostData]=useState("");
     });
   };
 
-  return (
+  return ( 
     <WrapperBlog className="pt100 pb100 mobPb40 mobPt40">
       <Container>
       {
