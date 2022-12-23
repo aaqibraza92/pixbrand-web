@@ -22,6 +22,7 @@ import TermsServices from "./TermsServices/TermsServices";
 import UiDesign from "./UiDesign/UiDesign";
 import Work from "./Work/Work";
 import PerfectDesigning from "./PerfectDesigning/PerfectDesigning";
+import SingleBlog from "./SingleBlogPage";
 
 const Pages = {
   HomePage: Home,
@@ -31,6 +32,7 @@ const Pages = {
   SingleBlogPage: SingleBlogPage,
   Work: Work,
   SingleCareerPage: SingleCareerPage,
+  SingleBlog: SingleBlog,
   PrivacyPolicy: PrivacyPolicy,
   TermsServices: TermsServices,
   ContactUs: ContactUs,

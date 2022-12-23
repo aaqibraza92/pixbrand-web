@@ -49,23 +49,7 @@ const [postData,setPostData]=useState("");
   return ( 
     <WrapperBlog className="pt100 pb100 mobPb40 mobPt40">
       <Container>
-      {
-            postData.length > 0 && postData?.map((item,ind)=>{
-              return  <div key={ind}>
-              <div className="mb15">
-                <GImage radius="24px" src={Img.b1} />
-              </div>
-              <p>
-                <Link
-                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to="#"
-                >
-                  {item.title?.rendered}
-                </Link>
-              </p>
-              </div>  
-            })
-           }
+
 
       <Fade bottom cascade>
           <GSpacing mb="40px" mobmb="0px">
@@ -120,55 +104,34 @@ const [postData,setPostData]=useState("");
           }}
         >
            <Fade bottom cascade>
-{
-  console.log('postData',postData[0].title?.rendered)
-}
 
 
        
 
            <div className="bloggerList">
+
+           {
+            postData.length > 0 && postData?.map((item,ind)=>{
+              return <SwiperSlide>
+              <div key={ind}>
+              <div className="mb15">
+                <GImage radius="24px" src={item?.x_featured_media_medium ? item?.x_featured_media_medium : Img.b1} />
+              </div>
+              <p>
+                <Link
+                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
+                  to={`/blog/${item?.id}`}
+                >
+                  {item.title?.rendered}
+                </Link>
+              </p>
+              </div>  
+              </SwiperSlide> 
+            })
+           }
+
         
-            <SwiperSlide>
-              <div className="mb15">
-                <GImage radius="24px" src={Img.b2} />
-              </div>
-              <p>
-                <Link
-                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to="#"
-                >
-                  Top 10 things to ask before hiring eCommerce development
-                  company Boston
-                </Link>
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="mb15">
-                <GImage radius="24px" src={Img.b3} />
-              </div>
-              <p>
-                <Link
-                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to="#"
-                >
-                  Top 5 reasons you should start an ecommerce business
-                </Link>
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="mb15">
-                <GImage radius="24px" src={Img.b4} />
-              </div>
-              <p>
-                <Link
-                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to="#"
-                >
-                  How Hiring Offshore hybrid developer is better than In-House?
-                </Link>
-              </p>
-            </SwiperSlide>
+      
           </div>
            </Fade>
        

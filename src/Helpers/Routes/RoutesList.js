@@ -59,6 +59,13 @@ let RouterList = [
   },
   {
     element: (
+      <GetRoute isprivate={false} role="Default" page={Pages.SingleBlog} />
+    ),
+    path: "/blog/:id/",
+    isAdmin: false,
+  },
+  {
+    element: (
       <GetRoute isprivate={false} role="Default" page={Pages.SingleBlogPage} />
     ),
     path: "/single-blog-page",
