@@ -49,7 +49,7 @@ const [postData,setPostData]=useState("");
   return (
     <WrapperBlog className="pt100 pb100 mobPb40 mobPt40">
       <Container>
-      {/* {
+      {
             postData.length > 0 && postData?.map((item,ind)=>{
               return  <div key={ind}>
               <div className="mb15">
@@ -60,12 +60,12 @@ const [postData,setPostData]=useState("");
                   className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
                   to="#"
                 >
-                  {item.title}
+                  {item.title?.rendered}
                 </Link>
               </p>
               </div>  
             })
-           } */}
+           }
 
       <Fade bottom cascade>
           <GSpacing mb="40px" mobmb="0px">
@@ -121,7 +121,7 @@ const [postData,setPostData]=useState("");
         >
            <Fade bottom cascade>
 {
-  console.log('postData',postData)
+  console.log('postData',postData[0].title?.rendered)
 }
 
 
