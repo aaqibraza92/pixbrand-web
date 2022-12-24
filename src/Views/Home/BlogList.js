@@ -112,8 +112,8 @@ const [postData,setPostData]=useState("");
 
            {
             postData.length > 0 && postData?.map((item,ind)=>{
-              return <SwiperSlide>
-              <div key={ind}>
+              return <SwiperSlide key={ind}>
+              <div >
               <div className="mb15">
                 <GImage radius="24px" src={item?.x_featured_media_medium ? item?.x_featured_media_medium : Img.b1} />
               </div>

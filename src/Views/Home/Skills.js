@@ -3,6 +3,7 @@ import { Col, Container, Row } from "reactstrap";
 import styled from "styled-components";
 import Slide from "react-reveal/Slide";
 import $ from "jquery";
+import { Fragment } from "react";
 
 const WrapperSkills = styled.div`
   padding-top: 70px;
@@ -78,41 +79,37 @@ const TabContent = [
 ];
 
 const Skills = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
+  // const isElementInViewport = (elem) => {
+  //   var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-  const checkAnimation = () => {
-    var $elem = $(".lineAnimateSkill");
+  // const checkAnimation = () => {
+  //   var $elem = $(".lineAnimateSkill");
 
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
+  //   if ($elem.hasClass("start")) return;
 
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
+  //   if (isElementInViewport($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
-  useEffect(() => {
-    $(window).scroll(function () {
-      checkAnimation();
-    });
-  });
+  // useEffect(() => {
+  //   $(window).scroll(function () {
+  //     checkAnimation();
+  //   });
+  // });
 
   const [verticalTab, setverticalTab] = useState("v0");
   const handleTab = (ind) => {
@@ -161,7 +158,7 @@ const Skills = () => {
               {TabContent &&
                 TabContent.map((elem, index) => {
                   return (
-                    <>
+                    <Fragment key={"o" + index}>
                       {"v" + index === verticalTab && (
                         <WrapperTabContent key={"q" + index}>
                           <Row
@@ -182,7 +179,7 @@ const Skills = () => {
                           </Row>
                         </WrapperTabContent>
                       )}
-                    </>
+                      </Fragment>
                   );
                 })}
             </Col>

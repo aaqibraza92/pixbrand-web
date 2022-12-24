@@ -131,72 +131,61 @@ const Slider = () => {
   );
 };
 
-// Making a business visible section
 const Business = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
+  // const isElementInViewport = (elem) => {
+  //   var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  // const checkAnimation = () => {
+  //   var $elem = $(".lineView");
+  //   if ($elem.hasClass("start")) return;
 
-  const checkAnimation = () => {
-    var $elem = $(".lineView");
+  //   if (isElementInViewport($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
+  // const isElementInViewport1 = (elem) => {
+  //   var $elem = $(elem);
 
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
 
-  const isElementInViewport1 = (elem) => {
-    var $elem = $(elem);
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  // const checkAnimation1 = () => {
+  //   var $elem = $(".lineView1");
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  //   if ($elem.hasClass("start")) return;
 
-  const checkAnimation1 = () => {
-    var $elem = $(".lineView1");
-
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
-
-    if (isElementInViewport1($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
+  //   if (isElementInViewport1($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
   useEffect(() => {
     $(window).scroll(function () {
-      checkAnimation();
-      checkAnimation1();
+     // checkAnimation();
+     // checkAnimation1();
     });
   });
 

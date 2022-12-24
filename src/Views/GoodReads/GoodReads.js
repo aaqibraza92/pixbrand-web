@@ -4,6 +4,10 @@ import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import GImage from "../../Components/GComponents/GImage/GImage";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { allposts } from "../../Helpers/Api/Endpoint";
 
 const Cards = [
   {
@@ -93,6 +97,27 @@ const Cards = [
 ];
 
 const GoodReads = () => {
+
+  const [postData,setPostData]=useState("");
+  useEffect(()=>{
+    getAllPosts();
+  },[]);
+
+  const getAllPosts = async() => {
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    };
+
+    await axios.get(allposts, options).then((res) => {
+      if (res && res.status === 200) {
+        setPostData(res?.data)
+      }
+    });
+  };
+
   return (
     <>
       <Helmet>
@@ -102,20 +127,13 @@ const GoodReads = () => {
       </Helmet>
       <Title />
       <Trophy />
-      <Products />
+      <BlogListing />
     </>
   );
 };
 
 export default GoodReads;
 
-{
-  /* <h2 className="colorBlack fs60 tabFs40  tabLgFs40 mobFs32 mb60 mobMb30">
-  <Slide bottom>
-    Let’s get on a newfound journey together and make an impact!
-  </Slide>
-</h2>; */
-}
 
 // Title
 const Title = () => {
@@ -171,7 +189,7 @@ const Trophy = () => {
   );
 };
 
-const Products = (props) => {
+const BlogListing = (props) => {
   return (
     <>
       <Container>

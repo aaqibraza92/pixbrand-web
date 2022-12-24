@@ -5,72 +5,63 @@ import Slide from "react-reveal/Slide";
 import $ from "jquery";
 
 const Services = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
+  // const isElementInViewport = (elem) => {
+  //   var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-  const checkAnimation = () => {
-    var $elem = $(".lineAnimate");
+  // const checkAnimation = () => {
+  //   var $elem = $(".lineAnimate");
+  //   if ($elem.hasClass("start")) return;
 
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
+  //   if (isElementInViewport($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
+  // const isElementInViewport1 = (elem) => {
+  //   var $elem = $(elem);
 
-  const isElementInViewport1 = (elem) => {
-    var $elem = $(elem);
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  // const checkAnimation1 = () => {
+  //   var $elem = $(".lineAnimate1");
 
-  const checkAnimation1 = () => {
-    var $elem = $(".lineAnimate1");
+  //   if ($elem.hasClass("start")) return;
 
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
+  //   if (isElementInViewport1($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
-    if (isElementInViewport1($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
-
-  useEffect(() => {
-    $(window).scroll(function () {
-      checkAnimation();
-      checkAnimation1();
-    });
-  });
+  // useEffect(() => {
+  //   $(window).scroll(function () {
+  //     checkAnimation();
+  //     checkAnimation1();
+  //   });
+  // });
   return (
     <section className="pt100 pb100">
       <Container>

@@ -7,6 +7,7 @@ import Svg from "../../Assets/Svg/Svg";
 import GImage from "../../Components/GComponents/GImage/GImage";
 import GLink from "../../Components/GComponents/GLink/GLink";
 import Fade from "react-reveal/Fade";
+import { Fragment } from "react";
 
 const WrapperTestimonial = styled.div`
   padding-top: 100px;
@@ -98,7 +99,7 @@ const Testimonials = () => {
                   {tabTriggerContent &&
                     tabTriggerContent.map((elem, ind) => {
                       return (
-                        <div>
+                        <div key={ind}>
                           <Fade bottom >
                             <div className="mb5">
                               <GImage src={elem.img} />
@@ -121,9 +122,9 @@ const Testimonials = () => {
               {TabContent &&
                 TabContent.map((elem, index) => {
                   return (
-                    <>
+                    <Fragment key={"o" + index}>
                       {"v" + index === verticalTab && (
-                        <WrapperTabContent key={"o" + index}>
+                        <WrapperTabContent >
                           <div className="ratingArea d-flex align-items-center">
                             {elem.star === 5 && (
                               <>
@@ -166,7 +167,7 @@ const Testimonials = () => {
                           </div>
                         </WrapperTabContent>
                       )}
-                    </>
+</Fragment>
                   );
                 })}
             </Col>

@@ -479,41 +479,36 @@ const Collaborate = () => {
 
 // Started
 const Started = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
+  // const isElementInViewport = (elem) => {
+  //   var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+  //   var scrollElem =
+  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
+  //       ? "body"
+  //       : "html";
+  //   var viewportTop = $(scrollElem).scrollTop();
+  //   var viewportBottom = viewportTop + $(window).height();
+  //   var elemTop = Math.round($elem.offset().top);
+  //   var elemBottom = elemTop + $elem.height();
 
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
+  //   return elemTop < viewportBottom && elemBottom > viewportTop;
+  // };
 
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
+  // const checkAnimation = () => {
+  //   var $elem = $(".lineView3");
 
-  const checkAnimation = () => {
-    var $elem = $(".lineView3");
+  //   if ($elem.hasClass("start")) return;
 
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
+  //   if (isElementInViewport($elem)) {
+  //     $elem.addClass("start");
+  //   }
+  // };
 
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
-
-  useEffect(() => {
-    $(window).scroll(function () {
-      checkAnimation();
-    });
-  });
+  // useEffect(() => {
+  //   $(window).scroll(function () {
+  //     checkAnimation();
+  //   });
+  // });
   return (
     <>
       <section className="bgLightGrey pt100 pb100 tabPt80 tabPb80 mobPt60 mobPb60 mb100 mobMb60">

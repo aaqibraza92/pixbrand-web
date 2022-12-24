@@ -30,6 +30,13 @@ const SingleBlog = (props) => {
     });
   };
 
+  const dateConverter = (str) => {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  };
+
   return (
     <section className="pt80 pb100 tabPt80 tabPb80 mobPt60 mobPb60">
         <Container>
@@ -38,13 +45,13 @@ const SingleBlog = (props) => {
         }
         <div className="text-center">
             <Slide bottom>
-              <h4 className="fs16 colorLightBlack">PUBLISHED JULY 05, 2021</h4>
+              <h4 className="fs16 colorLightBlack">PUBLISHED {dateConverter(postData?.modified)}</h4>
               <h1 className="fs65 tabFs60 tabLgFs60 mobFs45 mb20 mobMb10 fw500 colorWhite">
-                Its time to check on your website’s skills.
+                {postData?.title?.rendered}
               </h1>
-              <p className="fs22 mobFs18 tabFs18 tabLgFs18 mb40 mobMb20 colorWhite">
+              {/* <p className="fs22 mobFs18 tabFs18 tabLgFs18 mb40 mobMb20 colorWhite">
                 Why Branding matters to your Business
-              </p>
+              </p> */}
               <div className="d-flex justify-content-center mb100 mobMb60 overscrollx">
                 <button className="btn-blog mr10">Branding</button>
                 <button className="btn-blog mr10">Communication</button>
@@ -55,7 +62,7 @@ const SingleBlog = (props) => {
                 <GImage
                   radius="24px"
                   radiusMob="15px"
-                  src={Img.singleblogpage}
+                  src={postData?.x_featured_media_original ? postData?.x_featured_media_original : Img.singleblogpage}
                 />
               </div>
             </Slide>
