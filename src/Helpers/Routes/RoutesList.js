@@ -49,7 +49,13 @@ let RouterList = [
     path: "/about",
     isAdmin: false,
   },
-
+  {
+    element: (
+      <GetRoute isprivate={false} role="Default" page={Pages.BlogCategory} />
+    ),
+    path: "/category/:name/",
+    isAdmin: false,
+  },
   {
     element: (
       <GetRoute isprivate={false} role="Default" page={Pages.GoodReads} />

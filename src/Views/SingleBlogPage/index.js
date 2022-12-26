@@ -9,7 +9,6 @@ import { allposts } from '../../Helpers/Api/Endpoint'
 
 const SingleBlog = (props) => {
     const id=useParams();
-    console.log(id);
     const [postData,setPostData]=useState("");
   useEffect(()=>{
     getAllPosts();

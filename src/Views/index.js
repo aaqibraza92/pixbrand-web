@@ -23,12 +23,14 @@ import UiDesign from "./UiDesign/UiDesign";
 import Work from "./Work/Work";
 import PerfectDesigning from "./PerfectDesigning/PerfectDesigning";
 import SingleBlog from "./SingleBlogPage";
+import BlogCategory from "./Category";
 
 const Pages = {
   HomePage: Home,
   HeaderComponent: Header,
   FooterComponent: Footer,
   GoodReads: GoodReads,
+  BlogCategory: BlogCategory,
   SingleBlogPage: SingleBlogPage,
   Work: Work,
   SingleCareerPage: SingleCareerPage,
