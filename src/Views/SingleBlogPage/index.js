@@ -39,9 +39,6 @@ const SingleBlog = (props) => {
   return (
     <section className="pt80 pb100 tabPt80 tabPb80 mobPt60 mobPb60">
         <Container>
-        {
-            console.log('postData',postData)
-        }
         <div className="text-center">
             <Slide bottom>
               <h4 className="fs16 colorLightBlack">PUBLISHED {dateConverter(postData?.modified)}</h4>
