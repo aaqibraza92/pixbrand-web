@@ -120,7 +120,7 @@ const [postData,setPostData]=useState("");
               <p>
                 <Link
                   className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
-                  to={`/blog/${item?.id}`}
+                  to={`/blog/${item?.slug}`}
                 >
                   {item.title?.rendered}
                 </Link>

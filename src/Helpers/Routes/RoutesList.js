@@ -67,7 +67,7 @@ let RouterList = [
     element: (
       <GetRoute isprivate={false} role="Default" page={Pages.SingleBlog} />
     ),
-    path: "/blog/:id/",
+    path: "/blog/:slug/",
     isAdmin: false,
   },
   {
