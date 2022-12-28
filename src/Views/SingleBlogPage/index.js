@@ -27,7 +27,7 @@ const SingleBlog = (props) => {
     await axios.get(allposts + "?slug=" + id?.slug, options).then((res) => {
       if (res && res.status === 200) {
         setPostData(res?.data?.[0]);
-        setacfData(res?.data?.[0]?.acf);
+        setacfData(res?.data?.[0]?.acf?.blog_flexible_data);
       }
     });
   };
@@ -123,7 +123,7 @@ const SingleBlog = (props) => {
             {
   <h2>
 {
-  acfData?.test
+  console.log('sss',postData)
 }
   </h2>
   
