@@ -115,7 +115,12 @@ const [postData,setPostData]=useState("");
               return <SwiperSlide key={ind}>
               <div >
               <div className="mb15">
+              <Link
+                  className="colorWhite fs20 tabFs16 tabLgFs16 mobFs16 lh28 hoverRed"
+                  to={`/blog/${item?.slug}`}
+                >
                 <GImage radius="24px" src={item?.x_featured_media_medium ? item?.x_featured_media_medium : Img.b1} />
+                </Link>
               </div>
               <p>
                 <Link

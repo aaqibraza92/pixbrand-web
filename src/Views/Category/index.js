@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const Cards = [
   {
@@ -97,23 +98,23 @@ const Cards = [
 ];
 
 const BlogCategory = () => {
+  const categoryId= useParams();
 
   const [postData,setPostData]=useState("");
   useEffect(()=>{
-    getAllPosts();
-  },[]);
+    postOfCategory();
+  },[categoryId?.name]);
 
-  const getAllPosts = async() => {
+  const postOfCategory = async() => {
     const options = {
       method: "GET",
       headers: {
         Accept: "application/json",
       },
     };
-
-    await axios.get(allposts, options).then((res) => {
+    await axios.get(allposts+'?categories='+categoryId?.name, options).then((res) => {
       if (res && res.status === 200) {
-        setPostData(res?.data)
+        setPostData(res?.data);
       }
     });
   };
@@ -125,9 +126,22 @@ const BlogCategory = () => {
         <title>Category - Pixbrand</title>
         <meta name="Blog" content="Pixbrand Blog"></meta>
       </Helmet>
+
+     
       <Title />
-      <Trophy />
-      <BlogListing />
+      {/* <Trophy /> */}
+      <Container>
+            <Row>
+              {postData.length > 0 &&
+                postData.map((item, ind) => {
+                  if (ind === 0) {
+                    return "";
+                  } else {
+                    return <BlogListings key={ind} data={item} />;
+                  }
+                })}
+            </Row>
+          </Container>
     </>
   );
 };
@@ -222,5 +236,58 @@ const BlogListing = (props) => {
         </Row>
       </Container>
     </>
+  );
+};
+
+const BlogListings = (props) => {
+  const { data } = props;
+
+  const dateConverter = (str) => {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  };
+
+  return (
+    <Col lg={4} md={4} className="">
+      <section className="mb80 mobMb40">
+        <div className="mb20 mobMb10">
+          {data?.x_featured_media_large ? (
+            <div className="postImgWrapper mb-2">
+              <Link to={`/blog/${data?.slug}`}>
+                <GImage
+                  radius="24px"
+                  radiusMob="15px"
+                  src={data?.x_featured_media_large}
+                />
+              </Link>
+            </div>
+          ) : (
+            <Link to={`/blog/${data?.slug}`}>
+              <GImage radius="24px" radiusMob="15px" src={Img?.goodreads1} />
+            </Link>
+          )}
+        </div>
+        <p className="fs16 colorLightBlack mb0">
+          {dateConverter(data?.modified)}
+        </p>
+        <div className="mb20 mobMb10">
+          <Link
+            to={`/blog/${data?.slug}`}
+            className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 lh33"
+          >
+            {data?.title?.rendered}
+          </Link>
+        </div>
+        <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">
+          {
+            <div
+              dangerouslySetInnerHTML={{ __html: data?.excerpt?.rendered }}
+            />
+          }
+        </div>
+      </section>
+    </Col>
   );
 };

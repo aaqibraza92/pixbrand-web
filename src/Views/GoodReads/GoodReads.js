@@ -9,101 +9,21 @@ import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
 
-const Cards = [
-  {
-    img: Img.goodreads1,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads2,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads3,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads4,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads5,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads6,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads7,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads8,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads9,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads10,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads11,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads12,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-];
-
 const GoodReads = () => {
+  const dateConverter = (str) => {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  };
 
-  const [postData,setPostData]=useState("");
-  useEffect(()=>{
-    getAllPosts();
-  },[]);
+  const [postData, setPostData] = useState("");
+  const [loading, setloading] = useState(true);
+  useEffect(() => {
+    loadAllPosts();
+  }, []);
 
-  const getAllPosts = async() => {
+  const loadAllPosts = async () => {
     const options = {
       method: "GET",
       headers: {
@@ -113,7 +33,8 @@ const GoodReads = () => {
 
     await axios.get(allposts, options).then((res) => {
       if (res && res.status === 200) {
-        setPostData(res?.data)
+        setPostData(res?.data);
+        setloading(false);
       }
     });
   };
@@ -126,14 +47,75 @@ const GoodReads = () => {
         <meta name="Blog" content="Pixbrand Blog"></meta>
       </Helmet>
       <Title />
-      <Trophy />
-      <BlogListing />
+      {loading ? (
+        <div className="text-center mb60">
+          <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Container className="mb100 mobMb60">
+            <Row className="align-items-center flexreverse">
+              <Col md={6}>
+                <div>
+                  <Link to={`/blog/${postData?.[0]?.slug}`}>
+                    <GImage
+                      radius="24px"
+                      radiusMob="15px"
+                      src={postData?.[0]?.x_featured_media_large}
+                    />
+                  </Link>
+                </div>
+              </Col>
+              <Col md={6}>
+                <section className="d-flex justify-content-between mobMl0 ml40">
+                  <div>
+                    <p className="fs16 colorLightBlack">
+                      {dateConverter(postData?.[0]?.modified)}
+                    </p>
+                    <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
+                      <Link
+                        to={`/blog/${postData?.[0]?.slug}`}
+                        className="colorWhite"
+                      >
+                        {postData?.[0]?.title?.rendered}
+                      </Link>
+                    </h2>
+
+                    <div className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightBlack excerptData">
+                      {
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: postData?.[0]?.excerpt?.rendered,
+                          }}
+                        />
+                      }
+                    </div>
+                  </div>
+                </section>
+              </Col>
+            </Row>
+          </Container>
+          <Container>
+            <Row>
+              {postData.length > 0 &&
+                postData.map((item, ind) => {
+                  if (ind === 0) {
+                    return "";
+                  } else {
+                    return <BlogListing key={ind} data={item} />;
+                  }
+                })}
+            </Row>
+          </Container>
+        </>
+      )}
     </>
   );
 };
 
 export default GoodReads;
-
 
 // Title
 const Title = () => {
@@ -158,69 +140,56 @@ const Title = () => {
   );
 };
 
-// Trophy
-const Trophy = () => {
-  return (
-    <>
-      <Container className="mb100 mobMb60">
-        <Row className="align-items-center flexreverse">
-          <Col md={6}>
-            <div>
-              <GImage radius="24px" radiusMob="15px" src={Img.cup} />
-            </div>
-          </Col>
-          <Col md={6}>
-            <section className="d-flex justify-content-between mobMl0 ml40">
-              <div>
-                <p className="fs16 colorLightBlack">JULY 05, 2021</p>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                  New jersey website design company – pix brand
-                </h2>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightBlack">
-                  Establishing the right visual connection with your customers
-                  and users by creating eye-catching and memorable designs.
-                </p>
-              </div>
-            </section>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
-
 const BlogListing = (props) => {
+  const { data } = props;
+  console.log("props1", data);
+
+  const dateConverter = (str) => {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  };
+
   return (
-    <>
-      <Container>
-        <Row>
-          {Cards.map((obj, ind) => {
-            return (
-              <>
-                <Col lg={4} md={4} className="" key={"p" + ind}>
-                  <section className="mb80 mobMb40">
-                    <div className="mb20 mobMb10">
-                      <GImage radius="24px" radiusMob="15px" src={obj.img} />
-                    </div>
-                    <p className="fs16 colorLightBlack mb0">{obj.pretitle}</p>
-                    <div className="mb20 mobMb10">
-                      <Link
-                        to={obj.linkto}
-                        className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 "
-                      >
-                        {obj.title}
-                      </Link>
-                    </div>
-                    <p className="fs20 colorLightBlack mobFs16 mb0">
-                      {obj.desc}
-                    </p>
-                  </section>
-                </Col>
-              </>
-            );
-          })}
-        </Row>
-      </Container>
-    </>
+    <Col lg={4} md={4} className="">
+      <section className="mb80 mobMb40">
+        <div className="mb20 mobMb10">
+          {data?.x_featured_media_large ? (
+            <div className="postImgWrapper mb-2">
+              <Link to={`/blog/${data?.slug}`}>
+                <GImage
+                  radius="24px"
+                  radiusMob="15px"
+                  src={data?.x_featured_media_large}
+                />
+              </Link>
+            </div>
+          ) : (
+            <Link to={`/blog/${data?.slug}`}>
+              <GImage radius="24px" radiusMob="15px" src={Img?.goodreads1} />
+            </Link>
+          )}
+        </div>
+        <p className="fs16 colorLightBlack mb0">
+          {dateConverter(data?.modified)}
+        </p>
+        <div className="mb20 mobMb10">
+          <Link
+            to={`/blog/${data?.slug}`}
+            className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 lh33"
+          >
+            {data?.title?.rendered}
+          </Link>
+        </div>
+        <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">
+          {
+            <div
+              dangerouslySetInnerHTML={{ __html: data?.excerpt?.rendered }}
+            />
+          }
+        </div>
+      </section>
+    </Col>
   );
 };

@@ -8,24 +8,13 @@ import { useEffect } from "react";
 
 const HomeBanner = () => {
   const videoRef = useRef(null);
-  const [playStatus, setplayStatus] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     setTimeout(() => {
       videoRef.current.play();
     }, 500);
-  
-  },[])
+  }, [videoRef]);
 
-  const playPauseToggle = (status) => {
-    if (playStatus === false) {
-      videoRef.current.play();
-      setplayStatus(true);
-    } else {
-      videoRef.current.pause();
-      setplayStatus(false);
-    }
-  };
   return (
     <div>
       <div className="bannerArea position-relative">
@@ -51,7 +40,7 @@ const HomeBanner = () => {
                       style={{ left: "-3px", top: "14px" }}
                     >
                       *
-                    </sup>{" "}
+                    </sup>
                     And for the ones with grand ambitions
                   </p>
                 </Col>
@@ -60,11 +49,9 @@ const HomeBanner = () => {
           </GSpacing>
           <Slide bottom cascade>
             <div className="videoWrapper">
-              <video ref={videoRef} className="radius" loop >
+              <video ref={videoRef} autoplay loop muted>
                 <source src={Img?.bannerVideo} type="video/mp4" />
               </video>
-
-      
             </div>
           </Slide>
         </Container>

@@ -2,19 +2,22 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Slide } from "react-reveal";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
-import { Container } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
 import GImage from "../../Components/GComponents/GImage/GImage";
-import { allposts } from "../../Helpers/Api/Endpoint";
+import { allposts, category } from "../../Helpers/Api/Endpoint";
 
 const SingleBlog = (props) => {
   const id = useParams();
   const [postData, setPostData] = useState("");
   const [acfData, setacfData] = useState("");
+  const [allCategory, setAllCategory] = useState("");
   useEffect(() => {
     getAllPosts();
+    loadCategory();
   }, [id?.slug]);
 
   const getAllPosts = async () => {
@@ -27,9 +30,28 @@ const SingleBlog = (props) => {
     await axios.get(allposts + "?slug=" + id?.slug, options).then((res) => {
       if (res && res.status === 200) {
         setPostData(res?.data?.[0]);
-        setacfData(res?.data?.[0]?.acf?.blog_flexible_data);
+        setacfData(res?.data?.[0]?.acf===false ? "" : res?.data?.[0]?.acf?.blog_flexible_data);
       }
     });
+  };
+
+  const loadCategory = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    };
+
+    await axios
+      .get(category,
+        options
+      )
+      .then((res) => {
+        if (res?.status === 200) {
+          setAllCategory(res?.data);
+        }
+      });
   };
 
   const dateConverter = (str) => {
@@ -43,13 +65,10 @@ const SingleBlog = (props) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Blog - {id?.slug}</title>
+        <title>Blog - </title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
 
-      {
-        console.log('acfData',acfData)
-      }
 
       <section className="pt80 pb100 tabPt80 tabPb80 mobPt60 mobPb60">
         <Container>
@@ -65,10 +84,23 @@ const SingleBlog = (props) => {
                 Why Branding matters to your Business
               </p> */}
               <div className="d-flex justify-content-center mb100 mobMb60 overscrollx">
-                <button className="btn-blog mr10">Branding</button>
-                <button className="btn-blog mr10">Communication</button>
-                <button className="btn-blog mr10">Experience</button>
-                <button className="btn-blog">Identity</button>
+                {allCategory.length > 0 &&
+                  allCategory?.map((elem, i) => {
+                    if(elem?.name==="Uncategorized"){
+                      return ""
+                    }else{
+                      return (
+                      <Link
+                        key={i}
+                        to={`/category/${elem?.id}`}
+                        className="btn-blog mr10 text-capitalize"
+                      >
+                        {elem?.name}
+                      </Link>
+                    );
+                    }
+                
+                  })}
               </div>
               <div className="mb60 mobMb30">
                 <GImage
@@ -84,20 +116,21 @@ const SingleBlog = (props) => {
             </Slide>
           </div>
 
-          {acfData.length > 0 && acfData?.map((e, i) => {
+          {acfData.length > 0 &&
+            acfData?.map((e, i) => {
               if (e.acf_fc_layout === "paragraph") {
-               
-                e.paragraph.length > 0 && e.paragraph?.map((elem, ind) => {
-                  console.log('eee',elem['para'])
-                  return (
-                    <p
-                      key={ind}
-                      className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite "
-                    >
-                      {elem && elem.para}
-                    </p>
-                  );
-                });
+                e.paragraph.length > 0 &&
+                  e.paragraph?.map((elem, ind) => {
+                    console.log("eee", elem["para"]);
+                    return (
+                      <p
+                        key={ind}
+                        className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite "
+                      >
+                        {elem && elem.para}
+                      </p>
+                    );
+                  });
               }
             })}
 
@@ -119,17 +152,130 @@ const SingleBlog = (props) => {
               </div>
             </div>
 
-            <h3>helllo</h3>
-            {
-  <h2>
-{
-  console.log('sss',postData)
-}
-  </h2>
-  
-}
-
-        
+            {acfData?.length > 0 &&
+              acfData?.map((el, index) => {
+                if (el.acf_fc_layout === "paragraph") {
+                  return (
+                    <section key={"parent" + index} className="mb-5">
+                      {el.acf_fc_layout === "paragraph" &&
+                        el?.paragraph?.map((e, i) => {
+                          if (i === 0) {
+                            return (
+                              <p
+                                className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite"
+                                key={i}
+                              >
+                                {e.para}
+                              </p>
+                            );
+                          } else {
+                            return (
+                              <p
+                                className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10"
+                                key={i}
+                              >
+                                {e.para}
+                              </p>
+                            );
+                          }
+                        })}
+                    </section>
+                  );
+                } else if (el.acf_fc_layout === "image_and_paragraph") {
+                  return (
+                    <section className="mb-5">
+                      {el?.repeater?.map((e, i) => {
+                        if (i % 2) {
+                          return (
+                            <section
+                              key={i}
+                              className="mobMl0 mobMr0 mb100 mobMb60"
+                            >
+                              <Row className="align-items-center">
+                                <Col lg={6}>
+                                  <Slide bottom>
+                                    <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite width80 mobWidth100 tabWidth100 tabLgWidth100 ">
+                                      {e.title}
+                                    </h3>
+                                    <p className="fs18 colorLightBlack width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10">
+                                      {e.paragraph}
+                                    </p>
+                                  </Slide>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Slide bottom>
+                                      <GImage
+                                        radius="24px"
+                                        radiusMob="15px"
+                                        src={e?.image?.url}
+                                      />
+                                    </Slide>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </section>
+                          );
+                        } else {
+                          return (
+                            <section
+                              key={i}
+                              className="mobMl0 mobMr0 mb100 mobMb60"
+                            >
+                              <Row className="align-items-center flexreverse">
+                                <Col md={6}>
+                                  <div>
+                                    <Slide bottom>
+                                      <GImage
+                                        radius="24px"
+                                        radiusMob="15px"
+                                        src={e?.image?.url}
+                                      />
+                                    </Slide>
+                                  </div>
+                                </Col>
+                                <Col md={6}>
+                                  <section className="ml40 mobMl0 mobMb10">
+                                    <Slide bottom>
+                                      <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
+                                        {e.title}
+                                      </h2>
+                                      <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                                        {e.paragraph}
+                                      </p>
+                                    </Slide>
+                                  </section>
+                                </Col>
+                              </Row>
+                            </section>
+                          );
+                        }
+                      })}
+                    </section>
+                  );
+                } else if (el.acf_fc_layout === "title_and_paragraph") {
+                  return (
+                    <section className="mb-5">
+                      {el?.repeater?.map((e, i) => {
+                        return (
+                          <section key={i} className="mobMl0 mobMr0">
+                            <div className="mb60 mobMb30">
+                              <Slide bottom>
+                                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
+                                  {e.title}
+                                </h2>
+                                <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                                  {e.paragraph}
+                                </p>
+                              </Slide>
+                            </div>
+                          </section>
+                        );
+                      })}
+                    </section>
+                  );
+                }
+              })}
 
             {/* <p className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite ">
                 When you are on the hunt for best designers for your website you

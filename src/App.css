@@ -597,3 +597,7 @@ span.circleArrow::before {
   height: 100%;
 }
 /*toggle video play/pause */
+.excerptData {
+  max-height: 79px;
+  overflow-y: hidden;
+}
