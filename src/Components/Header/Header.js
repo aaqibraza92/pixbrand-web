@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
@@ -10,6 +10,11 @@ import $ from "jquery";
 import Flip from 'react-reveal/Flip';
 
 const Header = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const [menuenable, setmenuenable] = useState(false);
   const [delayer, setdelayer] = useState(false);
 
@@ -103,9 +108,7 @@ const WebRightSideHeaderContentWithoutLogin = (props) => {
         <div className="d-flex align-items-center flex-wrap">
           <div className="logo mr20">
             <Link to="/">
-              <Flip left >
-                <img src={Img.logo.default} alt="" />
-              </Flip>
+                <img src={Img.logo.default} alt="logo" />
             </Link>
           </div>
         </div>
