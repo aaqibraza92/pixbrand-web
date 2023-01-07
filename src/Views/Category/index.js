@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import GImage from "../../Components/GComponents/GImage/GImage";
@@ -8,14 +7,38 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
+import {
+  Link,
+  useNavigate,
+  useSearchParams,
+  useParams,
+} from "react-router-dom";
+import "react-creative-cursor/dist/styles.css";
+import Pagination, {
+  bootstrap5PaginationPreset,
+} from "react-responsive-pagination";
 
 const BlogCategory = () => {
   const categoryId = useParams();
   const [loading, setloading] = useState(true);
   const [postData, setPostData] = useState("");
+  const navigation = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
+  const [currentPage, setcurrentPage] = useState(
+    searchParams.get("page") ? searchParams.get("page") : 1
+  );
+
+  const setCurrentPageHandle = (val) => {
+    setcurrentPage(val);
+    setSearchParams({ page: val });
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     postOfCategory();
-  }, [categoryId?.name]);
+  }, [categoryId?.name,currentPage]);
 
   const postOfCategory = async () => {
     const options = {
@@ -25,11 +48,24 @@ const BlogCategory = () => {
       },
     };
     await axios
-      .get(allposts + "?categories=" + categoryId?.name, options)
+      .get(
+        allposts +
+          "?categories=" +
+          categoryId?.name +
+          "&per_page=10&page=" +
+          currentPage,
+        options
+      )
       .then((res) => {
         if (res && res.status === 200) {
           setPostData(res?.data);
           setloading(false);
+
+          setTotalPage(res?.headers["x-wp-totalpages"]);
+          setTotalCount(res?.headers["x-wp-total"]);
+          if (currentPage !== 1) {
+            navigation(`/category/4/?page=${currentPage}`);
+          }
         }
       });
   };
@@ -45,8 +81,6 @@ const BlogCategory = () => {
       <Title />
       {/* <Trophy /> */}
       <Container>
-
-
         <Row>
           {postData.length > 0 &&
             postData.map((item, ind) => {
@@ -64,6 +98,13 @@ const BlogCategory = () => {
                 );
               }
             })}
+
+          <Pagination
+            {...bootstrap5PaginationPreset}
+            current={Number(currentPage)}
+            total={Number(totalPage)}
+            onPageChange={setCurrentPageHandle}
+          />
         </Row>
       </Container>
     </>
