@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import GImage from "../../Components/GComponents/GImage/GImage";
@@ -8,8 +7,19 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const GoodReads = () => {
+  const navigation = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [postData, setPostData] = useState("");
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
+  const [currentPage, setcurrentPage] = useState(
+    searchParams.get("page") ? searchParams.get("page") : 1
+  );
+
+
   const dateConverter = (str) => {
     var date = new Date(str),
       mnth = ("0" + (date.getMonth() + 1)).slice(-2),
@@ -17,7 +27,6 @@ const GoodReads = () => {
     return [date.getFullYear(), mnth, day].join("-");
   };
 
-  const [postData, setPostData] = useState("");
   const [loading, setloading] = useState(true);
   useEffect(() => {
     loadAllPosts();
