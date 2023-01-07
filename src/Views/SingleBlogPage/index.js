@@ -2,8 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Slide } from "react-reveal";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
@@ -18,7 +17,10 @@ const SingleBlog = (props) => {
   useEffect(() => {
     getAllPosts();
     loadCategory();
+    window.scrollTo(0, 0);
   }, [id?.slug]);
+
+
 
   const getAllPosts = async () => {
     const options = {

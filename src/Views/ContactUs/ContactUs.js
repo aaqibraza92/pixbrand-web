@@ -406,7 +406,7 @@ const Form = () => {
                     {/* Animated Checkbox */}
                     {/* <section>
                       <form
-                        class="ac-custom ac-checkbox ac-boxfill"
+                        className="ac-custom ac-checkbox ac-boxfill"
                         autocomplete="off"
                       >
                         <ul>

@@ -8,7 +8,7 @@ import Cyberpal from "./Cyberpal/Cyberpal";
 import DigitalMarketing from "./DigitalMarketing/DigitalMarketing";
 import DigitalMarketing1 from "./DigitalMarketing/DigitalMarketing1";
 import Game from "./Game/Game";
-import GoodReads from "./GoodReads/GoodReads";
+import GoodReads from "./Blogs";
 import Home from "./Home/Home";
 import HouseTrippng from "./HouseTripping/HouseTripping";
 import Pixxley from "./Pixxley/Pixxley";
@@ -25,13 +25,14 @@ import PerfectDesigning from "./PerfectDesigning/PerfectDesigning";
 import SingleBlog from "./SingleBlogPage";
 import BlogCategory from "./Category";
 
+
 const Pages = {
   HomePage: Home,
   HeaderComponent: Header,
   FooterComponent: Footer,
   GoodReads: GoodReads,
   BlogCategory: BlogCategory,
-  SingleBlogPage: SingleBlogPage,
+  SingleBlogPage: SingleBlog,
   Work: Work,
   SingleCareerPage: SingleCareerPage,
   SingleBlog: SingleBlog,

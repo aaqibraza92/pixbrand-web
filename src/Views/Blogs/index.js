@@ -8,8 +8,13 @@ import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import "react-creative-cursor/dist/styles.css";
+import "react-creative-cursor/dist/styles.css";
+import Pagination, {
+  bootstrap5PaginationPreset,
+} from "react-responsive-pagination";
 
-const GoodReads = () => {
+const Allblogs = () => {
   const navigation = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [postData, setPostData] = useState("");
@@ -30,7 +35,14 @@ const GoodReads = () => {
   const [loading, setloading] = useState(true);
   useEffect(() => {
     loadAllPosts();
-  }, []);
+  }, [currentPage]);
+
+  const setCurrentPageHandle = (val) => {
+    setcurrentPage(val);
+    setSearchParams({ page: val });
+    window.scrollTo(0, 0);
+  };
+
 
   const loadAllPosts = async () => {
     const options = {
@@ -40,10 +52,16 @@ const GoodReads = () => {
       },
     };
 
-    await axios.get(allposts, options).then((res) => {
+    await axios.get(`${allposts}?per_page=10&page=${currentPage}`, options).then((res) => {
       if (res && res.status === 200) {
         setPostData(res?.data);
         setloading(false);
+        setTotalPage(res?.headers["x-wp-totalpages"]);
+        setTotalCount(res?.headers["x-wp-total"]);
+        if (currentPage !== 1) {
+          navigation(`/blogs/?page=${currentPage}`);
+        }
+
       }
     });
   };
@@ -58,13 +76,14 @@ const GoodReads = () => {
       <Title />
       {loading ? (
         <div className="text-center mb60">
-          <div class="spinner-border text-light" role="status">
-            <span class="visually-hidden">Loading...</span>
+          <div className="spinner-border text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       ) : (
         <>
-          <Container className="mb100 mobMb60">
+        {
+          currentPage===1 && <Container className="mb100 mobMb60">
             <Row className="align-items-center flexreverse">
               <Col md={6}>
                 <div>
@@ -105,7 +124,10 @@ const GoodReads = () => {
                 </section>
               </Col>
             </Row>
+     
           </Container>
+        }
+      
           <Container>
             <Row>
               {postData.length > 0 &&
@@ -117,6 +139,14 @@ const GoodReads = () => {
                   }
                 })}
             </Row>
+
+            <Pagination
+          {...bootstrap5PaginationPreset}
+          current={Number(currentPage)}
+          total={Number(totalPage)}
+          onPageChange={setCurrentPageHandle}
+       
+        />
           </Container>
         </>
       )}
@@ -124,7 +154,7 @@ const GoodReads = () => {
   );
 };
 
-export default GoodReads;
+export default Allblogs;
 
 // Title
 const Title = () => {

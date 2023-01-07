@@ -601,3 +601,13 @@ span.circleArrow::before {
   max-height: 79px;
   overflow-y: hidden;
 }
+.page-item.active a {
+  background: #ff0a2b !important;
+  border-color: #ff0a2b !important;
+}
+.pagination.justify-content-center {
+  margin-bottom: 50px;
+}
+body .page-link {
+  color: #5e5e5e;
+}

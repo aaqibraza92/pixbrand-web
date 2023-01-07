@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import GImage from "../../Components/GComponents/GImage/GImage";
@@ -8,115 +8,30 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
-const Cards = [
-  {
-    img: Img.goodreads1,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads2,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads3,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads4,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads5,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads6,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads7,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads8,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads9,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads10,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads11,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-  {
-    img: Img.goodreads12,
-    pretitle: "JULY 05, 2021",
-    title: "New jersey website design company – pix brand",
-    desc: "Establishing the right visual connection with your customers and users by creating eye-catching",
-    linkto: "/terms-services",
-  },
-];
 
 const BlogCategory = () => {
-  const categoryId= useParams();
-
-  const [postData,setPostData]=useState("");
-  useEffect(()=>{
+  const categoryId = useParams();
+  const [loading, setloading] = useState(true);
+  const [postData, setPostData] = useState("");
+  useEffect(() => {
     postOfCategory();
-  },[categoryId?.name]);
+  }, [categoryId?.name]);
 
-  const postOfCategory = async() => {
+  const postOfCategory = async () => {
     const options = {
       method: "GET",
       headers: {
         Accept: "application/json",
       },
     };
-    await axios.get(allposts+'?categories='+categoryId?.name, options).then((res) => {
-      if (res && res.status === 200) {
-        setPostData(res?.data);
-      }
-    });
+    await axios
+      .get(allposts + "?categories=" + categoryId?.name, options)
+      .then((res) => {
+        if (res && res.status === 200) {
+          setPostData(res?.data);
+          setloading(false);
+        }
+      });
   };
 
   return (
@@ -127,27 +42,35 @@ const BlogCategory = () => {
         <meta name="Blog" content="Pixbrand Blog"></meta>
       </Helmet>
 
-     
       <Title />
       {/* <Trophy /> */}
       <Container>
-            <Row>
-              {postData.length > 0 &&
-                postData.map((item, ind) => {
-                  if (ind === 0) {
-                    return "";
-                  } else {
-                    return <BlogListings key={ind} data={item} />;
-                  }
-                })}
-            </Row>
-          </Container>
+
+
+        <Row>
+          {postData.length > 0 &&
+            postData.map((item, ind) => {
+              if (ind === 0) {
+                return "";
+              } else {
+                return loading ? (
+                  <div className="text-center mb60">
+                    <div className="spinner-border text-light" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                ) : (
+                  <BlogListings key={ind} data={item} />
+                );
+              }
+            })}
+        </Row>
+      </Container>
     </>
   );
 };
 
 export default BlogCategory;
-
 
 // Title
 const Title = () => {
@@ -197,42 +120,6 @@ const Trophy = () => {
               </div>
             </section>
           </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
-
-const BlogListing = (props) => {
-  return (
-    <>
-      <Container>
-        <Row>
-          {Cards.map((obj, ind) => {
-            return (
-              <>
-                <Col lg={4} md={4} className="" key={"p" + ind}>
-                  <section className="mb80 mobMb40">
-                    <div className="mb20 mobMb10">
-                      <GImage radius="24px" radiusMob="15px" src={obj.img} />
-                    </div>
-                    <p className="fs16 colorLightBlack mb0">{obj.pretitle}</p>
-                    <div className="mb20 mobMb10">
-                      <Link
-                        to={obj.linkto}
-                        className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 "
-                      >
-                        {obj.title}
-                      </Link>
-                    </div>
-                    <p className="fs20 colorLightBlack mobFs16 mb0">
-                      {obj.desc}
-                    </p>
-                  </section>
-                </Col>
-              </>
-            );
-          })}
         </Row>
       </Container>
     </>
