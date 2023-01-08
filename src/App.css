@@ -611,3 +611,34 @@ span.circleArrow::before {
 body .page-link {
   color: #5e5e5e;
 }
+.btnRed:hover {
+  background-color: #20272B;
+  color: #ddd;
+}
+.btnRed{
+  box-shadow: none;
+-webkit-box-shadow: none;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 20px;
+padding-right: 20px;
+margin-top: 0px;
+margin-bottom: 15px;
+margin-left: 0px;
+margin-right: 10px;
+-webkit-border-radius: 25px;
+border-radius: 25px;
+border: none;
+outline: none;
+color: #FFFFFF;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+font-weight: 500;
+font-size: 16px;
+-webkit-transition: all 0.3s ease 0s;
+-webkit-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+width: auto;
+background: #FF0A2B;
+}

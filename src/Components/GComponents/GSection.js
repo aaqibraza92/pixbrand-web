@@ -5,7 +5,7 @@ const GSection = styled.section`
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background: ${(props) => {
-    return props.background ? props.background : "#F7F8F9";
+    return props.background ? props.background : "transparent";
   }};
   padding-top: 60px;
   padding-bottom: 60px;

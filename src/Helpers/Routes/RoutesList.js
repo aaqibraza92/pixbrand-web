@@ -187,6 +187,11 @@ let RouterList = [
     path: "/pixxley",
     isAdmin: false,
   },
+  {
+    element: <GetRoute isprivate={false} role="Default" page={Pages.Pixxley} />,
+    path: "/portfolio/:slug/",
+    isAdmin: false,
+  },
 
   {
     element: (
@@ -203,7 +208,7 @@ let RouterList = [
         page={Pages.MainPortfolioPage}
       />
     ),
-    path: "/main-portfolio-page",
+    path: "/portfolio",
     isAdmin: false,
   },
 ];

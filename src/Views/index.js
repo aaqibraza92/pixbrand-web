@@ -11,7 +11,7 @@ import Game from "./Game/Game";
 import GoodReads from "./Blogs";
 import Home from "./Home/Home";
 import HouseTrippng from "./HouseTripping/HouseTripping";
-import Pixxley from "./Pixxley/Pixxley";
+import Pixxley from "./SinglePortfolio";
 import MainPortfolioPage from "./MainPortfolioPage/MainPortfolioPage";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import Services from "./Services/Services";

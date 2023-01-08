@@ -13,37 +13,7 @@ import { Cursor } from "react-creative-cursor";
 import "react-creative-cursor/dist/styles.css";
 
 const Portfolio = () => {
-  useEffect(() => {
-    // $(".arrowLink > span").mouseenter(function () {
-    //   $(".cursor").css("transform", "scale(1.5)");
-    // });
-    // $(".arrowLink > span").mouseleave(function () {
-    //   $(".cursor").css("transform", "scale(0.75)");
-    // });
-    // (function () {
-    //   const links = document.querySelectorAll(".hover-me");
-    //   const cursor = document.querySelector(".cursor");
-    //   const animateMe = function (e) {
-    //     const span = this.querySelector("span");
-    //     const { offsetX: x, offsetY: y } = e,
-    //       { offsetWidth: width, offsetHeight: height } = this;
-    //     let move;
-    //     move = 20;
-    //     let xMove = (x / width) * (move * 2) - move;
-    //     let yMove = (y / height) * (move * 2) - move;
-    //     span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-    //     if (e.type === "mouseleave") span.style.transform = "";
-    //   };
-    //   const editCursor = (e) => {
-    //     const { clientX: x, clientY: y } = e;
-    //     cursor.style.left = x + "px";
-    //     cursor.style.top = y + "px";
-    //   };
-    //   links.forEach((link) => link.addEventListener("mousemove", animateMe));
-    //   links.forEach((link) => link.addEventListener("mouseleave", animateMe));
-    //   window.addEventListener("mousemove", editCursor);
-    // })();
-  });
+
   return (
     <section>
       <Container className="overflow-hidden">

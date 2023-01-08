@@ -4,7 +4,7 @@ import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
 
-const Pixxley = () => {
+const SinglePortfolio = () => {
   return (
     <div className="pt80">
       <Title />
@@ -14,7 +14,7 @@ const Pixxley = () => {
   );
 };
 
-export default Pixxley;
+export default SinglePortfolio;
 
 // Title
 const Title = () => {
