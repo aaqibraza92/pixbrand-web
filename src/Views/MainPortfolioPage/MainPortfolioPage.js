@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
-import GButton from "../../Components/GComponents/GButton";
-import Portfolio from "../Home/Portfolio/Portfolio";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import axios from "axios";
@@ -12,8 +10,11 @@ import { Cursor } from "react-creative-cursor";
 import Svg from "../../Assets/Svg/Svg";
 import GSection from "../../Components/GComponents/GSection";
 import Img from "../../Assets/Img/Img";
-import GSpacing from "../../Components/GComponents/GSpacing";
-import { Fade } from "react-reveal";
+import Pagination, {
+  bootstrap5PaginationPreset,
+} from "react-responsive-pagination";
+
+
 
 const MainPortfolioPage = () => {
   const navigation = useNavigate();
@@ -26,12 +27,7 @@ const MainPortfolioPage = () => {
     searchParams.get("page") ? searchParams.get("page") : 1
   );
 
-  const dateConverter = (str) => {
-    var date = new Date(str),
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2);
-    return [date.getFullYear(), mnth, day].join("-");
-  };
+
 
   const [loading, setloading] = useState(true);
   useEffect(() => {
@@ -216,7 +212,13 @@ const MainPortfolioPage = () => {
           
           </Row>
         </div>
-
+        <Pagination
+          {...bootstrap5PaginationPreset}
+          current={Number(currentPage)}
+          total={Number(totalPage)}
+          onPageChange={setCurrentPageHandle}
+       
+        />
       </Container>
     </section>
     </div>
@@ -225,7 +227,6 @@ const MainPortfolioPage = () => {
 
 export default MainPortfolioPage;
 
-// Title
 const Title = () => {
   return (
     <section className="pt80 pb80 tabPt80 tabPb80 mobPt60 mobPb60">

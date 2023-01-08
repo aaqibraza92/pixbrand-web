@@ -180,7 +180,6 @@ const Title = () => {
 
 const BlogListing = (props) => {
   const { data } = props;
-  console.log("props1", data);
 
   const dateConverter = (str) => {
     var date = new Date(str),

@@ -1,25 +1,48 @@
+import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
+import { allportfolio } from "../../Helpers/Api/Endpoint";
+import { Link,useParams } from "react-router-dom";
+import { useEffect,useState } from "react";
 
 const SinglePortfolio = () => {
+
+  const id = useParams();
+  const [postData, setPostData] = useState("");
+  const [acfData, setacfData] = useState("");
+  const [allCategory, setAllCategory] = useState("");
+  useEffect(() => {
+    getAllPosts();
+    window.scrollTo(0, 0);
+  }, [id?.slug]);
+
+
+
+  const getAllPosts = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    };
+    await axios.get(allportfolio + "?slug=" + id?.slug, options).then((res) => {
+      if (res && res.status === 200) {
+        setPostData(res?.data?.[0]);
+        setacfData(res?.data?.[0]?.acf===false ? "" : res?.data?.[0]?.acf?.blog_flexible_data);
+      }
+    });
+  };
+
+
+
   return (
     <div className="pt80">
-      <Title />
-      <Challenge />
-      <Gallery />
-    </div>
-  );
-};
-
-export default SinglePortfolio;
-
-// Title
-const Title = () => {
-  return (
-    <section className="mb100 mobMb30">
+    {
+      console.log('postData',postData)
+    }
+          <section className="mb100 mobMb30">
       <Container>
         <section className="mb80 mobMb30">
           <h4 className="fs16 colorWhite">TITAN LOUNGE -</h4>
@@ -37,8 +60,15 @@ const Title = () => {
         <img src={Img.px1} alt="" className="w-100 mobMb15" />
       </div>
     </section>
+      <Challenge />
+      <Gallery />
+    </div>
   );
 };
+
+export default SinglePortfolio;
+
+
 
 // Challenge
 const Challenge = () => {
