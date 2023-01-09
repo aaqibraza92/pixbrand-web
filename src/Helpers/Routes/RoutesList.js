@@ -58,6 +58,13 @@ let RouterList = [
   },
   {
     element: (
+      <GetRoute isprivate={false} role="Default" page={Pages.PortfolioCategory} />
+    ),
+    path: "/portfolio-category/:name/",
+    isAdmin: false,
+  },
+  {
+    element: (
       <GetRoute isprivate={false} role="Default" page={Pages.GoodReads} />
     ),
     path: "/blogs",

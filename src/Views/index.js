@@ -24,6 +24,7 @@ import Work from "./Work/Work";
 import PerfectDesigning from "./PerfectDesigning/PerfectDesigning";
 import SingleBlog from "./SingleBlogPage";
 import BlogCategory from "./Category";
+import PortfolioCat from "./PortfolioCat";
 
 
 const Pages = {
@@ -32,6 +33,7 @@ const Pages = {
   FooterComponent: Footer,
   GoodReads: GoodReads,
   BlogCategory: BlogCategory,
+  PortfolioCategory: PortfolioCat,
   SingleBlogPage: SingleBlog,
   Work: Work,
   SingleCareerPage: SingleCareerPage,

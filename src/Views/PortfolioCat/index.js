@@ -1,40 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import Slide from "react-reveal/Slide";
-import { Helmet } from "react-helmet";
-import axios from "axios";
-import { allportfolio, portfolioCat } from "../../Helpers/Api/Endpoint";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import GImage from "../../Components/GComponents/GImage/GImage";
-import { Cursor } from "react-creative-cursor";
-import Svg from "../../Assets/Svg/Svg";
-import GSection from "../../Components/GComponents/GSection";
 import Img from "../../Assets/Img/Img";
+import GImage from "../../Components/GComponents/GImage/GImage";
+import { Helmet } from "react-helmet";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { allportfolio } from "../../Helpers/Api/Endpoint";
+import {
+  Link,
+  useNavigate,
+  useSearchParams,
+  useParams,
+} from "react-router-dom";
+import "react-creative-cursor/dist/styles.css";
 import Pagination, {
   bootstrap5PaginationPreset,
 } from "react-responsive-pagination";
+import { Cursor } from "react-creative-cursor";
+import Svg from "../../Assets/Svg/Svg";
+import { Slide } from "react-reveal";
+import GSection from "../../Components/GComponents/GSection";
 
-
-
-const MainPortfolioPage = () => {
-  const navigation = useNavigate();
-  const [loader, setloader] = useState(true);
-  const [searchParams, setSearchParams] = useSearchParams();
+const PortfolioCat = () => {
+  const categoryId = useParams();
+  const [loading, setloading] = useState(true);
   const [postData, setPostData] = useState("");
-  const [allCategory, setAllCategory] = useState("");
+  const navigation = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [totalCount, setTotalCount] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
+  const [loader, setloader] = useState(true);
   const [currentPage, setcurrentPage] = useState(
     searchParams.get("page") ? searchParams.get("page") : 1
   );
-
-
-
-  const [loading, setloading] = useState(true);
-  useEffect(() => {
-    loadAllPosts();
-    loadCategory();
-  }, [currentPage]);
 
   const setCurrentPageHandle = (val) => {
     setcurrentPage(val);
@@ -42,54 +41,51 @@ const MainPortfolioPage = () => {
     window.scrollTo(0, 0);
   };
 
-  const loadCategory = async () => {
+  useEffect(() => {
+    postOfCategory();
+  }, [categoryId?.name,currentPage]);
+
+  const postOfCategory = async () => {
     const options = {
       method: "GET",
       headers: {
         Accept: "application/json",
       },
     };
-
-    await axios.get(`${portfolioCat}`, options).then((res) => {
-      if (res?.status === 200) {
-        setAllCategory(res?.data);
-        setloader(false);
-      }
-    });
-  };
-
-  const loadAllPosts = async () => {
-    const options = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-    };
-
     await axios
-      .get(`${allportfolio}?per_page=10&page=${currentPage}`, options)
+      .get(
+        allportfolio +
+          "?portfolio-category=" +
+          categoryId?.name +
+          "&per_page=10&page=" +
+          currentPage,
+        options
+      )
       .then((res) => {
         if (res && res.status === 200) {
           setPostData(res?.data);
           setloading(false);
+
           setTotalPage(res?.headers["x-wp-totalpages"]);
           setTotalCount(res?.headers["x-wp-total"]);
           if (currentPage !== 1) {
-            navigation(`/blogs/?page=${currentPage}`);
+            navigation(`/category/4/?page=${currentPage}`);
           }
+          setloader(false);
         }
       });
   };
 
   return (
-    <div>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Portfolio - Pixbrand</title>
-        <meta name="Portfolio" content="Pixbrand Portfolio"></meta>
+        <title>Category - Pixbrand</title>
+        <meta name="Blog" content="Pixbrand Blog"></meta>
       </Helmet>
-   
+
       <Title />
+
       <Container>
       {
           loader &&   <div className="text-center mb60">
@@ -98,28 +94,7 @@ const MainPortfolioPage = () => {
           </div>
         </div>
         }
-      </Container>
-      <Container className="mb120 mobMb75">
-        <section className="port-btn">
-          <Slide bottom>
-            <div className="port-btn-scroll">
-              {allCategory.length > 0 &&
-                allCategory?.map((cat, ind) => {
-                  return (
-                    <Link key={ind} className="btnRed" to={`/portfolio-category/${cat?.id}`}>
-                      {cat?.name} 
-                    </Link>
-                  );
-                })}
-            </div>
-          </Slide>
-        </section>
-      </Container>
-      <section>
-      <Container className="overflow-hidden">
-  
-        <div>
-          <Row className="gx-5 gXl10 mb100">
+      <Row className="gx-5 gXl10 mb100">
           {
             postData.length > 0 && postData?.map((e,i)=>{
               if(i%2){
@@ -221,37 +196,36 @@ const MainPortfolioPage = () => {
 
           
           </Row>
-        </div>
-        <Pagination
-          {...bootstrap5PaginationPreset}
-          current={Number(currentPage)}
-          total={Number(totalPage)}
-          onPageChange={setCurrentPageHandle}
-       
-        />
+
+          <Pagination
+            {...bootstrap5PaginationPreset}
+            current={Number(currentPage)}
+            total={Number(totalPage)}
+            onPageChange={setCurrentPageHandle}
+          />
+   
       </Container>
-    </section>
-    </div>
+    </>
   );
 };
 
-export default MainPortfolioPage;
+export default PortfolioCat;
 
+// Title
 const Title = () => {
   return (
     <section className="pt80 pb80 tabPt80 tabPb80 mobPt60 mobPb60">
       <Container>
-        <Row>
+        <Row className="justify-content-center ">
           <Col xl={10} lg={10} md={12}>
-            <section>
-              <Slide bottom>
-                <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
-                  The work we do,
-                </h1>
-                <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
-                  and the people we help.
-                </h1>
-              </Slide>
+            <section className="text-center mobtl">
+              <h1 className="fs80 tabFs60 tabLgFs60 mobFs45 fw600 colorWhite mb20">
+                Some Good Reads for You!
+              </h1>
+              <p className="fs24 colorWhite width70 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
+                Here are some of our curated blogs, fitting for a New Jersey web
+                development company like us.
+              </p>
             </section>
           </Col>
         </Row>
@@ -260,3 +234,57 @@ const Title = () => {
   );
 };
 
+
+
+const BlogListings = (props) => {
+  const { data } = props;
+
+  const dateConverter = (str) => {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  };
+
+  return (
+    <Col lg={4} md={4} className="">
+      <section className="mb80 mobMb40">
+        <div className="mb20 mobMb10">
+          {data?.x_featured_media_large ? (
+            <div className="postImgWrapper mb-2">
+              <Link to={`/blog/${data?.slug}`}>
+                <GImage
+                  radius="24px"
+                  radiusMob="15px"
+                  src={data?.x_featured_media_large}
+                />
+              </Link>
+            </div>
+          ) : (
+            <Link to={`/blog/${data?.slug}`}>
+              <GImage radius="24px" radiusMob="15px" src={Img?.goodreads1} />
+            </Link>
+          )}
+        </div>
+        <p className="fs16 colorLightBlack mb0">
+          {dateConverter(data?.modified)}
+        </p>
+        <div className="mb20 mobMb10">
+          <Link
+            to={`/blog/${data?.slug}`}
+            className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 lh33"
+          >
+            {data?.title?.rendered}
+          </Link>
+        </div>
+        <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">
+          {
+            <div
+              dangerouslySetInnerHTML={{ __html: data?.excerpt?.rendered }}
+            />
+          }
+        </div>
+      </section>
+    </Col>
+  );
+};

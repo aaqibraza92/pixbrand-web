@@ -146,7 +146,7 @@ const MenuNav = (props) => {
         </div>
 
         <ul className="pl0 text-center noUl fullNav">
-          <li className="active-nav">
+          <li className="active-nav" onClick={()=>closeFn(false)}>
             <Link
               to="/services"
               className="fw700 fs80 colorWhite position-relative text-capitalize hover-target"
@@ -154,7 +154,7 @@ const MenuNav = (props) => {
               Service
             </Link>
           </li>
-          <li>
+          <li onClick={()=>closeFn(false)}>
             <Link
               to="/portfolio"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
@@ -162,7 +162,7 @@ const MenuNav = (props) => {
               Portfolio
             </Link>
           </li>
-          <li>
+          <li onClick={()=>closeFn(false)}>
             <Link
               to="#"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
@@ -170,7 +170,7 @@ const MenuNav = (props) => {
               Industries
             </Link>
           </li>
-          <li>
+          <li onClick={()=>closeFn(false)}>
             <Link
               to="/about"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
@@ -178,7 +178,7 @@ const MenuNav = (props) => {
               About Us
             </Link>
           </li>
-          <li>
+          <li onClick={()=>closeFn(false)}>
             <Link
               to="/contactus"
               className="fw700 fs80 colorWhite position-relative text-capitalize"

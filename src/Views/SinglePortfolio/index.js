@@ -4,21 +4,20 @@ import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
 import { allportfolio } from "../../Helpers/Api/Endpoint";
-import { Link,useParams } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const SinglePortfolio = () => {
-
   const id = useParams();
   const [postData, setPostData] = useState("");
   const [acfData, setacfData] = useState("");
+  const [loader, setloader] = useState(true);
   const [allCategory, setAllCategory] = useState("");
+
   useEffect(() => {
     getAllPosts();
     window.scrollTo(0, 0);
   }, [id?.slug]);
-
-
 
   const getAllPosts = async () => {
     const options = {
@@ -30,45 +29,113 @@ const SinglePortfolio = () => {
     await axios.get(allportfolio + "?slug=" + id?.slug, options).then((res) => {
       if (res && res.status === 200) {
         setPostData(res?.data?.[0]);
-        setacfData(res?.data?.[0]?.acf===false ? "" : res?.data?.[0]?.acf?.blog_flexible_data);
+        setacfData(
+          res?.data?.[0]?.acf === false
+            ? ""
+            : res?.data?.[0]?.acf?.flexible_content
+        );
+        setloader(false);
       }
     });
   };
 
-
-
   return (
     <div className="pt80">
-    {
-      console.log('postData',postData)
-    }
-          <section className="mb100 mobMb30">
-      <Container>
-        <section className="mb80 mobMb30">
-          <h4 className="fs16 colorWhite">TITAN LOUNGE -</h4>
-          <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
-            Find Your Best Companion App
-          </h1>
-          <p className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
-            explicabo eligendi repellendus quo? Sed provident laudantium, alias
-            asperiores dolore volupt
-          </p>
-        </section>
-      </Container>
-      <div>
-        <img src={Img.px1} alt="" className="w-100 mobMb15" />
-      </div>
-    </section>
+      <section className="mb100 mobMb30">
+        <Container>
+        {
+          loader &&   <div className="text-center mb60">
+          <div className="spinner-border text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        }
+          <section className="mb80 mobMb30">
+            <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
+            <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
+              {postData?.title?.rendered}
+            </h1>
+            <div
+              className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
+              dangerouslySetInnerHTML={{ __html: postData?.content?.rendered }}
+            />
+          </section>
+        </Container>
+        <div>
+          <img
+            src={postData?.x_featured_media_original}
+            alt=""
+            className="w-100 mobMb15"
+          />
+        </div>
+      </section>
       <Challenge />
-      <Gallery />
+      <section className="mb100 mobMb30">
+        {console.log("acfData", acfData)}
+        <Container className="overflow-hidden">
+          {acfData?.length > 0 &&
+            acfData?.map((el, index) => {
+              if (el.acf_fc_layout === "single_image") {
+                return el.image.map((e, i) => {
+                  return (
+                    <div key={i}>
+                      <img
+                        src={e.image?.url}
+                        alt=""
+                        className="w-100 mb50 mobMb30"
+                      />
+                    </div>
+                  );
+                });
+              } else if (el.acf_fc_layout === "two_row_image") {
+                return (
+                  <Row className="gx-5">
+                    {el.two_image_repeater.map((e, i) => {
+                      return (
+                        <Col lg={6} xs={6} key={i}>
+                          <div>
+                            <img
+                              src={e?.image?.url}
+                              alt=""
+                              className="w-100 mb50 mobMb30"
+                            />
+                          </div>
+                        </Col>
+                      );
+                    })}
+                  </Row>
+                );
+              } else if (el.acf_fc_layout === "title_and_content") {
+                return    <section  className="bBottom mb80 mobMb30"> 
+               { el.paragraph_repeater.map((e, i) => {
+                  return (
+                 
+                      <div key={i} className="mb30 mobMb30">
+                      {e?.title!=="" &&
+                      <h3 className="fs30 colorWhite mb25 mobMb10">
+                          {e?.title}
+                        </h3>
+                      }
+                     
+                        <p className="colorLightBlack mb0">
+                          {e?.paragraph}
+                        </p>
+                      </div>
+                    
+                  );
+                })}
+                </section>
+              }
+            })}
+
+  
+        </Container>
+      </section>
     </div>
   );
 };
 
 export default SinglePortfolio;
-
-
 
 // Challenge
 const Challenge = () => {
@@ -165,103 +232,6 @@ const Challenge = () => {
             </section>
           </Col>
         </Row>
-      </Container>
-    </section>
-  );
-};
-
-// Gallery Section
-const Gallery = () => {
-  return (
-    <section className="mb100 mobMb30">
-      <Container className="overflow-hidden">
-        <div>
-          <img src={Img.px2} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <Row className="gx-5">
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px3} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px4} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-        </Row>
-        <div>
-          <img src={Img.px5} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <div>
-          <img src={Img.px6} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <div>
-          <img src={Img.px7} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <div>
-          <img src={Img.px8} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <Row className="gx-5">
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px9} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px10} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-        </Row>
-        <div>
-          <img src={Img.px11} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <Row className="gx-5">
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px12} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-          <Col lg={6} xs={6}>
-            <div>
-              <img src={Img.px13} alt="" className="w-100 mb50 mobMb30" />
-            </div>
-          </Col>
-        </Row>
-        <div>
-          <img src={Img.px14} alt="" className="w-100 mb50 mobMb30" />
-        </div>
-        <section className="bBottom mb80 mobMb30">
-          <div className="mb80 mobMb30">
-            <h3 className="fs30 colorWhite mb25 mobMb10">The result</h3>
-            <p className="colorLightBlack mb30">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Cupiditate tempore laboriosam eius inventore. Quas expedita fugit
-              soluta laudantium non sed nobis error consequatur. Adipisci
-              doloremque iste perspiciatis quaerat debitis omnis perferendis.
-              soluta laudantium non sed nobis error consequatur. Adipisci
-              doloremque iste perspiciatis quaerat debitis omnis perferendis.
-              Qui, vel assumenda?Qui, vel assumenda?
-            </p>
-            <p className="colorLightBlack mb0">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Cupiditate tempore laboriosam eius inventore. Quas expedita fugit
-            </p>
-          </div>
-        </section>
-        <section>
-          <div className="mb80 mobMb15 text-center">
-            <h3 className="fs60 mobMb10 mb30 mobFs45 tabFs60">
-              <Link to="#" className="colorWhite">
-                Next Project
-              </Link>
-            </h3>
-            <div>
-              <Link to="/cyberpal">{Svg.arrowDiagnalWhite}</Link>
-            </div>
-          </div>
-        </section>
       </Container>
     </section>
   );
