@@ -642,3 +642,9 @@ transition: all 0.3s ease 0s;
 width: auto;
 background: #FF0A2B;
 }
+.inlineData br {
+  display: none;
+}
+.inlineData svg {
+  margin-right: 10px;
+}

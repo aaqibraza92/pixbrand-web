@@ -69,9 +69,9 @@ const SinglePortfolio = () => {
           />
         </div>
       </section>
-      <Challenge />
+     
+
       <section className="mb100 mobMb30">
-        {console.log("acfData", acfData)}
         <Container className="overflow-hidden">
           {acfData?.length > 0 &&
             acfData?.map((el, index) => {
@@ -125,6 +125,45 @@ const SinglePortfolio = () => {
                   );
                 })}
                 </section>
+              }else if (el.acf_fc_layout === "about_portfolio") {
+return  <section className="mb100 mobMb30">
+      <Container>
+        <Row>
+          <Col lg={4} className="mobMb10">
+            <section>
+            {
+              el?.sidebar_content?.map((e,i)=>{
+                return     <div key={i} className="mb30 mobMb15">
+                <h3 className="fs16 colorWhite"> {e?.title}</h3>
+                <div
+              className="colorLightBlack mb0 inlineData"
+              dangerouslySetInnerHTML={{ __html: e?.content }}
+            />
+              </div>
+              })
+            }
+           
+            </section>
+          </Col>
+          <Col lg={8}>
+            <section>
+            {
+              el?.title_and_content?.map((e,i)=>{
+                return     <div key={i} className="mb30">
+                <h3 className="fs30 colorWhite mb25 mobMb10">{e?.title}</h3>
+                <p className="colorLightBlack mb0">
+                {e?.paragraph}
+                </p>
+              </div>
+              })
+            }
+
+              
+            </section>
+          </Col>
+        </Row>
+      </Container>
+    </section>
               }
             })}
 
