@@ -1,11 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import Img from "../../Assets/Img/Img";
-import Svg from "../../Assets/Svg/Svg";
 import { allportfolio } from "../../Helpers/Api/Endpoint";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const SinglePortfolio = () => {
   const id = useParams();
@@ -40,16 +39,22 @@ const SinglePortfolio = () => {
   };
 
   return (
-    <div className="pt80">
+    <>
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>Portfolio - {postData && postData?.title?.rendered}</title>
+        <meta name="home" content="Pixbrand Home"></meta>
+      </Helmet>
+      <div className="pt80">
       <section className="mb100 mobMb30">
         <Container>
-        {
-          loader &&   <div className="text-center mb60">
-          <div className="spinner-border text-light" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-        }
+          {loader && (
+            <div className="text-center mb60">
+              <div className="spinner-border text-light" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          )}
           <section className="mb80 mobMb30">
             <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
             <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
@@ -69,7 +74,6 @@ const SinglePortfolio = () => {
           />
         </div>
       </section>
-     
 
       <section className="mb100 mobMb30">
         <Container className="overflow-hidden">
@@ -106,73 +110,76 @@ const SinglePortfolio = () => {
                   </Row>
                 );
               } else if (el.acf_fc_layout === "title_and_content") {
-                return    <section  className="bBottom mb80 mobMb30"> 
-               { el.paragraph_repeater.map((e, i) => {
-                  return (
-                 
-                      <div key={i} className="mb30 mobMb30">
-                      {e?.title!=="" &&
-                      <h3 className="fs30 colorWhite mb25 mobMb10">
-                          {e?.title}
-                        </h3>
-                      }
-                     
-                        <p className="colorLightBlack mb0">
-                          {e?.paragraph}
-                        </p>
-                      </div>
-                    
-                  );
-                })}
-                </section>
-              }else if (el.acf_fc_layout === "about_portfolio") {
-return  <section className="mb100 mobMb30">
-      <Container>
-        <Row>
-          <Col lg={4} className="mobMb10">
-            <section>
-            {
-              el?.sidebar_content?.map((e,i)=>{
-                return     <div key={i} className="mb30 mobMb15">
-                <h3 className="fs16 colorWhite"> {e?.title}</h3>
-                <div
-              className="colorLightBlack mb0 inlineData"
-              dangerouslySetInnerHTML={{ __html: e?.content }}
-            />
-              </div>
-              })
-            }
-           
-            </section>
-          </Col>
-          <Col lg={8}>
-            <section>
-            {
-              el?.title_and_content?.map((e,i)=>{
-                return     <div key={i} className="mb30">
-                <h3 className="fs30 colorWhite mb25 mobMb10">{e?.title}</h3>
-                <p className="colorLightBlack mb0">
-                {e?.paragraph}
-                </p>
-              </div>
-              })
-            }
+                return (
+                  <section className="bBottom mb80 mobMb30">
+                    {el.paragraph_repeater.map((e, i) => {
+                      return (
+                        <div key={i} className="mb30 mobMb30">
+                          {e?.title !== "" && (
+                            <h3 className="fs30 colorWhite mb25 mobMb10">
+                              {e?.title}
+                            </h3>
+                          )}
 
-              
-            </section>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+                          <p className="colorLightBlack mb0">{e?.paragraph}</p>
+                        </div>
+                      );
+                    })}
+                  </section>
+                );
+              } else if (el.acf_fc_layout === "about_portfolio") {
+                return (
+                  <section className="mb100 mobMb30">
+                    <Container>
+                      <Row>
+                        <Col lg={4} className="mobMb10">
+                          <section>
+                            {el?.sidebar_content?.map((e, i) => {
+                              return (
+                                <div key={i} className="mb30 mobMb15">
+                                  <h3 className="fs16 colorWhite">
+                                    {" "}
+                                    {e?.title}
+                                  </h3>
+                                  <div
+                                    className="colorLightBlack mb0 inlineData"
+                                    dangerouslySetInnerHTML={{
+                                      __html: e?.content,
+                                    }}
+                                  />
+                                </div>
+                              );
+                            })}
+                          </section>
+                        </Col>
+                        <Col lg={8}>
+                          <section>
+                            {el?.title_and_content?.map((e, i) => {
+                              return (
+                                <div key={i} className="mb30">
+                                  <h3 className="fs30 colorWhite mb25 mobMb10">
+                                    {e?.title}
+                                  </h3>
+                                  <p className="colorLightBlack mb0">
+                                    {e?.paragraph}
+                                  </p>
+                                </div>
+                              );
+                            })}
+                          </section>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </section>
+                );
               }
             })}
-
-  
         </Container>
       </section>
     </div>
+    </>
+   
   );
 };
 
 export default SinglePortfolio;
-

@@ -164,10 +164,10 @@ const MenuNav = (props) => {
           </li>
           <li onClick={()=>closeFn(false)}>
             <Link
-              to="#"
+              to="/blogs"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
             >
-              Industries
+              Blogs
             </Link>
           </li>
           <li onClick={()=>closeFn(false)}>

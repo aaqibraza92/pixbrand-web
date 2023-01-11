@@ -69,7 +69,7 @@ const SingleBlog = (props) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Blog - </title>
+        <title>Blog -  {postData && postData?.title?.rendered}</title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
 

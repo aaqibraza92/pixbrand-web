@@ -82,20 +82,21 @@ const BlogCategory = () => {
       {/* <Trophy /> */}
       <Container>
         <Row>
+        {loading && (
+        <div className="text-center mb60">
+          <div className="spinner-border text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
+
+
           {postData.length > 0 &&
             postData.map((item, ind) => {
               if (ind === 0) {
                 return "";
               } else {
-                return loading ? (
-                  <div className="text-center mb60">
-                    <div className="spinner-border text-light" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
-                  </div>
-                ) : (
-                  <BlogListings key={ind} data={item} />
-                );
+                return    <BlogListings key={ind} data={item} />
               }
             })}
 

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pixreact/static/css/main.2fd8ff41.css",
-    "main.js": "/pixreact/static/js/main.abf82088.js",
+    "main.css": "/pixreact/static/css/main.3fae2c75.css",
+    "main.js": "/pixreact/static/js/main.ab0bdd0f.js",
     "static/js/787.89e8ae29.chunk.js": "/pixreact/static/js/787.89e8ae29.chunk.js",
     "static/media/video.mp4": "/pixreact/static/media/video.e949525bba6b29e08d8b.mp4",
     "static/media/iceland.jpg": "/pixreact/static/media/iceland.d44e08ed498e72dbaae8.jpg",
@@ -128,12 +128,12 @@
     "static/media/ser4.svg": "/pixreact/static/media/ser4.4761d08dc7c6ad172f6707c8be81641f.svg",
     "index.html": "/pixreact/index.html",
     "static/media/logo.svg": "/pixreact/static/media/logo.a0c5fb9184a6378f9b135871e6f31a73.svg",
-    "main.2fd8ff41.css.map": "/pixreact/static/css/main.2fd8ff41.css.map",
-    "main.abf82088.js.map": "/pixreact/static/js/main.abf82088.js.map",
+    "main.3fae2c75.css.map": "/pixreact/static/css/main.3fae2c75.css.map",
+    "main.ab0bdd0f.js.map": "/pixreact/static/js/main.ab0bdd0f.js.map",
     "787.89e8ae29.chunk.js.map": "/pixreact/static/js/787.89e8ae29.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fd8ff41.css",
-    "static/js/main.abf82088.js"
+    "static/css/main.3fae2c75.css",
+    "static/js/main.ab0bdd0f.js"
   ]
 }

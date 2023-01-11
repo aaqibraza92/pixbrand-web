@@ -7,7 +7,6 @@ import Svg from "../../Assets/Svg/Svg";
 import styled from "styled-components";
 import MenuNav from "./MenuNav";
 import $ from "jquery";
-import Flip from 'react-reveal/Flip';
 
 const Header = () => {
   const { pathname } = useLocation();
