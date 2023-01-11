@@ -2,9 +2,10 @@ import axios from "axios";
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { allportfolio } from "../../Helpers/Api/Endpoint";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import { Slide } from "react-reveal";
 
 const SinglePortfolio = () => {
   const id = useParams();
@@ -56,6 +57,7 @@ const SinglePortfolio = () => {
             </div>
           )}
           <section className="mb80 mobMb30">
+          <Slide bottom>
             <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
             <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
               {postData?.title?.rendered}
@@ -64,31 +66,38 @@ const SinglePortfolio = () => {
               className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
               dangerouslySetInnerHTML={{ __html: postData?.content?.rendered }}
             />
+             </Slide>
           </section>
         </Container>
         <div>
+        <Slide bottom>
           <img
             src={postData?.x_featured_media_original}
             alt=""
             className="w-100 mobMb15"
           />
+          </Slide>
         </div>
       </section>
 
       <section className="mb100 mobMb30">
+      <Slide bottom>
         <Container className="overflow-hidden">
           {acfData?.length > 0 &&
             acfData?.map((el, index) => {
               if (el.acf_fc_layout === "single_image") {
                 return el.image.map((e, i) => {
                   return (
+                    <Slide bottom>
                     <div key={i}>
+                    
                       <img
                         src={e.image?.url}
                         alt=""
                         className="w-100 mb50 mobMb30"
                       />
                     </div>
+                    </Slide>
                   );
                 });
               } else if (el.acf_fc_layout === "two_row_image") {
@@ -97,6 +106,7 @@ const SinglePortfolio = () => {
                     {el.two_image_repeater.map((e, i) => {
                       return (
                         <Col lg={6} xs={6} key={i}>
+                        <Slide bottom>
                           <div>
                             <img
                               src={e?.image?.url}
@@ -104,6 +114,7 @@ const SinglePortfolio = () => {
                               className="w-100 mb50 mobMb30"
                             />
                           </div>
+                          </Slide>
                         </Col>
                       );
                     })}
@@ -114,6 +125,7 @@ const SinglePortfolio = () => {
                   <section className="bBottom mb80 mobMb30">
                     {el.paragraph_repeater.map((e, i) => {
                       return (
+                        <Slide bottom>
                         <div key={i} className="mb30 mobMb30">
                           {e?.title !== "" && (
                             <h3 className="fs30 colorWhite mb25 mobMb10">
@@ -123,6 +135,7 @@ const SinglePortfolio = () => {
 
                           <p className="colorLightBlack mb0">{e?.paragraph}</p>
                         </div>
+                        </Slide>
                       );
                     })}
                   </section>
@@ -137,6 +150,7 @@ const SinglePortfolio = () => {
                             {el?.sidebar_content?.map((e, i) => {
                               return (
                                 <div key={i} className="mb30 mobMb15">
+                                <Slide bottom>
                                   <h3 className="fs16 colorWhite">
                                     {" "}
                                     {e?.title}
@@ -147,6 +161,7 @@ const SinglePortfolio = () => {
                                       __html: e?.content,
                                     }}
                                   />
+                                        </Slide>
                                 </div>
                               );
                             })}
@@ -157,12 +172,15 @@ const SinglePortfolio = () => {
                             {el?.title_and_content?.map((e, i) => {
                               return (
                                 <div key={i} className="mb30">
-                                  <h3 className="fs30 colorWhite mb25 mobMb10">
+                                <Slide bottom>
+                                <h3 className="fs30 colorWhite mb25 mobMb10">
                                     {e?.title}
                                   </h3>
                                   <p className="colorLightBlack mb0">
                                     {e?.paragraph}
                                   </p>
+                                </Slide>
+                             
                                 </div>
                               );
                             })}
@@ -175,6 +193,8 @@ const SinglePortfolio = () => {
               }
             })}
         </Container>
+
+        </Slide>
       </section>
     </div>
     </>
