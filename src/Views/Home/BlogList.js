@@ -73,7 +73,7 @@ const [postData,setPostData]=useState("");
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
           speed={2000}
-          autoplay={{ delay: 1000 }}
+          autoPlay={{ delay: 1000 }}
           spaceBetween={50}
           slidesPerView={4}
           onSlideChange={() => {}}

@@ -38,7 +38,7 @@ const BlogCategory = () => {
 
   useEffect(() => {
     postOfCategory();
-  }, [categoryId?.name,currentPage]);
+  }, [categoryId?.name, currentPage]);
 
   const postOfCategory = async () => {
     const options = {

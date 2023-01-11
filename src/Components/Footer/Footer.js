@@ -12,15 +12,9 @@ const Footer = (props) => {
   useEffect(()=>{
     const currentYear=new Date().getFullYear()
     setyear(currentYear);
-  })
+  },[])
   return (
-    <>
-      {/* {props.footer && props.footer === 1 && (
-    
-      )} */}
-
-      {!props.footer && (
-        <section className="bgWhite pt120 pb30 mobPt40 height100vh">
+        <section className="bgWhite  height100vh d-flex justify-content-center flex-column">
           <Container className="mb30 ">
           
             <Row>
@@ -106,9 +100,7 @@ const Footer = (props) => {
                 </Slide>
               </Col>
             </Row>
-          </Container>
-          <section className="mt120 mobMt30">
-            <Container>
+            <div className="mt120 mobMt30">
               <Row className="align-items-center">
                 <Col lg={3} md={12} className="ord">
                   <div>
@@ -118,7 +110,6 @@ const Footer = (props) => {
                   </div>
                 </Col>
                 <Col lg={3} md={12}>
-                  {/* <ul className="socialLinks ml40 ml10Tab mlLgTab12"> */}
                   <ul className="socialLinks">
                     <li>
                       <GLink
@@ -209,12 +200,10 @@ const Footer = (props) => {
                   </ul>
                 </Col>
               </Row>
-             
-            </Container>
-          </section>
+          </div>
+          </Container>
+      
         </section>
-      )}
-    </>
   );
 };
 
