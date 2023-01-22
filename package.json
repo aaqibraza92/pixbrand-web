@@ -26,6 +26,7 @@
     "react-scripts": "5.0.0",
     "react-scroll-to-top": "^1.0.8",
     "react-select": "^5.2.2",
+    "react-ui-scrollspy": "^2.3.0",
     "reactstrap": "^9.0.1",
     "sass": "^1.49.7",
     "styled-components": "^5.3.3",

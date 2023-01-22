@@ -8,10 +8,11 @@ import GImage from "../../Components/GComponents/GImage/GImage";
 import GLink from "../../Components/GComponents/GLink/GLink";
 import Fade from "react-reveal/Fade";
 import { Fragment } from "react";
-
+import ScrollSpy from "react-ui-scrollspy";
 const WrapperTestimonial = styled.div`
   padding-top: 100px;
   padding-bottom: 100px;
+ 
   background-color: #111;
   @media only screen and (max-width: 767px) {
     padding-top: 0px;
@@ -20,6 +21,7 @@ const WrapperTestimonial = styled.div`
 `;
 
 const WrapperTabContent = styled.div`
+ margin-bottom: 100px;
   .ratingNum {
     border-left: 1px solid #3d3e42;
   }
@@ -40,21 +42,25 @@ const TabTriggerWrapper = styled.div`
 
 const tabTriggerContent = [
   {
+    id: 1,
     img: Img.test1,
     title: "Bob Glazebrook",
     description: "Principal, visual engineering Inc.",
   },
   {
+    id: 2,
     img: Img.test2,
     title: "Craig Barbar",
     description: "Principal, visual engineering Inc.",
   },
   {
+    id: 3,
     img: Img.test3,
     title: "Revget Raut",
     description: "Principal, visual engineering Inc.",
   },
   {
+    id: 4,
     img: Img.test4,
     title: "Adrian Lunga",
     description: "Principal, visual engineering Inc.",
@@ -63,18 +69,28 @@ const tabTriggerContent = [
 
 const TabContent = [
   {
+    id: 1,
     star: 5,
     rating: "5.0",
     text: "Pixbrand IT demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
     clutch: "",
   },
   {
+    id: 2,
     star: 5,
     rating: "4.8",
     text: "Pixbrand IT demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
     clutch: "",
   },
   {
+    id: 3,
+    star: 5,
+    rating: "4.5",
+    text: "Pixbrand IT demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+    clutch: "",
+  },
+  {
+    id: 4,
     star: 5,
     rating: "4.5",
     text: "Pixbrand IT demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
@@ -92,14 +108,14 @@ const Testimonials = () => {
     <div>
       <WrapperTestimonial>
         <Container>
-          <Row className="d-flex align-items-center">
+          <Row>
             <Col lg={3} md={3}>
-              <TabTriggerWrapper>
-                <div className="tab_menu">
+              <TabTriggerWrapper className="position-sticky">
+                <div className="tab_menu ">
                   {tabTriggerContent &&
-                    tabTriggerContent.map((elem, ind) => {
+                    tabTriggerContent?.map((elem, ind) => {
                       return (
-                        <div key={ind}>
+                        <div key={ind} data-to-scrollspy-id={`spying${elem.id}`}>
                           <Fade bottom >
                             <div className="mb5">
                               <GImage src={elem.img} />
@@ -123,31 +139,31 @@ const Testimonials = () => {
                 TabContent.map((elem, index) => {
                   return (
                     <Fragment key={"o" + index}>
-                      {"v" + index === verticalTab && (
-                        <WrapperTabContent >
+                    <ScrollSpy offsetTop="0">
+                        <WrapperTabContent id={`spying${elem.id}`} className="heightVh100">
                           <div className="ratingArea d-flex align-items-center">
                             {elem.star === 5 && (
                               <>
-                                <Fade bottom >
+                                {/* <Fade bottom > */}
                                   <span className="mr6">{Svg.redStar}</span>
                                   <span className="mr6">{Svg.redStar}</span>
                                   <span className="mr6">{Svg.redStar}</span>
                                   <span className="mr6">{Svg.redStar}</span>
                                   <span className="mr6">{Svg.redStar}</span>
-                                </Fade>
+                                {/* </Fade> */}
                               </>
                             )}
-                            <Fade bottom >
+                            {/* <Fade bottom > */}
                               <span className="ratingNum ml12 pl17 colorWhite fs22 tabFs18 tabLgFs18 mobFs16">
                                 {elem.rating}
                               </span>
-                            </Fade>
+                            {/* </Fade> */}
                           </div>
 
                           <div className="mt20">
                             <Row>
                               <Col lg={9}>
-                                <Fade bottom >
+                                {/* <Fade bottom > */}
                                   <p className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 ">
                                     {elem.text}
                                   </p>
@@ -161,12 +177,12 @@ const Testimonials = () => {
                                       View on Clutch
                                     </a>
                                   </div>
-                                </Fade>
+                                {/* </Fade> */}
                               </Col>
                             </Row>
                           </div>
                         </WrapperTabContent>
-                      )}
+                        </ScrollSpy>
 </Fragment>
                   );
                 })}

@@ -167,7 +167,7 @@ const Portfolio = () => {
         </div>
       </Container>
 
-      <Container className="overflow-hidden">
+      {/* <Container className="overflow-hidden">
         <div>
           <Row className="gx-5 gXl10 mb100">
             <Col
@@ -473,7 +473,7 @@ const Portfolio = () => {
             </div>
           </GSpacing>
         </div>
-      </Container>
+      </Container> */}
     </section>
   );
 };
