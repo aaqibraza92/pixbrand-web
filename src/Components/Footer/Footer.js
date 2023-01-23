@@ -14,7 +14,7 @@ const Footer = (props) => {
     setyear(currentYear);
   },[])
   return (
-        <section className="bgWhite  height100vh d-flex justify-content-center flex-column">
+        <section className="bgWhite pt120 pb30 mobPt40">
           <Container className="mb30 ">
           
             <Row>
