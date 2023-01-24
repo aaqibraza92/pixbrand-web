@@ -109,7 +109,7 @@ const PortfolioCat = () => {
                     <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                       {e.acf===false ? "" : e?.acf?.project_title}
                     </h6>
-                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                    <h3 className="colorLightBlack fs32 tabFs24 col-md-7 col-sm-12 col-xs-12 tabLgFs24 mobFs20 fThin mb36">
                    {e?.title?.rendered}
                     </h3>
                   </div>
@@ -137,7 +137,7 @@ const PortfolioCat = () => {
               </GSection>
               <GSection mb="0px">
                 <Slide bottom>
-                  <div className="protfolioWrapper pBgLightBlue pl20 radius24 overflow-hidden">
+                  <div className="protfolioWrapper pBgLightBlue radius24 overflow-hidden">
                     <GImage className="scale" width="100%" src={e?.x_featured_media_large ? e?.x_featured_media_large : Img.p1} />
                   </div>
                 </Slide>
@@ -152,7 +152,7 @@ const PortfolioCat = () => {
             >
               <GSection mb="0px">
                 <Slide bottom>
-                  <div className="protfolioWrapper pBgGreen pl20 pr20 radius24 overflow-hidden">
+                  <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden">
                     <GImage className="scale" width="100%" src={Img.p1} />
                   </div>
                 </Slide>
@@ -163,7 +163,7 @@ const PortfolioCat = () => {
                   <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                   {e.acf===false ? "" : e?.acf?.project_title}
                   </h6>
-                  <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                  <h3 className="colorLightBlack fs32 tabFs24 col-md-7 col-sm-12 col-xs-12 tabLgFs24 mobFs20 fThin mb36">
                   {e?.title?.rendered}
                   </h3>
                 </Slide>
@@ -220,12 +220,12 @@ const Title = () => {
           <Col xl={10} lg={10} md={12}>
             <section className="text-center mobtl">
               <h1 className="fs80 tabFs60 tabLgFs60 mobFs45 fw600 colorWhite mb20">
-                Some Good Reads for You!
+              The work we do,and the people we help.
               </h1>
-              <p className="fs24 colorWhite width70 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
+              {/* <p className="fs24 colorWhite width70 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
                 Here are some of our curated blogs, fitting for a New Jersey web
                 development company like us.
-              </p>
+              </p> */}
             </section>
           </Col>
         </Row>

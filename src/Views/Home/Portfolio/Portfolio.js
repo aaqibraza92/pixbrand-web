@@ -4,9 +4,7 @@ import { Row, Col, Container } from "reactstrap";
 import Img from "../../../Assets/Img/Img";
 import Svg from "../../../Assets/Svg/Svg";
 import GImage from "../../../Components/GComponents/GImage/GImage";
-import GSpacing from "../../../Components/GComponents/GSpacing";
 import GSection from "../../../Components/GComponents/GSpacing";
-import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import { Cursor } from "react-creative-cursor";
 import "react-creative-cursor/dist/styles.css";
@@ -94,7 +92,7 @@ const Portfolio = () => {
                       </GSection>
                       <GSection mb="0px">
                         <Slide bottom>
-                          <div className="protfolioWrapper pBgLightBlue pl20 radius24 overflow-hidden">
+                          <div className="protfolioWrapper pBgLightBlue radius24 overflow-hidden">
                             <GImage
                               className="scale"
                               width="100%"
@@ -119,7 +117,7 @@ const Portfolio = () => {
                     >
                       <GSection mb="0px">
                         <Slide bottom>
-                          <div className="protfolioWrapper pBgGreen pl20 pr20 radius24 overflow-hidden">
+                          <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden">
                             <GImage
                               className="scale"
                               width="100%"

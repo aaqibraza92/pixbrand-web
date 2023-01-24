@@ -26,9 +26,11 @@ const MainPortfolioPage = () => {
     searchParams.get("page") ? searchParams.get("page") : 1
   );
 
+  useEffect(()=>{
+    loadCategory();
+  },[])
   useEffect(() => {
     loadAllPosts();
-    loadCategory();
   }, [currentPage]);
 
   const setCurrentPageHandle = (val) => {
@@ -134,7 +136,7 @@ const MainPortfolioPage = () => {
                               <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                                 {e.acf === false ? "" : e?.acf?.project_title}
                               </h6>
-                              <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                              <h3 className="colorLightBlack fs32 tabFs24 col-md-7 col-sm-12 col-xs-12 tabLgFs24 mobFs20 fThin mb36">
                                 {e?.title?.rendered}
                               </h3>
                             </div>
@@ -162,7 +164,7 @@ const MainPortfolioPage = () => {
                         </GSection>
                         <GSection mb="0px">
                           <Slide bottom>
-                            <div className="protfolioWrapper pBgLightBlue pl20 radius24 overflow-hidden">
+                            <div className="protfolioWrapper pBgLightBlue  radius24 overflow-hidden">
                               <GImage
                                 className="scale"
                                 width="100%"
@@ -187,7 +189,7 @@ const MainPortfolioPage = () => {
                       >
                         <GSection mb="0px">
                           <Slide bottom>
-                            <div className="protfolioWrapper pBgGreen pl20 pr20 radius24 overflow-hidden">
+                            <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden">
                               <GImage
                                 className="scale"
                                 width="100%"
@@ -202,7 +204,7 @@ const MainPortfolioPage = () => {
                             <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                               {e.acf === false ? "" : e?.acf?.project_title}
                             </h6>
-                            <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                            <h3 className="colorLightBlack fs32 tabFs24 col-md-7 col-sm-12 col-xs-12 tabLgFs24 mobFs20 fThin mb36">
                               {e?.title?.rendered}
                             </h3>
                           </Slide>
