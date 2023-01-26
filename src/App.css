@@ -647,3 +647,17 @@ background: #FF0A2B;
 .inlineData svg {
   margin-right: 10px;
 }
+.text-light div{
+  color: #fff;
+}
+.stickyTop{
+  top: 10px;
+}
+.active-scroll-spy img {
+  border-color: #ff0a2b !important;
+}
+.scroller img{
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 3px solid transparent;
+}

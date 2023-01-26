@@ -24,24 +24,21 @@ const Home = (props) => {
         <title>Home - Pixbrand</title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
-      <div className="overflow-hidden">
-  <Container>
- 
-
-  </Container>
         <HomeBanner />
         <Slide bottom>
           <Services />
         </Slide>
         <Services2 />
         <Portfolio />
+        <div className="overflow-hidden">
         <Marque />
+        </div>
+       
         <Services3 />
         <Skills />
         <Testimonials />
         <BlogList />
         <Faq />
-      </div>
     </>
   );
 };
