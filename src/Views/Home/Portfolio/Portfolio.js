@@ -56,7 +56,7 @@ const Portfolio = () => {
                       lg={6}
                       md={6}
                       key={i}
-                      className="d-flex flex-column justify-content-between "
+                      className="d-flex flex-column justify-content-between revColMob"
                     >
                       <GSection mb="150px" tabLgmb="80px" className="mobMb0">
                         <Slide bottom>
@@ -64,11 +64,13 @@ const Portfolio = () => {
                             <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                               {e.acf === false ? "" : e?.acf?.project_title}
                             </h6>
-                            <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                            <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36 col-md-7 col-sm-12 col-xs-12">
                               {e?.title?.rendered}
                             </h3>
                           </div>
                         </Slide>
+              
+
                         <div className="magnetWrapper">
                           <Link
                             to={`/portfolio/${e?.slug}`}
@@ -79,7 +81,7 @@ const Portfolio = () => {
                               <div className="mb15">
                                 <span className="d-flex align-items-center">
                                   <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                                    View the project
+                                    View the project 
                                   </span>
                                   <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
                                     {Svg.arrowRight}
@@ -92,7 +94,7 @@ const Portfolio = () => {
                       </GSection>
                       <GSection mb="0px">
                         <Slide bottom>
-                          <div className="protfolioWrapper pBgLightBlue radius24 overflow-hidden">
+                          <div className="protfolioWrapper pBgLightBlue radius24 overflow-hidden mb-5">
                             <GImage
                               className="scale"
                               width="100%"
@@ -117,7 +119,7 @@ const Portfolio = () => {
                     >
                       <GSection mb="0px">
                         <Slide bottom>
-                          <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden">
+                          <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden mb-5">
                             <GImage
                               className="scale"
                               width="100%"
@@ -132,7 +134,7 @@ const Portfolio = () => {
                           <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                             {e.acf === false ? "" : e?.acf?.project_title}
                           </h6>
-                          <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                          <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36 col-md-7 col-sm-12 col-xs-12">
                             {e?.title?.rendered}
                           </h3>
                         </Slide>
@@ -146,7 +148,7 @@ const Portfolio = () => {
                               <div className="mb15">
                                 <span className="d-flex align-items-center">
                                   <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                                    View the project
+                                    View the project 
                                   </span>
                                   <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
                                     {Svg.arrowRight}

@@ -69,7 +69,7 @@ const PortfolioCat = () => {
           setTotalPage(res?.headers["x-wp-totalpages"]);
           setTotalCount(res?.headers["x-wp-total"]);
           if (currentPage !== 1) {
-            navigation(`/category/4/?page=${currentPage}`);
+            navigation(`/portfolio-category/${categoryId?.name}/?page=${currentPage}`);
           }
           setloader(false);
         }
@@ -101,7 +101,7 @@ const PortfolioCat = () => {
                return <Col
               lg={6}
               md={6}
-              className="d-flex flex-column justify-content-between "
+              className="d-flex flex-column justify-content-between revColMob"
             >
               <GSection mb="150px" tabLgmb="80px" className="mobMb0">
                 <Slide bottom>

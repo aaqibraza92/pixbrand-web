@@ -106,7 +106,7 @@ const Testimonials = () => {
   };
   return (
     <div>
-      <WrapperTestimonial>
+      <WrapperTestimonial className="parentScrolller">
         <Container className="scroller">
           <Row>
             <Col lg={3}>

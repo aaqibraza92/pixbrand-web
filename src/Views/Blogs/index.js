@@ -83,7 +83,7 @@ const Allblogs = () => {
         <>
         {
           currentPage===1 && <Container className="mb100 mobMb60">
-            <Row className="align-items-center flexreverse">
+            <Row className="align-items-center flexreverse gy-3">
               <Col md={6}>
                 <div>
                   <Link to={`/blog/${postData?.[0]?.slug}`}>

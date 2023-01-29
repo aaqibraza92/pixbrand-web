@@ -117,6 +117,16 @@ body .posRightLeft .textMover {
 }
 
 @media only screen and (max-width: 767px) {
+  body .revColMob {
+    flex-direction: column-reverse !important;
+  }
+  .parentScrolller {
+    padding-bottom: 0px !important;
+  }
+  .scroller .pb100 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
   .mobFs13 {
     font-size: 13px !important;
   }

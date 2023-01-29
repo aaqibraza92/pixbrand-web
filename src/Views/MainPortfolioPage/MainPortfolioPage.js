@@ -72,7 +72,7 @@ const MainPortfolioPage = () => {
           setTotalPage(res?.headers["x-wp-totalpages"]);
           setTotalCount(res?.headers["x-wp-total"]);
           if (currentPage !== 1) {
-            navigation(`/blogs/?page=${currentPage}`);
+            navigation(`/portfolio/?page=${currentPage}`);
           }
         }
       });
@@ -128,7 +128,7 @@ const MainPortfolioPage = () => {
                         lg={6}
                         md={6}
                         key={i}
-                        className="d-flex flex-column justify-content-between "
+                        className="d-flex flex-column justify-content-between revColMob"
                       >
                         <GSection mb="150px" tabLgmb="80px" className="mobMb0">
                           <Slide bottom>
