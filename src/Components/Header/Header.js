@@ -8,11 +8,16 @@ import styled from "styled-components";
 import MenuNav from "./MenuNav";
 import $ from "jquery";
 
-const Header = () => {
+const Header = (props) => {
+  console.log('props',props)
   const { pathname } = useLocation();
+
+  console.log('pathname',pathname);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+
 
   const [menuenable, setmenuenable] = useState(false);
   const [delayer, setdelayer] = useState(false);
@@ -75,7 +80,7 @@ const Header = () => {
         <div className="top-layer top-layer--4"></div>
         <div className="top-layer top-layer--5"></div>
       </div>
-      <header className="siteHeader pt15 pb15">
+      <header className={`siteHeader pt15 pb15 ${pathname.includes('/portfolio/') && 'singlePortfolio'}`}>
         {menuenable && (
           <>{delayer && <MenuNav closeCallback={closemenuFn} />}</>
         )}

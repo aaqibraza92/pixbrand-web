@@ -671,3 +671,8 @@ background: #FF0A2B;
   border-radius: 100%;
   border: 3px solid transparent;
 }
+.singlePortfolio {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+}

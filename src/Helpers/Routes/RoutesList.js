@@ -195,9 +195,10 @@ let RouterList = [
     isAdmin: false,
   },
   {
-    element: <GetRoute isprivate={false} role="Default" page={Pages.Pixxley} />,
+    element: <GetRoute isprivate={false} role="Default" page={Pages.Pixxley} classData="portfolioSingle" />,
     path: "/portfolio/:slug/",
     isAdmin: false,
+    
   },
 
   {
