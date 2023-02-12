@@ -13,6 +13,7 @@ import Marque from "../Marque/Marque";
 import { Helmet } from "react-helmet";
 import Slide from "react-reveal/Slide";
 import 'react-creative-cursor/dist/styles.css';
+import VerticalTabs from "./VerticalTabs";
 
 const Home = (props) => {
   return (
@@ -26,6 +27,7 @@ const Home = (props) => {
         <Slide bottom>
           <Services />
         </Slide>
+        <VerticalTabs/>
         <Services2 />
         <Portfolio />
         <div className="overflow-hidden">
