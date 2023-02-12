@@ -27,7 +27,6 @@ const Home = (props) => {
         <Slide bottom>
           <Services />
         </Slide>
-        <VerticalTabs/>
         <Services2 />
         <Portfolio />
         <div className="overflow-hidden">

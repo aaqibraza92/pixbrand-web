@@ -79,107 +79,182 @@ const TabContent = [
 ];
 
 const Skills = () => {
-
-
   const [verticalTab, setverticalTab] = useState("v0");
   const handleTab = (ind) => {
     setverticalTab(ind);
   };
   return (
     <>
-            <Helmet>
-     
-        <script
-          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-          integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-          crossorigin="anonymous"
-        ></script>
-
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-          integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-          crossorigin="anonymous"
-        ></script>
-      </Helmet>
-
       <div>
-      <WrapperSkills>
-        <Container>
-          <Slide bottom>
-            <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb100 mobMb15 lineAnimateSkill">
-              We make you stand with PIX
-            </h3>
-          </Slide>
+        <WrapperSkills>
+          <Container>
+            <Slide bottom>
+              <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb100 mobMb15 lineAnimateSkill">
+                We make you stand with PIX
+              </h3>
+            </Slide>
 
-          <Row>
-            <Col lg={3} md={3}>
-              <TabTriggerWrapper>
-                <Row>
-                  <Slide bottom>
-                    <div className="verticalTabbing">
-                      {/* {tabTriggerContent &&
-                        tabTriggerContent.map((elem, ind) => {
-                          return (
-                            <div
-                              key={ind}
-                              className="pointer mb25 mobMb10"
-                              onClick={(e) => handleTab("v" + ind)}
-                            >
-                              <span
-                                className={`verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10 ${
-                                  "v" + ind === verticalTab && "runningLine"
-                                }`}
-                              >
-                                {elem.title}
-                              </span>
-                            </div>
-                          );
-                        })} */}
+            <div
+              id="demo"
+              className="sliderTab carousel slide vert"
+              data-ride="carousel"
+              data-interval="10000"
+            >
+              <div className="row no-gutters">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                  <div className="verticalTabbing">
+                    <div className="carousel-indicators text-start">
+                      <div
+                        data-target="#demo"
+                        data-slide-to="0"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Perfection
+                        </span>
+                      </div>
+                      <div
+                        data-target="#demo"
+                        data-slide-to="1"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Ideas
+                        </span>
+                      </div>
+                      <div
+                        data-target="#demo"
+                        data-slide-to="2"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Xcellence
+                        </span>
+                      </div>
                     </div>
-                  </Slide>
-                </Row>
-              </TabTriggerWrapper>
-            </Col>
-            <Col lg={9} md={9}>
-              {TabContent &&
-                TabContent.map((elem, index) => {
-                  return (
-                    <Fragment key={"o" + index}>
-                      {"v" + index === verticalTab && (
-                        <WrapperTabContent key={"q" + index}>
-                          <Row
-                            className={`${
-                              "v" + index === verticalTab && ""
-                            } justify-content-center`}
-                          >
-                            <Col lg={7} md={8}>
-                              <Slide bottom>
-                                <p
-                                  style={{ color: "#7D7D7D" }}
-                                  className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                  </div>
+                </div>
+
+                <div className="col-12 col-sm-12 col-md-12 col-lg-9">
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                              For every project or client onboarded, Pix Brand
+                              is committed to utmost perfection in delivery and
+                              support. In this industry, perfection is the bare
+                              minimum and we understand that completely.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="carousel-item">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                     At the end of the day, it is the right set of ideas that need to be thought upon to deliver something unique and cutting-edge, every single time. This is what we strive to do at Pix Brand.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="carousel-item">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                   For us, it's Xcellence, because we ensure to bring the X-factor in everyday excellence. It's important to help you stay ahead of whichever domain you belong to, and this counts in the long-term.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <Row>
+              <Col lg={3} md={3}>
+                <TabTriggerWrapper>
+                  <Row>
+                    <Slide bottom>
+                      <div className="verticalTabbing">
+                        {tabTriggerContent &&
+                          tabTriggerContent.map((elem, ind) => {
+                            return (
+                              <div
+                                key={ind}
+                                className="pointer mb25 mobMb10"
+                                onClick={(e) => handleTab("v" + ind)}
+                              >
+                                <span
+                                  className={`verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10 ${
+                                    "v" + ind === verticalTab && "runningLine"
+                                  }`}
                                 >
-                                  {elem.content}
-                                </p>
-                              </Slide>
-                            </Col>
-                          </Row>
-                        </WrapperTabContent>
-                      )}
+                                  {elem.title}
+                                </span>
+                              </div>
+                            );
+                          })}
+                      </div>
+                    </Slide>
+                  </Row>
+                </TabTriggerWrapper>
+              </Col>
+              <Col lg={9} md={9}>
+                {TabContent &&
+                  TabContent.map((elem, index) => {
+                    return (
+                      <Fragment key={"o" + index}>
+                        {"v" + index === verticalTab && (
+                          <WrapperTabContent key={"q" + index}>
+                            <Row
+                              className={`${
+                                "v" + index === verticalTab && ""
+                              } justify-content-center`}
+                            >
+                              <Col lg={7} md={8}>
+                                <Slide bottom>
+                                  <p
+                                    style={{ color: "#7D7D7D" }}
+                                    className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                                  >
+                                    {elem.content}
+                                  </p>
+                                </Slide>
+                              </Col>
+                            </Row>
+                          </WrapperTabContent>
+                        )}
                       </Fragment>
-                  );
-                })}
-            </Col>
-          </Row>
-        </Container>
-      </WrapperSkills>
-    </div>
+                    );
+                  })}
+              </Col>
+            </Row> */}
+          </Container>
+        </WrapperSkills>
+      </div>
     </>
- 
   );
 };
 
