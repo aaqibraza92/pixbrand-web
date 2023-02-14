@@ -9,10 +9,8 @@ import MenuNav from "./MenuNav";
 import $ from "jquery";
 
 const Header = (props) => {
-  console.log('props',props)
   const { pathname } = useLocation();
 
-  console.log('pathname',pathname);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

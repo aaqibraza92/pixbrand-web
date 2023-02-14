@@ -49,7 +49,7 @@ const HomeBanner = () => {
           </GSpacing>
           <Slide bottom cascade>
             <div className="videoWrapper">
-              <video ref={videoRef} autoplay loop muted>
+              <video ref={videoRef} autoPlay loop muted>
                 <source src={Img?.bannerVideo} type="video/mp4" />
               </video>
             </div>

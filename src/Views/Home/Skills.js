@@ -97,8 +97,8 @@ const Skills = () => {
             <div
               id="demo"
               className="sliderTab carousel slide vert"
-              data-ride="carousel"
-              data-interval="10000"
+             data-ride="carousel"
+              data-interval="6000"
             >
               <div className="row no-gutters">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">

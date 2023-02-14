@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pixreact/static/css/main.d21bc3ef.css",
-    "main.js": "/pixreact/static/js/main.25cfaba2.js",
+    "main.css": "/pixreact/static/css/main.9b9e9166.css",
+    "main.js": "/pixreact/static/js/main.b29ad73c.js",
     "static/js/787.89e8ae29.chunk.js": "/pixreact/static/js/787.89e8ae29.chunk.js",
     "static/media/video.mp4": "/pixreact/static/media/video.e949525bba6b29e08d8b.mp4",
     "static/media/iceland.jpg": "/pixreact/static/media/iceland.d44e08ed498e72dbaae8.jpg",
@@ -124,16 +124,16 @@
     "static/media/tabimg.png": "/pixreact/static/media/tabimg.de11bc89727bd4cc6f29.png",
     "static/media/ser1.svg": "/pixreact/static/media/ser1.1138f21042bd11bdeb00781cbd3c4c84.svg",
     "static/media/ser3.svg": "/pixreact/static/media/ser3.480e90f351bb67874296e4df6bba2b61.svg",
+    "index.html": "/pixreact/index.html",
     "static/media/ser2.svg": "/pixreact/static/media/ser2.3317b344811eaa905f95e5b5c2dd89da.svg",
     "static/media/ser4.svg": "/pixreact/static/media/ser4.4761d08dc7c6ad172f6707c8be81641f.svg",
-    "index.html": "/pixreact/index.html",
     "static/media/logo.svg": "/pixreact/static/media/logo.a0c5fb9184a6378f9b135871e6f31a73.svg",
-    "main.d21bc3ef.css.map": "/pixreact/static/css/main.d21bc3ef.css.map",
-    "main.25cfaba2.js.map": "/pixreact/static/js/main.25cfaba2.js.map",
+    "main.9b9e9166.css.map": "/pixreact/static/css/main.9b9e9166.css.map",
+    "main.b29ad73c.js.map": "/pixreact/static/js/main.b29ad73c.js.map",
     "787.89e8ae29.chunk.js.map": "/pixreact/static/js/787.89e8ae29.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d21bc3ef.css",
-    "static/js/main.25cfaba2.js"
+    "static/css/main.9b9e9166.css",
+    "static/js/main.b29ad73c.js"
   ]
 }

@@ -46,7 +46,7 @@ const SinglePortfolio = () => {
         <title>Portfolio - {postData && postData?.title?.rendered}</title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
-      <div className="pt80">
+      <div className="single_portfolio_data">
       <section className="mb100 mobMb30">
         <Container>
           {loader && (
@@ -58,18 +58,25 @@ const SinglePortfolio = () => {
           )}
           <section className="mb80 mobMb30">
           <Slide bottom>
-            <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
-            <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
+          
+             </Slide>
+          </section>
+        </Container>
+        <div className="position-relative">
+        <section className="single_portfolio_title">
+        <Container>
+        <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
+            <h1 className="fs60 mobMb10 mb-0 mobFs45 tabFs60  colorWhite">
               {postData?.title?.rendered}
             </h1>
             <div
               className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
               dangerouslySetInnerHTML={{ __html: postData?.content?.rendered }}
             />
-             </Slide>
-          </section>
         </Container>
-        <div>
+        </section>
+
+     
         <Slide bottom>
           <img
             src={postData?.x_featured_media_original}

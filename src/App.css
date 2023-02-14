@@ -117,6 +117,16 @@ body .posRightLeft .textMover {
 }
 
 @media only screen and (max-width: 767px) {
+  body .single_portfolio_data {
+    margin-top: 110px;
+  }
+  body .single_portfolio_title h1 {
+    font-size: 30px !important;
+    margin-bottom: 20px !important;
+  }
+  body .single_portfolio_title{
+    position: static;
+  }
   body .revColMob {
     flex-direction: column-reverse !important;
   }
@@ -379,7 +389,7 @@ body .radius24 {
   transition: opacity 300ms, transform 300ms;
 }
 .runningLine:hover::after,
-.runningLine:focus::after,.active .runningLine::after {
+.runningLine:focus::after{
   opacity: 1 !important;
   transform: translate3d(0, 0.2em, 0);
 }
@@ -675,6 +685,7 @@ background: #FF0A2B;
   position: absolute;
   width: 100%;
   top: 0px;
+  z-index: 3;
 }
 .sliderTab *{
   color: #fff;
@@ -693,30 +704,16 @@ background: #FF0A2B;
     width: 700px;
     height: 250px;
   }
-  .carousel-indicators{
-    display:inline-block;
-    height: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position:static;
-    direction: rtl;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .carousel-indicators {
+    display: block;
+    position: static;
+    margin-left: 0px;
   }
   @media screen and (max-width:992px){
-    .carousel-indicators{
-      display: inline-flex;
-      direction: inherit;
-      height: auto;
-      width: 100%;
-      max-width:800px;
-      overflow-x: auto;
-      position: relative;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      overflow-y: hidden;
-      justify-content: normal;
-      margin-bottom:20px;
+    .carousel-indicators {
+      display: block;
+      position: static;
+      margin-left: 0px;
     }
     .carousel-inner{
       margin-left:0!important;
@@ -823,3 +820,15 @@ background: #FF0A2B;
     transform: translateY(-100%) !important;
   }
   
+  .active .runningLine {
+    border-bottom: 1px solid #fff !important;
+  }
+  .single_portfolio_title {
+    position: absolute;
+    top: 14%;
+    z-index: 2;
+    width: 100%;
+  }
+  .single_portfolio_data {
+    margin-top: -81px;
+  }
