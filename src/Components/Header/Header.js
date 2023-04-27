@@ -93,7 +93,7 @@ const Header = (props) => {
   });
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="containerEffect">
         <div className="top-layer"></div>
         <div className="top-layer top-layer--2"></div>

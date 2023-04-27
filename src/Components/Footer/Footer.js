@@ -6,204 +6,234 @@ import GPara from "../GComponents/GPara/GPara";
 import GLink from "../GComponents/GLink/GLink";
 import GSectionTitle from "../GComponents/GSectionTitle";
 import Slide from "react-reveal/Slide";
+import { Link } from "react-router-dom";
 const Footer = (props) => {
-  const [year,setyear]=useState(null);
+  const [year, setyear] = useState(null);
 
-  useEffect(()=>{
-    const currentYear=new Date().getFullYear()
+  useEffect(() => {
+    const currentYear = new Date().getFullYear();
     setyear(currentYear);
-  },[])
+  }, []);
   return (
-        <section className="bgWhite pt120 pb30 mobPt40">
-          <Container className="mb30 ">
-          
-            <Row>
-              <Col lg={8} xl={10}>
-                <h2 className="colorBlack fs60 tabFs40  tabLgFs40 mobFs32 mb60 mobMb30">
-                  <Slide bottom >
-                    Let’s get on a newfound journey together and make an impact!
-                  </Slide>
-                </h2>
-              </Col>
-            </Row>
+    <section className="bgWhite pt120 pb5 mobPt40">
+      <Container className="mb30 ">
+        <Row className="align-items-center">
+          <Col lg={7} xl={7}>
+            <h2 className="colorBlack fs60 tabFs40  tabLgFs40 mobFs32 mb0 mobMb30 mobTextCenter" >
+              <Slide bottom>
+                Let's start something completely new together
+              </Slide>
+            </h2>
+          </Col>
 
-            <Row className="gy-3">
-              <Col lg={7} xs={12} md={7}>
-                <Slide bottom >
-                  <GPara color="#111111" fs="17px">
-                    Drop us a call, mail, or DM on our social media channels.
-                    Let’s find out how can we bond together and take us both
-                    forward!
-                  </GPara>
-                </Slide>
-              </Col>
-              <Col lg={5} xs={12} md={5}>
-                <Slide bottom >
-                  <GLink
-                    className="mobJustifyContentStart"
-                    itemAlign="right"
-                    buttonView
-                    text="Contact Us"
-                    align="between"
-                    to="#"
-                    width="200px"
-                    icon={Svg.arrowRight}
-                    radius="30px"
-                  />
-                </Slide>
-              </Col>
-            </Row>
-            <div className="lineAnimate1 pt20 pb30 mb45"></div>
-            <Row className="gy-4">
-              <Col lg={6} xs={12} md={6}>
-                <Slide bottom >
-                  <div className="footerContact">
-                    <GSectionTitle
-                      title="E-MAIL"
-                      fsT="14px"
-                      titlecolor="#FF0A2B"
-                      fwt="bold"
-                      fsTitleMob="12px"
-                    />
-                    <GLink
-                      top="-5px"
-                      hoverColor="#FF0A2B"
-                      color="#111111"
-                      fs="24px"
-                      text="start@pixbrand.in"
-                      align="between"
-                      to="mailto:start@pixbrand.in"
-                      icon={Svg.arrowDiagnal}
-                    />
-                  </div>
-                </Slide>
-              </Col>
-              <Col lg={6} xs={12} md={6}>
-                <Slide bottom >
-                  <div className="footerContact">
-                    <GSectionTitle
-                      title="PHONE NUMBER"
-                      fsT="14px"
-                      titlecolor="#FF0A2B"
-                      fwt="bold"
-                      fsTitleMob="12px"
-                    />
-                    <GLink
-                      top="-5px"
-                      hoverColor="#FF0A2B"
-                      color="#111111"
-                      fs="24px"
-                      text="+91 9876 543 210"
-                      to="tel:+91 9876 543 210"
-                    />
-                  </div>
-                </Slide>
-              </Col>
-            </Row>
-            <div className="mt120 mobMt30">
-              <Row className="align-items-center">
-                <Col lg={3} md={12} className="ord">
-                  <div>
-                    <p className="fs12 mb0 colorGrey ">
-                      © {year} Pix Brand All rights reserved.
-                    </p>
-                  </div>
-                </Col>
-                <Col lg={3} md={12}>
-                  <ul className="socialLinks">
-                    <li>
-                      <GLink
-                        className="runningLine"
-                        hoverColor="#FF0A2B"
-                        color="#7d7d7d"
-                        fs="12px"
-                        text="Privacy policy "
-                        to="/privacy-policy"
-                        mrtextSpan="0px"
-                      />
-                    </li>
-                    <li>
-                      <GLink
-                      className="runningLine"
-                        hoverColor="#FF0A2B"
-                        color="#7d7d7d"
-                        fs="12px"
-                        text="Term & conditon"
-                        to="/terms-services"
-                        mrtextSpan="0px"
-                      />
-                    </li>
-                  </ul>
-                </Col>
-                <Col lg={6} md={12}>
-                  <ul className="socialLinks">
-                    <li className="fs12">
-                      <a
-                        className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Behance
-                      </a>
-                    </li>
-                    <li className="fs12">
-                      <a
-                      className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Dribbble
-                      </a>
-                    </li>
-                    <li className="fs12">
-                      <a
-                      className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Pinterest
-                      </a>
-                    </li>
-                    <li className="fs12">
-                      <a
-                      className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        LinkedIn
-                      </a>
-                    </li>
-                    <li className="fs12">
-                      <a
-                      className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Instagram
-                      </a>
-                    </li>
-                    <li className="fs12">
-                      <a
-                      className="runningLine"
-                        href="https://www.pixbrand.org"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Facebook
-                      </a>
-                    </li>
-                  </ul>
-                </Col>
-              </Row>
+          <Col lg={5} xl={5}>
+          <div className="mobTextCenter justify-content-xs-center">
+          <Slide bottom>
+              <GLink
+                className="mobJustifyContentStart"
+                itemAlign="right"
+                buttonView
+                text="Get In Touch"
+                align="between"
+                to="#"
+                width="200px"
+                icon={Svg.arrowRight}
+                radius="30px"
+              />
+            </Slide>
           </div>
-          </Container>
-      
-        </section>
+        
+          </Col>
+        </Row>
+
+        <div className="lineAnimate1 pt20 pb50 mb65"></div>
+
+        <Row className="gy-3">
+          <Col lg={2} xs={12} md={2}>
+          <div className='mobTextCenter mb30'>
+          <Slide bottom >
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                <img
+                  className="img-fluid"
+                  src={require("../../Assets/Img/pix_full.svg").default}
+                  alt="logo"
+                />
+              </Link>
+            </Slide>
+          </div>
+         
+          </Col>
+          <Col lg={10} xs={12} md={10}>
+            <Row className="justify-content-center gy-3">
+              <Col lg={3} xs={6}>
+                <div className="text-center">
+                  <div className="mb20 min64">
+                    <img
+                      className="img-fluid"
+                      src={require("../../Assets/Img/india.svg").default}
+                      alt="India"
+                    />
+                  </div>
+                  <h4 className="colorBlack fs18 fw600">India</h4>
+                  <p className="fs14 colorBlack">
+                    704, Skye Corporate Park, Indore, Madhya Pradesh
+                  </p>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="text-center">
+                  <div className="mb20 min64">
+                    <img
+                      className="img-fluid"
+                      src={require("../../Assets/Img/dubai.svg").default}
+                      alt="India"
+                    />
+                  </div>
+                  <h4 className="colorBlack fs18 fw600">Dubai</h4>
+                  <p className="fs14 colorBlack">
+                  Dubai, United Arab Emirates Dubai, United Arab Emirates
+                  </p>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="text-center">
+                  <div className="mb20 min64">
+                    <img
+                      className="img-fluid"
+                      src={require("../../Assets/Img/america.svg").default}
+                      alt="India"
+                    />
+                  </div>
+                  <h4 className="colorBlack fs18 fw600">United States</h4>
+                  <p className="fs14 colorBlack">
+                  PO Box 643, Crompond, NY, United States, New York
+                  </p>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="text-center">
+                  <div className="mb20 min64">
+                    <img
+                      className="img-fluid"
+                      src={require("../../Assets/Img/footer_call.svg").default}
+                      alt="India"
+                    />
+                  </div>
+                  <h4 className="colorBlack fs18 fw600"><a className="colorBlack fs18 fw600" href="mailto:start@pixbrand.in">start@pixbrand.in</a>  </h4>
+                  <h4 className="colorBlack fs18 fw600"><a className="colorBlack fs18 fw600" href="tel:+91 90393 77530">+91 90393 77530</a>  </h4>
+             
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+
+       
+        <div className="mt60 mobMt30">
+          <Row className="align-items-center gy-3">
+            <Col lg={6} md={12} className="ord">
+              <div className="d-flex flex-wrap mobJustifyContentCenter">
+                <p className="fs14 mb0 colorGrey mr25">
+                  © {year} Pix Brand All rights reserved.
+                </p>
+                <ul className="socialLinks mobJustifyContentCenter">
+                  <li>
+                    <GLink
+                      className="runningLine"
+                      hoverColor="#FF0A2B"
+                      color="#7d7d7d"
+                      fs="14px"
+                      text="Privacy policy "
+                      to="/privacy-policy"
+                      mrtextSpan="0px"
+                    />
+                  </li>
+                  <li>
+                    <GLink
+                      className="runningLine"
+                      hoverColor="#FF0A2B"
+                      color="#7d7d7d"
+                      fs="14px"
+                      text="Term & conditon"
+                      to="/terms-services"
+                      mrtextSpan="0px"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </Col>
+
+            <Col lg={6} md={12}>
+              <ul className="socialLinks mobJustifyContentCenter">
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Behance
+                  </a>
+                </li>
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Dribbble
+                  </a>
+                </li>
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Pinterest
+                  </a>
+                </li>
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li className="fs14">
+                  <a
+                    className="runningLine"
+                    href="https://www.pixbrand.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook
+                  </a>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+    </section>
   );
 };
 

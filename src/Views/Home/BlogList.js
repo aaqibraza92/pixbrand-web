@@ -154,7 +154,7 @@ const [postData,setPostData]=useState("");
                     <div data-cursor-magnetic>
                       <div className="mb15 d-flex align-items-center">
                       <span className="mr10 fs14 tabFs12 tabLgFs12 mobFs12">
-              See all work
+                      View All Blog
             </span>{" "}
             <span className="circleArrow d-flex align-items-center radius100 justify-content-center">
               {Svg.arrowRight}

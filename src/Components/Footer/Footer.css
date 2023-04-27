@@ -38,3 +38,6 @@
 .socialLinks li a:hover {
   color: var(--colorRed);
 }
+.min64{
+  min-height: 64px;
+}

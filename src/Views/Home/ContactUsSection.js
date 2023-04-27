@@ -11,13 +11,12 @@ const ContactUsSection = () => {
     <Col lg={6} md={6}>
         <div className='borderGrey radius20 contactSpacer transition'>
         <h3 className='mb30 colorWhite fs30 fw500'>
-        Lorem ipsum dolor, sit amet consectetur <br/> 
-        Suscipit impedit debitis assumenda 
+        Can’t find a service you <br/> are looking for?
         </h3>
 
         <div>
             <Link to='#' className='btnTransparent'>
-                Explore All Services
+            Explore All Services
             </Link>
         </div>
         </div>
@@ -26,13 +25,12 @@ const ContactUsSection = () => {
     <Col lg={6} md={6}>
         <div className='borderGrey radius20 contactSpacer transition'>
         <h3 className='mb30 colorWhite fs30 fw500'>
-        Lorem ipsum dolor, sit amet consectetur <br/> 
-        Suscipit impedit debitis assumenda 
+        Want to hire resources <br/> to work with you?
         </h3>
 
         <div>
             <Link to='#' className='btnTransparent'>
-                Explore All Services
+            Let's Discuss
             </Link>
         </div>
         </div>

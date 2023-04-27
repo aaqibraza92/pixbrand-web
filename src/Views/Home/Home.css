@@ -84,11 +84,16 @@ body .accordion {
   }
 }
 .borderGrey{
-  border: 1px solid #9c9c9c;
+  border: 1px solid #373737;
 }
 .borderGrey:hover{
   border-color: #ff0a2b;
 }
 .contactSpacer{
   padding: 90px 10%;
+}
+.bgLogo {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }

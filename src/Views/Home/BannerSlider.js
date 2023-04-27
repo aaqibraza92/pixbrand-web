@@ -19,26 +19,23 @@ const BannerSlider = () => {
         <Row className="align-items-center">
           <Col lg={5} md={5}>
             <div>
-              <h2 className="colorWhite fs45 fw600 mb20">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <h2 className="colorWhite fs70 fw600 mb20">
+              A Creative Digital Design Studio inspired by creativity.
               </h2>
-              <p className="colorLightBlack fs15">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-                quos officiis laborum ducimus molestias iure facilis iusto eos
-                placeat fuga quidem dolorum laudantium dolorem id, doloremque
-                dolores corporis iste incidunt.
+              <p className="colorLightBlack fs20">
+              We help our clients build delightful customer experiences. We create unique digital products from concept to final design solutions.
               </p>
 
               <div className="mt30">
-                <Link to="#" className="btnRed">
-                  Explore All Services
+                <Link to="/contact" className="btnRed">
+                Start a Project
                 </Link>
               </div>
             </div>
           </Col>
-          <Col lg={7} md={7}>
+          <Col lg={7} md={7} className="position-relative">
             <div className="bgLogo">
-        <img className="img-fluid" src="" alt="" />
+        <img className="img-fluid" src={require('../../Assets/Img/big_x.svg').default} alt="" />
             </div>
             <div className="swiperTopBanner">
               <Swiper
