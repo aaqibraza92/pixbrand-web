@@ -14,7 +14,30 @@ const Header = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  const [stickyHeader, setstickyHeader] = useState(false);
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const isTop = window.scrollY;
+      if (isTop > 200) {
+        setstickyHeader("topDown");
+      }
+      else{
+        setstickyHeader("topUp");
+      }
+    });
+  }, []);
 
+  //   const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  //   const resizeScreen = () => {
+  //     setScreenWidth(window.innerWidth);
+  //   };
+  //   useEffect(() => {
+  // resizeScreen();
+  //     window.addEventListener("resize", resizeScreen);
+  //     return () => {
+  //       window.removeEventListener("resize", resizeScreen);
+  //     };
+  //   });
 
 
   const [menuenable, setmenuenable] = useState(false);
@@ -78,8 +101,9 @@ const Header = (props) => {
         <div className="top-layer top-layer--4"></div>
         <div className="top-layer top-layer--5"></div>
       </div>
-      <header className={`siteHeader pt15 pb15 ${pathname.includes('/portfolio/') && 'singlePortfolio'}`}>
-        {menuenable && (
+      <header className={`siteHeader  ${pathname.includes('/portfolio/') && 'singlePortfolio' } ${stickyHeader}`}>
+      <div className="childWrapperHeader pt15 pb15">
+      {menuenable && (
           <>{delayer && <MenuNav closeCallback={closemenuFn} />}</>
         )}
 
@@ -88,6 +112,8 @@ const Header = (props) => {
             <WebRightSideHeaderContentWithoutLogin callback={menuFn} />
           </Row>
         </Container>
+      </div>
+       
       </header>
     </div>
   );
@@ -96,7 +122,21 @@ const Header = (props) => {
 export default Header;
 
 const WebRightSideHeaderContentWithoutLogin = (props) => {
-  //const {data}=props;
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  
+
+  
+  const resizeScreen = () => {
+    setScreenWidth(window.innerWidth);
+  };
+  useEffect(() => {
+resizeScreen();
+    window.addEventListener("resize", resizeScreen);
+    return () => {
+      window.removeEventListener("resize", resizeScreen);
+    };
+  });
+
   const [burgerStatus, setBurgerStatus] = useState(false);
 
   const burgerMenu = (status) => {
@@ -108,7 +148,7 @@ const WebRightSideHeaderContentWithoutLogin = (props) => {
     <>
       <Col lg={6} xs={6}>
         <div className="d-flex align-items-center flex-wrap">
-          <div className="logo mr20">
+          <div className="logo mr30">
             <Link to="/">
                 <img src={Img.logo.default} alt="logo" />
             </Link>
@@ -116,6 +156,8 @@ const WebRightSideHeaderContentWithoutLogin = (props) => {
         </div>
       </Col>
       <Col lg={6} xs={6} className="d-flex justify-content-end">
+      {
+        screenWidth < 990 ?  <>
         <button
           id="top"
           className="no-link noBtn buttons animateTrigger"
@@ -124,6 +166,11 @@ const WebRightSideHeaderContentWithoutLogin = (props) => {
           {Svg.menu}
         </button>
         <div className="buttons aaaaa"></div>
+        </>
+        :
+        <DesktopMenu/>
+      }
+       
       </Col>
       <BurgerNav show={burgerStatus}>
         <CloseWrapper>
@@ -174,3 +221,66 @@ const CloseWrapper = styled.div`
   justify-content: flex-end;
   cursor: pointer;
 `;
+
+
+const DesktopMenu=()=>{
+  return  <ul className="noUl d-flex align-items-center justify-content-end mb0">
+    <li className="mr30">
+            <Link
+              to="/work"
+              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+            >
+              Work
+            </Link>
+          </li>
+        <li className="mr30">
+            <Link
+              to="/services"
+              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+            >
+              Service
+            </Link>
+          </li>
+          <li className="mr30">
+            <Link
+              to="/about"
+              className="fw500 fs15 colorWhite position-relative text-capitalize"
+            >
+              About Us
+            </Link>
+          </li>
+          <li className="mr30">
+            <Link
+              to="/blogs"
+              className="fw500 fs15 colorWhite position-relative text-capitalize"
+            >
+              Blogs
+            </Link>
+          </li>
+          <li className="mr30">
+            <Link
+              to="/portfolio"
+              className="fw500 fs15 colorWhite position-relative text-capitalize"
+            >
+              Portfolio
+            </Link>
+          </li>
+       
+          <li>
+            <Link
+              to="/contactus"
+              className="fw500 fs15 colorWhite position-relative text-capitalize"
+            >
+              Career
+            </Link>
+          </li>
+          <li className="uniqueHeader ml30">
+            <Link
+              to="/contactus"
+              className="fw500 fs15 colorWhite position-relative text-capitalize btnRed"
+            >
+              Start a Project
+            </Link>
+          </li>
+  </ul>
+}

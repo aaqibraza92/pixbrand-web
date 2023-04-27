@@ -275,3 +275,44 @@ body {
 
 
 /*effect layer*/
+.topDown{
+  background: rgba(0, 0, 0, 0.04);
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  -webkit-animation-name: stickySlideDown;
+  animation-name: stickySlideDown;
+  animation-duration: 0.5s;
+  animation-direction: normal;
+}
+.childWrapperHeader{
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px)
+}
+
+@-webkit-keyframes stickySlideDown {
+  0% {
+    opacity: 0.7;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes stickySlideDown {
+  0% {
+    opacity: 0.7;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}

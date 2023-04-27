@@ -832,3 +832,28 @@ background: #FF0A2B;
   .single_portfolio_data {
     margin-top: -81px;
   }
+  /* .btnRed{
+    background: #ff0a2b;
+color: #fff;
+-webkit-text-decoration: none !important;
+text-decoration: none !important;
+font-size: 18px;
+padding: 12px 28px;
+  } */
+
+  .btnTransparent{
+    background: transparent;
+color: #fff;
+border: 1px solid #fff;
+-webkit-text-decoration: none !important;
+text-decoration: none !important;
+font-size: 15px;
+padding: 10px 22px;
+-webkit-border-radius: 30px;
+border-radius: 30px;
+  }
+  .btnTransparent:hover{
+    background: #ff0a2b;
+    color: #fff;
+    border-color:#ff0a2b ;
+  }

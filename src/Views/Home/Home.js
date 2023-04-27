@@ -14,6 +14,9 @@ import { Helmet } from "react-helmet";
 import Slide from "react-reveal/Slide";
 import 'react-creative-cursor/dist/styles.css';
 import VerticalTabs from "./VerticalTabs";
+import ContactUsSection from "./ContactUsSection";
+import StandWithUs from "./StandWithUs";
+import BannerSlider from "./BannerSlider";
 
 const Home = (props) => {
   return (
@@ -23,6 +26,7 @@ const Home = (props) => {
         <title>Home - Pixbrand</title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
+      <BannerSlider/>
         <HomeBanner />
         <Slide bottom>
           <Services />
@@ -32,6 +36,8 @@ const Home = (props) => {
         <div className="overflow-hidden">
         <Marque />
         </div>
+        <ContactUsSection/>
+        <StandWithUs/>
        
         <Services3 />
         <Skills />

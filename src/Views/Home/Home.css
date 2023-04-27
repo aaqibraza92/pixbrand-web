@@ -83,3 +83,12 @@ body .accordion {
     font-size: 18px !important;
   }
 }
+.borderGrey{
+  border: 1px solid #9c9c9c;
+}
+.borderGrey:hover{
+  border-color: #ff0a2b;
+}
+.contactSpacer{
+  padding: 90px 10%;
+}
