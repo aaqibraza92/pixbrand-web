@@ -63,7 +63,7 @@ const StandWithUs = () => {
           </Col>
 
           <Col lg={4} md={4}>
-            <div className="radius20 borderGrey">
+            <div className="radius20 borderGrey h-100">
               <img
                 src="https://placehold.co/600x400"
                 className="img-fluid radiusRight"

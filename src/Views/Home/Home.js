@@ -17,6 +17,7 @@ import VerticalTabs from "./VerticalTabs";
 import ContactUsSection from "./ContactUsSection";
 import StandWithUs from "./StandWithUs";
 import BannerSlider from "./BannerSlider";
+import AboutUsSection from "./AboutUsSection";
 
 const Home = (props) => {
   return (
@@ -29,7 +30,7 @@ const Home = (props) => {
       <div className="overflow-hidden">
       <BannerSlider/>
       </div>
-     
+      <AboutUsSection/>
         {/* <HomeBanner /> */}
         <Slide bottom>
           <Services />
