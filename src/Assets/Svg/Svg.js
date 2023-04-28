@@ -18,38 +18,13 @@ const Svg = {
     </>
   ),
   arrowRight: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 17.414 17.414"
-    >
-      <g
-        id="Icon_feather-arrow-right"
-        data-name="Icon feather-arrow-right"
-        transform="translate(0 0.707)"
-      >
-        <path
-          id="Path_2811"
-          data-name="Path 2811"
-          d="M7.5,18h16"
-          transform="translate(-7.5 -10)"
-          fill="none"
-          stroke="#fff"
-          strokeLinejoin="round"
-          strokeWidth="2"
-        />
-        <path
-          id="Path_2812"
-          data-name="Path 2812"
-          d="M18,7.5l8,8-8,8"
-          transform="translate(-10 -7.5)"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2"
-        />
-      </g>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18.497" height="8.494" viewBox="0 0 18.497 8.494">
+    <g id="Icon_feather-arrow-right" data-name="Icon feather-arrow-right" transform="translate(5.437 -1.753)">
+      <path id="Path_2811" data-name="Path 2811" d="M7.5,18H24.937" transform="translate(-12.937 -12)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_2812" data-name="Path 2812" d="M18,7.5l3.717,3.717L18,14.934" transform="translate(-9.717 -5.217)" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </svg>
+  
   ),
   arrowDiagnal: (
     <svg
@@ -1861,6 +1836,20 @@ const Svg = {
       </svg>
     </>
   ),
+
+  ArrowUp: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Group_63135" data-name="Group 63135" transform="translate(-771 -1908)">
+    <circle id="Ellipse_13529" data-name="Ellipse 13529" cx="16" cy="16" r="16" transform="translate(771 1908)" fill="#4f4f4f"/>
+    <path id="Path_35380" data-name="Path 35380" d="M-11982.27-2331.775l6.408-6.408,6.408,6.408" transform="translate(12762.77 4258.683)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  </g>
+</svg>,
+
+CircleCheck: <svg xmlns="http://www.w3.org/2000/svg" width="18.5" height="18.5" viewBox="0 0 18.5 18.5">
+<path id="Path_35372" data-name="Path 35372" d="M12797,4267.25a9.25,9.25,0,1,1,9.25,9.25A9.26,9.26,0,0,1,12797,4267.25Zm3.917-5.333a7.549,7.549,0,1,0,5.333-2.206A7.507,7.507,0,0,0,12800.917,4261.917Zm2.976,8.832-2.422-2.422a.424.424,0,0,1,0-.6l.769-.769a.42.42,0,0,1,.3-.125.412.412,0,0,1,.3.125l1.743,1.743,5.1-5.136a.4.4,0,0,1,.3-.129.407.407,0,0,1,.3.132l.759.778a.436.436,0,0,1,.02.579l-.016.019-5.86,5.889h-.017a.958.958,0,0,1-.592.238A1.007,1.007,0,0,1,12803.893,4270.75Z" transform="translate(-12797 -4258)" fill="#4f4f4f"/>
+</svg>
+
+
+
 
   
 };

@@ -857,3 +857,13 @@ border-radius: 30px;
     color: #fff;
     border-color:#ff0a2b ;
   }
+  .greyishBg{
+    background: #202020;
+  }
+  .borderTop {
+    border-top: 1px solid #373737;
+  }
+  .rotate180 {
+    transform: rotate(180deg);
+    display: block;
+  }

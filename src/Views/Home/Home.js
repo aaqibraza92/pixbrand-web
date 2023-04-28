@@ -18,6 +18,7 @@ import ContactUsSection from "./ContactUsSection";
 import StandWithUs from "./StandWithUs";
 import BannerSlider from "./BannerSlider";
 import AboutUsSection from "./AboutUsSection";
+import OurServices from "./OurServices";
 
 const Home = (props) => {
   return (
@@ -30,12 +31,14 @@ const Home = (props) => {
       <div className="overflow-hidden">
       <BannerSlider/>
       </div>
+      <OurServices/>
       <AboutUsSection/>
+      
         {/* <HomeBanner /> */}
-        <Slide bottom>
+        {/* <Slide bottom>
           <Services />
-        </Slide>
-        <Services2 />
+        </Slide> */}
+        {/* <Services2 /> */}
         <Portfolio />
         {/* <div className="overflow-hidden">
         <Marque />

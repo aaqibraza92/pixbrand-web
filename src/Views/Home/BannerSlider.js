@@ -16,9 +16,9 @@ const BannerSlider = () => {
   return (
     <section>
       <Container>
-        <Row className="align-items-center">
-          <Col lg={5} md={5}>
-            <div>
+        <Row className="align-items-center gx-5">
+          <Col lg={6} md={6}>
+            <div className="pr30">
               <h2 className="colorWhite fs70 fw600 mb20">
               A Creative Digital Design Studio inspired by creativity.
               </h2>
@@ -33,7 +33,7 @@ const BannerSlider = () => {
               </div>
             </div>
           </Col>
-          <Col lg={7} md={7} className="position-relative">
+          <Col lg={6} md={6} className="position-relative">
             <div className="bgLogo">
         <img className="img-fluid" src={require('../../Assets/Img/big_x.svg').default} alt="" />
             </div>
@@ -75,7 +75,7 @@ const BannerSlider = () => {
                 {
                   Array(6).fill().map((v,i)=>(
                     <SwiperSlide key={i}>
-                      <GImage radius="12px" src="https://placehold.jp/500x800.png" />
+                      <GImage radius="12px" src={require('../../Assets/Img/banner1.jpg')} />
                     </SwiperSlide>
                   ))
                 }

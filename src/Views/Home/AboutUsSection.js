@@ -1,51 +1,51 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
+import Svg from "../../Assets/Svg/Svg";
 
 let data = [
   {
-    img: "https://placehold.jp/300x300.png",
+    img: require('../../Assets/Img/Analysis.svg'),
     title: "Analysis",
     url: "#",
   },
   {
-    img: "https://placehold.jp/300x300.png",
-    title: "Analysis",
+    img: require('../../Assets/Img/design.svg'),
+    title: "Design",
     url: "#",
   },
   {
-    img: "https://placehold.jp/300x300.png",
-    title: "Analysis",
+    img: require('../../Assets/Img/Development.svg'),
+    title: "Development",
     url: "#",
   },
   {
-    img: "https://placehold.jp/300x300.png",
-    title: "Analysis",
+    img: require('../../Assets/Img/qa.svg'),
+    title: "QA",
     url: "#",
   },
 ];
 const AboutUsSection = () => {
   return (
-    <section>
+    <section className="mb60">
       <Container>
-        <div className="bgGreyish radius20 pt30 pb30 pl30 pr30">
+        <div className="greyishBg radius20 pt30 pb30 pl30 pr30">
           <Row className="mb80">
             <Col lg={6} md={6}>
-              <h6 className="colorRed fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
+              <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
                 We're different
               </h6>
 
-              <h3 className="fs40 colorWhite fw500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-                provident.
+              <h3 className="fs40 mb30 colorWhite fw500">
+              Don’t think of us as ‘just another marketing or web design company’. Our Pix mantra makes us your collaborative partner.
               </h3>
 
               <div className="d-flex">
                 <Link class="btnRed mb0" to="/#">
-                  Lorem ipsum
+                Get In Touch
                 </Link>
                 <Link class="btnTransparent" to="/#">
-                  Lorem ipsum{" "}
+                About Us <span className="ml10">{Svg.arrowRight}</span> 
                 </Link>
               </div>
             </Col>
@@ -67,7 +67,7 @@ const AboutUsSection = () => {
                 <div className="position-relative d-flex align-items-center justify-content-center">
                   <img
                     className="img-fluid radius20"
-                    src={e.img}
+                    src={e.img.default}
                     alt="analysis"
                   />
                   <Link

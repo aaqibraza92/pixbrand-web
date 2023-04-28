@@ -22,6 +22,9 @@ body .colorBlack {
 .colorWhite {
   color: #fff;
 }
+.colorLightGrey{
+  color: #CCCCCC;
+}
 .bgBlack {
   background: var(--colorBlack);
 }
