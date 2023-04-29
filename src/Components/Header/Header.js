@@ -102,10 +102,11 @@ const Header = (props) => {
         <div className="top-layer top-layer--5"></div>
       </div>
       <header className={`siteHeader  ${pathname.includes('/portfolio/') && 'singlePortfolio' } ${stickyHeader}`}>
-      <div className="childWrapperHeader pt15 pb15">
       {menuenable && (
           <>{delayer && <MenuNav closeCallback={closemenuFn} />}</>
         )}
+      <div className="childWrapperHeader pt15 pb15">
+     
 
         <Container>
           <Row className="align-items-center">

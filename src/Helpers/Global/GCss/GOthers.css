@@ -556,3 +556,7 @@ body .radiusFull {
   border: none;
   outline: none;
 }
+
+.fs75{
+  font-size: 75px;
+}
