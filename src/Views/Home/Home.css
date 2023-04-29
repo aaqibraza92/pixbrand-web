@@ -86,6 +86,9 @@ body .accordion {
 .borderGrey{
   border: 1px solid #373737;
 }
+.wrapperStand .borderGrey:hover {
+  border-color: #373737;
+}
 .borderGrey:hover{
   border-color: #ff0a2b;
 }

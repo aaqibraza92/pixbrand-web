@@ -86,8 +86,8 @@ input:checked + label::before {
 
 .ac-custom svg path {
   stroke: #ff0a2b;
-  stroke-width: 7px;
+  strokeWidth: 7px;
   stroke-linecap: round;
-  stroke-linejoin: round;
+  strokeLinejoin: round;
   fill: none;
 }

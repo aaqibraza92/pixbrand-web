@@ -14,15 +14,15 @@ import { Fade } from "react-reveal";
 
 const BannerSlider = () => {
   return (
-    <section>
+    <section className="pt40 mb120 mobMb60">
       <Container>
-        <Row className="align-items-center gx-5">
+        <Row className="align-items-center gx-5 gy-5">
           <Col lg={6} md={6}>
-            <div className="pr30">
-              <h2 className="colorWhite fs70 fw600 mb20">
+            <div className="mr30 mobMr0">
+              <h2 className="colorWhite fs70 fw600 mb20 mobFs33 tabFs40">
               A Creative Digital Design Studio inspired by creativity.
               </h2>
-              <p className="colorLightBlack fs20">
+              <p className="colorLightBlack fs20 mobFs15">
               We help our clients build delightful customer experiences. We create unique digital products from concept to final design solutions.
               </p>
 
@@ -33,8 +33,8 @@ const BannerSlider = () => {
               </div>
             </div>
           </Col>
-          <Col lg={6} md={6} className="position-relative">
-            <div className="bgLogo">
+          <Col lg={6} md={6} className="position-relative mobMt110">
+            <div className="bgLogo ">
         <img className="img-fluid" src={require('../../Assets/Img/big_x.svg').default} alt="" />
             </div>
             <div className="swiperTopBanner">
@@ -75,7 +75,10 @@ const BannerSlider = () => {
                 {
                   Array(6).fill().map((v,i)=>(
                     <SwiperSlide key={i}>
-                      <GImage radius="12px" src={require('../../Assets/Img/banner1.jpg')} />
+                    <div className="mobWHandle">
+                    <GImage radius="12px" src={require('../../Assets/Img/banner1.jpg')} />
+                    </div>
+                  
                     </SwiperSlide>
                   ))
                 }

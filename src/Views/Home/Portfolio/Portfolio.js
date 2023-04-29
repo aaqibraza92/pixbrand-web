@@ -56,22 +56,48 @@ const Portfolio = () => {
                       lg={6}
                       md={6}
                       key={i}
-                      className="d-flex flex-column justify-content-between revColMob"
+                      className="revColMob"
                     >
-                      <GSection mb="150px" tabLgmb="80px" className="mobMb0">
+                      <GSection mb="0px">
                         <Slide bottom>
-                          <div className="aboutPortfolio ">
-                            <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
-                              {e.acf === false ? "" : e?.acf?.project_title}
-                            </h6>
-                            <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36 col-md-7 col-sm-12 col-xs-12">
-                              {e?.title?.rendered}
-                            </h3>
+                          <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-lg-5">
+                            <GImage
+                              className="scale"
+                              width="100%"
+                              src={
+                                e?.x_featured_media_large
+                                  ? e?.x_featured_media_large
+                                  : Img.p1
+                              }
+                            />
+                            <Link
+                              to={`/portfolio/${e?.slug}`}
+                              className="arrowLink colorWhite hover-me position-absolute"
+                            >
+                              <div className="btnPortfolio transition">
+                                <span className="fs17 fw500 colorBlack">
+                                  Case Study
+                                </span>{" "}
+                                <span className="ml10">{Svg.ArrowDiagnal}</span>
+                              </div>
+                            </Link>
                           </div>
                         </Slide>
-              
+                      </GSection>
 
-                        <div className="magnetWrapper">
+                      <GSection mb="150px" tabLgmb="80px" className="mobMb0">
+                        <Slide bottom>
+                          <div className="aboutPortfolio mb60 mobMb30">
+                            <h6 className="fs28 tabFs18  mobFs18 mb9 mobMb10 tabMb10 colorWhite">
+                              {e.acf === false ? "" : e?.acf?.project_title}
+                            </h6>
+                            <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs18 mb36 col-md-7 col-sm-12 col-xs-12">
+                              {e?.title?.rendered}
+                            </p>
+                          </div>
+                        </Slide>
+
+                        {/* <div className="magnetWrapper">
                           <Link
                             to={`/portfolio/${e?.slug}`}
                             className="arrowLink colorWhite hover-me "
@@ -90,22 +116,7 @@ const Portfolio = () => {
                               </div>
                             </div>
                           </Link>
-                        </div>
-                      </GSection>
-                      <GSection mb="0px">
-                        <Slide bottom>
-                          <div className="protfolioWrapper pBgLightBlue radius24 overflow-hidden mb-5">
-                            <GImage
-                              className="scale"
-                              width="100%"
-                              src={
-                                e?.x_featured_media_large
-                                  ? e?.x_featured_media_large
-                                  : Img.p1
-                              }
-                            />
-                          </div>
-                        </Slide>
+                        </div> */}
                       </GSection>
                     </Col>
                   );
@@ -117,33 +128,65 @@ const Portfolio = () => {
                       key={i}
                       className="d-flex flex-column justify-content-between "
                     >
+                      {i === 0 && (
+                        <div>
+                          <h2 className="fs40 mb25 colorWhite fw500 mobFs33">
+                            Our Recent Projects
+                          </h2>
+                          <p className="colorLightGrey fs22 fw500 mb30 mobFs18">
+                            Our projects are the result of meticulous research,
+                            attention to details and of improving the customer
+                            and users´ needs.
+                          </p>
+
+                          <div className="mt30 mb110">
+                            <Link className="btnTransparent" to="/#">
+                              View All Projects{" "}
+                              <span className="ml10">{Svg.arrowRight}</span>
+                            </Link>
+                          </div>
+                        </div>
+                      )}
                       <GSection mb="0px">
                         <Slide bottom>
-                          <div className="protfolioWrapper pBgGreen pr20 radius24 overflow-hidden mb-5">
+                          <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgGreen pr20 radius24 overflow-hidden mb-lg-5">
                             <GImage
                               className="scale"
                               width="100%"
                               src={Img.p1}
                             />
+                            <Link
+                              to={`/portfolio/${e?.slug}`}
+                              className="arrowLink colorWhite hover-me position-absolute"
+                            >
+                              <div className="btnPortfolio transition">
+                                <span className="fs17 mobFs18 fw500 colorBlack">
+                                  Case Study
+                                </span>{" "}
+                                <span className="ml10">{Svg.ArrowDiagnal}</span>
+                              </div>
+                            </Link>
                           </div>
                         </Slide>
                       </GSection>
 
-                      <div className="aboutPortfolio">
+                      <div className="aboutPortfolio mb60 mobMb30">
                         <Slide bottom>
-                          <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
+                          <h6 className="fs28 tabFs13 tabLgFs13 mobFs18 mb9 mobMb10 tabMb10 colorWhite">
                             {e.acf === false ? "" : e?.acf?.project_title}
                           </h6>
-                          <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36 col-md-7 col-sm-12 col-xs-12">
+                          <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs16 mb36 col-md-7 col-sm-12 col-xs-12">
                             {e?.title?.rendered}
-                          </h3>
+                          </p>
                         </Slide>
-                        <div className="magnetWrapper">
+
+                        {/* <div className="magnetWrapper">
                           <Link
                             to={`/portfolio/${e?.slug}`}
                             className="arrowLink colorWhite hover-me "
                           >
                             <Cursor isGelly={true} />
+                         
                             <div data-cursor-magnetic>
                               <div className="mb15">
                                 <span className="d-flex align-items-center">
@@ -157,7 +200,7 @@ const Portfolio = () => {
                               </div>
                             </div>
                           </Link>
-                        </div>
+                        </div> */}
                       </div>
                     </Col>
                   );

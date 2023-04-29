@@ -33,51 +33,51 @@ const VerticalTabs = () => {
         ></script> */}
       </Helmet>
       <Container>
-      <div class="container-fluid">
+      <div className="container-fluid">
 
-<div id="demo" class="sliderTab carousel slide vert" data-ride="carousel" data-interval="10000">
+<div id="demo" className="sliderTab carousel slide vert" data-ride="carousel" data-interval="10000">
 
-  <div class="row no-gutters">
+  <div className="row no-gutters">
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
-      <div class="carousel-indicators">
-        <div data-target="#demo" data-slide-to="0" class="item active"></div>
-        <div data-target="#demo" data-slide-to="1" class="item">Lorem 1</div>
-        <div data-target="#demo" data-slide-to="2" class="item">Lorem 2</div>
-        <div data-target="#demo" data-slide-to="3" class="item">Lorem 3</div>
-        <div data-target="#demo" data-slide-to="4" class="item">Lorem 4</div>
-        <div data-target="#demo" data-slide-to="5" class="item">Lorem 5</div>
+    <div className="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <div className="carousel-indicators">
+        <div data-target="#demo" data-slide-to="0" className="item active"></div>
+        <div data-target="#demo" data-slide-to="1" className="item">Lorem 1</div>
+        <div data-target="#demo" data-slide-to="2" className="item">Lorem 2</div>
+        <div data-target="#demo" data-slide-to="3" className="item">Lorem 3</div>
+        <div data-target="#demo" data-slide-to="4" className="item">Lorem 4</div>
+        <div data-target="#demo" data-slide-to="5" className="item">Lorem 5</div>
       </div>
     </div>
 
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+    <div className="col-12 col-sm-12 col-md-12 col-lg-6">
+      <div className="carousel-inner">
+        <div className="carousel-item active">
        <h3>lorem</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
             <h3>lorem 1</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
      
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
             <h3>lorem 2</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
         
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
             <h3>lorem 3</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
       
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
             <h3>lorem 4</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
      
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
             <h3>lorem 5</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque at ipsum suscipit illo cupiditate aspernatur dolore earum similique excepturi id consequatur voluptatum facilis ullam, iste sint quaerat ipsa dolor!</p>
     

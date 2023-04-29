@@ -19,7 +19,7 @@ const Footer = (props) => {
       <Container className="mb30 ">
         <Row className="align-items-center">
           <Col lg={7} xl={7}>
-            <h2 className="colorBlack fs60 tabFs40  tabLgFs40 mobFs32 mb0 mobMb30 mobTextCenter" >
+            <h2 className="colorBlack fs60 tabFs40  tabLgFs40 mobFs33 mb0 mobMb30" >
               <Slide bottom>
                 Let's start something completely new together
               </Slide>
@@ -50,7 +50,7 @@ const Footer = (props) => {
 
         <Row className="gy-3">
           <Col lg={2} xs={12} md={2}>
-          <div className='mobTextCenter mb30'>
+          <div className=' mb30'>
           <Slide bottom >
               <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                 <img
@@ -64,9 +64,9 @@ const Footer = (props) => {
          
           </Col>
           <Col lg={10} xs={12} md={10}>
-            <Row className="justify-content-center gy-3">
+            <Row className=" gy-3">
               <Col lg={3} xs={6}>
-                <div className="text-center">
+                <div className="">
                   <div className="mb20 min64">
                     <img
                       className="img-fluid"
@@ -82,7 +82,7 @@ const Footer = (props) => {
               </Col>
 
               <Col lg={3} xs={6}>
-                <div className="text-center">
+                <div>
                   <div className="mb20 min64">
                     <img
                       className="img-fluid"
@@ -98,7 +98,7 @@ const Footer = (props) => {
               </Col>
 
               <Col lg={3} xs={6}>
-                <div className="text-center">
+                <div>
                   <div className="mb20 min64">
                     <img
                       className="img-fluid"
@@ -114,7 +114,7 @@ const Footer = (props) => {
               </Col>
 
               <Col lg={3} xs={6}>
-                <div className="text-center">
+                <div>
                   <div className="mb20 min64">
                     <img
                       className="img-fluid"
@@ -135,11 +135,11 @@ const Footer = (props) => {
         <div className="mt60 mobMt30">
           <Row className="align-items-center gy-3">
             <Col lg={6} md={12} className="ord">
-              <div className="d-flex flex-wrap mobJustifyContentCenter">
+              <div className="d-flex flex-wrap">
                 <p className="fs14 mb0 colorGrey mr25">
                   © {year} Pix Brand All rights reserved.
                 </p>
-                <ul className="socialLinks mobJustifyContentCenter">
+                <ul className="socialLinks">
                   <li>
                     <GLink
                       className="runningLine"
@@ -167,7 +167,7 @@ const Footer = (props) => {
             </Col>
 
             <Col lg={6} md={12}>
-              <ul className="socialLinks mobJustifyContentCenter">
+              <ul className="socialLinks mobJustifyContentLeft">
                 <li className="fs14">
                   <a
                     className="runningLine"

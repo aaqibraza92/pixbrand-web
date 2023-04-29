@@ -51,7 +51,7 @@ const GImage = styled.img`
   }};
   @media only screen and (max-width: 767px) {
     border-radius: ${(props) => {
-      return props.radiusMob ? props.radiusMob : "0px";
+      return props.radiusMob && props.radiusMob ;
     }};
   }
 `;

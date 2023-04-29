@@ -61,6 +61,7 @@ const [postData,setPostData]=useState("");
                 WidthTabTitle="75%"
                 tt="uppercase"
                 fsT="40px"
+                fsTitleMob="33px"
                 pretitle="Our Blogs"
                 fwPt="bold"
                 colorPt="#FF0A2B"
@@ -147,19 +148,12 @@ const [postData,setPostData]=useState("");
 
         <div className="magnetWrapper">
                   <Link
-                    to="/contactus"
+                    to="/blogs"
                     className="arrowLink colorWhite hover-me "
                   >
                     <Cursor isGelly={true} />
-                    <div data-cursor-magnetic>
-                      <div className="mb15 d-flex align-items-center">
-                      <span className="mr10 fs14 tabFs12 tabLgFs12 mobFs12">
-                      View All Blog
-            </span>{" "}
-            <span className="circleArrow d-flex align-items-center radius100 justify-content-center">
-              {Svg.arrowRight}
-            </span>
-                      </div>
+                    <div className="btnTransparent" data-cursor-magnetic>
+                    View All Blog <span className="ml10">{Svg.arrowRight}</span> 
                     </div>
                   </Link>
                 </div>
@@ -169,3 +163,4 @@ const [postData,setPostData]=useState("");
 };
 
 export default BlogList;
+

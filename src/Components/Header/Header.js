@@ -146,7 +146,7 @@ resizeScreen();
   };
   return (
     <>
-      <Col lg={6} xs={6}>
+      <Col lg={3} xs={3}>
         <div className="d-flex align-items-center flex-wrap">
           <div className="logo mr30">
             <Link to="/">
@@ -155,7 +155,7 @@ resizeScreen();
           </div>
         </div>
       </Col>
-      <Col lg={6} xs={6} className="d-flex justify-content-end">
+      <Col lg={9} xs={9} className="d-flex justify-content-end">
       {
         screenWidth < 990 ?  <>
         <button

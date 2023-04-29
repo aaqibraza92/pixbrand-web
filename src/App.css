@@ -1,10 +1,10 @@
 @font-face {
   font-family: fMedium;
-  src: url(./Assets/Fonts/Larsseit.otf);
+  src: url(./Assets/Fonts/lota-regular.otf);
 }
 @font-face {
   font-family: fThin;
-  src: url(./Assets/Fonts/Larsseit-Thin.otf);
+  src: url(./Assets/Fonts/lota-thin.otf);
 }
 
 body,
@@ -497,7 +497,8 @@ body .radius24 {
   .hover-me {
     width: 100%;
     padding: 20px 0;
-    display: inline-block;
+    display: block;
+    text-align: center;
   }
 }
 /*magnetic*/
@@ -631,7 +632,7 @@ body .page-link {
   color: #5e5e5e;
 }
 .btnRed:hover {
-  background-color: #20272B;
+  background-color: #111;
   color: #ddd;
 }
 .btnRed{
@@ -642,9 +643,7 @@ padding-bottom: 8px;
 padding-left: 25px;
 padding-right: 25px;
 margin-top: 0px;
-margin-bottom: 15px;
 margin-left: 0px;
-margin-right: 10px;
 -webkit-border-radius: 25px;
 border-radius: 25px;
 border: none;
@@ -660,6 +659,8 @@ font-size: 16px;
 transition: all 0.3s ease 0s;
 width: auto;
 background: #FF0A2B;
+align-items: center;
+display: inline-flex;
 }
 .inlineData br {
   display: none;
@@ -866,4 +867,20 @@ border-radius: 30px;
   .rotate180 {
     transform: rotate(180deg);
     display: block;
+  }
+  element {
+
+  }
+  .btnPortfolio {
+  
+      background: #ddd;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 30px;
+  
+  }
+  .btnPortfolio:hover {
+    background:  #9f9f9f  
+   
   }

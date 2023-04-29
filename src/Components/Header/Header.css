@@ -209,7 +209,7 @@ body .tiles__line-img--large {
   stroke: #000;
   fill: #000;
   transform: scaleY(0);
-  stroke-width: 2px;
+  strokeWidth: 2px;
   position: relative;
   left: -50px;
 }

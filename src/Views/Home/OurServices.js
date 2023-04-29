@@ -5,9 +5,9 @@ import { useState } from "react";
 
 const OurServices = () => {
   return (
-    <section>
+    <section className="mb100">
       <Container>
-        <h2 className="fs45 fw500 colorWhite mb30">Our Services</h2>
+        <h2 className="fs40 fw500 colorWhite mb30 mobFs33">Our Services</h2>
 
         <Row className="gy-3">
           <Col lg={8} md={8}>
@@ -70,7 +70,11 @@ const OurServices = () => {
             />
           </Col>
           <Col lg={4} md={4}>
-            <div className="d-flex justify-content-end">
+            <div className="d-flex justify-content-end position-sticky pb30"
+                style={{
+                  width: "100%",
+                  top: "100px",
+                }}>
               <img
                 src={require("../../Assets/Img/serviceRight.svg").default}
                 className="img-fluid"
@@ -94,7 +98,7 @@ const ServiceItem = (props) => {
       <div className="serviceTitle fs28 colorWhite d-flex justify-content-between align-items-center     pt30 pl30 pr30">
         <div className="d-flex align-items-center">
           <img src={icon.default} alt="laptop" />
-          <h3 className="w-100 ml15">{title}</h3>
+          <h3 className="w-100 mobFs20 ml15">{title}</h3>
         </div>
 
         <button onClick={() => settoggle(!toggle)} className="noBtn">
@@ -105,14 +109,14 @@ const ServiceItem = (props) => {
       </div>
       {toggle && (
         <div className="contentSection">
-          <p className="colorLightBlack fs20 mb30 pt30 pl30 pr30">{content}</p>
+          <p className="colorLightBlack fs22 mb30 pt30 pl30 pr30 mobFs18">{content}</p>
           <div className="borderTop">
             <Row className="pt30 pl30 pr30 gy-3">
               {list.map((e, i) => (
                 <Col key={i} lg={6} md={6}>
                   <div className="d-flex align-items-center">
                     {Svg.CircleCheck}
-                    <p className="colorLightGrey fs18 fw500 mb0 ml10">{e}</p>
+                    <p className="colorLightGrey fs18 fw500 mobFs15 mb0 ml10">{e}</p>
                   </div>
                 </Col>
               ))}

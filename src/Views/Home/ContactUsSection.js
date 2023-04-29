@@ -7,7 +7,7 @@ const ContactUsSection = () => {
   return (
    <section className='pt80 pb80'>
    <Container>
-   <Row>
+   <Row className='gy-3'>
     <Col lg={6} md={6}>
         <div className='borderGrey radius20 contactSpacer transition'>
         <h3 className='mb30 colorWhite fs30 fw500'>

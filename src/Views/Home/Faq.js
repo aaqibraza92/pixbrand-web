@@ -29,7 +29,7 @@ const Faq = () => {
                 maxWidth="90%"
                 fsT="40px"
                 fsSubT="22px"
-                mbT="25px"
+                fsTitleMob="33px"
                 subtitlecolor="#fff"
                 title="Frequently asked questions"   
               />
