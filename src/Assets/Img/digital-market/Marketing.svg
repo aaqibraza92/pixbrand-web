@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="linear-gradient" x2="0.801" y2="1.269" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3d3e42"/>
+      <stop offset="1" stop-color="#191919"/>
+    </linearGradient>
+  </defs>
+  <g id="Marketing" transform="translate(-143 -3387)">
+    <rect id="Rectangle_13021" data-name="Rectangle 13021" width="64" height="64" rx="18" transform="translate(143 3387)" fill="url(#linear-gradient)"/>
+    <g id="megaphone_marketing_speaker_icon_208963" transform="translate(152.059 3396)">
+      <path id="Path_26563" data-name="Path 26563" d="M9.765,17.882a1.882,1.882,0,0,0-1.882,1.882v5.647a1.882,1.882,0,0,0,1.882,1.882h3.765V17.882Zm3.765,11.294H11.647v7.529a.941.941,0,1,0,1.882,0Zm-3.765,0A3.765,3.765,0,0,1,6,25.412V19.765A3.765,3.765,0,0,1,9.765,16h4.706a.941.941,0,0,1,.941.941V36.706a2.824,2.824,0,0,1-5.647,0Z" transform="translate(-1 -0.529)" fill="#fff" stroke="#fff" stroke-width="0.5" fill-rule="evenodd"/>
+      <path id="Path_26564" data-name="Path 26564" d="M29.747,7.116a.941.941,0,0,1,.488.825v9.412A3.765,3.765,0,0,1,34,21.118v.941a3.765,3.765,0,0,1-3.765,3.765v9.412a.941.941,0,0,1-1.446.794L18.436,29.441A.941.941,0,0,1,18,28.647V14.529a.941.941,0,0,1,.436-.794L28.789,7.147A.941.941,0,0,1,29.747,7.116Zm.488,16.825a1.882,1.882,0,0,0,1.882-1.882v-.941a1.882,1.882,0,0,0-1.882-1.882Zm-10.353-8.9V28.13l8.471,5.39V9.656Z" transform="translate(-0.706)" fill="#fff" stroke="#fff" stroke-width="0.5" fill-rule="evenodd"/>
+      <path id="Path_26565" data-name="Path 26565" d="M40.548,17.419a.941.941,0,0,1-.261,1.305l-2.824,1.882a.941.941,0,0,1-1.044-1.566l2.824-1.882A.941.941,0,0,1,40.548,17.419ZM36,23.588a.941.941,0,0,1,.941-.941h3.765a.941.941,0,1,1,0,1.882H36.941A.941.941,0,0,1,36,23.588Zm.158,3.243a.941.941,0,0,1,1.305-.261l2.824,1.882a.941.941,0,1,1-1.044,1.566l-2.824-1.882A.941.941,0,0,1,36.158,26.831Z" transform="translate(-0.765 -1.588)" fill="#fff" stroke="#fff" stroke-width="0.5" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

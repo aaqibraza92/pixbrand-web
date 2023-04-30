@@ -12,6 +12,7 @@ import ImageTab from "../TabAndContent/ImageTab";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import Svg from "../../Assets/Svg/Svg";
+import ContactUsSection from "../Home/ContactUsSection";
 
 const Services = () => {
   return (
@@ -25,9 +26,10 @@ const Services = () => {
       <ServiceSlider />
       <Website />
       <Mobile />
-     
+      
       <Digital />
       <Branding />
+      <ContactUsSection/>
       <ImageTab />
       <Slider />
       <Approach />
@@ -349,6 +351,9 @@ const Digital = () => {
                   </ul>
                 </Col>
               </Row>
+              <div className="mt30">
+                <Link className="btnRed" to='#'>Learn More</Link>
+                </div>
             </Slide>
           </Col>
           <Col md={6}>
@@ -376,7 +381,7 @@ const Branding = () => {
   return (
     <>
       <Container className="mb100 mobMb60">
-        <Row className="align-items-center flexreverse">
+        <Row className="align-items-center flexreverse gx-5 gy-3">
           <Col md={6}>
             <section>
               <div>
@@ -385,7 +390,7 @@ const Branding = () => {
                     radius="24px"
                     radiusMob="5px"
                     width='100%'
-                    src={require('../../Assets/Img/services/digital.png')}
+                    src={require('../../Assets/Img/services/branding.jpg')}
                   />
                 </Slide>
               </div>
@@ -418,6 +423,10 @@ const Branding = () => {
                     </ul>
                   </Col>
                 </Row>
+
+                <div className="mt30">
+                <Link className="btnRed" to='#'>Learn More</Link>
+                </div>
               </Slide>
             </section>
           </Col>
