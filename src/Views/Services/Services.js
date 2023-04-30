@@ -26,13 +26,47 @@ const Services = () => {
       <ServiceSlider />
       <Website />
       <Mobile />
-      
+
       <Digital />
       <Branding />
-      <ContactUsSection/>
-      <ImageTab />
+
+      {/* <ImageTab />
       <Slider />
-      <Approach />
+      <Approach /> */}
+      <Results/>
+      <section className="">
+        <Container>
+          <div className="greyishBg tabPt30 radius20 pl40 pr40 mobPl20 mobPr20">
+            <Row className="align-items-center mobMb40 gy-3 gx-5">
+              <Col lg={6} md={12} className="mt0">
+                <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
+                  Pixbrand Approach
+                </h6>
+
+                <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                  A user-focused approach is what we aim to achieve at Pixbrand
+                  every single time, with every product.
+                </h3>
+
+                <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+                  User experience is key to engagement and retention, and our
+                  team at Pixbrand understands that very well. We minimize the
+                  process and maximize the output with our approach.
+                </p>
+              </Col>
+
+              <Col lg={6} md={12} className="mt0">
+                <img
+                  className="w-100"
+                  src={require("../../Assets/Img/services/approach.jpg")}
+                  alt=""
+                />
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </section>
+      <ContactUsSection />
     </div>
   );
 };
@@ -49,10 +83,9 @@ const Title = () => {
             <Slide bottom>
               <section className="text-center mobtl">
                 <h1 className="fs75 mb24 mobMb10 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite">
-                Providing the Best of Services- from Startups to Large Businesses
-               
+                  Providing the Best of Services- from Startups to Large
+                  Businesses
                 </h1>
-            
               </section>
             </Slide>
           </Col>
@@ -104,87 +137,155 @@ const ServiceSlider = () => {
           <div className="bloggerList">
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s1.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s1.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s2.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s2.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s3.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s3.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s4.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s4.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s5.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s5.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s6.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s6.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s7.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s7.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s8.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s8.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s9.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s9.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s10.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s10.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s11.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s11.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s12.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s12.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15 mt50">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s13.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s13.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s14.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s14.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s15.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s15.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s16.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s16.jpg")}
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="mb15">
-                <GImage radius="18px" radiusMob="5px" src={require('../../Assets/Img/services/s17.jpg')} />
+                <GImage
+                  radius="18px"
+                  radiusMob="5px"
+                  src={require("../../Assets/Img/services/s17.jpg")}
+                />
               </div>
             </SwiperSlide>
           </div>
@@ -200,15 +301,15 @@ const Mobile = () => {
     <>
       <Container className="mb100 mobMb60">
         <Row className="align-items-center gy-3 gx-5">
-        <Col md={6}>
+          <Col md={6}>
             <section>
               <div>
                 <Slide bottom>
                   <GImage
                     radius="24px"
-                    radiusMob="5px" 
-                    width='100%'
-                    src={require('../../Assets/Img/services/mobile.jpg')}
+                    radiusMob="5px"
+                    width="100%"
+                    src={require("../../Assets/Img/services/mobile.jpg")}
                   />
                 </Slide>
               </div>
@@ -230,21 +331,38 @@ const Mobile = () => {
                 <Row>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10"> <span className="mr10">{Svg.CircleCheck}</span> iOS Apps</li>
-                      <li className="mb10"> <span className="mr10">{Svg.CircleCheck}</span> Android Apps</li>
+                      <li className="mb10">
+                        {" "}
+                        <span className="mr10">{Svg.CircleCheck}</span> iOS Apps
+                      </li>
+                      <li className="mb10">
+                        {" "}
+                        <span className="mr10">{Svg.CircleCheck}</span> Android
+                        Apps
+                      </li>
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span>Hybrid Apps</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Wearable Apps</li>
+                      <li className="mb10">
+                        <span className="mr10">{Svg.CircleCheck}</span>Hybrid
+                        Apps
+                      </li>
+                      <li className="mb10">
+                        <span className="mr10">{Svg.CircleCheck}</span> Wearable
+                        Apps
+                      </li>
                     </ul>
                   </Col>
+                  <div className="mt30">
+                    <Link className="btnRed" to="#">
+                      Learn More
+                    </Link>
+                  </div>
                 </Row>
               </Slide>
             </section>
           </Col>
-     
         </Row>
       </Container>
     </>
@@ -257,7 +375,7 @@ const Website = () => {
     <>
       <Container className="mb100 mobMb60">
         <Row className="align-items-center gy-3 gx-5 flexreverse">
-        <Col md={6}>
+          <Col md={6}>
             <section className="">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 width67 mobWidth100 tabWidth100 tabLgWidth100">
@@ -272,25 +390,51 @@ const Website = () => {
                 <Row>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10 d-flex align-items-center"> <span className="mr10">{Svg.CircleCheck}</span>  UI/UX Design</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span>  Audit and Analytics</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span>  Frameworks</li>
-                      <li className="mb10"> <span className="mr10">{Svg.CircleCheck}</span>  CMS Integration</li>
+                      <li className="mb10 d-flex align-items-center">
+                        {" "}
+                        <span className="mr10">{Svg.CircleCheck}</span> UI/UX
+                        Design
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Audit
+                        and Analytics
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span>{" "}
+                        Frameworks
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        {" "}
+                        <span className="mr10">{Svg.CircleCheck}</span> CMS
+                        Integration
+                      </li>
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> E-commerce Stores</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Web Development</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Hosting</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span>  Maintenance & Support</li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span>{" "}
+                        E-commerce Stores
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Web
+                        Development
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Hosting
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span>{" "}
+                        Maintenance & Support
+                      </li>
                     </ul>
                   </Col>
                 </Row>
                 <div className="mt30">
-                <Link className="btnRed" to='#'>Learn More</Link>
+                  <Link className="btnRed" to="#">
+                    Learn More
+                  </Link>
                 </div>
-               
               </Slide>
             </section>
           </Col>
@@ -302,14 +446,13 @@ const Website = () => {
                   <GImage
                     radius="24px"
                     radiusMob="5px"
-                    width='100%'
-                    src={require('../../Assets/Img/services/web.jpg')}
+                    width="100%"
+                    src={require("../../Assets/Img/services/web.jpg")}
                   />
                 </div>
               </Slide>
             </section>
           </Col>
-         
         </Row>
       </Container>
     </>
@@ -336,24 +479,47 @@ const Digital = () => {
               <Row>
                 <Col lg={6} xs={6}>
                   <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Social Media Marketing</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> SEO</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> SMO</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Content Marketing</li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> Social
+                      Media Marketing
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> SEO
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> SMO
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> Content
+                      Marketing
+                    </li>
                   </ul>
                 </Col>
                 <Col lg={6} xs={6}>
                   <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Inbound Marketing</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> E-mail Marketing</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Affiliate Marketing</li>
-                    <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Online PR</li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> Inbound
+                      Marketing
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> E-mail
+                      Marketing
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> Affiliate
+                      Marketing
+                    </li>
+                    <li className="mb10 d-flex align-items-center">
+                      <span className="mr10">{Svg.CircleCheck}</span> Online PR
+                    </li>
                   </ul>
                 </Col>
               </Row>
               <div className="mt30">
-                <Link className="btnRed" to='#'>Learn More</Link>
-                </div>
+                <Link className="btnRed" to="#">
+                  Learn More
+                </Link>
+              </div>
             </Slide>
           </Col>
           <Col md={6}>
@@ -363,8 +529,8 @@ const Digital = () => {
                   <GImage
                     radius="24px"
                     radiusMob="5px"
-                    width='100%'
-                    src={require('../../Assets/Img/services/digital.png')}
+                    width="100%"
+                    src={require("../../Assets/Img/services/digital.png")}
                   />
                 </Slide>
               </div>
@@ -386,11 +552,11 @@ const Branding = () => {
             <section>
               <div>
                 <Slide bottom>
-                <GImage
+                  <GImage
                     radius="24px"
                     radiusMob="5px"
-                    width='100%'
-                    src={require('../../Assets/Img/services/branding.jpg')}
+                    width="100%"
+                    src={require("../../Assets/Img/services/branding.jpg")}
                   />
                 </Slide>
               </div>
@@ -411,21 +577,38 @@ const Branding = () => {
                 <Row>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand identity</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand strategy</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand positioning</li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Brand
+                        identity
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Brand
+                        strategy
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Brand
+                        positioning
+                      </li>
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
                     <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand Guide</li>
-                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Packaging Solutions</li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span> Brand
+                        Guide
+                      </li>
+                      <li className="mb10 d-flex align-items-center">
+                        <span className="mr10">{Svg.CircleCheck}</span>{" "}
+                        Packaging Solutions
+                      </li>
                     </ul>
                   </Col>
                 </Row>
 
                 <div className="mt30">
-                <Link className="btnRed" to='#'>Learn More</Link>
+                  <Link className="btnRed" to="#">
+                    Learn More
+                  </Link>
                 </div>
               </Slide>
             </section>
@@ -593,7 +776,7 @@ const Approach = () => {
   return (
     <>
       <Container className="mb100 mobMb60">
-        <Row className="align-items-center justify-content-center ">
+        <Row className="align-items-center justify-content-center gy-3">
           <Col md={4} className="mb20 mobMb10 dNoneXs">
             <div>
               <Slide bottom>
@@ -635,5 +818,88 @@ const Approach = () => {
         </Row>
       </Container>
     </>
+  );
+};
+
+const Results = () => {
+  let data=[
+    {
+      icon: require('../../Assets/Img/services/research.svg'),
+      title: 'Research',
+      content: 'Understanding market dynamics and trends are the stepping stone to further success. In-depth research and analysis, and then the derived inferences form the foundation of our work ahead.'
+    },
+    {
+      icon: require('../../Assets/Img/services/Analysis.svg'),
+      title: 'Analysis',
+      content: 'Our analysis is no mean feat and involves much more head and heart than the traditional surveys that once ruled the market analysis. The right analysis brings the right strategic approach.'
+    },
+    {
+      icon: require('../../Assets/Img/services/Concept.svg'),
+      title: 'Concept',
+      content: 'With the right inferences on the side, we then develop a concept to make the business objective relatable & executable. Once the concept becomes watertight, the execution becomes seamless. '
+    },
+    {
+      icon: require('../../Assets/Img/services/Design.svg'),
+      title: 'Design',
+      content: 'With a solid theoretical concept in place, it’s then time for creating designs that resonate with trends and make the perfect impact, every time a design element leaves the stables for the target audience. '
+    },
+    {
+      icon: require('../../Assets/Img/services/Improve.svg'),
+      title: 'Improve',
+      content: 'We prefer long-term relationships and are by your side even after delivering your project. We test it when necessary, so you can be sure it is always a hundred per cent.'
+    },
+    {
+      icon: require('../../Assets/Img/services/Development.svg'),
+      title: 'Development',
+      content: 'With things evolving every day, constant improvements are the need of the hour. We ensure that despite creating great products, constant improvements are always made for future-proofing purposes. '
+    }
+  ]
+  return (
+    <section className="greyishBg pb30 pt30 mb60">
+      <Container>
+        <Row className="align-items-center pt60 pb60">
+          <Col lg={4}>
+            <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
+              STEP BY STEP
+            </h6>
+          </Col>
+          <Col lg={8}>
+            <h2 className="fs40 mb30 colorWhite fw500 mobFs33">
+              Great results come <br />
+              from a six-tuned process
+            </h2>
+          </Col>
+        </Row>
+        {
+          data.map((e,i,arr)=>(
+            <div className={`${i === arr.length - 1 ? '' : 'bBottom'} mb30 pb15`} key={i}>
+            <Row className="gy-3"> 
+              <Col lg={4}>
+              <div className="d-flex align-items-center">
+                <div>
+                  <img src={e.icon.default} alt={e.title} className="img-fluid" />
+                </div>
+                <div className="ml15">
+                  <h3 className="fs40 mb0 colorWhite fw500 mobFs33">
+                    {e.title}
+                  </h3>
+                </div>
+              </div>
+              </Col>
+
+              <Col lg={8}>
+              <p className="fs20 mobFs18 tabFs18 tabLgFs18 colorLightBlack  ">
+                {
+                  e.content
+                }
+              </p>
+              </Col>
+            </Row>
+            </div>
+         
+          ))
+        }
+      </Container>
+    </section>
   );
 };
