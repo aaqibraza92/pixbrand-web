@@ -358,7 +358,8 @@ const Digital = () => {
                   <GImage
                     radius="24px"
                     radiusMob="5px"
-                    src={require('../../Assets/Img/services/digital.jpg')}
+                    width='100%'
+                    src={require('../../Assets/Img/services/digital.png')}
                   />
                 </Slide>
               </div>
@@ -380,39 +381,40 @@ const Branding = () => {
             <section>
               <div>
                 <Slide bottom>
-                  <GImage
+                <GImage
                     radius="24px"
                     radiusMob="5px"
-                    src={Img.redrectangle}
+                    width='100%'
+                    src={require('../../Assets/Img/services/digital.png')}
                   />
                 </Slide>
               </div>
             </section>
           </Col>
           <Col md={6}>
-            <section className="ml90 mobMl0 ml0Tab">
+            <section className="mobMl0 ml0Tab">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10">
                   <Link to="/digital-marketing1" className="colorWhite">
                     Branding
                   </Link>
                 </h2>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorWhite mb20 mobMb10  width94 mobWidth100 tabWidth100 tabLgWidth100">
+                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightGrey mb20 mobMb10  width94 mobWidth100 tabWidth100 tabLgWidth100">
                   Being a business and being a brand are two different things-
                   we make sure you become a true brand in your industrial niche.
                 </p>
                 <Row>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightBlack fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10">Brand identity</li>
-                      <li className="mb10">Brand strategy</li>
-                      <li className="mb10">Brand positioning</li>
+                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand identity</li>
+                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand strategy</li>
+                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand positioning</li>
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightBlack fs17 tabFs15 tabLgFs15 mobFs15">
-                      <li className="mb10">Brand Guide</li>
-                      <li className="mb10">Packaging Solutions</li>
+                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Brand Guide</li>
+                      <li className="mb10"><span className="mr10">{Svg.CircleCheck}</span> Packaging Solutions</li>
                     </ul>
                   </Col>
                 </Row>
