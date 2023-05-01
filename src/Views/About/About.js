@@ -21,7 +21,7 @@ const About = () => {
         <meta name="About" content="Pixbrand About"></meta>
       </Helmet>
       <Title />
-      <Slider />
+      {/* <Slider /> */}
       <Business />
       <Why />
       <How />
