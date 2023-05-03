@@ -44,3 +44,17 @@
   background: url(../../Assets/Img/rightarrow.png);
   background-repeat: no-repeat;
 } */
+.mobile-ul li{
+  position: relative;
+  padding-left: 10px;
+}
+
+.mobile-ul li::before {
+  content: '';
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  left: -10px;
+  position: absolute;
+  top: 8px;
+}

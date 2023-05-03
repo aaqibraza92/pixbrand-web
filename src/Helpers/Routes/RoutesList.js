@@ -142,6 +142,17 @@ let RouterList = [
       <GetRoute
         isprivate={false}
         role="Default"
+        page={Pages.Branding}
+      />
+    ),
+    path: "/branding",
+    isAdmin: false,
+  },
+  {
+    element: (
+      <GetRoute
+        isprivate={false}
+        role="Default"
         page={Pages.PerfectDesigning}
       />
     ),

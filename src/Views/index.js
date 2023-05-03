@@ -25,6 +25,7 @@ import PerfectDesigning from "./PerfectDesigning/PerfectDesigning";
 import SingleBlog from "./SingleBlogPage";
 import BlogCategory from "./Category";
 import PortfolioCat from "./PortfolioCat";
+import Branding from "./Branding/Branding";
 
 
 const Pages = {
@@ -46,6 +47,7 @@ const Pages = {
   Services: Services,
   UiDesign: UiDesign,
   SingleServicePage: SingleServicePage,
+  Branding: Branding,
   PerfectDesigning: PerfectDesigning,
   DigitalMarketing: DigitalMarketing,
   DigitalMarketing1: DigitalMarketing1,

@@ -7,10 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import GImage from "../../Components/GComponents/GImage/GImage";
 import GSpacing from "../../Components/GComponents/GSpacing";
-// import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import $ from "jquery";
+import { useState } from "react";
 
 const About = () => {
   return (
@@ -21,10 +22,108 @@ const About = () => {
         <meta name="About" content="Pixbrand About"></meta>
       </Helmet>
       <Title />
-      <Slider />
+
+      <section>
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={8}>
+              <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                Don’t think of us as ‘just another marketing or web design
+                company’. Our Pix mantra makes us your collaborative partner.
+              </h3>
+            </Col>
+            <Col lg={4}>
+              <img
+                src={require("../../Assets/Img/about/transparent-logo.png")}
+                alt="banner"
+                className="img-fluid"
+              />
+            </Col>
+
+            <Col lg={12}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/banner_abt1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="pt60 pb60">
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={4}>
+              <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                About <br />
+                Company
+              </h3>
+
+              <Link className="btnRed mb0 mr15" to="/#">
+                Get In Touch
+              </Link>
+            </Col>
+            <Col lg={8}>
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+                At Pix Brand, we cover all facets of business enterprises by
+                bringing stupendous branding campaigns and equally revolutionary
+                products by leveraging the experience of our team with the most
+                sophisticated technical method-logies, that maximize revenue and
+                deliver impeccable client satisfaction and retention.
+              </p>
+
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+                At Pix Brand, we cover all facets of business enterprises by
+                bringing stupendous branding campaigns and equally revolutionary
+                products by leveraging the experience of our team with the most
+                sophisticated technical method-logies, that maximize revenue and
+                deliver impeccable client satisfaction and retention.
+              </p>
+
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+                At Pix Brand, we cover all facets of business enterprises by
+                bringing stupendous branding campaigns and equally revolutionary
+                products by leveraging the experience of our team with the most
+                sophisticated technical method-logies, that maximize revenue and
+                deliver impeccable client satisfaction and retention.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <How />
+      <section className="pt60 pb60">
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={6}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/abt1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="mt40">
+                <img
+                  src={require("../../Assets/Img/about/abt2.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <SeventeenToNow />
+
       <Business />
       <Why />
-      <How />
+
       <What />
       <Goal />
       <Superstars />
@@ -33,6 +132,178 @@ const About = () => {
 };
 
 export default About;
+
+const SeventeenToNow = () => {
+  const [yearSec, setyearSec] = useState(false);
+
+  return (
+    <section className="pt60 pl30 pr40 pb60 greyishBg">
+      <Container>
+        <Row className="gy-3 gx-5 align-items-end">
+          <Col lg={8}>
+            <p className="fs20 mb30 colorWhite fw500 mobFs33">Lorem</p>
+            <h3 className="fs40 mb30 colorWhite fw500 mobFs33">2023</h3>
+            <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+              Don’t think of us as ‘just another marketing or web design
+              company’. Our Pix mantra makes us your collaborative partner.
+            </h3>
+            <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+              modi. Molestiae vel quasi quibusdam explicabo eveniet nihil
+              reprehenderit facere! Consequatur, iusto quaerat? Sint ad quod
+              explicabo perferendis amet enim unde obcaecati blanditiis,
+              pariatur accusamus modi laboriosam nemo molestiae quaerat error
+              cumque et rem eum neque tempore. Accusantium quas temporibus
+              fugiat nam atque. Voluptatum sequi pariatur tenetur blanditiis,
+              consequatur sed modi expedita molestiae! Saepe maxime ut impedit
+              architecto aspernatur
+            </p>
+          </Col>
+          <Col lg={4}>
+            <div className="d-flex flex-wrap">
+              <button
+                onClick={() => setyearSec(true)}
+                className={`${yearSec && "activeYear"} btnRed mb0 mr15`}
+                to="/#"
+              >
+                Get In Touch
+              </button>
+              <button
+                onClick={() => setyearSec(true)}
+                className={`${yearSec && "activeYear"} btnRed mb0 mr15`}
+                to="/#"
+              >
+                Get In Touch
+              </button>
+            </div>
+          </Col>
+        </Row>
+{
+  yearSec ?  <div className="pt60 pb60">
+          <Row className="gy-3 gx-5 ">
+            <Col lg={7}>
+              <h3 className="fs40 mb30 colorRed fw500 mobFs33">
+                Don’t think of
+              </h3>
+              <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                Don’t think of us as
+              </h3>
+            </Col>
+            <Col lg={5}>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </Col>
+          </Row>
+
+          <Row className="gy-3 gx-5 ">
+            <Col lg={7}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/year1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+            <Col lg={5}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/year1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </div> :    <div className="pt60 pb60">
+          <Row className="gy-3 gx-5 ">
+            <Col lg={7}>
+              <h3 className="fs40 mb30 colorRed fw500 mobFs33">
+                Don’t think of
+              </h3>
+              <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                Don’t think of us as
+              </h3>
+            </Col>
+            <Col lg={5}>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div className="d-flex align-items-center">
+                {Svg.CircleCheck}
+                <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </Col>
+          </Row>
+
+          <Row className="gy-3 gx-5 ">
+            <Col lg={7}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/year1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+            <Col lg={5}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/year1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </div>
+}
+     
+      </Container>
+    </section>
+  );
+};
 
 //Title Section
 const Title = () => {
@@ -184,8 +455,8 @@ const Business = () => {
 
   useEffect(() => {
     $(window).scroll(function () {
-     // checkAnimation();
-     // checkAnimation1();
+      // checkAnimation();
+      // checkAnimation1();
     });
   });
 
@@ -371,42 +642,19 @@ const How = () => {
     });
   });
   return (
-    <>
+    <section>
       <Container className="mb80 mobMb60">
-        <Row className="justify-content-center">
-          <Col md={9} lg={9} xl={9} xxl={9}>
-            <section className="text-center ">
-              <Slide bottom>
-                <h1 className="fs60 tabFs40 tabLgFs40 mobFs24 mb40 mobMb10 fw600 colorWhite">
-                  The How
-                </h1>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorWhite mb25 mobMb10">
-                  We help budding startups adopt and implement the best
-                  practices for them, while we also aid large businesses to stay
-                  on the track of innovation and creativity.
-                </p>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorWhite mb40 mobMb20">
-                  At Pixbrand, we aim to become the bridge between what a
-                  business dreams and what is realistically possible in terms of
-                  implementation. It’s not just the services we offer- we offer
-                  a unique approach to utilize these services with perfection.
-                </p>
-              </Slide>
-            </section>
-          </Col>
-        </Row>
-
-        <div>
-          <Slide bottom>
-            <img src={Img.how} alt="" className="w-100 mb45 mobMb30" />
-          </Slide>
-        </div>
-
         <Row>
           <Col lg={4} md={4}>
-            <section className="text-center mobMb20">
+            <div className="mobMb20">
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.ball}</div>
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a1.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
                 <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                   Perfection
                 </h3>
@@ -416,12 +664,18 @@ const How = () => {
                   execution, perfection is our mantra here at Pixbrand.{" "}
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
           <Col lg={4} md={4}>
-            <section className="text-center mobMb20">
+            <div className="mobMb20">
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.ideas}</div>
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a2.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
                 <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                   Ideas
                 </h3>
@@ -431,12 +685,18 @@ const How = () => {
                   unique and serve the overall purpose, with purpose!
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
           <Col lg={4} md={4}>
-            <section className="text-center">
+            <div>
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.excellence}</div>
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a3.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
                 <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                   Xcellence
                 </h3>
@@ -446,13 +706,13 @@ const How = () => {
                   something we ensure happens every single time.
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
         </Row>
 
-        <div className="position-relative h_145 dNoneXs lineView2"></div>
+        {/* <div className="position-relative h_145 dNoneXs lineView2"></div> */}
       </Container>
-    </>
+    </section>
   );
 };
 
