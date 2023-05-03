@@ -7,10 +7,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import GImage from "../../Components/GComponents/GImage/GImage";
 import GSpacing from "../../Components/GComponents/GSpacing";
-// import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import $ from "jquery";
+import { useState } from "react";
+import ContactUsSection from "../Home/ContactUsSection";
 
 const About = () => {
   return (
@@ -20,19 +22,309 @@ const About = () => {
         <title>About - Pixbrand</title>
         <meta name="About" content="Pixbrand About"></meta>
       </Helmet>
-      <Title />
-      {/* <Slider /> */}
-      <Business />
-      <Why />
+
+      <section className="pt80">
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={8}>
+              <h3 className="fs75 mb30 colorWhite fw500 mobFs33">
+                We create websites and brands that are seen and heard. Loud and
+                clear.
+              </h3>
+            </Col>
+            <Col lg={4} className="position-relative">
+              <div className="logoPos">
+                <img
+                  src={require("../../Assets/Img/about/transparent-logo.png")}
+                  alt="banner"
+                  className="img-fluid"
+                />
+              </div>
+            </Col>
+
+            <Col lg={12}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/banner_abt1.jpg")}
+                  alt="banner"
+                  className="w-100 radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="pt80 pb60">
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={4}>
+              <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
+                About <br />
+                Company
+              </h3>
+
+              <Link className="btnRed mb0 mr15" to="/contact">
+                Start a Project
+              </Link>
+            </Col>
+            <Col lg={8}>
+              <p className="colorLightGrey fs20 mb30 mobFs15">
+                Hello There! We are Pixbrand!
+              </p>
+
+              <p className="colorLightGrey mt40 fs20 mb30 mobFs15">
+                Making a business visible amidst competition is no mean feat.
+                But this branding needs to be completely on point to ensure the
+                right business growth. Pixbrand transforms any business profile
+                with its Agile approach and technology used to deliver branding
+                that is unheard of for business across niches.
+              </p>
+
+              <p className="colorLightGrey mt40 fs20 mb30 mobFs15">
+                We have been making dreams a reality since our inception in
+                2017.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <How />
-      <What />
+      <section className="pt60 pb60">
+        <Container>
+          <Row className="gy-3 gx-5">
+            <Col lg={6} md={6}>
+              <div>
+                <img
+                  src={require("../../Assets/Img/about/abt1.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+            <Col lg={6} md={6}>
+              <div className="mt40">
+                <img
+                  src={require("../../Assets/Img/about/abt2.jpg")}
+                  alt="banner"
+                  className="img-fluid radius20"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <SeventeenToNow />
+
+      {/* <Business /> */}
+      {/* <Why /> */}
+
+      {/* <What /> */}
       <Goal />
       <Superstars />
+
+      <ContactUsSection/>
     </div>
   );
 };
 
 export default About;
+
+const SeventeenToNow = () => {
+  const [yearSec, setyearSec] = useState(new Date().getFullYear());
+
+  return (
+    <section className="pt60 pl30 pr40 pb60  mobPl0 mobPr0">
+      <Container>
+        <Row className="gy-5 gx-5 align-items-end mb60">
+          <Col lg={6}>
+            <p className="fs20 mb0 colorWhite fw500 mobFs33">
+              {" "}
+              {yearSec===2017 ? "Since" : "Now"}
+            </p>
+            <div>
+              {yearSec ? (
+                <img
+                  src={require("../../Assets/Img/about/2017.svg").default}
+                  className="img-fluid"
+                  alt="2017"
+                />
+              ) : (
+                <img
+                  src={require("../../Assets/Img/about/2023.svg").default}
+                  className="img-fluid"
+                  alt="2017"
+                />
+              )}
+            </div>
+            <h3 className="fs40 mb30 mt20 colorWhite fw500 mobFs33">
+              We enliven businesses by <br />
+              perfect branding
+            </h3>
+            <p className="colorLightGrey mt40 fs18 mb0 mobFs15">
+              We paint the bright future for the businesses working on digital
+              landscapes and firmly believe in providing productive long-term
+              business relationships.
+            </p>
+          </Col>
+          <Col lg={6}>
+            <div className="d-flex flex-wrap justify-content-end">
+              <button
+                onClick={() => setyearSec(true)}
+                className={`${yearSec===2017 && "activeYear"} btnRed mb0`}
+                to="/#"
+              >
+                2017
+              </button>
+              <button
+                onClick={() => setyearSec(false)}
+                className={`${yearSec===new Date().getFullYear() && "activeYear"} btnRed mb0`}
+                to="/#"
+              >
+                {new Date().getFullYear()}
+              </button>
+            </div>
+          </Col>
+        </Row>
+        {yearSec ? (
+          <div className="pt60 pl40 pr40 pb60 greyishBg radius20">
+            <Row className="gy-3 gx-5 mobMb30 tabMb30">
+              <Col lg={7}>
+                <h3 className="fs40 mb0 colorRed fw500 mobFs33">
+                March   2017
+                </h3>
+                <h3 className="fs40 mb20 colorWhite fw500 mobFs33">
+                Planting Mind tree
+                </h3>
+
+                <p className="colorLightGrey mb30 mt40 fs22 mb0 mobFs15">
+              We paint the bright future for the businesses working on digital
+              landscapes and firmly believe in providing productive long-term
+              business relationships.
+            </p>
+              </Col>
+              <Col lg={5}>
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 3 Engineers
+                  </p>
+                </div>
+
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 200 Square Feet Office
+                  </p>
+                </div>
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with one programming language
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 200 Square Feet Office
+                  </p>
+                </div>
+              </Col>
+            </Row>
+
+            <Row className="gy-3 gx-5 ">
+              <Col lg={7}>
+                <div>
+                  <img
+                    src={require("../../Assets/Img/about/year1.jpg")}
+                    alt="banner"
+                    className="w-100 radius20"
+                  />
+                </div>
+              </Col>
+              <Col lg={5}>
+                <div>
+                  <img
+                    src={require("../../Assets/Img/about/year1.jpg")}
+                    alt="banner"
+                    className="w-100 radius20"
+                  />
+                </div>
+              </Col>
+            </Row>
+          </div>
+        ) : (
+          <div className="pt60 pl40 pr40 pb60 greyishBg radius20">
+            <Row className="gy-3 gx-5 ">
+              <Col lg={7}>
+                <h3 className="fs40 mb0 colorRed fw500 mobFs33">
+                March   {new Date().getFullYear()}
+                </h3>
+                <h3 className="fs40 mb20 colorWhite fw500 mobFs33">
+                Planting Mind tree
+                </h3>
+
+                <p className="colorLightGrey mb30 mt40 fs22 mb0 mobFs15">
+              We paint the bright future for the businesses working on digital
+              landscapes and firmly believe in providing productive long-term
+              business relationships.
+            </p>
+              </Col>
+              <Col lg={5}>
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 3 Engineers
+                  </p>
+                </div>
+
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 200 Square Feet Office
+                  </p>
+                </div>
+                <div className="d-flex align-items-center mb10">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with one programming language
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  {Svg.RedCheckBox}
+                  <p className="colorWhite fs18 fw500 mobFs15 mb0 ml10">
+                  Started with 200 Square Feet Office
+                  </p>
+                </div>
+              </Col>
+            </Row>
+
+            <Row className="gy-3 gx-5 ">
+              <Col lg={7}>
+                <div>
+                  <img
+                    src={require("../../Assets/Img/about/year1.jpg")}
+                    alt="banner"
+                    className="w-100 radius20"
+                  />
+                </div>
+              </Col>
+              <Col lg={5}>
+                <div>
+                  <img
+                    src={require("../../Assets/Img/about/year1.jpg")}
+                    alt="banner"
+                    className="w-100 radius20"
+                  />
+                </div>
+              </Col>
+            </Row>
+          </div>
+        )}
+      </Container>
+    </section>
+  );
+};
 
 //Title Section
 const Title = () => {
@@ -184,8 +476,8 @@ const Business = () => {
 
   useEffect(() => {
     $(window).scroll(function () {
-     // checkAnimation();
-     // checkAnimation1();
+      // checkAnimation();
+      // checkAnimation1();
     });
   });
 
@@ -371,88 +663,77 @@ const How = () => {
     });
   });
   return (
-    <>
+    <section>
       <Container className="mb80 mobMb60">
-        <Row className="justify-content-center">
-          <Col md={9} lg={9} xl={9} xxl={9}>
-            <section className="text-center ">
-              <Slide bottom>
-                <h1 className="fs60 tabFs40 tabLgFs40 mobFs24 mb40 mobMb10 fw600 colorWhite">
-                  The How
-                </h1>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorWhite mb25 mobMb10">
-                  We help budding startups adopt and implement the best
-                  practices for them, while we also aid large businesses to stay
-                  on the track of innovation and creativity.
-                </p>
-                <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorWhite mb40 mobMb20">
-                  At Pixbrand, we aim to become the bridge between what a
-                  business dreams and what is realistically possible in terms of
-                  implementation. It’s not just the services we offer- we offer
-                  a unique approach to utilize these services with perfection.
-                </p>
-              </Slide>
-            </section>
-          </Col>
-        </Row>
-
-        <div>
-          <Slide bottom>
-            <img src={Img.how} alt="" className="w-100 mb45 mobMb30" />
-          </Slide>
-        </div>
-
         <Row>
           <Col lg={4} md={4}>
-            <section className="text-center mobMb20">
+            <div className="mobMb20">
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.ball}</div>
-                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Perfection
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a1.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                  Vision
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  In everything we do for businesses, we strive for utmost
-                  perfection. From the very first innovation to the final
-                  execution, perfection is our mantra here at Pixbrand.{" "}
+                  We paint the bright future for the businesses working on
+                  digital landscapes and firmly believe in providing productive
+                  long-term business relationships.
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
           <Col lg={4} md={4}>
-            <section className="text-center mobMb20">
+            <div className="mobMb20">
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.ideas}</div>
-                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Ideas
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a2.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                  Mission
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  We don’t rely on ‘recreating’ something already created. Our
-                  focus is completely inclined to come up with ideas that are
-                  unique and serve the overall purpose, with purpose!
+                  We paint the bright future for the businesses working on
+                  digital landscapes and firmly believe in providing productive
+                  long-term business relationships.
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
           <Col lg={4} md={4}>
-            <section className="text-center">
+            <div>
               <Slide bottom>
-                <div className="mb20 mobMb10">{Svg.excellence}</div>
-                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Xcellence
+                <div className="mb20 mobMb10">
+                  <img
+                    src={require("../../Assets/Img/about/a3.svg").default}
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                  Values
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb60 mobMb10">
-                  As a branding agency, we pursue excellence in our avenues and
-                  agendas. Yes, it’s not easy, but with a great team, this is
-                  something we ensure happens every single time.
+                  We paint the bright future for the businesses working on
+                  digital landscapes and firmly believe in providing productive
+                  long-term business relationships.
                 </p>
               </Slide>
-            </section>
+            </div>
           </Col>
         </Row>
 
-        <div className="position-relative h_145 dNoneXs lineView2"></div>
+        {/* <div className="position-relative h_145 dNoneXs lineView2"></div> */}
       </Container>
-    </>
+    </section>
   );
 };
 
@@ -516,76 +797,46 @@ const What = () => {
 const Goal = () => {
   return (
     <>
-      <section className="bgLightGrey pt100 pb100 mobPt40 mobPb40 mobPb0 mb80 mobMb60">
+      <section className="pt40 pb40 mobPt40 mobPb40 mobPb0 mb80 mobMb60">
         <Container>
           <section className="">
             <Slide bottom>
-              <p className="fs16 colorRed">OUR GOAL</p>
-              <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb40 mobMb20">
-                We like to see our clients as partners and we do our best to
-                deliver the product they and their users are 100% satisfied
-                with. Agile principles, ongoing communication, transparency are
-                the cornerstones of each of our projects.
-              </h2>
-              <div>
-                <img
-                  src={Img.Goal}
-                  alt=""
-                  className="w-100 mb100 mobMb60 radius"
-                />
-              </div>
-              {/* <div className="mb15">
-              <GImage radius="24px" radiusMob="5px" src={Img.b4} />
-            </div> */}
-              <Row className="justify-content-center">
-                <Col lg={4} md={4} xs={6} className="mb60 mobMb15">
+         
+              <Row className="justify-content-center mobJustifyContentStart">
+                <Col lg={4} md={4} xs={6} className="mobMb15">
                   <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    50+
+                  100+
                   </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Employees
+                  <h4 className="fs22 colorWhite mt15 mb15 tabFs15 tabLgFs15 mobFs18">
+                  Satisfied Clients
                   </h4>
+                  <p className="colorLightBlack fs18 mobFs15">
+                  Helping various clients around the world by actualizing their idea and vision into real picture of a design both mobile and website
+                  </p>
                 </Col>
-                <Col lg={4} md={4} xs={6} className="mb60 mobMb15">
+                <Col lg={4} md={4} xs={6} className="mobMb15">
                   <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    90+
+                    15+
                   </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Clients from different countries
+                  <h4 className="fs22 colorWhite mt15 mb15 tabFs15 tabLgFs15 mobFs18">
+                  Professional
                   </h4>
+                  <p className="colorLightBlack fs18 mobFs15">
+                  Filled by friendly and professionals handyman, we always try to provide our clients with best and user friendly product expereicnes
+                  </p>
                 </Col>
-                <Col lg={4} md={4} xs={6} className="mb60 mobMb15">
+                <Col lg={4} md={4} xs={6} className="mobMb15">
                   <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    0
+                  7 +
                   </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Deadlines missed
+                  <h4 className="fs22 colorWhite mt15 mb15 tabFs15 tabLgFs15 mobFs18">
+                  Years of Operation
                   </h4>
+                  <p className="colorLightBlack fs18 mobFs15">
+                  This team was founded 1 year ago, however our members have their own related experience long before this team was formed
+                  </p>
                 </Col>
-                <Col lg={4} md={4} xs={6}>
-                  <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    200+
-                  </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Products shipped
-                  </h4>
-                </Col>
-                <Col lg={4} md={4} xs={6}>
-                  <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    20+
-                  </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Finished design sprints
-                  </h4>
-                </Col>
-                <Col lg={4} md={4} xs={6}>
-                  <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                    5
-                  </h2>
-                  <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                    Years on the market
-                  </h4>
-                </Col>
+              
               </Row>
             </Slide>
           </section>
@@ -598,8 +849,8 @@ const Goal = () => {
 // Superstars Section
 const Superstars = () => {
   return (
-    <>
-      <Container>
+    <section className="greyishBg pt80 pb40">
+  <Container>
         <section className="text-center">
           <Slide bottom>
             <p className="fs16 fw700 colorRed mb20 mobMb10">TEAM</p>
@@ -718,6 +969,7 @@ const Superstars = () => {
           </Row>
         </section>
       </Container>
-    </>
+    </section>
+
   );
 };

@@ -11,63 +11,6 @@ import Services3 from "../Home/Services3";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 
-// Text Font Size 14 - fs14 tabFs13 tabLgFs13 mobFs13
-// Text Font Size 17(Thin) - fs17 tabFs15 tabLgFs15 mobFs15 fThin
-// Text Font Size 20 - fs20 tabFs16 tabLgFs16 mobFs16
-// Text Font Size 22(Thin) - fs22 mobFs18 tabFs18 tabLgFs18 fThin mb0
-// Text Font Size 28 - fs28 tabFs20 tabLgFs20 mobFs18
-// Text Font Size 32 - fs32 tabFs24 tabLgFs24 mobFs20 fThin
-// Text Font Size 40 - fs40 tabFs28 tabLgFs28 mobFs24 mb100 mobMb15
-// Title Font Size 80 - fs80 tabFs60 tabLgFs60 mobFs45
-
-const NeuroData = [
-  {
-    svg: Svg.ball,
-    title: "Mail Marketing",
-    desc: "Take your brand to the right audiences by reaching their inboxes through customized mails for the right pitch and impact. ",
-  },
-  {
-    svg: Svg.ideas,
-    title: "Search Engine Optimization",
-    desc: "We have mastered the SEO process, helping you rank better and more dominantly on search engines with 100% organic results. ",
-  },
-  ,
-  {
-    svg: Svg.excellence,
-    title: "Affiliated Marketing",
-    desc: "Pix Brand helps you earn and assist your marketing efforts by using other products or services through affiliate marketing, a great way to grow!",
-  },
-  {
-    svg: Svg.ball,
-    title: "Social Media Marketing",
-    desc: "Leverage the social media trend to grow and create a community where the right content can prove to be a highly engaging tool for your brand. ",
-  },
-  {
-    svg: Svg.ideas,
-    title: "Inbound Marketing",
-    desc: "We know the importance of tailored content better than anyone else, and we use it to create retention rates that are truly effective and efficient. ",
-  },
-  {
-    svg: Svg.excellence,
-    title: "Online PR",
-    desc: "In a digital world, digital reputation is everything, which is why our online reputation-building methods provide a delightful branding avenue to you. ",
-  },
-  {
-    svg: Svg.ball,
-    title: "PPC Management",
-    desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!",
-  },
-  {
-    svg: Svg.ideas,
-    title: "Content Marketing",
-    desc: "Pix Brand does understand the value of great content, and with our marketing efforts focused on content quality, we ensure you can leverage that too. ",
-  },
-  {
-    svg: Svg.excellence,
-    title: "Social Media Optimisation",
-    desc: "Our digital marketing experts are armed with the right technical knowledge to completely revamp & optimize your existing social media strategy.",
-  },
-];
 
 const DigitalMarketing = () => {
   return (
@@ -223,7 +166,7 @@ const Perceptions = () => {
           <Col md={6}>
             <div>
               <Slide bottom>
-                <img src={Img.ui} alt="" className="w-100" />
+                <img src={require('../../Assets/Img/digital-market/Retention.png')} alt="" className="w-100" />
               </Slide>
             </div>
           </Col>
@@ -257,6 +200,56 @@ const Perceptions = () => {
 
 // NeuroMarketing Section
 const NeuroMarketing = () => {
+  
+let NeuroData = [
+  {
+    svg: require('../../Assets/Img/digital-market/mail.svg'),
+    title: "Mail Marketing",
+    desc: "Take your brand to the right audiences by reaching their inboxes through customized mails for the right pitch and impact. "
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/search.svg'),
+    title: "Search Engine Optimization",
+    desc: "We have mastered the SEO process, helping you rank better and more dominantly on search engines with 100% organic results. "
+  },
+  ,
+  {
+    svg: require('../../Assets/Img/digital-market/AffiliateMarketing.svg'),
+    title: "Affiliated Marketing",
+    desc: "Pix Brand helps you earn and assist your marketing efforts by using other products or services through affiliate marketing, a great way to grow!"
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/Marketing.svg'),
+    title: "Social Media Marketing",
+    desc: "Leverage the social media trend to grow and create a community where the right content can prove to be a highly engaging tool for your brand. "
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/InboundMarketing.svg'),
+    title: "Inbound Marketing",
+    desc: "We know the importance of tailored content better than anyone else, and we use it to create retention rates that are truly effective and efficient. "
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/OnlinePR.svg'),
+    title: "Online PR",
+    desc: "In a digital world, digital reputation is everything, which is why our online reputation-building methods provide a delightful branding avenue to you. "
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/PPCManagement.svg'),
+    title: "PPC Management",
+    desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!"
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/ContentMarketing.svg'),
+    title: "Content Marketing",
+    desc: "Pix Brand does understand the value of great content, and with our marketing efforts focused on content quality, we ensure you can leverage that too. "
+  },
+  {
+    svg: require('../../Assets/Img/digital-market/SocialMediaOptimization.svg'),
+    title: "Social Media Optimisation",
+    desc: "Our digital marketing experts are armed with the right technical knowledge to completely revamp & optimize your existing social media strategy."
+  },
+];
+
   return (
     <>
       <Container className="mb60 mobMb40">
@@ -279,7 +272,7 @@ const NeuroMarketing = () => {
                 <Col md={4} className="mb40 mobMb20" key={index}>
                   <section className="text-center">
                     <Slide bottom>
-                      <div className="mb20 mobMb10">{obj.svg}</div>
+                      <div className="mb20 mobMb10"><img className="img-fluid" src={obj.svg.default} alt={obj.title} /></div>
                       <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                         {obj.title}
                       </h3>
@@ -368,7 +361,9 @@ const Slider = () => {
             <SwiperSlide>
               <section>
                 <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div className="radius shadow width15 pt25 pb25 pl25 pr25 scards-img mb20 mobMb10"></div>
+                  <div>
+                    <img className="img-fluid" src={require('../../Assets/Img/digital-market/sl-r1.svg').default} alt="Research" />
+                  </div>
                   <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                     Research
                   </h3>
@@ -383,7 +378,9 @@ const Slider = () => {
             <SwiperSlide>
               <section>
                 <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div className="radius shadow width15 pt25 pb25 pl25 pr25 scards-img mb20 mobMb10"></div>
+                    <div>
+                    <img className="img-fluid" src={require('../../Assets/Img/digital-market/Positioning.svg').default} alt="Positioning" />
+                  </div>
                   <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                     Positioning
                   </h3>
@@ -399,7 +396,9 @@ const Slider = () => {
             <SwiperSlide>
               <section>
                 <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div className="radius shadow width15 pt25 pb25 pl25 pr25 scards-img mb20 mobMb10"></div>
+                    <div>
+                    <img className="img-fluid" src={require('../../Assets/Img/digital-market/Creative.svg').default} alt="Creative" />
+                  </div>
                   <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                     Creative
                   </h3>
@@ -414,7 +413,9 @@ const Slider = () => {
             <SwiperSlide>
               <section>
                 <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div className="radius shadow width15 pt25 pb25 pl25 pr25 scards-img mb20 mobMb10"></div>
+                <div>
+                    <img className="img-fluid" src={require('../../Assets/Img/digital-market/Marketing.svg').default} alt="Marketing" />
+                  </div>
                   <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                     Marketing
                   </h3>
@@ -429,7 +430,9 @@ const Slider = () => {
             <SwiperSlide>
               <section>
                 <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div className="radius shadow width15 pt25 pb25 pl25 pr25 scards-img mb20 mobMb10"></div>
+                <div>
+                    <img className="img-fluid" src={require('../../Assets/Img/digital-market/Marketing.svg').default} alt="Management" />
+                  </div>
                   <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
                     Management
                   </h3>
@@ -476,7 +479,7 @@ const How = () => {
               <div>
                 {/* <img src={Img.} alt="" className="w-100" /> */}
                 <Slide bottom>
-                  <GImage radius="24px" radiusMob="12px" src={Img.Schedule} />
+                  <GImage radius="24px" radiusMob="12px" src={require('../../Assets/Img/digital-market/digital_mark.jpg')} />
                 </Slide>
               </div>
             </section>

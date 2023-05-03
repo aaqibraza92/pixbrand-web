@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 
 const Data = [
   {
-    icon: Img.ser1.default,
+    icon: require('../../Assets/Img/digital-market/MobileDesign.svg'),
     title: "Mobile Design & Development",
     titlelink: "#",
     data1: "IOS Mobile",
@@ -21,7 +21,7 @@ const Data = [
     link5: "#",
   },
   {
-    icon: Img.ser2.default,
+    icon: require('../../Assets/Img/digital-market/Website Design.svg'),
     title: "Website Design & Development",
     titlelink: "#",
     data1: "Audit & Analytics",
@@ -42,7 +42,7 @@ const Data = [
     link8: "#",
   },
   {
-    icon: Img.ser3.default,
+    icon: require('../../Assets/Img/digital-market/DigitalMarketing.svg'),
     title: "Digital Marketing",
     titlelink: "#",
     data1: "Search Engine Optimization",
@@ -63,7 +63,7 @@ const Data = [
     link8: "#",
   },
   {
-    icon: Img.ser4.default,
+    icon: require('../../Assets/Img/digital-market/Branding.svg'),
     title: "Branding ",
     titlelink: "#",
     data1: "Brand Strategy",
@@ -94,7 +94,7 @@ const Services3 = () => {
                 <Col lg={3} md={3} xs={6} key={ind}>
                   <Fade bottom >
                     <div>
-                      <img src={elem.icon} alt="" className="w60" />
+                      <img src={elem.icon.default} alt="" className="w60" />
                     </div>
                     <h3 className="colorWhite fs20 tabFs16 tabLgFs16 mobFs18 mt20 mb18 width72">
                       <Link to="#" className="colorWhite ">

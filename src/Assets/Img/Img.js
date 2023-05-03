@@ -68,7 +68,6 @@ const Img = {
   ui: require("./ui.png"),
   Schedule: require("./Schedule.png"),
   Game: require("./Game.png"),
-  headphone: require("./headphone.png"),
   React: require("./React.png"),
   Angular: require("./Angular.png"),
   Vue: require("./Vue.png"),

@@ -4,8 +4,22 @@
   height: 100px;
   display: inline-block;
 }
+.logoPos {
+  position: absolute;
+  bottom: -45%;
+  right: 12%;
+}
+@media only screen and (max-width: 1024px) {
+  .tabMb30{
+    margin-bottom: 30px;
+  }
+  body .logoPos{
+    position: static;
+  }
+}
 
 @media only screen and (max-width: 767px) {
+ 
   .mt0Mob {
     margin-top: 0;
   }
