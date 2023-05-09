@@ -853,6 +853,20 @@ padding: 10px 22px;
 -webkit-border-radius: 30px;
 border-radius: 30px;
   }
+  .btnWhite{
+    background: #fff;
+    color: #111111;
+    -webkit-text-decoration: none !important;
+    text-decoration: none !important;
+    font-size: 15px;
+    padding: 10px 22px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+  .btnWhite:hover{
+    background: #111111;
+    color: #fff;
+  }
   .btnTransparent:hover{
     background: #ff0a2b;
     color: #fff;
@@ -868,9 +882,7 @@ border-radius: 30px;
     transform: rotate(180deg);
     display: block;
   }
-  element {
 
-  }
   .btnPortfolio {
   
       background: #ddd;
@@ -883,4 +895,22 @@ border-radius: 30px;
   .btnPortfolio:hover {
     background:  #9f9f9f  
    
+  }
+  .btnGrey{
+    background: #202020;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .forth {
+    margin-top: -110px;
+  }
+  .brick-grid {
+    column-count: 2; 
+    column-gap: 50px; 
+  }
+  
+  .brick {
+    break-inside: avoid; 
+    margin-bottom: 10px; 
   }

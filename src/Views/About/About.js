@@ -22,7 +22,6 @@ const About = () => {
         <title>About - Pixbrand</title>
         <meta name="About" content="Pixbrand About"></meta>
       </Helmet>
-
       <section className="pt80">
         <Container>
           <Row className="gy-3 gx-5">
@@ -46,54 +45,53 @@ const About = () => {
               <div>
                 <img
                   src={require("../../Assets/Img/about/banner_abt1.jpg")}
-                  alt="banner"
                   className="w-100 radius20"
+                  alt=""
                 />
               </div>
             </Col>
           </Row>
         </Container>
-      </section>
+        </section>
 
-      <section className="pt80 pb60">
-        <Container>
+      <section className="pt60 pb60">
+      <Container>
           <Row className="gy-3 gx-5">
             <Col lg={4}>
               <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
                 About <br />
                 Company
-              </h3>
-
-              <Link className="btnRed mb0 mr15" to="/contact">
-                Start a Project
+                <div>
+                <Link className="btnRed mb0 mr15" to="/contact-us">
+                       Start a Project
               </Link>
+                </div>
+                  
+              </h3>
             </Col>
             <Col lg={8}>
-              <p className="colorLightGrey fs20 mb30 mobFs15">
-                Hello There! We are Pixbrand!
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+              Hello There! We are Pixbrand!
               </p>
 
-              <p className="colorLightGrey mt40 fs20 mb30 mobFs15">
-                Making a business visible amidst competition is no mean feat.
-                But this branding needs to be completely on point to ensure the
-                right business growth. Pixbrand transforms any business profile
-                with its Agile approach and technology used to deliver branding
-                that is unheard of for business across niches.
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+              Making a business visible amidst competition is no mean feat. But this branding needs to be completely on point to ensure the right business growth. Pixbrand transforms any business profile with its Agile approach and technology used to deliver branding that is unheard of for business across niches.
+
               </p>
 
-              <p className="colorLightGrey mt40 fs20 mb30 mobFs15">
-                We have been making dreams a reality since our inception in
-                2017.
+              <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+              We have been making dreams a reality since our inception in 2017.
+
               </p>
             </Col>
           </Row>
         </Container>
       </section>
       <How />
-      <section className="pt60 pb60">
+      <section className="pt60 pb80">
         <Container>
           <Row className="gy-3 gx-5">
-            <Col lg={6} md={6}>
+            <Col lg={6}>
               <div>
                 <img
                   src={require("../../Assets/Img/about/abt1.jpg")}
@@ -102,8 +100,8 @@ const About = () => {
                 />
               </div>
             </Col>
-            <Col lg={6} md={6}>
-              <div className="mt40">
+            <Col lg={6}>
+              <div className="mt60">
                 <img
                   src={require("../../Assets/Img/about/abt2.jpg")}
                   alt="banner"
@@ -116,13 +114,12 @@ const About = () => {
       </section>
       <SeventeenToNow />
 
-      {/* <Business /> */}
-      {/* <Why /> */}
+      {/* <Business />
+      <Why />
 
-      {/* <What /> */}
+      <What /> */}
       <Goal />
       <Superstars />
-
       <ContactUsSection/>
     </div>
   );
@@ -139,11 +136,10 @@ const SeventeenToNow = () => {
         <Row className="gy-5 gx-5 align-items-end mb60">
           <Col lg={6}>
             <p className="fs20 mb0 colorWhite fw500 mobFs33">
-              {" "}
               {yearSec===2017 ? "Since" : "Now"}
             </p>
             <div>
-              {yearSec ? (
+              {yearSec===2017 ? (
                 <img
                   src={require("../../Assets/Img/about/2017.svg").default}
                   className="img-fluid"
@@ -170,15 +166,15 @@ const SeventeenToNow = () => {
           <Col lg={6}>
             <div className="d-flex flex-wrap justify-content-end">
               <button
-                onClick={() => setyearSec(true)}
-                className={`${yearSec===2017 && "activeYear"} btnRed mb0`}
+                onClick={() => setyearSec(2017)}
+                className={`${yearSec===2017 ? "activeYear" : "btnGrey"} btnRed mb0 pl50 pr50`}
                 to="/#"
               >
                 2017
               </button>
               <button
-                onClick={() => setyearSec(false)}
-                className={`${yearSec===new Date().getFullYear() && "activeYear"} btnRed mb0`}
+                onClick={() => setyearSec(new Date().getFullYear())}
+                className={`${yearSec===new Date().getFullYear() ? "activeYear" : "btnGrey"} btnRed mb0 pl50 pr50`}
                 to="/#"
               >
                 {new Date().getFullYear()}
@@ -424,62 +420,7 @@ const Slider = () => {
 };
 
 const Business = () => {
-  // const isElementInViewport = (elem) => {
-  //   var $elem = $(elem);
 
-  //   var scrollElem =
-  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-  //       ? "body"
-  //       : "html";
-  //   var viewportTop = $(scrollElem).scrollTop();
-  //   var viewportBottom = viewportTop + $(window).height();
-  //   var elemTop = Math.round($elem.offset().top);
-  //   var elemBottom = elemTop + $elem.height();
-
-  //   return elemTop < viewportBottom && elemBottom > viewportTop;
-  // };
-
-  // const checkAnimation = () => {
-  //   var $elem = $(".lineView");
-  //   if ($elem.hasClass("start")) return;
-
-  //   if (isElementInViewport($elem)) {
-  //     $elem.addClass("start");
-  //   }
-  // };
-
-  // const isElementInViewport1 = (elem) => {
-  //   var $elem = $(elem);
-
-  //   var scrollElem =
-  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-  //       ? "body"
-  //       : "html";
-  //   var viewportTop = $(scrollElem).scrollTop();
-  //   var viewportBottom = viewportTop + $(window).height();
-
-  //   var elemTop = Math.round($elem.offset().top);
-  //   var elemBottom = elemTop + $elem.height();
-
-  //   return elemTop < viewportBottom && elemBottom > viewportTop;
-  // };
-
-  // const checkAnimation1 = () => {
-  //   var $elem = $(".lineView1");
-
-  //   if ($elem.hasClass("start")) return;
-
-  //   if (isElementInViewport1($elem)) {
-  //     $elem.addClass("start");
-  //   }
-  // };
-
-  useEffect(() => {
-    $(window).scroll(function () {
-      // checkAnimation();
-      // checkAnimation1();
-    });
-  });
 
   return (
     <section className="mb60 mobMb15">
@@ -522,41 +463,7 @@ const Business = () => {
 
 // Why Section
 const Why = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
-
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
-
-  const checkAnimation = () => {
-    var $elem = $(".lineView1");
-
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
-
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
-
-  useEffect(() => {
-    $(window).scroll(function () {
-      checkAnimation();
-    });
-  });
   return (
     <>
       <Container className="mb80 mobMb60">
@@ -627,44 +534,10 @@ const Why = () => {
 
 // How Section
 const How = () => {
-  const isElementInViewport = (elem) => {
-    var $elem = $(elem);
 
-    // Get the scroll position of the page.
-    var scrollElem =
-      navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-        ? "body"
-        : "html";
-    var viewportTop = $(scrollElem).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-
-    // Get the position of the element on the page.
-    var elemTop = Math.round($elem.offset().top);
-    var elemBottom = elemTop + $elem.height();
-
-    return elemTop < viewportBottom && elemBottom > viewportTop;
-  };
-
-  const checkAnimation = () => {
-    var $elem = $(".lineView2");
-
-    // If the animation has already been started
-    if ($elem.hasClass("start")) return;
-
-    if (isElementInViewport($elem)) {
-      // Start the animation
-      $elem.addClass("start");
-    }
-  };
-
-  useEffect(() => {
-    $(window).scroll(function () {
-      checkAnimation();
-    });
-  });
   return (
     <section>
-      <Container className="mb80 mobMb60">
+      <Container className="mb10 mobMb60">
         <Row>
           <Col lg={4} md={4}>
             <div className="mobMb20">
@@ -676,13 +549,11 @@ const How = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Vision
+                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                Vision
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  We paint the bright future for the businesses working on
-                  digital landscapes and firmly believe in providing productive
-                  long-term business relationships.
+                We paint the bright future for the businesses working on digital landscapes and firmly believe in providing productive long-term business relationships.
                 </p>
               </Slide>
             </div>
@@ -697,13 +568,11 @@ const How = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Mission
+                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                Mission
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  We paint the bright future for the businesses working on
-                  digital landscapes and firmly believe in providing productive
-                  long-term business relationships.
+                We paint the bright future for the businesses working on digital landscapes and firmly believe in providing productive long-term business relationships.
                 </p>
               </Slide>
             </div>
@@ -718,13 +587,11 @@ const How = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="fs28 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                  Values
+                <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
+                Values
                 </h3>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb60 mobMb10">
-                  We paint the bright future for the businesses working on
-                  digital landscapes and firmly believe in providing productive
-                  long-term business relationships.
+                We paint the bright future for the businesses working on digital landscapes and firmly believe in providing productive long-term business relationships.
                 </p>
               </Slide>
             </div>
@@ -796,8 +663,7 @@ const What = () => {
 // Our Goal Section
 const Goal = () => {
   return (
-    <>
-      <section className="pt40 pb40 mobPt40 mobPb40 mobPb0 mb80 mobMb60">
+   <section className="pt40 pb20 mobPt40 mobPb40 mobPb0 mb80 mobMb60">
         <Container>
           <section className="">
             <Slide bottom>
@@ -842,7 +708,6 @@ const Goal = () => {
           </section>
         </Container>
       </section>
-    </>
   );
 };
 
@@ -970,6 +835,5 @@ const Superstars = () => {
         </section>
       </Container>
     </section>
-
   );
 };

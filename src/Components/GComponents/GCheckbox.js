@@ -60,7 +60,7 @@ const CheckboxWrapper = styled.div`
 `;
 
 const GCheckbox = (props) => {
-  const onChange = (e) => {};
+  const onClick = (e) => {};
 
   return (
     <CheckboxWrapper>
@@ -70,7 +70,9 @@ const GCheckbox = (props) => {
         className={props.className}
         type="checkbox"
         id={props.id}
-        onChange={props.onChange || onChange}
+        onClick={props.onChange || onClick}
+        defaultChecked={props?.check && true}
+        value={props.label}
       />
       <label className="f16" htmlFor={props.id}>
         {props.label}

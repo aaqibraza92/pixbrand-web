@@ -145,6 +145,8 @@ resizeScreen();
       props.callback(status);
     }
   };
+
+ 
   return (
     <>
       <Col lg={3} xs={3}>
@@ -164,7 +166,7 @@ resizeScreen();
           className="no-link noBtn buttons animateTrigger"
           onClick={() => burgerMenu(true)}
         >
-          {Svg.menu}
+          {Svg.MobBurger}
         </button>
         <div className="buttons aaaaa"></div>
         </>
@@ -228,10 +230,18 @@ const DesktopMenu=()=>{
   return  <ul className="noUl d-flex align-items-center justify-content-end mb0">
     <li className="mr30">
             <Link
-              to="/work"
+              to="/portfolio"
               className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
             >
               Work
+            </Link>
+          </li>
+          <li className="mr30">
+            <Link
+              to="/work"
+              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+            >
+              Ecommerce Solution
             </Link>
           </li>
         <li className="mr30">
@@ -255,29 +265,13 @@ const DesktopMenu=()=>{
               to="/blogs"
               className="fw500 fs15 colorWhite position-relative text-capitalize"
             >
-              Blogs
+              Blog
             </Link>
           </li>
-          <li className="mr30">
+     
+          <li className="uniqueHeader ml10">
             <Link
-              to="/portfolio"
-              className="fw500 fs15 colorWhite position-relative text-capitalize"
-            >
-              Portfolio
-            </Link>
-          </li>
-       
-          <li>
-            <Link
-              to="/contactus"
-              className="fw500 fs15 colorWhite position-relative text-capitalize"
-            >
-              Career
-            </Link>
-          </li>
-          <li className="uniqueHeader ml30">
-            <Link
-              to="/contactus"
+              to="/contact-us"
               className="fw500 fs15 colorWhite position-relative text-capitalize btnRed"
             >
               Start a Project

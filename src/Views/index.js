@@ -27,7 +27,8 @@ import BlogCategory from "./Category";
 import PortfolioCat from "./PortfolioCat";
 import Branding from "./Branding/Branding";
 import MobileDesign from "./MobileDesign";
-
+import WebDesign from "./WebDesign";
+import Ecommerce from "./Ecommerce/Ecommerce";
 
 const Pages = {
   HomePage: Home,
@@ -48,7 +49,9 @@ const Pages = {
   Services: Services,
   UiDesign: UiDesign,
   SingleServicePage: SingleServicePage,
+  WebDesign: WebDesign,
   Branding: Branding,
+  Ecommerce: Ecommerce,
   PerfectDesigning: PerfectDesigning,
   DigitalMarketing: DigitalMarketing,
   DigitalMarketing1: DigitalMarketing1,

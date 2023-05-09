@@ -12,7 +12,7 @@ const GInput = styled.input`
   display: block;
   border: 1px solid #1f1f1f;
   outline: none;
-  color: ${(props) => (props.color ? props.color : "#3f3f3f")};
+  color: ${(props) => (props.color ? props.color : "#fff")};
   flex-direction: ${(props) => (props.direction ? props.direction : "row")};
   font-size: 14px;
   min-width: 100px;

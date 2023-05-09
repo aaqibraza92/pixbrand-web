@@ -12,18 +12,18 @@ import Services3 from "../Home/Services3";
 import $ from "jquery";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 
-const MobileDesign = () => {
+const WebDesign = () => {
   return (
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mobile Design and Development - Pixbrand</title>
+        <title>Web Desing Services - Pixbrand</title>
         <meta
-          name="Mobile Design and Development"
-          content="Pixbrand Mobile Design and Development"
+          name="Web Desing Services"
+          content="Pixbrand Web Desing Services"
         ></meta>
       </Helmet>
       <Title />
@@ -41,7 +41,7 @@ const MobileDesign = () => {
   );
 };
 
-export default MobileDesign;
+export default WebDesign;
 
 // Title
 const Title = () => {
@@ -52,7 +52,7 @@ const Title = () => {
           <Col xl={10} lg={10} md={12}>
             <section className="text-center mobtl">
               <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
-                <Slide bottom> Delivering Excellent Experiences on Smartphones!</Slide>
+                <Slide bottom> Creating Exhilarating Web Experiences</Slide>
               </h1>
             </section>
           </Col>
@@ -106,7 +106,7 @@ const SingleServiceSlider = () => {
             <div className="bloggerList">
               <SwiperSlide>
                 <div className="mb15">
-                  <GImage width='100%' radius="24px" radiusMob="15px" src={require('../../Assets/Img/mobile/mobile_top.jpg')}/>
+                  <GImage width='100%' radius="24px" radiusMob="15px" src={require('../../Assets/Img/web-design/webdesign_banner.jpg')} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -142,10 +142,10 @@ const SingleServiceSlider = () => {
             >
               <div>
                 <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10">
-                  Gamezania
+                Reach
                 </h4>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack fThin mb0 mobMb10">
-                  AR games get you moving, but don't
+                Reach expert hiring platform design & development
                 </h2>
               </div>
               <div>
@@ -173,7 +173,7 @@ const Invent = () => {
           <Col md={6} className="mobMb15">
             <div>
               <Slide bottom>
-                <img src={require('../../Assets/Img/mobile/ban1.png')} alt="banner" className="w-100" />
+                <img src={require('../../Assets/Img/web-design/lft.png')} alt="" className="w-100" />
               </Slide>
             </div>
           </Col>
@@ -181,15 +181,29 @@ const Invent = () => {
             <section className="ml90 mobMl0 ml0Tab">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb20 mobMb10 width85 mobWidth100 tabWidth100 tabLgWidth100">
-                Mobile App Designs that Revolutionize User Experience
+                Invent or reinvent the look & feel of your web application
                 </h2>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10">
-                We understand how mobile apps have become an integral part of our everyday lives, which is why our app development team leaves no stone unturned to deliver you mobile apps that take things to a whole new level in terms of experience and functionality.
+                  Need to create a brand new app from scratch? Looking to
+                  redesign your existing product? Want to expand to new markets
+                  by introducing new functionality?
                 </p>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10">
-                Our cross-platform apps provide you with a seamless transition between devices so that life stays uncluttered for you, always.
+                  We provide product design talents to help you create
+                  functional, beautiful, and inspiring applications.
                 </p>
-            
+                <ul className="noUl mobile-ul fs17 tabFs15 tabLgFs15 mobFs15">
+                  <li className=" colorLightBlack mb10 ml11">Brand identity</li>
+                  <li className=" colorLightBlack mb10 ml11">
+                    User experience design
+                  </li>
+                  <li className=" colorLightBlack mb10 ml11">
+                    Prototyping and validation
+                  </li>
+                  <li className=" colorLightBlack ml11">
+                    User interface design
+                  </li>
+                </ul>
               </Slide>
             </section>
           </Col>
@@ -239,17 +253,17 @@ const Planning = () => {
   return (
     <>
       <Container className="mb100 mobMb60">
-        <Row className="align-items-center gy-5 mb60 mobMb30">
+        <Row className="align-items-center mb60 mobMb30">
           <Col lg={6} sm={6}>
             <div className="width70 mobWidth100 tabWidth100 tabLgWidth100">
               <Slide bottom>
-                <h3 className="fs16 mb20 mobMb10 fw700 colorRed">UNDERSTAND THE PRODUCT AND ITS AUDIENCE</h3>
-                <h2 className="fs32 tabFs20 tabLgFs20 mobFs18 colorWhite mb30 mobMb10">
-                Mobile app design works when the team behind it understands your users and your product strategy. We'll run interviews with stakeholders and users and do competitive research.
+                <h3 className="fs16 mb20 mobMb10 fw700 colorRed">PLAN</h3>
+                <h2 className="fs32 tabFs20 tabLgFs20 mobFs18 colorWhite mb0 mobMb10">
+                  With a planning stage in the product design, you want to
+                  understand people's pains and how other products solve or
+                  don't solve them. We do research to make your product the best
+                  possible solution.
                 </h2>
-                <p className="fs22 colorLightGrey fw500 mb0">
-                Our findings turn into customer journey maps, user flows, and wireframes and then into a nice prototype that you can click on and show to everybody.
-                </p>
               </Slide>
             </div>
           </Col>
@@ -257,8 +271,7 @@ const Planning = () => {
             <div>
               <Slide bottom>
                 <img
-                 
-                  src={require('../../Assets/Img/mobile/bar1.svg').default}
+                  src={require('../../Assets/Img/web-design/webbar1.svg').default}
                   alt=""
                   className="img-fluid ml40 mobMl0 ml0Tab mobWidth100"
                 />
@@ -266,7 +279,44 @@ const Planning = () => {
             </div>
           </Col>
         </Row>
-
+        <Row>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  01.
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15  colorLightBlack mb0">
+                Design ideas are derived from extensive research and evaluation from our clients, allowing us more clarity.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  02
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15  colorLightBlack mb0">
+                We then combine the design idea with an understanding of our tools, making the task easy for our team members.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  03
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15  colorLightBlack mb0">
+                Team members then brainstorm and employ their knowledge and experience to design appropriate wireframes.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   );
@@ -281,26 +331,66 @@ const Prototyping = () => {
           <Col lg={6} md={6}>
             <div>
               <Slide bottom>
-                <img  src={require('../../Assets/Img/mobile/bar2.svg').default} alt="" className="img-fluid mobWidth100" />
+              <img
+                  src={require('../../Assets/Img/web-design/webbar2.svg').default}
+                  alt=""
+                  className="img-fluid ml40 mobMl0 ml0Tab mobWidth100"
+                />
               </Slide>
             </div>
           </Col>
           <Col lg={6} md={6}>
             <div className="width70 mobWidth100 tabWidth100 tabLgWidth100">
               <Slide bottom>
-                <h3 className="fs16 mb20 mobMb10 fw700 colorRed">HOOK USERS AND KEEP THEM COMING BACK</h3>
+                <h3 className="fs16 mb20 mobMb10 fw700 colorRed">ITERATE</h3>
                 <h2 className="fs32 tabFs20 tabLgFs20 mobFs18 mb0  mobMb10 colorWhite">
-                Our goal is to make sure your product can acquire new users and retain them. We pay great attention to user onboarding, push notifications, and habit forming UX design. By and large, user feedback informs our decisions.
+                  Since we're in the product design, continuous iterations and
+                  testing are going to be our daily routines. You want your app
+                  to provide the best user experience, so we're going to
+                  discover what this means.
                 </h2>
-                <p className="fs22 colorLightGrey fw500 mb0">
-                To get it, we design interactive prototypes. They let you check if your app is what the world wants before you invest in development.
-                </p>
-            
               </Slide>
             </div>
           </Col>
         </Row>
-
+        <Row>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  01
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Visual research is absolutely crucial, and apart from the UX, it’s one of the most critical design elements.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  02
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Different elements are then combined to form a working prototype, and their usability is then tested in different simulations.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  03
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Once we get the feedback on the prototype and its cohesiveness, we work further to take the niggles away.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   );
@@ -315,29 +405,66 @@ const Collaborate = () => {
           <Col md={6}>
             <div className="width70 mobWidth100 tabWidth100 tabLgWidth100">
               <Slide bottom>
-                <h3 className="fs16 fw700 colorRed">CONSISTENT REFINING AND RETUNING</h3>
+                <h3 className="fs16 fw700 colorRed">Collaborate</h3>
                 <h2 className="fs32 tabFs20 tabLgFs20 mobFs18 colorWhite mb0 mobMb10">
-                Product design is a cyclic process that we go through in the form of iterations. We are constantly doing research, prototyping, testing, analyzing and refining each successive version of your product.
+                  One great product designer is good. One great product team is
+                  better. We collaborate with your team on every stage of
+                  product development including usability testing, user
+                  interviews, & analysis.{" "}
                 </h2>
-                <p className="fs22 colorLightGrey fw500 mb0">
-                We collaborate with your developers and product managers bringing our expertise in all stages of the product lifecycle.
-                </p>
               </Slide>
             </div>
           </Col>
           <Col md={6}>
             <div>
               <Slide bottom>
-                <img
-                   src={require('../../Assets/Img/mobile/bar3.svg').default}
+              <img
+                  src={require('../../Assets/Img/web-design/webbar3.svg').default}
                   alt=""
                   className="img-fluid ml40 mobMl0 ml0Tab mobWidth100"
-                />{" "}
+                />
               </Slide>
             </div>
           </Col>
         </Row>
-      
+        <Row>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  01
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Once the right design is prepared, our developers then get to work and implement the code behind the finalized design.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  02
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Providing the product to a set of users to ensure proper functionality is everything our user testing is all about.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+          <Col lg={4} md={4}>
+            <div>
+              <Slide bottom>
+                <h2 className="fs20 tabFs16 tabLgFs16 mobFs16 mb20 mobMb10 colorWhite">
+                  03
+                </h2>
+                <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
+                Staying updated is key, and our developers and designers ensure that you always stay with the trend.
+                </p>
+              </Slide>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   );
@@ -459,8 +586,6 @@ const DesignServiceHeading = () => {
 };
 
 
-
-// For Tab Section
 const WrapperSkills = styled.div`
   @media only screen and (max-width: 767px) {
     background: none;
@@ -513,29 +638,29 @@ const tabTriggerContent = [
 // Right Result of Tab Menu
 const TabContent = [
   {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
-  },
-  {
-    content: require('../../Assets/Img/mobile/mob2.svg'),
+    content: require('../../Assets/Img/mobile/mob2.svg')
   },
   {
     content: require('../../Assets/Img/mobile/mob2.svg')
-  }
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
+  {
+    content: require('../../Assets/Img/mobile/mob2.svg')
+  },
 ];
 
 // Soundness
@@ -611,5 +736,3 @@ const ImageTab = () => {
     </WrapperSkills>
   );
 };
-
-

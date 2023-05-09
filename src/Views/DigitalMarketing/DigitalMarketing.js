@@ -29,7 +29,24 @@ const DigitalMarketing = () => {
       <NeuroMarketing />
       <Slider />
       <How />
+
+      <section>
+      <div className="text-center mb50">
+      <Row className="justify-content-center">
+        <Col lg={5}>
+        <h3 className="colorWhite fs40 ">
+        More design services from pixbrand
+        </h3>
+<p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
+We offer the whole package of product design services so you could cover all your design needs in one place.
+</p>
+        </Col>
+      </Row>
+
+      </div>
       <Services3 />
+      </section>
+   
     </div>
   );
 };
@@ -99,27 +116,27 @@ const DigitalMarketingSlider = () => {
             <div className="bloggerList">
               <SwiperSlide>
                 <div>
-                  <GImage radius="24px" radiusMob="15px" src={Img.digital} />
+                  <GImage width='100%'  radius="24px" radiusMob="15px" src={require('../../Assets/Img/digital-market/digi-banner.jpg')} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <GImage radius="24px" radiusMob="15px" src={Img.digital} />
+                  <GImage width='100%' radius="24px" radiusMob="15px" src={Img.digital} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <GImage radius="24px" radiusMob="15px" src={Img.digital} />
+                  <GImage width='100%' radius="24px" radiusMob="15px" src={Img.digital} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <GImage radius="24px" radiusMob="15px" src={Img.digital} />
+                  <GImage width='100%' radius="24px" radiusMob="15px" src={Img.digital} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <GImage radius="24px" radiusMob="15px" src={Img.digital} />
+                  <GImage width='100%' radius="24px" radiusMob="15px" src={Img.digital} />
                 </div>
               </SwiperSlide>
             </div>
@@ -135,15 +152,15 @@ const DigitalMarketingSlider = () => {
             >
               <div>
                 <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10">
-                  Gamezania
+                Bakim Randevu
                 </h4>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack fThin mb0 mobMb10">
-                  AR games get you moving, but don't
+                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack mb0 mobMb10">
+                Bakim Randevu Salon platform Case Study
                 </h2>
               </div>
               <div>
                 <span className="fs14 tabFs13 tabLgFs13 mobFs13 colorWhite mr15">
-                  View the project
+                View case study
                 </span>
                 <span className="arrow-circle">
                   {Svg.arrowwithLightBground}
@@ -219,7 +236,7 @@ let NeuroData = [
     desc: "Pix Brand helps you earn and assist your marketing efforts by using other products or services through affiliate marketing, a great way to grow!"
   },
   {
-    svg: require('../../Assets/Img/digital-market/Marketing.svg'),
+    svg: require('../../Assets/Img/digital-market/outline.svg'),
     title: "Social Media Marketing",
     desc: "Leverage the social media trend to grow and create a community where the right content can prove to be a highly engaging tool for your brand. "
   },
@@ -255,7 +272,7 @@ let NeuroData = [
       <Container className="mb60 mobMb40">
         <section className="text-center">
           <Slide bottom>
-            <h3 className="fs16 colorRed fw700 mb20 mobMb10">
+            <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
               Want to know more?
             </h3>
             <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb40 mobMb20 colorWhite width63 mobWidth100 tabWidth100 mx-auto">
@@ -268,7 +285,6 @@ let NeuroData = [
         <Row>
           {NeuroData.map((obj, index) => {
             return (
-              <>
                 <Col md={4} className="mb40 mobMb20" key={index}>
                   <section className="text-center">
                     <Slide bottom>
@@ -282,7 +298,6 @@ let NeuroData = [
                     </Slide>
                   </section>
                 </Col>
-              </>
             );
           })}
         </Row>
@@ -299,7 +314,7 @@ const Slider = () => {
         <section className="mb40 mobMb20">
           <Slide bottom>
             <div className="bBottom pb20">
-              <h3 className="fs16 colorRed fw700 mb20 mobMb10">
+              <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
                 How we nail Digital Marketing
               </h3>
               <GAlign align="between" alignV="center" className="flex-wrap">

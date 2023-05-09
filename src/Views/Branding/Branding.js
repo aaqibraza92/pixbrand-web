@@ -12,8 +12,8 @@ import Services3 from "../Home/Services3";
 import ImageTab from "../TabAndContent/ImageTab";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
-import Skills from "../Home/Skills";
 import { useState } from "react";
+import styled from "styled-components";
 
 const Branding = () => {
   return (
@@ -30,6 +30,8 @@ const Branding = () => {
       <SingleServiceSlider />
       <Invent />
       <Benefit />
+      
+   
       <Invent2/>
       {/* <Pixels /> */}
       {/* <Planning /> */}
@@ -51,8 +53,23 @@ export default Branding;
 
 const BrandingProcess = () => {
   const [process, setprocess] = useState("pr1");
+  const [process2, setprocess2] = useState(false);
+  const [process3, setprocess3] = useState(false);
+  const [process4, setprocess4] = useState(false);
+
+  const slide2=()=>{
+    setprocess("pr2");
+    setprocess2(true);
+    setTimeout(()=>{
+      if(process==="pr2"){
+        setprocess3(false);
+        setprocess4(false);
+      }
+    },200)
+   
+  }
   return (
-    <section className="pt60 pb60">
+    <section className="pt80 pb80"> 
       <Container>
         <Row className="align-items-center justify-content-center">
           <Col lg={7} md={12}>
@@ -68,8 +85,9 @@ const BrandingProcess = () => {
             </div>
           </Col>
         </Row>
+      
 
-        <div className="triggerArea mt30">
+        <div className="triggerArea position-relative mt30">
           <Row className="align-items-center justify-content-center">
             <Col lg={3} md={6}>
               <div className="trigWrapper " onClick={() => setprocess("pr1")}>
@@ -79,54 +97,80 @@ const BrandingProcess = () => {
                     alt="banner"
                     className="img-fluid radius20"
                   />
+                  
                 </div>
                 <h6 className="fs20 mb30 text-center mt20 colorWhite fw500 mobFs33">
-                  Lorem
+                Discovery
                 </h6>
               </div>
             </Col>
 
             <Col lg={3} md={6}>
-              <div className="trigWrapper " onClick={() => setprocess("pr2")}>
+              <div className="trigWrapper " onClick={() =>slide2() }>
                 <div className="text-center">
-                  <img
-                    src={require("../../Assets/Img/branding/pr1.svg").default}
+                {
+                  process2 ?    <img
+                    src={require("../../Assets/Img/branding/pr2.svg").default}
+                    alt="banner"
+                    className="img-fluid radius20"
+                  /> :   <img
+                    src={require("../../Assets/Img/branding/p2.svg").default}
                     alt="banner"
                     className="img-fluid radius20"
                   />
+                }
+                
+                  
                 </div>
                 <h6 className="fs20 mb30 text-center mt20 colorWhite fw500 mobFs33">
-                  Lorem
+                Research & Strategizing
                 </h6>
               </div>
             </Col>
 
             <Col lg={3} md={6}>
-              <div className="trigWrapper " onClick={() => setprocess("pr3")}>
+              <div className="trigWrapper " onClick={() => {setprocess("pr3"); setprocess3(true)}}>
                 <div className="text-center">
-                  <img
-                    src={require("../../Assets/Img/branding/pr1.svg").default}
+                {
+                  process3 ?    <img
+                    src={require("../../Assets/Img/branding/pr3.svg").default}
+                    alt="banner"
+                    className="img-fluid radius20"
+                  /> :     <img
+                    src={require("../../Assets/Img/branding/p3.svg").default}
                     alt="banner"
                     className="img-fluid radius20"
                   />
+                }
+                 
+                    
                 </div>
                 <h6 className="fs20 mb30 text-center mt20 colorWhite fw500 mobFs33">
-                  Lorem
+                Media Tactics
                 </h6>
               </div>
             </Col>
 
             <Col lg={3} md={6}>
-              <div className="trigWrapper " onClick={() => setprocess("pr4")}>
+              <div className="trigWrapper " onClick={() => {setprocess("pr4"); setprocess4(true)}}>
                 <div className="text-center">
-                  <img
-                    src={require("../../Assets/Img/branding/pr1.svg").default}
+                {
+                  process4 ?    <img
+                    src={require("../../Assets/Img/branding/pr4.svg").default}
+                    alt="banner"
+                    className="img-fluid radius20"
+                  /> :         <img
+                    src={require("../../Assets/Img/branding/p4.svg").default}
                     alt="banner"
                     className="img-fluid radius20"
                   />
+                }
+
+                 
+                    
                 </div>
                 <h6 className="fs20 mb30 text-center mt20 colorWhite fw500 mobFs33">
-                  Lorem
+                Analyze & Tweak
                 </h6>
               </div>
             </Col>
@@ -134,6 +178,7 @@ const BrandingProcess = () => {
         </div>
         <div className="contentArea">
           {process === "pr1" && (
+            <Slide right>
             <Row className="gy-3 gx-5 align-items-center">
               <Col lg={4}>
                 <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
@@ -155,9 +200,11 @@ const BrandingProcess = () => {
                 </div>
               </Col>
             </Row>
+            </Slide>
           )}
 
           {process === "pr2" && (
+            <Slide right>
             <Row className="gy-3 gx-5 align-items-center">
               <Col lg={4}>
                 <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
@@ -179,13 +226,16 @@ const BrandingProcess = () => {
                 </div>
               </Col>
             </Row>
+            </Slide>
+         
           )}
 
           {process === "pr3" && (
+            <Slide right>
             <Row className="gy-3 gx-5 align-items-center">
               <Col lg={4}>
                 <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
-                  Don’t think of us as
+                 3 Don’t think of us as
                 </h3>
                 <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -203,13 +253,16 @@ const BrandingProcess = () => {
                 </div>
               </Col>
             </Row>
+            </Slide>
+           
           )}
 
           {process === "pr4" && (
+            <Slide right>
             <Row className="gy-3 gx-5 align-items-center">
               <Col lg={4}>
                 <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
-                  Don’t think of us as
+                 4 Don’t think of us as
                 </h3>
                 <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -227,6 +280,8 @@ const BrandingProcess = () => {
                 </div>
               </Col>
             </Row>
+            </Slide>
+         
           )}
         </div>
       </Container>
@@ -239,10 +294,10 @@ const Title = () => {
     <section className="pt80 pb80 tabPt80 tabPb80 mobPt60 mobPb60">
       <Container>
         <Row className="justify-content-center ">
-          <Col xl={10} lg={10} md={12}>
+          <Col xl={8} lg={8} md={12}>
             <section className="text-center mobtl">
               <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
-                <Slide bottom> Creating Exhilarating Web Experiences</Slide>
+                <Slide bottom>Helping You Become the Brand You Always Aspire to be</Slide>
               </h1>
             </section>
           </Col>
@@ -296,7 +351,7 @@ const SingleServiceSlider = () => {
             <div className="bloggerList">
               <SwiperSlide>
                 <div className="mb15">
-                  <GImage radius="24px" radiusMob="15px" src={Img.Game} />
+                  <GImage radius="24px" radiusMob="15px" src={require('../../Assets/Img/branding/brand.jpg')} />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -332,15 +387,15 @@ const SingleServiceSlider = () => {
             >
               <div>
                 <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10">
-                  Bluebix Solutions Inc
+                Bluebix Solutions Inc
                 </h4>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack fThin mb0 mobMb10">
-                  Bluebix complete branding design
+                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack mb0 mobMb10">
+                Bluebix complete branding design
                 </h2>
               </div>
               <div>
                 <span className="fs14 tabFs13 tabLgFs13 mobFs13 colorWhite mr15">
-                  View the project
+                View branding
                 </span>
                 <span className="arrow-circle">
                   {Svg.arrowwithLightBground}
@@ -438,27 +493,24 @@ const Invent = () => {
             <section className="ml90 mobMl0 ml0Tab">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb20 mobMb10 width85 mobWidth100 tabWidth100 tabLgWidth100">
-                  Invent or reinvent the look & feel of your web application
+                Designing the Right Branding Strategy for You
                 </h2>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10">
-                  Need to create a brand new app from scratch? Looking to
-                  redesign your existing product? Want to expand to new markets
-                  by introducing new functionality?
+                If you always dreamt of creating a brand of your business setup, Pix Brand can be your perfect branding partner. Tap into markets in a consolidated manner with ease.
                 </p>
                 <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10">
-                  We provide product design talents to help you create
-                  functional, beautiful, and inspiring applications.
+                Our branding solutions help you define your organization in the best way possible-
                 </p>
                 <ul className="noUl mobile-ul fs17 tabFs15 tabLgFs15 mobFs15">
                   <li className=" colorLightBlack mb10 ml11">Brand identity</li>
                   <li className=" colorLightBlack mb10 ml11">
-                    User experience design
+                  Brand Strategy
                   </li>
                   <li className=" colorLightBlack mb10 ml11">
-                    Prototyping and validation
+                  Brand Positioning
                   </li>
                   <li className=" colorLightBlack ml11">
-                    User interface design
+                  Brand Guide
                   </li>
                 </ul>
               </Slide>
@@ -510,7 +562,7 @@ const Invent2 = () => {
             <div>
               <Slide bottom>
                 <img
-                  src={require("../../Assets/Img/branding/brand-left.png")}
+                  src={require("../../Assets/Img/branding/brand_right.png")}
                   alt=""
                   className="w-100"
                 />
@@ -791,36 +843,7 @@ const Collaborate = () => {
 
 // Started
 const Started = () => {
-  // const isElementInViewport = (elem) => {
-  //   var $elem = $(elem);
 
-  //   var scrollElem =
-  //     navigator.userAgent.toLowerCase().indexOf("webkit") != -1
-  //       ? "body"
-  //       : "html";
-  //   var viewportTop = $(scrollElem).scrollTop();
-  //   var viewportBottom = viewportTop + $(window).height();
-  //   var elemTop = Math.round($elem.offset().top);
-  //   var elemBottom = elemTop + $elem.height();
-
-  //   return elemTop < viewportBottom && elemBottom > viewportTop;
-  // };
-
-  // const checkAnimation = () => {
-  //   var $elem = $(".lineView3");
-
-  //   if ($elem.hasClass("start")) return;
-
-  //   if (isElementInViewport($elem)) {
-  //     $elem.addClass("start");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   $(window).scroll(function () {
-  //     checkAnimation();
-  //   });
-  // });
   return (
     <>
       <section className="bgLightGrey pt100 pb100 tabPt80 tabPb80 mobPt60 mobPb60 mb100 mobMb60">
@@ -900,6 +923,193 @@ const DesignServiceHeading = () => {
           </Col>
         </Row>
       </Container>
+    </>
+  );
+};
+
+
+const WrapperSkills = styled.div`
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: #111111; /* Old browsers */
+  background: -moz-linear-gradient(
+    to right,
+    #111 33%,
+    #191919 20%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    to right,
+    #111 33%,
+    #191919 20%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #111 33%, #191919 20%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#707070',GradientType=1 ); /* IE6-9 */
+  @media only screen and (max-width: 767px) {
+    background: none;
+    .tabMobView {
+      background: #191919;
+      padding: 50px 35px;
+      margin-top: 20px;
+    }
+  }
+  h3 {
+    padding-bottom: 10px;
+  }
+  .verticalTrigger1 {
+    border-bottom: 1px solid transparent;
+  }
+  .activeTabVer {
+    border-color: #fff;
+  }
+  .verticalTrigger1 {
+    display: inline-block;
+    padding-bottom: 5px !important;
+  }
+  .runningLine::after {
+    background: #fff;
+  }
+`;
+
+const Skills = () => {
+  const [verticalTab, setverticalTab] = useState("v0");
+  const handleTab = (ind) => {
+    setverticalTab(ind);
+  };
+  return (
+    <>
+      <div>
+        <WrapperSkills>
+          <Container>
+            <Slide bottom>
+              <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb100 mobMb15 lineAnimateSkill">
+                We make you stand with PIX
+              </h3>
+            </Slide>
+
+            <div
+              id="demo"
+              className="sliderTab carousel slide vert"
+             data-ride="carousel"
+              data-interval="6000"
+            >
+              <div className="row no-gutters">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                  <div className="verticalTabbing">
+                    <div className="carousel-indicators text-start">
+                      <div
+                        data-target="#demo"
+                        data-slide-to="0"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Brand Strategy
+                        </span>
+                      </div>
+                      <div
+                        data-target="#demo"
+                        data-slide-to="1"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Brand Positioning
+                        </span>
+                      </div>
+                      <div
+                        data-target="#demo"
+                        data-slide-to="2"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                          Brand Architecture
+                        </span>
+                      </div>
+                      <div
+                        data-target="#demo"
+                        data-slide-to="2"
+                        className="item active pointer mb25 mobMb10"
+                      >
+                        <span
+                          className={`runningLine verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10`}
+                        >
+                         Brand Identity
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-sm-12 col-md-12 col-lg-8">
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                          Understanding the long-term implications of branding, we create result-driven brand strategy that allows users becoming loyal to using your brand’s products or services over a considerable period of time.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="carousel-item">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                     At the end of the day, it is the right set of ideas that need to be thought upon to deliver something unique and cutting-edge, every single time. This is what we strive to do at Pix Brand.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="carousel-item">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                   For us, it's Xcellence, because we ensure to bring the X-factor in everyday excellence. It's important to help you stay ahead of whichever domain you belong to, and this counts in the long-term.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="carousel-item">
+                      <Row className="justify-content-center">
+                        <Col lg={7} md={8}>
+                          <Slide bottom>
+                            <p
+                              style={{ color: "#7D7D7D" }}
+                              className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
+                            >
+                   For us, it's Xcellence, because we ensure to bring the X-factor in everyday excellence. It's important to help you stay ahead of whichever domain you belong to, and this counts in the long-term.
+                            </p>
+                          </Slide>
+                        </Col>
+                      </Row>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </Container>
+        </WrapperSkills>
+      </div>
     </>
   );
 };

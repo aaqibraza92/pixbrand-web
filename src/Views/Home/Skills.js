@@ -47,36 +47,6 @@ const WrapperSkills = styled.div`
   }
 `;
 
-const WrapperTabContent = styled.div``;
-
-const TabTriggerWrapper = styled.div``;
-
-const tabTriggerContent = [
-  {
-    title: "Perfection",
-  },
-  {
-    title: "Ideas",
-  },
-  {
-    title: "Xcellence",
-  },
-];
-
-const TabContent = [
-  {
-    content:
-      "For every project or client onboarded, Pix Brand is committed to utmost perfection in delivery and support. In this industry, perfection is the bare minimum and we understand that completely.",
-  },
-  {
-    content:
-      "At the end of the day, it is the right set of ideas that need to be thought upon to deliver something unique and cutting-edge, every single time. This is what we strive to do at Pix Brand.",
-  },
-  {
-    content:
-      "For us, it's Xcellence, because we ensure to bring the X-factor in everyday excellence. It's important to help you stay ahead of whichever domain you belong to, and this counts in the long-term.",
-  },
-];
 
 const Skills = () => {
   const [verticalTab, setverticalTab] = useState("v0");
@@ -192,65 +162,7 @@ const Skills = () => {
                 </div>
               </div>
             </div>
-            {/* <Row>
-              <Col lg={3} md={3}>
-                <TabTriggerWrapper>
-                  <Row>
-                    <Slide bottom>
-                      <div className="verticalTabbing">
-                        {tabTriggerContent &&
-                          tabTriggerContent.map((elem, ind) => {
-                            return (
-                              <div
-                                key={ind}
-                                className="pointer mb25 mobMb10"
-                                onClick={(e) => handleTab("v" + ind)}
-                              >
-                                <span
-                                  className={`verticalTrigger1 runningLine colorWhite transition fs32 tabFs24 tabLgFs24 mobFs20 lh24 mobMr10 ${
-                                    "v" + ind === verticalTab && "runningLine"
-                                  }`}
-                                >
-                                  {elem.title}
-                                </span>
-                              </div>
-                            );
-                          })}
-                      </div>
-                    </Slide>
-                  </Row>
-                </TabTriggerWrapper>
-              </Col>
-              <Col lg={9} md={9}>
-                {TabContent &&
-                  TabContent.map((elem, index) => {
-                    return (
-                      <Fragment key={"o" + index}>
-                        {"v" + index === verticalTab && (
-                          <WrapperTabContent key={"q" + index}>
-                            <Row
-                              className={`${
-                                "v" + index === verticalTab && ""
-                              } justify-content-center`}
-                            >
-                              <Col lg={7} md={8}>
-                                <Slide bottom>
-                                  <p
-                                    style={{ color: "#7D7D7D" }}
-                                    className="colorWhite fs17 tabFs15 tabLgFs15 mobFs15 lh25 tabMobView"
-                                  >
-                                    {elem.content}
-                                  </p>
-                                </Slide>
-                              </Col>
-                            </Row>
-                          </WrapperTabContent>
-                        )}
-                      </Fragment>
-                    );
-                  })}
-              </Col>
-            </Row> */}
+        
           </Container>
         </WrapperSkills>
       </div>

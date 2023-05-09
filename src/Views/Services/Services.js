@@ -320,7 +320,7 @@ const Mobile = () => {
             <section>
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 width52 mobWidth100 tabWidth100 tabLgWidth100">
-                  <Link to="/uidesign-services" className="colorWhite">
+                  <Link to="/mobile-design" className="colorWhite">
                     Mobile Design & Development
                   </Link>
                 </h2>
@@ -330,7 +330,7 @@ const Mobile = () => {
                 </p>
                 <Row>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10">
                         {" "}
                         <span className="mr10">{Svg.CircleCheck}</span> iOS Apps
@@ -343,7 +343,7 @@ const Mobile = () => {
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10">
                         <span className="mr10">{Svg.CircleCheck}</span>Hybrid
                         Apps
@@ -355,7 +355,7 @@ const Mobile = () => {
                     </ul>
                   </Col>
                   <div className="mt30">
-                    <Link className="btnRed" to="#">
+                    <Link className="btnRed" to="/mobile-design">
                       Learn More
                     </Link>
                   </div>
@@ -379,7 +379,7 @@ const Website = () => {
             <section className="">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 width67 mobWidth100 tabWidth100 tabLgWidth100">
-                  <Link to="/single-services-page" className="colorWhite">
+                  <Link to="/web-design" className="colorWhite">
                     Website Design & Development
                   </Link>
                 </h2>
@@ -389,7 +389,7 @@ const Website = () => {
                 </p>
                 <Row>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10 d-flex align-items-center">
                         {" "}
                         <span className="mr10">{Svg.CircleCheck}</span> UI/UX
@@ -411,7 +411,7 @@ const Website = () => {
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey  fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10 d-flex align-items-center">
                         <span className="mr10">{Svg.CircleCheck}</span>{" "}
                         E-commerce Stores
@@ -431,7 +431,7 @@ const Website = () => {
                   </Col>
                 </Row>
                 <div className="mt30">
-                  <Link className="btnRed" to="#">
+                  <Link className="btnRed" to="/web-design">
                     Learn More
                   </Link>
                 </div>
@@ -478,7 +478,7 @@ const Digital = () => {
               </p>
               <Row>
                 <Col lg={6} xs={6}>
-                  <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                  <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                     <li className="mb10 d-flex align-items-center">
                       <span className="mr10">{Svg.CircleCheck}</span> Social
                       Media Marketing
@@ -496,7 +496,7 @@ const Digital = () => {
                   </ul>
                 </Col>
                 <Col lg={6} xs={6}>
-                  <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                  <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                     <li className="mb10 d-flex align-items-center">
                       <span className="mr10">{Svg.CircleCheck}</span> Inbound
                       Marketing
@@ -516,7 +516,7 @@ const Digital = () => {
                 </Col>
               </Row>
               <div className="mt30">
-                <Link className="btnRed" to="#">
+                <Link className="btnRed" to="/digital-marketing">
                   Learn More
                 </Link>
               </div>
@@ -566,33 +566,30 @@ const Branding = () => {
             <section className="mobMl0 ml0Tab">
               <Slide bottom>
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10">
-                  <Link to="/digital-marketing1" className="colorWhite">
+                  <Link to="/branding" className="colorWhite">
                     Branding
                   </Link>
                 </h2>
                 <p className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightGrey mb20 mobMb10  width94 mobWidth100 tabWidth100 tabLgWidth100">
-                  Being a business and being a brand are two different things-
-                  we make sure you become a true brand in your industrial niche.
+                Websites are the first point of contact between brands and customers today, and we help ensure that it’s just perfect!
                 </p>
                 <Row>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10 d-flex align-items-center">
                         <span className="mr10">{Svg.CircleCheck}</span> Brand
                         identity
                       </li>
                       <li className="mb10 d-flex align-items-center">
-                        <span className="mr10">{Svg.CircleCheck}</span> Brand
-                        strategy
+                        <span className="mr10">{Svg.CircleCheck}</span>Brand Strategy
                       </li>
                       <li className="mb10 d-flex align-items-center">
-                        <span className="mr10">{Svg.CircleCheck}</span> Brand
-                        positioning
+                        <span className="mr10">{Svg.CircleCheck}</span> Brand Positioning
                       </li>
                     </ul>
                   </Col>
                   <Col lg={6} xs={6}>
-                    <ul className="mobile-ul noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
+                    <ul className="noUl colorLightGrey fs17 tabFs15 tabLgFs15 mobFs15">
                       <li className="mb10 d-flex align-items-center">
                         <span className="mr10">{Svg.CircleCheck}</span> Brand
                         Guide
@@ -606,7 +603,7 @@ const Branding = () => {
                 </Row>
 
                 <div className="mt30">
-                  <Link className="btnRed" to="#">
+                  <Link className="btnRed" to="/branding">
                     Learn More
                   </Link>
                 </div>
@@ -857,14 +854,14 @@ const Results = () => {
   return (
     <section className="greyishBg pb30 pt30 mb60">
       <Container>
-        <Row className="align-items-center pt60 pb60">
+        <Row className="pt60 pb60">
           <Col lg={4}>
             <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
               STEP BY STEP
             </h6>
           </Col>
           <Col lg={8}>
-            <h2 className="fs40 mb30 colorWhite fw500 mobFs33">
+            <h2 className="fs60 mb30 colorWhite fw500 mobFs33">
               Great results come <br />
               from a six-tuned process
             </h2>

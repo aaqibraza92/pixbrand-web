@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +13,18 @@ import GImage from "../../Components/GComponents/GImage/GImage";
 import { Fade } from "react-reveal";
 
 const BannerSlider = () => {
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  const resizeScreen = () => {
+    setScreenWidth(window.innerWidth);
+  };
+  useEffect(() => {
+resizeScreen();
+    window.addEventListener("resize", resizeScreen);
+    return () => {
+      window.removeEventListener("resize", resizeScreen);
+    };
+  });
+
   return (
     <section className="pt40 mb120 mobMb60">
       <Container>
@@ -27,16 +39,19 @@ const BannerSlider = () => {
               </p>
 
               <div className="mt30">
-                <Link to="/contact" className="btnRed">
+                <Link to="/contact-us" className="btnRed">
                 Start a Project
                 </Link>
               </div>
             </div>
           </Col>
-          <Col lg={6} md={6} className="position-relative mobMt110">
-            <div className="bgLogo ">
-        <img className="img-fluid" src={require('../../Assets/Img/big_x.svg').default} alt="" />
+          <Col lg={6} md={6} className="position-relative mobMt40">
+          {
+            screenWidth > 1024 &&  <div className="bgLogo ">
+        <img className="img-fluid d-xs-none" src={require('../../Assets/Img/big_x.svg').default} alt="" />
             </div>
+          }
+          
             <div className="swiperTopBanner">
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
@@ -76,7 +91,7 @@ const BannerSlider = () => {
                   Array(6).fill().map((v,i)=>(
                     <SwiperSlide key={i}>
                     <div className="mobWHandle">
-                    <GImage radius="12px" src={require('../../Assets/Img/banner1.jpg')} />
+                    <GImage radius="12px" widthMob='100%' src={require('../../Assets/Img/banner1.jpg')} />
                     </div>
                   
                     </SwiperSlide>

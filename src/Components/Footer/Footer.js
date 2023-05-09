@@ -9,11 +9,23 @@ import Slide from "react-reveal/Slide";
 import { Link } from "react-router-dom";
 const Footer = (props) => {
   const [year, setyear] = useState(null);
-
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+    const resizeScreen = () => {
+      setScreenWidth(window.innerWidth);
+    };
   useEffect(() => {
+  
     const currentYear = new Date().getFullYear();
     setyear(currentYear);
+    resizeScreen();
+    window.addEventListener("resize", resizeScreen);
+    return () => {
+      window.removeEventListener("resize", resizeScreen);
+    };
   }, []);
+
+
+
   return (
     <section className="bgWhite pt120 pb5 mobPt40">
       <Container className="mb30 ">
@@ -139,7 +151,8 @@ const Footer = (props) => {
                 <p className="fs14 mb0 colorGrey mr25">
                   © {year} Pix Brand All rights reserved.
                 </p>
-                <ul className="socialLinks">
+                {
+                  screenWidth > 780 &&     <ul className="socialLinks">
                   <li>
                     <GLink
                       className="runningLine"
@@ -163,10 +176,38 @@ const Footer = (props) => {
                     />
                   </li>
                 </ul>
+                }
+            
               </div>
             </Col>
 
             <Col lg={6} md={12}>
+            {
+                  screenWidth < 780 &&     <ul className="socialLinks mobJustifyContentLeft">
+                  <li>
+                    <GLink
+                      className="runningLine"
+                      hoverColor="#FF0A2B"
+                      color="#7d7d7d"
+                      fs="14px"
+                      text="Privacy policy "
+                      to="/privacy-policy"
+                      mrtextSpan="0px"
+                    />
+                  </li>
+                  <li>
+                    <GLink
+                      className="runningLine"
+                      hoverColor="#FF0A2B"
+                      color="#7d7d7d"
+                      fs="14px"
+                      text="Term & conditon"
+                      to="/terms-services"
+                      mrtextSpan="0px"
+                    />
+                  </li>
+                </ul>
+                }
               <ul className="socialLinks mobJustifyContentLeft">
                 <li className="fs14">
                   <a

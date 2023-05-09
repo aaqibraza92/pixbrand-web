@@ -2,6 +2,8 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import Svg from "../../Assets/Svg/Svg";
+import { useState } from "react";
+import { useEffect } from "react";
 
 let data = [
   {
@@ -26,6 +28,17 @@ let data = [
   },
 ];
 const AboutUsSection = () => {
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  const resizeScreen = () => {
+    setScreenWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    resizeScreen();
+    window.addEventListener("resize", resizeScreen);
+    return () => {
+      window.removeEventListener("resize", resizeScreen);
+    };
+  });
   return (
     <section className="mb60">
       <Container>
@@ -40,6 +53,13 @@ const AboutUsSection = () => {
               Don’t think of us as ‘just another marketing or web design company’. Our Pix mantra makes us your collaborative partner.
               </h3>
 
+              {
+                screenWidth < 1024 &&
+                <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
+              At Pix Brand, we cover all facets of business enterprises by bringing stupendous branding campaigns and equally revolutionary products by leveraging the experience of our team with the most sophisticated technical method-logies, that maximize revenue and deliver impeccable client satisfaction and retention.
+              </p>
+              }
+
               <div className="d-flex">
                 <Link className="btnRed mb0 mr15" to="/#">
                 Get In Touch
@@ -50,21 +70,23 @@ const AboutUsSection = () => {
               </div>
             </Col>
 
-            <Col lg={6} md={12}>
+            {
+                screenWidth > 1024 &&    <Col lg={6} md={12}>
               <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
               At Pix Brand, we cover all facets of business enterprises by bringing stupendous branding campaigns and equally revolutionary products by leveraging the experience of our team with the most sophisticated technical method-logies, that maximize revenue and deliver impeccable client satisfaction and retention.
               </p>
 
-              <p className="colorLightGrey fs18 mobFs15">Our services at a glance- </p>
             </Col>
+}
+         
           </Row>
 
           <Row className="gy-3">
             {data.map((e, i) => (
-              <Col key={i} lg={3} md={6} xs={6}>
+              <Col key={i} lg={3} md={6} xs={12}>
                 <div className="position-relative d-flex align-items-center justify-content-center">
                   <img
-                    className="img-fluid radius20"
+                    className="w-100 radius20"
                     src={e.img.default}
                     alt="analysis"
                   />

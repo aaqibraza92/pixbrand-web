@@ -65,6 +65,17 @@ let RouterList = [
   },
   {
     element: (
+      <GetRoute
+        isprivate={false}
+        role="Default"
+        page={Pages.Ecommerce}
+      />
+    ),
+    path: "/e-commerce",
+    isAdmin: false,
+  },
+  {
+    element: (
       <GetRoute isprivate={false} role="Default" page={Pages.GoodReads} />
     ),
     path: "/blogs",
@@ -104,7 +115,7 @@ let RouterList = [
     element: (
       <GetRoute isprivate={false} role="Default" page={Pages.ContactUs} />
     ),
-    path: "/contactus",
+    path: "/contact-us",
     isAdmin: false,
   },
   {
@@ -135,6 +146,17 @@ let RouterList = [
       />
     ),
     path: "/single-services-page",
+    isAdmin: false,
+  },
+  {
+    element: (
+      <GetRoute
+        isprivate={false}
+        role="Default"
+        page={Pages.WebDesign}
+      />
+    ),
+    path: "/web-design",
     isAdmin: false,
   },
   {

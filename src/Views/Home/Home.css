@@ -100,3 +100,9 @@ body .accordion {
   bottom: 0px;
   right: 0px;
 }
+.serviceStiky > a {
+  display: none;
+}
+.serviceStiky > a.active-scroll-spy{
+  display: block !important;
+}

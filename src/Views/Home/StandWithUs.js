@@ -11,7 +11,7 @@ const StandWithUs = () => {
         We make you stand with PIX
         </h2>
         <Row className="">
-          <Col lg={8} md={12} className="mb30">
+          <Col lg={8} md={12} className="mb0">
             <div className="radius20 borderGrey mb30">
               <Row className="align-items-center">
                 <Col lg={6} md={6}>
@@ -31,8 +31,8 @@ const StandWithUs = () => {
               </Row>
             </div>
 
-            <div className="radius20 borderGrey">
-              <Row className="align-items-center">
+            <div className="radius20 borderGrey mobMb30">
+              <Row className="align-items-center mobColomnReverse">
                 <Col lg={6} md={6}>
                 <div className="standTextWrapper pl30 pr30 mobPt30 mobPb30">
                     <h4 className="colorWhite fs28 fw500 tabFs20">
@@ -45,7 +45,7 @@ const StandWithUs = () => {
                 </Col>
                 <Col lg={6} md={6}>
                 <div className="d-flex justify-content-end">
-                <GImage radiusMob="0px 0px 18px 18px"  radius="0px 18px 18px 0px" width="100%" src={require('../../Assets/Img/stand2.jpg')} />
+                <GImage radiusMob="18px 18px 0px 0px"  radius="0px 18px 18px 0px" width="100%" src={require('../../Assets/Img/stand2.jpg')} />
                 </div>
                
                 </Col>

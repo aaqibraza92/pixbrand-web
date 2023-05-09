@@ -1,3 +1,13 @@
 .h275 {
   height: 275px;
 }
+
+.triggerArea::after {
+  content: "";
+  background: #3D3E42;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 23%;
+  z-index: -1;
+}

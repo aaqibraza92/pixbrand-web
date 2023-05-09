@@ -46,21 +46,33 @@ const Portfolio = () => {
       )}
 
       <Container className="overflow-hidden">
-        <div>
-          <Row className="gx-5 gXl10 mb100">
-            {postData.length > 0 &&
-              postData?.map((e, i) => {
-                if (i % 2) {
-                  return (
-                    <Col
-                      lg={6}
-                      md={6}
-                      key={i}
-                      className="revColMob"
-                    >
-                      <GSection mb="0px">
-                        <Slide bottom>
-                          <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-lg-5">
+        <div className="mb60">
+        <div className="brick-grid">
+              {postData.length > 0 &&
+                postData?.map((e, i) => {
+                
+                   return  <div className="brick" key={i}>
+                   {i === 0 && (
+                          <div className="mb120">
+                          <h2 className="fs40 fw500 colorWhite mb30 mobFs33">    Our Recent Projects</h2>
+                      
+                            <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs18 mb36">
+                            Our projects are the result of meticulous research, attention to details and of improving the customer and users´ needs.
+                            </p>
+
+                            <div className="mt30" onClick={()=>window.scrollTo(0,0)
+                            }>
+                            <Link className="btnTransparent" to="/portfolio" >
+                            View All Projects <span className="ml10">{Svg.arrowRight}</span> 
+                </Link>
+                            </div>
+                  
+                          </div>
+                        )}
+                        
+                    <Slide bottom >
+                    <div className="mb80 mobMb30">
+                    <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-4">
                             <GImage
                               className="scale"
                               width="100%"
@@ -82,131 +94,28 @@ const Portfolio = () => {
                               </div>
                             </Link>
                           </div>
-                        </Slide>
-                      </GSection>
-
-                      <GSection mb="150px" tabLgmb="80px" className="mobMb0">
-                        <Slide bottom>
                           <div className="aboutPortfolio mb60 mobMb30">
                             <h6 className="fs28 tabFs18  mobFs18 mb9 mobMb10 tabMb10 colorWhite">
-                              {e.acf === false ? "" : e?.acf?.project_title}
+                              <Link
+                                to={`/portfolio/${e?.slug}`}
+                                className="colorWhite"
+                              >
+                                {e.acf === false ? "" : e?.acf?.project_title}
+                              </Link>
                             </h6>
                             <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs18 mb36 col-md-7 col-sm-12 col-xs-12">
                               {e?.title?.rendered}
                             </p>
                           </div>
+                    </div>
+                        
                         </Slide>
-
-                        {/* <div className="magnetWrapper">
-                          <Link
-                            to={`/portfolio/${e?.slug}`}
-                            className="arrowLink colorWhite hover-me "
-                          >
-                            <Cursor isGelly={true} />
-                            <div data-cursor-magnetic>
-                              <div className="mb15">
-                                <span className="d-flex align-items-center">
-                                  <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                                    View the project 
-                                  </span>
-                                  <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                                    {Svg.arrowRight}
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                          </Link>
-                        </div> */}
-                      </GSection>
-                    </Col>
-                  );
-                } else {
-                  return (
-                    <Col
-                      lg={6}
-                      md={6}
-                      key={i}
-                      className="d-flex flex-column justify-content-between "
-                    >
-                      {i === 0 && (
-                        <div>
-                          <h2 className="fs40 mb25 colorWhite fw500 mobFs33">
-                            Our Recent Projects
-                          </h2>
-                          <p className="colorLightGrey fs22 fw500 mb30 mobFs18">
-                            Our projects are the result of meticulous research,
-                            attention to details and of improving the customer
-                            and users´ needs.
-                          </p>
-
-                          <div className="mt30 mb110">
-                            <Link className="btnTransparent" to="/#">
-                              View All Projects{" "}
-                              <span className="ml10">{Svg.arrowRight}</span>
-                            </Link>
-                          </div>
-                        </div>
-                      )}
-                      <GSection mb="0px">
-                        <Slide bottom>
-                          <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgGreen pr20 radius24 overflow-hidden mb-lg-5">
-                            <GImage
-                              className="scale"
-                              width="100%"
-                              src={Img.p1}
-                            />
-                            <Link
-                              to={`/portfolio/${e?.slug}`}
-                              className="arrowLink colorWhite hover-me position-absolute"
-                            >
-                              <div className="btnPortfolio transition">
-                                <span className="fs17 mobFs18 fw500 colorBlack">
-                                  Case Study
-                                </span>{" "}
-                                <span className="ml10">{Svg.ArrowDiagnal}</span>
-                              </div>
-                            </Link>
-                          </div>
-                        </Slide>
-                      </GSection>
-
-                      <div className="aboutPortfolio mb60 mobMb30">
-                        <Slide bottom>
-                          <h6 className="fs28 tabFs13 tabLgFs13 mobFs18 mb9 mobMb10 tabMb10 colorWhite">
-                            {e.acf === false ? "" : e?.acf?.project_title}
-                          </h6>
-                          <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs16 mb36 col-md-7 col-sm-12 col-xs-12">
-                            {e?.title?.rendered}
-                          </p>
-                        </Slide>
-
-                        {/* <div className="magnetWrapper">
-                          <Link
-                            to={`/portfolio/${e?.slug}`}
-                            className="arrowLink colorWhite hover-me "
-                          >
-                            <Cursor isGelly={true} />
-                         
-                            <div data-cursor-magnetic>
-                              <div className="mb15">
-                                <span className="d-flex align-items-center">
-                                  <span className="mr15 fs14 tabFs13 tabLgFs13 mobFs13">
-                                    View the project 
-                                  </span>
-                                  <span className="circleArrow hvr-sweep-to-top  d-flex align-items-center radius100 justify-content-center">
-                                    {Svg.arrowRight}
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                          </Link>
-                        </div> */}
-                      </div>
-                    </Col>
-                  );
-                }
-              })}
-          </Row>
+                    </div>
+              
+             
+                
+                })}
+                </div>;
         </div>
       </Container>
 
@@ -237,7 +146,7 @@ const Portfolio = () => {
                 </Slide>
                 <div className="magnetWrapper">
                   <Link
-                    to="/contactus"
+                    to="/contact-us"
                     className="arrowLink colorWhite hover-me "
                   >
                     <Cursor isGelly={true} />
@@ -277,7 +186,7 @@ const Portfolio = () => {
                 </Slide>
                 <div className="magnetWrapper">
                   <Link
-                    to="/contactus"
+                    to="/contact-us"
                     className="arrowLink colorWhite hover-me "
                   >
                     <Cursor isGelly={true} />
@@ -330,7 +239,7 @@ const Portfolio = () => {
                   </Slide>
                   <div className="magnetWrapper">
                     <Link
-                      to="/contactus"
+                      to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
                       <Cursor isGelly={true} />
@@ -372,7 +281,7 @@ const Portfolio = () => {
                   </Slide>
                   <div className="magnetWrapper">
                     <Link
-                      to="/contactus"
+                      to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
                       <Cursor isGelly={true} />
@@ -409,7 +318,7 @@ const Portfolio = () => {
                   </Slide>
                   <div className="magnetWrapper">
                     <Link
-                      to="/contactus"
+                      to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
                       <Cursor isGelly={true} />
@@ -452,7 +361,7 @@ const Portfolio = () => {
                   </Slide>
                   <div className="magnetWrapper">
                     <Link
-                      to="/contactus"
+                      to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
                       <Cursor isGelly={true} />
@@ -498,7 +407,7 @@ const Portfolio = () => {
             </Fade>
 
             <div className="magnetWrapper">
-              <Link to="/contactus" className="arrowLink colorWhite hover-me ">
+              <Link to="/contact-us" className="arrowLink colorWhite hover-me ">
                 <Cursor isGelly={true} />
                 <div data-cursor-magnetic>
                   <div className="mb15">

@@ -1854,8 +1854,16 @@ ArrowDiagnal: <svg xmlns="http://www.w3.org/2000/svg" width="18.841" height="18.
   <path id="Path_35546" data-name="Path 35546" d="M0,0,8,8l8-8" transform="translate(0 7.998)" fill="none" stroke="#111" strokeWidth="1.5"/>
 </g>
 </svg>,
-RedCheckBox: <svg xmlns="http://www.w3.org/2000/svg" width="18.5" height="18.5" viewBox="0 0 18.5 18.5">
-<path id="Path_35372" data-name="Path 35372" d="M12797,4267.25a9.25,9.25,0,1,1,9.25,9.25A9.26,9.26,0,0,1,12797,4267.25Zm3.917-5.333a7.549,7.549,0,1,0,5.333-2.206A7.507,7.507,0,0,0,12800.917,4261.917Zm2.976,8.832-2.422-2.422a.424.424,0,0,1,0-.6l.769-.769a.42.42,0,0,1,.3-.125.412.412,0,0,1,.3.125l1.743,1.743,5.1-5.136a.4.4,0,0,1,.3-.129.407.407,0,0,1,.3.132l.759.778a.436.436,0,0,1,.02.579l-.016.019-5.86,5.889h-.017a.958.958,0,0,1-.592.238A1.007,1.007,0,0,1,12803.893,4270.75Z" transform="translate(-12797 -4258)" fill="#ff0a2b"/>
+
+MobBurger: <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+<g id="Group_63279" data-name="Group 63279" transform="translate(-325 -27)">
+  <circle id="Ellipse_13595" data-name="Ellipse 13595" cx="14" cy="14" r="14" transform="translate(325 27)" fill="#fff"/>
+  <g id="Group_63278" data-name="Group 63278" transform="translate(0.793 1.5)">
+    <line id="Line_489" data-name="Line 489" x2="14" transform="translate(331.207 34.5)" fill="none" stroke="#111" stroke-linecap="round" stroke-width="1.5"/>
+    <line id="Line_490" data-name="Line 490" x2="10" transform="translate(333.207 39.5)" fill="none" stroke="#111" stroke-linecap="round" stroke-width="1.5"/>
+    <line id="Line_491" data-name="Line 491" x2="14" transform="translate(331.207 44.5)" fill="none" stroke="#111" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</g>
 </svg>
 
 

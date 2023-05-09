@@ -53,6 +53,9 @@ const GImage = styled.img`
     border-radius: ${(props) => {
       return props.radiusMob && props.radiusMob ;
     }};
+    width: ${(props) => {
+      return props.widthMob && props.widthMob ;
+    }};
   }
 `;
 export default GImage;

@@ -148,10 +148,10 @@ const MenuNav = (props) => {
         <ul className="pl0 text-center noUl fullNav">
           <li className="active-nav" onClick={()=>closeFn(false)}>
             <Link
-              to="/services"
+              to="/work"
               className="fw700 fs80 colorWhite position-relative text-capitalize hover-target"
             >
-              Service
+              Work
             </Link>
           </li>
           <li onClick={()=>closeFn(false)}>
@@ -164,15 +164,23 @@ const MenuNav = (props) => {
           </li>
           <li onClick={()=>closeFn(false)}>
             <Link
-              to="/blogs"
+              to="/#"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
             >
-              Blogs
+              Ecommerce Solution
             </Link>
           </li>
           <li onClick={()=>closeFn(false)}>
             <Link
-              to="/about"
+              to="/services"
+              className="fw700 fs80 colorWhite position-relative text-capitalize"
+            >
+              Services
+            </Link>
+          </li>
+          <li onClick={()=>closeFn(false)}>
+            <Link
+              to="/about-us"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
             >
               About Us
@@ -180,10 +188,10 @@ const MenuNav = (props) => {
           </li>
           <li onClick={()=>closeFn(false)}>
             <Link
-              to="/contactus"
+              to="/blog"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
             >
-              Contact Us
+              Blog
             </Link>
           </li>
         </ul>

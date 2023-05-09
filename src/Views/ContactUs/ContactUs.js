@@ -11,6 +11,8 @@ import "./Contact.css";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { homeUrl } from "../../Helpers/Api/Endpoint";
 
 const DummyLoop = [
   {
@@ -83,12 +85,97 @@ const Form = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [company, setcompany] = useState("");
-  const [website, setwebsite] = useState("");
+  const [message, setmessage] = useState("");
+  const [projectType, setProjectType] = useState([]);
+  const [Budget, setBudget] = useState([]);
 
-  const onSubmitHandler = (e) => {
-    e.Preventdefault();
+  const clearAll=()=>{
+    setname("");
+    setemail("");
+    setcompany("");
+    setmessage("");
+    setProjectType([]);
+    setBudget([]);
+  }
+
+  const handleCheckbox = (val) => {
+    if (val.target.checked) {
+      setProjectType((oldArray) =>
+        oldArray.concat({
+          value: val.target.value,
+        })
+      );
+    } else {
+      const result = projectType.filter((item) => {
+        if (item.value !== val.target.value) {
+          return true;
+        }
+      });
+      setProjectType(result);
+    }
   };
 
+  const handleCheckbox2 = (val) => {
+    if (val.target.checked) {
+      setBudget((oldArray) =>
+        oldArray.concat({
+          value: val.target.value,
+        })
+      );
+    } else {
+      const result = Budget.filter((item) => {
+        if (item.value !== val.target.value) {
+          return true;
+        }
+      });
+      setBudget(result);
+    }
+  };
+  const onSubmitHandler = (e) => {
+ 
+    const iData = new FormData();
+    iData.append("yourname", name);
+    iData.append("your-email", email);
+    iData.append("company", company);
+    iData.append("your-message", message);
+    if (projectType.length > 0) {
+      let temp=[];
+      projectType.forEach((f, i) => {
+        temp.push(f.value);
+   
+      });
+      iData.append("ProjectType", temp);
+    } else {
+      iData.append("ProjectType", []);
+    }
+    if (Budget.length > 0) {
+      let temp1=[];
+      Budget.forEach((f, i) => {
+        temp1.push(f.value);
+      
+      });
+      iData.append("Budget", temp1);
+    } else {
+      iData.append("Budget", []);
+    }
+
+
+    const options = {
+      method: "POST",
+      headers: {
+        // if file upload "Content-Type": "multipart/form-data",
+        Accept: "application/json"
+      },
+    };
+
+    axios.post(homeUrl+"/wp-json/contact-form-7/v1/contact-forms/7892/feedback", iData, options).then((res) => {
+      console.log(res);
+      if (res && res.status===200) {
+        alert(res?.data?.message);
+        clearAll();
+      }
+    });
+  };
   useEffect(() => {
     if (document.createElement("svg").getAttributeNS) {
       var checkbxsCross = Array.prototype.slice.call(
@@ -329,9 +416,9 @@ const Form = () => {
   return (
     <>
       <Container>
+     
         <Row>
           <Col lg={7}>
-            <form onSubmit={onSubmitHandler}>
               <Slide bottom>
                 <GIconInput
                   type="text"
@@ -354,21 +441,15 @@ const Form = () => {
                   onChange={(e) => setcompany(e.target.value)}
                 ></GIconInput>
 
-                <GSpacing mb="30px" mobmb="12px">
-                  <GIconInput
-                    type="text"
-                    placeholder="Does your company have a website?"
-                    value={website}
-                    onChange={(e) => setwebsite(e.target.value)}
-                  ></GIconInput>
-                </GSpacing>
+               
               </Slide>
               <Slide bottom>
                 <h3 className="fs28 tabFs20 tabLgFs20 mobFs18 colorWhite mb20 mobMb10">
                   Let us know a little more about your project
                 </h3>
                 <GSpacing>
-                  <GTextarea
+                  <GTextarea 
+                    onChange={(e) => setmessage(e.target.value)}
                     label="You can tell us everything in brief, or a little. It’s up to you!"
                     placeholder="Start typing..."
                   ></GTextarea>
@@ -403,25 +484,13 @@ const Form = () => {
                     <h5 className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20">
                       Branding
                     </h5>
-                    {/* Animated Checkbox */}
-                    {/* <section>
-                      <form
-                        className="ac-custom ac-checkbox ac-boxfill"
-                        autocomplete="off"
-                      >
-                        <ul>
-                          <li>
-                            <input id="cb10" name="cb10" type="checkbox" />
-                            <label htmlFor="cb10">Brand Strategy</label>
-                          </li>
-                        </ul>
-                      </form>
-                    </section> */}
+                  
                     <GSpacing mb="5px">
                       <GCheckbox
                         id="strategy"
                         name="1"
                         label="Brand Strategy"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -429,6 +498,7 @@ const Form = () => {
                         id="Identity"
                         name="2"
                         label="Brand Identity"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -436,6 +506,7 @@ const Form = () => {
                         id="Collateral"
                         name="3"
                         label="Brand Collateral"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                   </Slide>
@@ -450,6 +521,7 @@ const Form = () => {
                         id="Website"
                         name="4"
                         label="Website Strategy"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>{" "}
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -457,6 +529,7 @@ const Form = () => {
                         id="Copywriting"
                         name="5"
                         label="Website Copywriting"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>{" "}
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -464,6 +537,7 @@ const Form = () => {
                         id="Design"
                         name="6"
                         label="Website Design"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>{" "}
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -471,6 +545,7 @@ const Form = () => {
                         id="Development"
                         name="7"
                         label="Website Development"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>{" "}
                     </GSpacing>
                   </Slide>
@@ -483,6 +558,7 @@ const Form = () => {
                         id="Product"
                         name="8"
                         label="Product Strategy"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -490,6 +566,7 @@ const Form = () => {
                         id="writing"
                         name="9"
                         label="Product Copywriting"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -497,6 +574,7 @@ const Form = () => {
                         id="PDesign"
                         name="10"
                         label="Product Design"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -504,6 +582,7 @@ const Form = () => {
                         id="PDevelopment"
                         name="11"
                         label="Product Development"
+                        onChange={(e)=>handleCheckbox(e)}
                       ></GCheckbox>
                     </GSpacing>
                   </Slide>
@@ -515,7 +594,6 @@ const Form = () => {
                     Do you have a budget in mind?
                   </h3>
                   <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20">
-                    {" "}
                     Based on your selection of services, we’ve recommended a
                     budget range below. Keep in mind that this is a guess,
                     subject to time and scope.
@@ -530,6 +608,8 @@ const Form = () => {
                         id="Less"
                         name="12"
                         label="Less than $25k"
+                        onChange={(e)=>handleCheckbox2(e)}
+                        
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -537,6 +617,7 @@ const Form = () => {
                         id="$100k"
                         name="13"
                         label="$100k to $150k"
+                        onChange={(e)=>handleCheckbox2(e)}
                       ></GCheckbox>
                     </GSpacing>
                   </Slide>
@@ -548,6 +629,7 @@ const Form = () => {
                         id="25k"
                         name="14"
                         label="$25k to $50k"
+                        onChange={(e)=>handleCheckbox2(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -555,6 +637,7 @@ const Form = () => {
                         id="$More"
                         name="15"
                         label="More than $150k"
+                        onChange={(e)=>handleCheckbox2(e)}
                       ></GCheckbox>
                     </GSpacing>
                   </Slide>
@@ -566,6 +649,7 @@ const Form = () => {
                         id="$50k"
                         name="16"
                         label="$50k to $100k"
+                        onChange={(e)=>handleCheckbox2(e)}
                       ></GCheckbox>
                     </GSpacing>
                     <GSpacing mb="5px">
@@ -573,6 +657,7 @@ const Form = () => {
                         id="$costs"
                         name="17"
                         label="Whatever it costs"
+                        onChange={(e)=>handleCheckbox2(e)}
                       ></GCheckbox>
                     </GSpacing>
                   </Slide>
@@ -580,10 +665,9 @@ const Form = () => {
               </Row>
               <GSpacing mb="100px" mobmb="60px" tabmb="100px">
                 <Slide bottom>
-                  <button className="red-btn">Submit</button>
+                  <button onClick={onSubmitHandler} className="red-btn">Submit</button>
                 </Slide>
               </GSpacing>
-            </form>
           </Col>
           <Col lg={5} className="mb100 mobMb60">
             <section className="ml40 mobMl0">
