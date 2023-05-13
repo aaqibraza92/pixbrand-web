@@ -21,6 +21,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
+import { Link } from "react-router-dom";
 
 const WrapperFaq = styled.div`
   background-color: #111;
@@ -37,32 +38,230 @@ const Ecommerce = () => {
         ></meta>
       </Helmet>
 
-      <section className="ecommorceTop">
-      <Container>
-      <Row className="mobReverse">
+      <section className="ecommorceTop pt80 pb80">
+      <Container className="position-relative d-flex align-items-center justify-content-center">
+      <div className="position-absolute cuttedLogo">
+        <img src={require('../../Assets/Img/ecommerce/cutlogo.png')} alt="" className="img-fluid" />
+      </div>
+      <Row className="mobReverse gx-5 gy-5">
           <Col lg={6} md={12}>
-            <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
+          <div className="d-flex flex-column justify-content-between h-100">
+          <h1 className="fs80 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
               <Slide bottom>Ecommerce Solution</Slide>
             </h1>
 
             <div className="tabbing">
+            <Slide bottom>
             <p className="colorRed fs16 fw600">
             WHAT WE DO
             </p>
             <h3 className="fs40 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
             SkyRocket Your Brand with our E-commerce & Retail Solutions.
             </h3>
+            </Slide>
+         
             </div>
+          </div>
+          
           </Col>
           <Col lg={6} md={12}>
-            <img  src={require('../../Assets/Img/digital-market/digi-banner.jpg')} alt="" className="img-fluid radius" />
+          <Slide right><img  src={require('../../Assets/Img/ecommerce/ecom.jpg')} alt="" className="img-fluid radius" /></Slide>
+
+            
           </Col>
         </Row>
       </Container>
      
       </section>
 
-      <DigitalMarketingSlider />
+      <section className="pt0 pb80">
+      <Container className="position-relative d-flex align-items-center justify-content-center">
+      <Row className="gx-5 gy-5">
+          <Col lg={6} md={12}>
+          <div className="prr30 ecommerceAcc">
+                <Accordion>
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        UX/UI DESIGN
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          Web design has become the first point of contact for
+                          businesses of all shapes and sizes. With the onslaught
+                          of digital resources for customers, good web design
+                          has become important for businesses. Here’s why-
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        E-COMMERCE DEVELOPMENT
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          A nicely done web design makes for a great first
+                          impression on every visitor coming over to the
+                          business site.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>HEADLESS COMMERCE</AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          Without a website, it will always be difficult to
+                          ensure visibility amidst competition in search engine
+                          results. A great web development company assists with
+                          that.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        PLATFORM MIGRATION
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          With properly designed web pages, a business can
+                          create a consistent brand across the entire website
+                          profile. It helps in reducing the bounce rate of the
+                          web pages too. These and many more are the reasons why
+                          you should always pay a lot of attention to the web
+                          design for your business- a place where we can help
+                          you out.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        INTERNATIONAL EXPANSION
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <ul className="mb0 ">
+                          <li className="colorPara mb10 fs17 tabFs15 tabLgFs15 mobFs15 ">
+                            Web design - Web design in its essence, refers to
+                            the abstract aspects of a website that determine its
+                            overall usability. As far as web design is
+                            concerned, the developers use different tools to
+                            create varying templates for designing related
+                            visual aspects within the website.
+                          </li>
+                          <li className="colorPara fs17 tabFs15 tabLgFs15 mobFs15 ">
+                            Web Development - In web development, the developers
+                            choose a design and then create a fully functional
+                            website with the help of web creation tools like
+                            CSS, Javascript, to enliven the design files and
+                            create the right website.
+                          </li>
+                        </ul>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        B2B COMMERCE
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          At Pix Brand, we have been creating spectacular mobile
+                          and web products since 2017. To ensure that we create
+                          cross-platform applications and websites, we employ
+                          the use of the latest technologies and development
+                          frameworks which are then followed by intense testing
+                          and Quality Assurance practices. The final product
+                          coming at you is, expectedly, bug-free, smooth, and
+                          sticks to our Pix mantra with perfection.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        E-COMMERCE STRATEGY
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          Pix Brand takes its commitment to professionalism and
+                          transparency very seriously, which is why after we
+                          complete your website, we take you through all the
+                          logs, credentials, and using all the other features of
+                          the site. Despite that, we are always there for all
+                          our clients, and that’s not just client support-
+                          that’s our Pix Brand promise.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+                  <Fade bottom >
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                        TECHNICAL DISCOVERY
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          Pix Brand takes its commitment to professionalism and
+                          transparency very seriously, which is why after we
+                          complete your website, we take you through all the
+                          logs, credentials, and using all the other features of
+                          the site. Despite that, we are always there for all
+                          our clients, and that’s not just client support-
+                          that’s our Pix Brand promise.
+                        </p>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Fade>
+                </Accordion>
+              </div>
+          </Col>
+          <Col>
+            <p className="colorLightBlack fs20 mobFs15">
+            Avex designs, builds & optimizes e-commerce channels for the world’s largest brands. Shopify Services that include strategy, UX design, platform migrations & headless commerce development. We build conversion-focused ecommerce stores on Shopify Plus.
+            </p>
+
+            <div className="mt30">
+              <Link className="btnRed" to="/contact-us">
+              Get In Touch
+              </Link>
+            </div>
+          </Col>
+          </Row>
+      </Container>
+      </section>
+
+    
       <Perceptions />
       <NeuroMarketing />
       <Slider />
@@ -89,133 +288,6 @@ const Ecommerce = () => {
 };
 
 export default Ecommerce;
-
-// Slider
-const DigitalMarketingSlider = () => {
-  return (
-    <>
-      <Container className="mb100 mobMb60">
-        <section>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            loop={true}
-            speed={2000}
-            autoplay={{ delay: 1000 }}
-            spaceBetween={10}
-            slidesPerView={1}
-            onSlideChange={() => {}}
-            onSwiper={() => {}}
-            className="mb40 mobMb20"
-            //   breakpoints={{
-            //     // when window width is >= 640px
-            //     300: {
-            //       width: 300,
-            //       slidesPerView: 1,
-            //     },
-            //     // when window width is >= 768px
-            //     550: {
-            //       width: 550,
-            //       slidesPerView: 2,
-            //     },
-            //     992: {
-            //       width: 992,
-            //       slidesPerView: 3,
-            //     },
-            //     1201: {
-            //       width: 1201,
-            //       slidesPerView: 4,
-            //     },
-            //     1360: {
-            //       width: 1360,
-            //       slidesPerView: 4,
-            //     },
-            //   }}
-          >
-            <div className="bloggerList">
-              <SwiperSlide>
-                <div>
-                  <GImage
-                    width="100%"
-                    radius="24px"
-                    radiusMob="15px"
-                    src={require("../../Assets/Img/digital-market/digi-banner.jpg")}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <GImage
-                    width="100%"
-                    radius="24px"
-                    radiusMob="15px"
-                    src={Img.digital}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <GImage
-                    width="100%"
-                    radius="24px"
-                    radiusMob="15px"
-                    src={Img.digital}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <GImage
-                    width="100%"
-                    radius="24px"
-                    radiusMob="15px"
-                    src={Img.digital}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <GImage
-                    width="100%"
-                    radius="24px"
-                    radiusMob="15px"
-                    src={Img.digital}
-                  />
-                </div>
-              </SwiperSlide>
-            </div>
-          </Swiper>
-        </section>
-        <Slide bottom>
-          <section className="bBottom pb100 mobPb20 tabPb80">
-            <GAlign
-              align="between"
-              alignV="center"
-              mobWrap="wrap"
-              tabWrap="wrap"
-            >
-              <div>
-                <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10">
-                  Bakim Randevu
-                </h4>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack mb0 mobMb10">
-                  Bakim Randevu Salon platform Case Study
-                </h2>
-              </div>
-              <div>
-                <span className="fs14 tabFs13 tabLgFs13 mobFs13 colorWhite mr15">
-                  View case study
-                </span>
-                <span className="arrow-circle">
-                  {Svg.arrowwithLightBground}
-                </span>
-              </div>
-            </GAlign>
-          </section>
-        </Slide>
-      </Container>
-    </>
-  );
-};
 
 // Perceptions
 const Perceptions = () => {

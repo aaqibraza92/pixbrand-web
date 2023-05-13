@@ -914,3 +914,29 @@ border-radius: 30px;
     break-inside: avoid; 
     margin-bottom: 10px; 
   }
+  .ecommorceTop{
+background: #202020; /* Old browsers */
+background: -moz-linear-gradient(to bottom, #202020 50%,#111 50%);
+background: -webkit-linear-gradient(to bottom, #202020 50%,#111 50%);
+background: linear-gradient(to bottom, #202020 50%,#111 50%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
+
+
+  }
+  .cuttedLogo {
+    top: 40%;
+    transform: translate(-10px,-109px);
+    left: 30%;
+  }
+  .ecommerceAcc .accordion__button {
+    font-size: 18px;
+  }
+  .ecommerceAcc .accordion__button {
+    font-size: 18px;
+    border-bottom: 1px solid #373737;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .ecommerceAcc > .accordion > div:last-child .accordion__button{
+    border-bottom: none; 
+  }

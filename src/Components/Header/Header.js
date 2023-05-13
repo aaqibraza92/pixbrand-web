@@ -238,7 +238,7 @@ const DesktopMenu=()=>{
           </li>
           <li className="mr30">
             <Link
-              to="/work"
+              to="/e-commerce"
               className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
             >
               Ecommerce Solution
