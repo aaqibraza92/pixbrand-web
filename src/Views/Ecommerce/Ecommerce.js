@@ -7,7 +7,6 @@ import GImage from "../../Components/GComponents/GImage/GImage";
 import GAlign from "../../Components/GComponents/GAlign";
 import Svg from "../../Assets/Svg/Svg";
 import "./DigitalMarketing.css";
-import Services3 from "../Home/Services3";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
@@ -251,7 +250,7 @@ const Ecommerce = () => {
             Avex designs, builds & optimizes e-commerce channels for the world’s largest brands. Shopify Services that include strategy, UX design, platform migrations & headless commerce development. We build conversion-focused ecommerce stores on Shopify Plus.
             </p>
 
-            <div className="mt30">
+            <div className="mt50">
               <Link className="btnRed" to="/contact-us">
               Get In Touch
               </Link>
@@ -262,127 +261,50 @@ const Ecommerce = () => {
       </section>
 
     
-      <Perceptions />
       <NeuroMarketing />
       <Slider />
-      <How />
 
-      <section>
-        <div className="text-center mb50">
-          <Row className="justify-content-center">
-            <Col lg={5}>
-              <h3 className="colorWhite fs40 ">
-                More design services from pixbrand
-              </h3>
-              <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                We offer the whole package of product design services so you
-                could cover all your design needs in one place.
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <Services3 />
-      </section>
     </div>
   );
 };
 
 export default Ecommerce;
 
-// Perceptions
-const Perceptions = () => {
-  return (
-    <>
-      <Container className="mb100 mobMb60">
-        <Row className="align-items-center flexreverse">
-          <Col md={6}>
-            <div>
-              <Slide bottom>
-                <img
-                  src={require("../../Assets/Img/digital-market/Retention.png")}
-                  alt=""
-                  className="w-100"
-                />
-              </Slide>
-            </div>
-          </Col>
-          <Col md={6}>
-            <section className="ml90 mobMl0 ml0Tab mobMb10">
-              <Slide bottom>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb20 mobMb10">
-                  Developing the Right Retention Measures & Solutions
-                </h2>
-                <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10">
-                  To differentiate the right marketing from just marketing, our
-                  digital marketing experts at Pix Brand focus on delivering
-                  measurable results for enhancing your digital visibility
-                  across the virtual ecosystem.
-                </p>
-                <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  The results of our digital marketing campaign are built to
-                  last and offer more for your investment than any other
-                  marketing process. With our branding expertise, we incorporate
-                  digital marketing from the very first day, so that it all
-                  comes together seamlessly.
-                </p>
-              </Slide>
-            </section>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
 
 // NeuroMarketing Section
 const NeuroMarketing = () => {
   let NeuroData = [
     {
-      svg: require("../../Assets/Img/digital-market/mail.svg"),
-      title: "Mail Marketing",
-      desc: "Take your brand to the right audiences by reaching their inboxes through customized mails for the right pitch and impact. ",
-    },
-    {
-      svg: require("../../Assets/Img/digital-market/search.svg"),
-      title: "Search Engine Optimization",
-      desc: "We have mastered the SEO process, helping you rank better and more dominantly on search engines with 100% organic results. ",
-    },
-    ,
-    {
-      svg: require("../../Assets/Img/digital-market/AffiliateMarketing.svg"),
-      title: "Affiliated Marketing",
-      desc: "Pix Brand helps you earn and assist your marketing efforts by using other products or services through affiliate marketing, a great way to grow!",
-    },
-    {
-      svg: require("../../Assets/Img/digital-market/outline.svg"),
-      title: "Social Media Marketing",
-      desc: "Leverage the social media trend to grow and create a community where the right content can prove to be a highly engaging tool for your brand. ",
-    },
-    {
-      svg: require("../../Assets/Img/digital-market/InboundMarketing.svg"),
-      title: "Inbound Marketing",
-      desc: "We know the importance of tailored content better than anyone else, and we use it to create retention rates that are truly effective and efficient. ",
-    },
-    {
-      svg: require("../../Assets/Img/digital-market/OnlinePR.svg"),
-      title: "Online PR",
-      desc: "In a digital world, digital reputation is everything, which is why our online reputation-building methods provide a delightful branding avenue to you. ",
-    },
-    {
-      svg: require("../../Assets/Img/digital-market/PPCManagement.svg"),
-      title: "PPC Management",
+      svg: require("../../Assets/Img/ecommerce/eyeview.svg"),
+      title: "Customer Satisfaction",
       desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!",
     },
     {
-      svg: require("../../Assets/Img/digital-market/ContentMarketing.svg"),
-      title: "Content Marketing",
-      desc: "Pix Brand does understand the value of great content, and with our marketing efforts focused on content quality, we ensure you can leverage that too. ",
+      svg: require("../../Assets/Img/ecommerce/bow.svg"),
+      title: "Aglie Procedure",
+      desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!",
+    },
+    ,
+    {
+      svg: require("../../Assets/Img/ecommerce/diamond.svg"),
+      title: "Dedicated Teams",
+      desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!",
     },
     {
-      svg: require("../../Assets/Img/digital-market/SocialMediaOptimization.svg"),
-      title: "Social Media Optimisation",
-      desc: "Our digital marketing experts are armed with the right technical knowledge to completely revamp & optimize your existing social media strategy.",
+      svg: require("../../Assets/Img/ecommerce/eyeview.svg"),
+      title: "Integrity & Transparency",
+      desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation! ",
     },
+    {
+      svg: require("../../Assets/Img/ecommerce/bow.svg"),
+      title: "Engagement Models",
+      desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation!",
+    },
+    {
+      svg: require("../../Assets/Img/ecommerce/diamond.svg"),
+      title: "Competitive Pricing",
+      desc: "PPC gives you a lot of control over your digital advertising as you are in charge of every penny you spend. We help you with the right allocation! ",
+    }
   ];
 
   return (
@@ -391,12 +313,15 @@ const NeuroMarketing = () => {
         <section className="text-center">
           <Slide bottom>
             <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
-              Want to know more?
+            Why Choose US
             </h3>
-            <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb40 mobMb20 colorWhite width63 mobWidth100 tabWidth100 mx-auto">
-              We offer an end-to-end Digital Marketing suite for Absolute
-              Sophistication
+            <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb20 colorWhite width63 mobWidth100 tabWidth100 mx-auto">
+            Why Choose Pixbrand for
+Ecommerce Website Development
             </h2>
+            <p className="colorLightBlack fs20 mobFs15 width63 mobWidth100 tabWidth100 mx-auto mb60">
+            Being a well-known Ecommerce solution provider. Pixbrand is recognized for serving modern business needs and delivering the best-in-class solutions.
+            </p>
           </Slide>
         </section>
 
@@ -625,49 +550,6 @@ const Slider = () => {
     </section>
   );
 };
-
-// How we do it
-const How = () => {
-  return (
-    <>
-      <Container className="mb100 mobMb60">
-        <Row className="align-items-center">
-          <Col md={6} className="mobMb15">
-            <section className="width80 mobWidth100 tabWidth100 tabLgWidth100">
-              <Slide bottom>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb20 mobMb10">
-                  Digital Marketing With Pixbrand
-                </h2>
-                <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                  Our philosophy has always been making organizations of all
-                  sizes scalable and efficient in their digital efforts to have
-                  their own standing in this increasingly virtual world. With
-                  the right technology, tools, and human resources, we ensure
-                  measurable marketing results professionally.
-                </p>
-              </Slide>
-            </section>
-          </Col>
-          <Col md={6}>
-            <section>
-              <div>
-                {/* <img src={Img.} alt="" className="w-100" /> */}
-                <Slide bottom>
-                  <GImage
-                    radius="24px"
-                    radiusMob="12px"
-                    src={require("../../Assets/Img/digital-market/digital_mark.jpg")}
-                  />
-                </Slide>
-              </div>
-            </section>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
-
 
 
 const Faq = () => {
