@@ -21,6 +21,7 @@ import {
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import { Link } from "react-router-dom";
+import ContactUsSection from "../Home/ContactUsSection";
 
 const WrapperFaq = styled.div`
   background-color: #111;
@@ -260,17 +261,36 @@ const Ecommerce = () => {
       </Container>
       </section>
 
+      <Slider />
+<RetailSection/>
     
       <NeuroMarketing />
-      <Slider />
-
+     
+      <div className="mb60">
+      <ContactUsSection/>
+      </div>
+  
     </div>
   );
 };
 
 export default Ecommerce;
 
-
+const RetailSection=()=>{
+  return <section>
+    <Container>
+      <div className="greyishBg radius20 pl30 pr30 pt60 pb60">
+      <h6 class="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">COMMON FEATURES</h6>
+      <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb20 colorWhite">
+      Retail Mobile App
+            </h2>
+            <p className="colorLightBlack fs20 mobFs15">
+            In order to give your customers’ best digital experience, we design and develop ecommerce mobile apps that give your users engaging and real time shopping experience as well as helps to retain and allure them to revisit your app frequently. Our ecommerce mobile apps help your business to create an online marketplace to attract multiple vendors to online sell their different product brands.
+            </p>
+      </div>
+    </Container>
+  </section>
+}
 // NeuroMarketing Section
 const NeuroMarketing = () => {
   let NeuroData = [
@@ -309,7 +329,7 @@ const NeuroMarketing = () => {
 
   return (
     <>
-      <Container className="mb60 mobMb40">
+      <Container className=" mobMb40">
         <section className="text-center">
           <Slide bottom>
             <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
