@@ -61,10 +61,10 @@ const AboutUsSection = () => {
               }
 
               <div className="d-flex">
-                <Link className="btnRed mb0 mr15" to="/#">
+                <Link className="btnRed mb0 mr15" to="/contact-us">
                 Get In Touch
                 </Link>
-                <Link className="btnTransparent" to="/#">
+                <Link className="btnTransparent" to="/about">
                 About Us <span className="ml10">{Svg.arrowRight}</span> 
                 </Link>
               </div>

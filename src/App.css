@@ -940,3 +940,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', end
   .ecommerceAcc > .accordion > div:last-child .accordion__button{
     border-bottom: none; 
   }
+  .bTopGrey{
+    border-top:1px solid #313235
+  }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -22,6 +22,8 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 import { Link } from "react-router-dom";
 import ContactUsSection from "../Home/ContactUsSection";
+import axios from "axios";
+import { allportfolio } from "../../Helpers/Api/Endpoint";
 
 const WrapperFaq = styled.div`
   background-color: #111;
@@ -260,8 +262,9 @@ const Ecommerce = () => {
           </Row>
       </Container>
       </section>
-
+      
       <Slider />
+      <ContactRed/>
 <RetailSection/>
     
       <NeuroMarketing />
@@ -277,16 +280,30 @@ const Ecommerce = () => {
 export default Ecommerce;
 
 const RetailSection=()=>{
+  const list=['Seamless UI','E-Catalogues','Complete security includes transactions and payment','Multi-Currency','Order tracking','Product reviews','Products Gallery','Personalised option to send offers, sale and other announcements','Reports & analytics','Multilingual support','Store-map for holistic shopping experience','Simple inventory management','User-friendly app navigation','Price check, product availability, price comparison','Highly secured payment methods','Unlimited products & categories','Advanced products search criteria/filters','Display and track shopping items','Easy shopping cart administration']
   return <section>
     <Container>
-      <div className="greyishBg radius20 pl30 pr30 pt60 pb60">
-      <h6 class="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">COMMON FEATURES</h6>
+      <div className="greyishBg radius20 pl40 pr40 pt60 pb60">
+      <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">COMMON FEATURES</h6>
       <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb20 colorWhite">
       Retail Mobile App
             </h2>
-            <p className="colorLightBlack fs20 mobFs15">
+            <p className="colorLightBlack fs20 mobFs15 mb50">
             In order to give your customers’ best digital experience, we design and develop ecommerce mobile apps that give your users engaging and real time shopping experience as well as helps to retain and allure them to revisit your app frequently. Our ecommerce mobile apps help your business to create an online marketplace to attract multiple vendors to online sell their different product brands.
             </p>
+            <Row className="gy-3">
+              {list.map((e, i) => (
+                <Col key={i} lg={4} md={6}>
+                  <div className="d-flex">
+                    <span style={{width: '25px'}}>{Svg.CircleCheck}</span>
+                    <p className="colorLightGrey fs18 fw500 mobFs15 mb0 ml10">
+                      {e}
+                    </p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+
       </div>
     </Container>
   </section>
@@ -329,7 +346,7 @@ const NeuroMarketing = () => {
 
   return (
     <>
-      <Container className=" mobMb40">
+      <Container className="pt80 mobMb40">
         <section className="text-center">
           <Slide bottom>
             <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
@@ -377,42 +394,57 @@ Ecommerce Website Development
 
 // Slider
 const Slider = () => {
+  const [loader, setloader] = useState(true);
+  const [postData, setPostData] = useState("");
+  useEffect(() => {
+    loadAllPosts();
+  }, []);
+
+  const loadAllPosts = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    };
+
+    await axios
+      .get(`${allportfolio}?per_page=6&page=1`, options)
+      .then((res) => {
+        if (res && res.status === 200) {
+          setPostData(res?.data);
+          setloader(false);
+        }
+      });
+  };
+
   return (
-    <section className="bgLightGrey pt100 pb100 mobPt40 mobPb40 mobPb0 mb100 mobMb60">
+    <section className="pt0  mobPb0  mobMb60">
       <Container>
         <section className="mb40 mobMb20">
           <Slide bottom>
-            <div className="bBottom pb20">
-              <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
-                How we nail Digital Marketing
-              </h3>
+            <div className="bTopGrey pt60 pb20">
               <GAlign align="between" alignV="center" className="flex-wrap">
                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb0 mobMb10 width68 mobWidth100 tabWidth100 ">
-                  We follow a well-defined 5-step process that delivers
-                  exceptional digital marketing results.
+                Featured E-Commerce Work
                 </h2>
+
                 <div className="">
-                  <span>
-                    <img
-                      src={Img.leftarrow}
-                      alt=""
-                      className="img-fluid mr15"
-                    />
-                  </span>
-                  <span>
-                    <img src={Img.rightarrow} alt="" className="img-fluid" />
-                  </span>
+                <Link className="btnTransparent" to="/portfolio">
+                View All Projects <span className="ml10">{Svg.arrowRight}</span> 
+                </Link>
+            
                 </div>
               </GAlign>
             </div>
           </Slide>
         </section>
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+             modules={[Navigation, Pagination, Autoplay]}
           loop={true}
           speed={2000}
-          // autoplay={{ delay: 1000 }}
-          spaceBetween={10}
+          autoplay={true}
+          spaceBetween={30}
           slidesPerView={4}
           onSlideChange={() => {}}
           onSwiper={() => {}}
@@ -433,138 +465,61 @@ const Slider = () => {
             },
             1201: {
               width: 1201,
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
             1360: {
               width: 1360,
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
         >
-          <div className="bloggerList">
-            <SwiperSlide>
-              <section>
-                <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={
-                        require("../../Assets/Img/digital-market/sl-r1.svg")
-                          .default
-                      }
-                      alt="Research"
-                    />
-                  </div>
-                  <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                    Research
-                  </h3>
-                  <p className="fs16 colorLightBlack mb0">
-                    It is crucial to understand market trends and competitors
-                    before developing a digital marketing strategy. Meticulous
-                    research is where we begin.
-                  </p>
-                </section>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section>
-                <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={
-                        require("../../Assets/Img/digital-market/Positioning.svg")
-                          .default
-                      }
-                      alt="Positioning"
-                    />
-                  </div>
-                  <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                    Positioning
-                  </h3>
-                  <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                    Understanding market sentiments and the right brand position
-                    has a lot to do with the long-term results of every digital
-                    marketing campaign we execute. Delivers a better brand
-                    message.
-                  </p>
-                </section>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section>
-                <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={
-                        require("../../Assets/Img/digital-market/Creative.svg")
-                          .default
-                      }
-                      alt="Creative"
-                    />
-                  </div>
-                  <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                    Creative
-                  </h3>
-                  <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                    To stand out from the rest, creativity plays a huge role and
-                    our digital marketers know that best. Every design for
-                    digital marketing has a strong underlying philosophy.
-                  </p>
-                </section>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section>
-                <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={
-                        require("../../Assets/Img/digital-market/Marketing.svg")
-                          .default
-                      }
-                      alt="Marketing"
-                    />
-                  </div>
-                  <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                    Marketing
-                  </h3>
-                  <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                    After everything, it’s essential to take the prepared
-                    resources to the right target audiences, made possible with
-                    our customized digital marketing services.
-                  </p>
-                </section>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section>
-                <section className="scards pt30 pb30 pl20 pr20 radius20">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={
-                        require("../../Assets/Img/digital-market/Marketing.svg")
-                          .default
-                      }
-                      alt="Management"
-                    />
-                  </div>
-                  <h3 className="fs20 tabFs16 tabLgFs16 mobFs16 colorWhite mb20 mobMb10">
-                    Management
-                  </h3>
-                  <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb0">
-                    For digital marketing to keep delivering results on a
-                    consistent basis, our digital marketing experts take their
-                    own sweet time managing existing campaigns so that results
-                    are always measurable.
-                  </p>
-                </section>
-              </section>
-            </SwiperSlide>
-          </div>
+         
+          {postData.length > 0 &&
+                postData?.map((e, i) => {
+                
+                   return  <SwiperSlide key={i}>
+                    <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-4">
+                            <GImage
+                              className="scale"
+                              width="100%"
+                              src={
+                                e?.x_featured_media_large
+                                  ? e?.x_featured_media_large
+                                  : Img.p1
+                              }
+                            />
+                            <Link
+                              to={`/portfolio/${e?.slug}`}
+                              className="arrowLink colorWhite hover-me position-absolute"
+                            >
+                              <div className="btnPortfolio transition">
+                                <span className="fs17 fw500 colorBlack">
+                                  Case Study
+                                </span>{" "}
+                                <span className="ml10">{Svg.ArrowDiagnal}</span>
+                              </div>
+                            </Link>
+                          </div>
+                          <div className="aboutPortfolio mb60 mobMb30">
+                            <h6 className="fs28 tabFs18  mobFs18 mb9 mobMb10 tabMb10 colorWhite">
+                              <Link
+                                to={`/portfolio/${e?.slug}`}
+                                className="colorWhite"
+                              >
+                                {e.acf === false ? "" : e?.acf?.project_title}
+                              </Link>
+                            </h6>
+                            <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs18 mb36">
+                              {e?.title?.rendered}
+                            </p>
+                          </div>
+                          </SwiperSlide>
+             
+                
+                })}
+      
+        
+         
         </Swiper>
       </Container>
     </section>
@@ -772,3 +727,28 @@ const Faq = () => {
 };
 
 
+const ContactRed=()=>{
+  return <section className="mb80">
+    <Container>
+
+      <div className="d-flex align-items-center position-relative justify-content-center">
+      <img className="radius20 w-100" src={require('../../Assets/Img/ecommerce/redBg.png')} alt="red bg"/>
+      <div className="position-absolute pl10 pr10 text-center">
+      <Row className="justify-content-center">
+      <Col lg={8} md={12}>
+      <h3 className="mb20 colorWhite fs30 fw500">
+
+      Let's Discuss Your Project
+      </h3>
+      <p className="mb40 colorWhite fs17 fw500">
+      Get free consultation and let us know your project idea to turn it into an amazing digital product.
+      </p>
+      </Col>
+    </Row>
+      <div><Link className="btnTransparent" to="/contact-us">Get In Touch</Link></div></div>
+      </div>
+  
+    
+    </Container>
+  </section>
+}
