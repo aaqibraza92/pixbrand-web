@@ -23,7 +23,7 @@ const ContactUsSection = () => {
     </Col>
 
     <Col lg={6} md={6}>
-        <div className='borderGrey d-flex align-items-center position-relative radius20 redBg transition'>
+        <div className='borderGrey discuss d-flex align-items-center position-relative radius20 redBg transition'>
         <img className='radius20 w-100' src={require('../../Assets/Img/redbg.jpg')} alt="red bg" />
         <div className='position-absolute contactSpacer'>
         <h3 className='mb40 colorWhite fs30 fw500'>

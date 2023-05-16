@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="558" height="444" viewBox="0 0 558 444">
+  <g id="Group_53396" data-name="Group 53396" transform="translate(-695 -2738)">
+    <g id="Group_50724" data-name="Group 50724" transform="translate(695 2738)">
+      <rect id="Rectangle_13029" data-name="Rectangle 13029" width="440" height="87" rx="8" fill="#e8e49b"/>
+      <text id="Competitive_research" data-name="Competitive research" transform="translate(219 52)" fill="#111" font-size="22" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-107.338" y="0">Competitive research</tspan></text>
+    </g>
+    <g id="Group_50725" data-name="Group 50725" transform="translate(813.101 2857.184)">
+      <rect id="Rectangle_13029-2" data-name="Rectangle 13029" width="440" height="87" rx="8" transform="translate(-0.101 -0.185)" fill="#ff7b7b"/>
+      <text id="Customer_journey_map" data-name="Customer journey map" transform="translate(219.898 51.815)" fill="#111" font-size="22" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-113.828" y="0">Customer journey map</tspan></text>
+    </g>
+    <g id="Group_50726" data-name="Group 50726" transform="translate(695 2976.369)">
+      <rect id="Rectangle_13029-3" data-name="Rectangle 13029" width="440" height="87" rx="8" transform="translate(0 -0.369)" fill="#f9e8ea"/>
+      <text id="User_flows" data-name="User flows" transform="translate(220 51.631)" fill="#111" font-size="22" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-52.019" y="0">User flows</tspan></text>
+    </g>
+    <g id="Group_50727" data-name="Group 50727" transform="translate(739.423 3095.553)">
+      <rect id="Rectangle_13029-4" data-name="Rectangle 13029" width="440" height="86" rx="8" transform="translate(-0.423 0.447)" fill="#84d6d7"/>
+      <text id="Wireframes" transform="translate(219.576 52.446)" fill="#111" font-size="22" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-57.948" y="0">Wireframes</tspan></text>
+    </g>
+  </g>
+</svg>

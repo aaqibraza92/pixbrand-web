@@ -47,7 +47,7 @@ const Footer = (props) => {
                 buttonView
                 text="Get In Touch"
                 align="between"
-                to="#"
+                to="/contact-us"
                 width="200px"
                 icon={Svg.arrowRight}
                 radius="30px"

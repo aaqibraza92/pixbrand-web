@@ -117,6 +117,9 @@ body .posRightLeft .textMover {
 }
 
 @media only screen and (max-width: 767px) {
+  .discuss img {
+    height: 300px;
+  }
   body .single_portfolio_data {
     margin-top: 110px;
   }
@@ -210,6 +213,9 @@ body .posRightLeft .textMover {
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
+  .discuss img {
+    height: 300px;
+  }
   .tabFs12 {
     font-size: 12px !important;
   }

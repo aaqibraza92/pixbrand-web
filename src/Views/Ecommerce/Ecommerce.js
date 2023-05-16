@@ -425,7 +425,7 @@ const Slider = () => {
           <Slide bottom>
             <div className="bTopGrey pt60 pb20">
               <GAlign align="between" alignV="center" className="flex-wrap">
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite mb0 mobMb10 width68 mobWidth100 tabWidth100 ">
+                <h2 className="fs40 tabFs28 mobMb30 tabLgFs28 mobFs24 tabMb30 colorWhite width68 mobWidth100 tabWidth100 ">
                 Featured E-Commerce Work
                 </h2>
 
@@ -728,7 +728,7 @@ const Faq = () => {
 
 
 const ContactRed=()=>{
-  return <section className="mb80">
+  return <section className="mb80 discuss">
     <Container>
 
       <div className="d-flex align-items-center position-relative justify-content-center">
