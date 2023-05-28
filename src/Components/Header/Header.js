@@ -7,6 +7,7 @@ import Svg from "../../Assets/Svg/Svg";
 import styled from "styled-components";
 import MenuNav from "./MenuNav";
 import $ from "jquery";
+import { Helmet } from "react-helmet";
 
 const Header = (props) => {
   const { pathname } = useLocation();
@@ -93,7 +94,13 @@ const Header = (props) => {
   });
 
   return (
-    <div className="overflow-hidden">
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home - Pixbrand</title>
+        <meta name="home" content="Pixbrand Home"></meta>
+      </Helmet>
+      <div className="overflow-hidden">
       <div className="containerEffect">
         <div className="top-layer"></div>
         <div className="top-layer top-layer--2"></div>
@@ -117,6 +124,8 @@ const Header = (props) => {
        
       </header>
     </div>
+    </>
+
   );
 };
 
