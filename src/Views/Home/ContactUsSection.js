@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'reactstrap'
 
 const ContactUsSection = () => {
   return (
-   <section className='pt80 mobPt40 pb20'>
+   <section className='pt80 mobPt40 pb20 contactSec'>
    <Container>
    <Row className='gy-3'>
     <Col lg={6} md={6}>
@@ -23,8 +23,8 @@ const ContactUsSection = () => {
     </Col>
 
     <Col lg={6} md={6}>
-        <div className='borderGrey discuss d-flex align-items-center position-relative radius20 redBg transition'>
-        <img className='radius20 w-100' src={require('../../Assets/Img/redbg.jpg')} alt="red bg" />
+        <div className='borderGrey discuss d-flex align-items-center h-100 position-relative radius20 redBg transition'>
+        <img className='radius20 w-100 h-100' src={require('../../Assets/Img/redbg.jpg')} alt="red bg" />
         <div className='position-absolute contactSpacer'>
         <h3 className='mb40 colorWhite fs30 fw500'>
         Want to hire resources <br className='d-xs-none'/> to work with you?

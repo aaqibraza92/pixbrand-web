@@ -19,6 +19,7 @@ const SingleBlog = (props) => {
     getAllPosts();
     loadCategory();
     window.scrollTo(0, 0);
+    
   }, [id?.slug]);
 
 
@@ -133,12 +134,8 @@ const SingleBlog = (props) => {
                 e.paragraph.length > 0 &&
                   e.paragraph?.map((elem, ind) => {
                     return (
-                      <p
-                        key={ind}
-                        className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite "
-                      >
-                        {elem && elem.para}
-                      </p>
+                 
+                      <div key={ind} className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite " dangerouslySetInnerHTML={{ __html: elem && elem.para }} />
                     );
                   });
               }
@@ -171,21 +168,13 @@ const SingleBlog = (props) => {
                         el?.paragraph?.map((e, i) => {
                           if (i === 0) {
                             return (
-                              <p
-                                className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite"
-                                key={i}
-                              >
-                                {e.para}
-                              </p>
+                              <div key={i} className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite" dangerouslySetInnerHTML={{ __html: e.para }} />
+                          
                             );
                           } else {
                             return (
-                              <p
-                                className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10"
-                                key={i}
-                              >
-                                {e.para}
-                              </p>
+                              <div  className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10"  key={i} dangerouslySetInnerHTML={{ __html: e.para }} />
+                            
                             );
                           }
                         })}
@@ -207,9 +196,8 @@ const SingleBlog = (props) => {
                                     <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite width80 mobWidth100 tabWidth100 tabLgWidth100 ">
                                       {e.title}
                                     </h3>
-                                    <p className="fs18 colorLightBlack width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10">
-                                      {e.paragraph}
-                                    </p>
+                                    <div className="fs18 colorLightBlack width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
+                                 
                                   </Slide>
                                 </Col>
                                 <Col lg={6}>
@@ -250,9 +238,8 @@ const SingleBlog = (props) => {
                                       <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                         {e.title}
                                       </h2>
-                                      <p className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack">
-                                        {e.paragraph}
-                                      </p>
+                                      <div className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
+                                 
                                     </Slide>
                                   </section>
                                 </Col>
@@ -274,9 +261,8 @@ const SingleBlog = (props) => {
                                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                   {e.title}
                                 </h2>
-                                <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
-                                  {e.paragraph}
-                                </p>
+                                <div className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack" dangerouslySetInnerHTML={{ __html: e.paragraph}} />
+                              
                               </Slide>
                             </div>
                           </section>

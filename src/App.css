@@ -831,14 +831,10 @@ display: inline-flex;
     border-bottom: 1px solid #fff !important;
   }
   .single_portfolio_title {
-    position: absolute;
-    top: 14%;
     z-index: 2;
     width: 100%;
   }
-  .single_portfolio_data {
-    margin-top: -81px;
-  }
+
   /* .btnRed{
     background: #ff0a2b;
 color: #fff;
@@ -896,7 +892,11 @@ border-radius: 30px;
       display: inline-flex;
       align-items: center;
       padding: 10px 30px;
+      visibility: hidden;
   
+  }
+  .protfolioWrapper:hover   .btnPortfolio {
+    visibility: visible; 
   }
   .btnPortfolio:hover {
     background:  #9f9f9f  

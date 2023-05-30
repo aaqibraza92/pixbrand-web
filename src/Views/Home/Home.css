@@ -60,6 +60,9 @@ body .accordion {
 
 /* Tab Menu CSS  */
 @media only screen and (max-width: 767px) {
+  .contactSec h3 {
+    font-size: 25px;
+  }
   .tab_menu {
     display: flex;
     display: -webkit-inline-box;
@@ -89,9 +92,9 @@ body .accordion {
 .wrapperStand .borderGrey:hover {
   border-color: #373737;
 }
-.borderGrey:hover{
+/* .borderGrey:hover{
   border-color: #ff0a2b;
-}
+} */
 .contactSpacer{
   padding: 90px 10%;
 }
@@ -105,4 +108,12 @@ body .accordion {
 }
 .serviceStiky > a.active-scroll-spy{
   display: block !important;
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .swiperTopBanner {
+    max-width: 455px;
+    overflow: hidden;
+  }
 }

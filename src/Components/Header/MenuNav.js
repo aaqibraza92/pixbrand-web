@@ -145,7 +145,7 @@ const MenuNav = (props) => {
           </div>
         </div>
 
-        <ul className="pl0 text-center noUl fullNav">
+        <ul className="pl15 text-center noUl fullNav">
           <li className="active-nav" onClick={()=>closeFn(false)}>
             <Link
               to="/work"
@@ -164,10 +164,10 @@ const MenuNav = (props) => {
           </li>
           <li onClick={()=>closeFn(false)}>
             <Link
-              to="/#"
+              to="/ecommerce-solutions"
               className="fw700 fs80 colorWhite position-relative text-capitalize"
             >
-              Ecommerce Solution
+              Ecommerce Solutions
             </Link>
           </li>
           <li onClick={()=>closeFn(false)}>

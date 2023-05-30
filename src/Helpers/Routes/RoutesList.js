@@ -71,7 +71,7 @@ let RouterList = [
         page={Pages.Ecommerce}
       />
     ),
-    path: "/e-commerce",
+    path: "/ecommerce-solutions",
     isAdmin: false,
   },
   {

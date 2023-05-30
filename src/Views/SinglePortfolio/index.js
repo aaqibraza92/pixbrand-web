@@ -63,12 +63,20 @@ const SinglePortfolio = () => {
           </section>
         </Container>
         <div className="position-relative">
-        <section className="single_portfolio_title">
+        <section className="single_portfolio_title pt80">
         <Container>
         <h4 className="fs16 colorWhite">{postData?.acf?.project_title}</h4>
-            <h1 className="fs60 mobMb10 mb-0 mobFs45 tabFs60  colorWhite">
-              {postData?.title?.rendered}
+            <h1 className="fs60 mobMb10 mb30 mobFs45 tabFs60  colorWhite">
+              {postData?.title?.rendered} -
             </h1>
+            <Slide bottom>
+          <img
+            src={postData?.x_featured_media_original}
+            alt=""
+            className="w-100 mobMb15"
+          />
+          </Slide>
+
             <div
               className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
               dangerouslySetInnerHTML={{ __html: postData?.content?.rendered }}
@@ -77,13 +85,7 @@ const SinglePortfolio = () => {
         </section>
 
      
-        <Slide bottom>
-          <img
-            src={postData?.x_featured_media_original}
-            alt=""
-            className="w-100 mobMb15"
-          />
-          </Slide>
+      
         </div>
       </section>
 

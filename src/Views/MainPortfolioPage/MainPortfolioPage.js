@@ -136,7 +136,9 @@ const MainPortfolioPage = () => {
                         
                     <Slide bottom >
                     <div className="mb80 mobMb30">
-                    <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-4">
+                    <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center radius24 overflow-hidden mb-4">
+                    <Link
+                              to={`/portfolio/${e?.slug}`}>
                             <GImage
                               className="scale"
                               width="100%"
@@ -146,6 +148,7 @@ const MainPortfolioPage = () => {
                                   : Img.p1
                               }
                             />
+                            </Link>
                             <Link
                               to={`/portfolio/${e?.slug}`}
                               className="arrowLink colorWhite hover-me position-absolute"
