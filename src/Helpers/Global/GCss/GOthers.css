@@ -404,9 +404,9 @@ button[disabled=""] {
   object-fit: cover;
 }
 .radiusTop {
-  -webkit-border-radius: 7px 7px 0px 0px;
-  -moz-border-radius: 7px 7px 0px 0px;
-  border-radius: 7px 7px 0px 0px;
+  -webkit-border-radius: 18px 18px 0px 0px;
+  -moz-border-radius: 18px 18px 0px 0px;
+  border-radius: 18px 18px 0px 0px;
 }
 body .radiusRight {
   -webkit-border-radius: 0px 7px 7px 0px;

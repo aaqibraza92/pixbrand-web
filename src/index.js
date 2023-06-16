@@ -4,15 +4,35 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import Store from "./store/slice";
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <BrowserRouter basename='/'>
+//       <App />
+//     </BrowserRouter>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter basename='/'>
+  <Provider store={Store}>
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <Provider store={Store}>
+//     <BrowserRouter basename="/">
+//       <App />
+//     </BrowserRouter>
+//   </Provider>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

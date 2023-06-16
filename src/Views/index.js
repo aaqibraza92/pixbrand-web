@@ -15,7 +15,6 @@ import Pixxley from "./SinglePortfolio";
 import MainPortfolioPage from "./MainPortfolioPage/MainPortfolioPage";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import Services from "./Services/Services";
-import SingleBlogPage from "./SingleBlogPage/SingleBlogPage";
 import SingleCareerPage from "./SingleCareerPage/SingleCareerPage";
 import SingleServicePage from "./SingleServicePage/SingleServicePage";
 import TermsServices from "./TermsServices/TermsServices";

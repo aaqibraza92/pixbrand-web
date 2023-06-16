@@ -6,8 +6,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Slide } from "react-reveal";
+import { useDispatch } from 'react-redux'
+import { portfolioColor } from "../../store/slice/GlobalReducer";
 
 const SinglePortfolio = () => {
+  const dispatch = useDispatch();
   const id = useParams();
   const [postData, setPostData] = useState("");
   const [acfData, setacfData] = useState("");
@@ -35,6 +38,8 @@ const SinglePortfolio = () => {
             : res?.data?.[0]?.acf?.flexible_content
         );
         setloader(false);
+        //res?.data?.[0]?.acf?.background_color
+        dispatch(portfolioColor(res?.data?.[0]?.acf?.background_color))
       }
     });
   };
@@ -47,7 +52,7 @@ const SinglePortfolio = () => {
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
       <div className="single_portfolio_data">
-      <section className="mb100 mobMb30">
+      <section id="colorBg" className="mb100 mobMb30" style={{background: postData?.acf?.background_color}}>
         <Container>
           {loader && (
             <div className="text-center mb60">
@@ -73,7 +78,7 @@ const SinglePortfolio = () => {
           <img
             src={postData?.x_featured_media_original}
             alt=""
-            className="w-100 mobMb15"
+            className="w-100 mobMb15 radiusTop"
           />
           </Slide>
 
@@ -97,8 +102,8 @@ const SinglePortfolio = () => {
               if (el.acf_fc_layout === "single_image") {
                 return el.image.map((e, i) => {
                   return (
-                    <Slide bottom>
-                    <div key={i}>
+                    <Slide bottom key={i}>
+                    <div>
                     
                       <img
                         src={e.image?.url}
@@ -134,8 +139,8 @@ const SinglePortfolio = () => {
                   <section className="bBottom mb80 mobMb30">
                     {el.paragraph_repeater.map((e, i) => {
                       return (
-                        <Slide bottom>
-                        <div key={i} className="mb30 mobMb30">
+                        <Slide bottom key={i}>
+                        <div className="mb30 mobMb30">
                           {e?.title !== "" && (
                             <h3 className="fs30 colorWhite mb25 mobMb10">
                               {e?.title}

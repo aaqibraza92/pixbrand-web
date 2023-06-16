@@ -121,7 +121,7 @@ body .posRightLeft .textMover {
     height: 300px;
   }
   body .single_portfolio_data {
-    margin-top: 110px;
+    margin-top: 80px;
   }
   body .single_portfolio_title h1 {
     font-size: 30px !important;
@@ -453,10 +453,6 @@ body .radius24 {
 .lineAnimate1::before {
   background: #000 !important;
 }
-/*magnetic*/
-/* html, body {
-    cursor: none;
-  } */
 .hover-me {
   transition: all 300ms ease;
 }
@@ -509,7 +505,7 @@ body .radius24 {
 }
 /*magnetic*/
 /* Sweep To Top */
-.arrowLink:hover span.circleArrow::before {
+/* .arrowLink:hover span.circleArrow::before {
   -webkit-transform: scale(2);
   transform: scale(2);
 }
@@ -545,7 +541,7 @@ span.circleArrow::before {
   transition-property: color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-}
+} */
 /* Sweep To Top */
 ::selection {
   color: #fff;

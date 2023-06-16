@@ -8,9 +8,12 @@ import styled from "styled-components";
 import MenuNav from "./MenuNav";
 import $ from "jquery";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 const Header = (props) => {
   const { pathname } = useLocation();
+
+  const selector = useSelector((state) => state);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,28 +24,15 @@ const Header = (props) => {
       const isTop = window.scrollY;
       if (isTop > 200) {
         setstickyHeader("topDown");
-      }
-      else{
+      } else {
         setstickyHeader("topUp");
       }
     });
   }, []);
 
-  //   const [screenWidth, setScreenWidth] = useState(window.screen.width);
-  //   const resizeScreen = () => {
-  //     setScreenWidth(window.innerWidth);
-  //   };
-  //   useEffect(() => {
-  // resizeScreen();
-  //     window.addEventListener("resize", resizeScreen);
-  //     return () => {
-  //       window.removeEventListener("resize", resizeScreen);
-  //     };
-  //   });
-
-
   const [menuenable, setmenuenable] = useState(false);
   const [delayer, setdelayer] = useState(false);
+  const [stylleBg, setstylleBg] = useState("#111");
 
   const menuFn = (data) => {
     setmenuenable(data);
@@ -101,31 +91,36 @@ const Header = (props) => {
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
       <div className="overflow-hidden">
-      <div className="containerEffect">
-        <div className="top-layer"></div>
-        <div className="top-layer top-layer--2"></div>
-        <div className="top-layer top-layer--3"></div>
-        <div className="top-layer top-layer--4"></div>
-        <div className="top-layer top-layer--5"></div>
+        <div className="containerEffect">
+          <div className="top-layer"></div>
+          <div className="top-layer top-layer--2"></div>
+          <div className="top-layer top-layer--3"></div>
+          <div className="top-layer top-layer--4"></div>
+          <div className="top-layer top-layer--5"></div>
+        </div>
+        <header
+          className={`siteHeader  ${
+            pathname.includes("/portfolio/") && "singlePortfolio"
+          } ${stickyHeader}`}
+          style={{
+            background: pathname.includes("/portfolio/")
+              ? selector?.portfolioColorState
+              : "transparent",
+          }}
+        >
+          {menuenable && (
+            <>{delayer && <MenuNav closeCallback={closemenuFn} />}</>
+          )}
+          <div className="childWrapperHeader pt15 pb15">
+            <Container>
+              <Row className="align-items-center">
+                <WebRightSideHeaderContentWithoutLogin callback={menuFn} />
+              </Row>
+            </Container>
+          </div>
+        </header>
       </div>
-      <header className={`siteHeader  ${pathname.includes('/portfolio/') && 'singlePortfolio' } ${stickyHeader}`}>
-      {menuenable && (
-          <>{delayer && <MenuNav closeCallback={closemenuFn} />}</>
-        )}
-      <div className="childWrapperHeader pt15 pb15">
-     
-
-        <Container>
-          <Row className="align-items-center">
-            <WebRightSideHeaderContentWithoutLogin callback={menuFn} />
-          </Row>
-        </Container>
-      </div>
-       
-      </header>
-    </div>
     </>
-
   );
 };
 
@@ -133,14 +128,12 @@ export default Header;
 
 const WebRightSideHeaderContentWithoutLogin = (props) => {
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
-  
 
-  
   const resizeScreen = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
-resizeScreen();
+    resizeScreen();
     window.addEventListener("resize", resizeScreen);
     return () => {
       window.removeEventListener("resize", resizeScreen);
@@ -155,34 +148,32 @@ resizeScreen();
     }
   };
 
- 
   return (
     <>
       <Col lg={3} xs={3}>
         <div className="d-flex align-items-center flex-wrap">
           <div className="logo mr30">
             <Link to="/">
-                <img src={Img.logo.default} alt="logo" />
+              <img src={Img.logo.default} alt="logo" />
             </Link>
           </div>
         </div>
       </Col>
       <Col lg={9} xs={9} className="d-flex justify-content-end">
-      {
-        screenWidth < 990 ?  <>
-        <button
-          id="top"
-          className="no-link noBtn buttons animateTrigger"
-          onClick={() => burgerMenu(true)}
-        >
-          {Svg.MobBurger}
-        </button>
-        <div className="buttons aaaaa"></div>
-        </>
-        :
-        <DesktopMenu/>
-      }
-       
+        {screenWidth < 990 ? (
+          <>
+            <button
+              id="top"
+              className="no-link noBtn buttons animateTrigger"
+              onClick={() => burgerMenu(true)}
+            >
+              {Svg.MobBurger}
+            </button>
+            <div className="buttons aaaaa"></div>
+          </>
+        ) : (
+          <DesktopMenu />
+        )}
       </Col>
       <BurgerNav show={burgerStatus}>
         <CloseWrapper>
@@ -234,57 +225,58 @@ const CloseWrapper = styled.div`
   cursor: pointer;
 `;
 
+const DesktopMenu = () => {
+  return (
+    <ul className="noUl d-flex align-items-center justify-content-end mb0">
+      <li className="mr30">
+        <Link
+          to="/portfolio"
+          className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+        >
+          Work
+        </Link>
+      </li>
+      <li className="mr30">
+        <Link
+          to="/ecommerce-solutions"
+          className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+        >
+          Ecommerce Solutions
+        </Link>
+      </li>
+      <li className="mr30">
+        <Link
+          to="/services"
+          className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
+        >
+          Service
+        </Link>
+      </li>
+      <li className="mr30">
+        <Link
+          to="/about"
+          className="fw500 fs15 colorWhite position-relative text-capitalize"
+        >
+          About Us
+        </Link>
+      </li>
+      <li className="mr30">
+        <Link
+          to="/blogs"
+          className="fw500 fs15 colorWhite position-relative text-capitalize"
+        >
+          Blog
+        </Link>
+      </li>
 
-const DesktopMenu=()=>{
-  return  <ul className="noUl d-flex align-items-center justify-content-end mb0">
-    <li className="mr30">
-            <Link
-              to="/portfolio"
-              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
-            >
-              Work
-            </Link>
-          </li>
-          <li className="mr30">
-            <Link
-              to="/ecommerce-solutions"
-              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
-            >
-              Ecommerce Solutions
-            </Link>
-          </li>
-        <li className="mr30">
-            <Link
-              to="/services"
-              className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
-            >
-              Service
-            </Link>
-          </li>
-          <li className="mr30">
-            <Link
-              to="/about"
-              className="fw500 fs15 colorWhite position-relative text-capitalize"
-            >
-              About Us
-            </Link>
-          </li>
-          <li className="mr30">
-            <Link
-              to="/blogs"
-              className="fw500 fs15 colorWhite position-relative text-capitalize"
-            >
-              Blog
-            </Link>
-          </li>
-     
-          <li className="uniqueHeader ml10">
-            <Link
-              to="/contact-us"
-              className="fw500 fs15 colorWhite position-relative text-capitalize btnRed"
-            >
-              Start a Project
-            </Link>
-          </li>
-  </ul>
-}
+      <li className="uniqueHeader ml10">
+        <Link
+          to="/contact-us"
+          className="fw500 fs15 colorWhite position-relative text-capitalize btnRed"
+        >
+          Start a Project
+        </Link>
+      </li>
+    </ul>
+  );
+};
