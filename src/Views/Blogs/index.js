@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import "react-creative-cursor/dist/styles.css";
 import Pagination, {
   bootstrap5PaginationPreset,
 } from "react-responsive-pagination";

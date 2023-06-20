@@ -16,7 +16,6 @@ import Img from "../../Assets/Img/Img";
 import { Link } from "react-router-dom";
 import Svg from "../../Assets/Svg/Svg";
 import Fade from "react-reveal/Fade";
-import { Cursor } from "react-creative-cursor";
 import { useEffect } from "react";
 import axios from "axios";
 import { allposts } from "../../Helpers/Api/Endpoint";
@@ -26,6 +25,7 @@ const WrapperBlog = styled.div`
   background: #191919;
 `;
 const BlogList = () => {
+  
 const [postData,setPostData]=useState("");
   useEffect(()=>{
     getAllPosts();
@@ -48,7 +48,9 @@ const [postData,setPostData]=useState("");
 
   return ( 
     <WrapperBlog className="pt100 pb100 mobPb40 mobPt40">
-      <Container>
+    
+
+ <Container>
 
 
       <Fade bottom cascade>
@@ -146,12 +148,14 @@ const [postData,setPostData]=useState("");
 
         </Fade>
 
+  
+       
         <div className="magnetWrapper">
                   <Link
                     to="/blogs"
                     className="arrowLink colorWhite hover-me "
                   >
-                    <Cursor isGelly={true} />
+                  
                     <div className="btnTransparent" data-cursor-magnetic>
                     View All Blog <span className="ml10">{Svg.arrowRight}</span> 
                     </div>

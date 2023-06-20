@@ -5,7 +5,6 @@ import "./Home.css";
 import Testimonials from "./Testimonials";
 import Portfolio from "./Portfolio/Portfolio";
 import { Helmet } from "react-helmet";
-import 'react-creative-cursor/dist/styles.css';
 import ContactUsSection from "./ContactUsSection";
 import StandWithUs from "./StandWithUs";
 import BannerSlider from "./BannerSlider";

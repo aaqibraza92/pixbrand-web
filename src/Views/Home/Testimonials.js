@@ -5,10 +5,9 @@ import styled from "styled-components";
 import Img from "../../Assets/Img/Img";
 import Svg from "../../Assets/Svg/Svg";
 import GImage from "../../Components/GComponents/GImage/GImage";
-import GLink from "../../Components/GComponents/GLink/GLink";
 import Fade from "react-reveal/Fade";
-import { Fragment } from "react";
 import ScrollSpy from "react-ui-scrollspy";
+
 const WrapperTestimonial = styled.div`
   padding-top: 100px;
   padding-bottom: 100px;

@@ -13,6 +13,8 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { homeUrl } from "../../Helpers/Api/Endpoint";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DummyLoop = [
   {
@@ -40,6 +42,7 @@ const DummyLoop = [
 const ContactUs = () => {
   return (
     <>
+      <ToastContainer />
       <Helmet>
         <meta charSet="utf-8" />
         <title>Contact Us - Pixbrand</title>
@@ -47,7 +50,7 @@ const ContactUs = () => {
       </Helmet>
       <Title />
       <Form />
-      <Locations />
+      {/* <Locations /> */}
     </>
   );
 };
@@ -171,7 +174,17 @@ const Form = () => {
     axios.post(homeUrl+"/wp-json/contact-form-7/v1/contact-forms/7892/feedback", iData, options).then((res) => {
       console.log(res);
       if (res && res.status===200) {
-        alert(res?.data?.message);
+        toast(res?.data?.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+       // alert(res?.data?.message);
         clearAll();
       }
     });
@@ -665,7 +678,7 @@ const Form = () => {
               </Row>
               <GSpacing mb="100px" mobmb="60px" tabmb="100px">
                 <Slide bottom>
-                  <button onClick={onSubmitHandler} className="red-btn">Submit</button>
+                  <button onClick={onSubmitHandler} className="btnRed">Submit</button>
                 </Slide>
               </GSpacing>
           </Col>

@@ -8,7 +8,7 @@
   --colorGreen: #47c085;
   --colorYellow: yellow;
   --colorPara: #54595c;
-  --colorLightGrey: #7d7d7d;
+  --colorLightGrey: #B2B2B2;
   --colorBlue: #47bbd0;
   --borderColor: #3D3E42;
 }
@@ -17,14 +17,12 @@ body .colorBlack {
   color: var(--colorBlack);
 }
 .colorLightGrey {
-  color: var(--colorLightGrey);
+  color: #B2B2B2;
 }
 .colorWhite {
   color: #fff;
 }
-.colorLightGrey{
-  color: #CCCCCC;
-}
+
 .bgBlack {
   background: var(--colorBlack);
 }

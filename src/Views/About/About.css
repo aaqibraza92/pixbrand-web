@@ -165,3 +165,9 @@
 .lineView1::before {
   /* background: #e0e0e0 !important; */
 }
+
+.btnWrapper {
+  background: #202020;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}

@@ -109,34 +109,39 @@ const ServiceSlider = () => {
           loop={true}
           speed={2000}
           autoplay={{ delay: 1000 }}
-          spaceBetween={5}
-          slidesPerView={10}
+          spaceBetween={1}
+          slidesPerView={15}
           onSlideChange={() => {}}
           onSwiper={() => {}}
-          // breakpoints={{
-          //   // when window width is >= 640px
-          //   300: {
-          //     width: 300,
-          //     slidesPerView: 1,
-          //   },
-          //   // when window width is >= 768px
-          //   550: {
-          //     width: 550,
-          //     slidesPerView: 2,
-          //   },
-          //   992: {
-          //     width: 992,
-          //     slidesPerView: 3,
-          //   },
-          //   1201: {
-          //     width: 1201,
-          //     slidesPerView: 4,
-          //   },
-          //   1360: {
-          //     width: 1360,
-          //     slidesPerView: 4,
-          //   },
-          // }}
+          breakpoints={{
+            // when window width is >= 640px
+            300: {
+              width: 300,
+              slidesPerView: 6,
+              
+            },
+            // when window width is >= 768px
+            550: {
+              width: 550,
+              slidesPerView: 6,
+            },
+            992: {
+              width: 992,
+              slidesPerView: 10,
+            },
+            1201: {
+              width: 1201,
+              slidesPerView: 10,
+            },
+            1360: {
+              width: 1360,
+              slidesPerView: 12,
+            },
+            1600: {
+              width: 1600,
+              slidesPerView: 14,
+            },
+          }}
         >
           <div className="bloggerList">
             <SwiperSlide>

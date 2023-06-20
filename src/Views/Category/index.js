@@ -13,7 +13,6 @@ import {
   useSearchParams,
   useParams,
 } from "react-router-dom";
-import "react-creative-cursor/dist/styles.css";
 import Pagination, {
   bootstrap5PaginationPreset,
 } from "react-responsive-pagination";

@@ -10,7 +10,6 @@ import GSpacing from "../../Components/GComponents/GSpacing";
 import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 import { Helmet } from "react-helmet";
-import $ from "jquery";
 import { useState } from "react";
 import ContactUsSection from "../Home/ContactUsSection";
 
@@ -61,13 +60,14 @@ const About = () => {
               <h3 className="fs40 mb30 colorWhite fw500 mobFs33">
                 About <br />
                 Company
-                <div>
+             
+                  
+              </h3>
+              <div>
                 <Link className="btnRed mb0 mr15" to="/contact-us">
                        Start a Project
               </Link>
                 </div>
-                  
-              </h3>
             </Col>
             <Col lg={8}>
               <p className="colorLightGrey mt40 fs18 mb30 mobFs15">
@@ -165,7 +165,8 @@ const SeventeenToNow = () => {
           </Col>
           <Col lg={6}>
             <div className="d-flex flex-wrap justify-content-end">
-              <button
+            <div className="btnWrapper">
+            <button
                 onClick={() => setyearSec(2017)}
                 className={`${yearSec===2017 ? "activeYear" : "btnGrey"} btnRed mb0 pl50 pr50`}
                 to="/#"
@@ -179,6 +180,8 @@ const SeventeenToNow = () => {
               >
                 {new Date().getFullYear()}
               </button>
+            </div>
+            
             </div>
           </Col>
         </Row>

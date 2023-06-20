@@ -13,11 +13,9 @@ import {
   useSearchParams,
   useParams,
 } from "react-router-dom";
-import "react-creative-cursor/dist/styles.css";
 import Pagination, {
   bootstrap5PaginationPreset,
 } from "react-responsive-pagination";
-import { Cursor } from "react-creative-cursor";
 import Svg from "../../Assets/Svg/Svg";
 import { Slide } from "react-reveal";
 import GSection from "../../Components/GComponents/GSection";

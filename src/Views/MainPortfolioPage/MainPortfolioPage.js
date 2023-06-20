@@ -6,7 +6,6 @@ import axios from "axios";
 import { allportfolio, portfolioCat } from "../../Helpers/Api/Endpoint";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import GImage from "../../Components/GComponents/GImage/GImage";
-import { Cursor } from "react-creative-cursor";
 import Svg from "../../Assets/Svg/Svg";
 import GSection from "../../Components/GComponents/GSection";
 import Img from "../../Assets/Img/Img";

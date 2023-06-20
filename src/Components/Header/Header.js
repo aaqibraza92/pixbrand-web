@@ -249,7 +249,7 @@ const DesktopMenu = () => {
           to="/services"
           className="fw500 fs15 colorWhite position-relative text-capitalize hover-target"
         >
-          Service
+          Services
         </Link>
       </li>
       <li className="mr30">

@@ -6,8 +6,6 @@ import Svg from "../../../Assets/Svg/Svg";
 import GImage from "../../../Components/GComponents/GImage/GImage";
 import GSection from "../../../Components/GComponents/GSpacing";
 import Slide from "react-reveal/Slide";
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
 import axios from "axios";
 import { allportfolio } from "../../../Helpers/Api/Endpoint";
 
@@ -153,7 +151,7 @@ const Portfolio = () => {
                     to="/contact-us"
                     className="arrowLink colorWhite hover-me "
                   >
-                    <Cursor isGelly={true} />
+               
                     <div data-cursor-magnetic>
                       <div className="mb15">
                         <span className="d-flex align-items-center">
@@ -193,7 +191,7 @@ const Portfolio = () => {
                     to="/contact-us"
                     className="arrowLink colorWhite hover-me "
                   >
-                    <Cursor isGelly={true} />
+               
                     <div data-cursor-magnetic>
                       <div className="mb15">
                         <span className="d-flex align-items-center">
@@ -246,7 +244,7 @@ const Portfolio = () => {
                       to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
-                      <Cursor isGelly={true} />
+                  
                       <div data-cursor-magnetic>
                         <div className="mb15">
                           <span className="d-flex align-items-center">
@@ -288,7 +286,7 @@ const Portfolio = () => {
                       to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
-                      <Cursor isGelly={true} />
+                  
                       <div data-cursor-magnetic>
                         <div className="mb15">
                           <span className="d-flex align-items-center">
@@ -325,7 +323,7 @@ const Portfolio = () => {
                       to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
-                      <Cursor isGelly={true} />
+                  
                       <div data-cursor-magnetic>
                         <div className="mb15">
                           <span className="d-flex align-items-center">
@@ -368,7 +366,7 @@ const Portfolio = () => {
                       to="/contact-us"
                       className="arrowLink colorWhite hover-me "
                     >
-                      <Cursor isGelly={true} />
+                  
                       <div data-cursor-magnetic>
                         <div className="mb15">
                           <span className="d-flex align-items-center">
@@ -412,7 +410,7 @@ const Portfolio = () => {
 
             <div className="magnetWrapper">
               <Link to="/contact-us" className="arrowLink colorWhite hover-me ">
-                <Cursor isGelly={true} />
+             
                 <div data-cursor-magnetic>
                   <div className="mb15">
                     <span className="d-flex align-items-center">

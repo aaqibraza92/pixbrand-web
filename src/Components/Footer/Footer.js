@@ -212,7 +212,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://www.behance.net/pixbrandme"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -222,7 +222,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://dribbble.com/pixbrandme"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -232,7 +232,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://in.pinterest.com/pixbrandme/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -242,7 +242,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://www.linkedin.com/company/pixbrandme/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -252,7 +252,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://www.instagram.com/pixbrandme/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -262,7 +262,7 @@ const Footer = (props) => {
                 <li className="fs14">
                   <a
                     className="runningLine"
-                    href="https://www.pixbrand.org"
+                    href="https://www.facebook.com/pixbrandme"
                     target="_blank"
                     rel="noreferrer"
                   >
