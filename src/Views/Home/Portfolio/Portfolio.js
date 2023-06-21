@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container } from "reactstrap";
+import {Container } from "reactstrap";
 import Img from "../../../Assets/Img/Img";
 import Svg from "../../../Assets/Svg/Svg";
 import GImage from "../../../Components/GComponents/GImage/GImage";
-import GSection from "../../../Components/GComponents/GSpacing";
 import Slide from "react-reveal/Slide";
 import axios from "axios";
-import { allportfolio } from "../../../Helpers/Api/Endpoint";
+import { selectedPortfolio } from "../../../Helpers/Api/Endpoint";
 
 const Portfolio = () => {
   const [loader, setloader] = useState(true);
@@ -25,10 +24,10 @@ const Portfolio = () => {
     };
 
     await axios
-      .get(`${allportfolio}?per_page=6&page=1`, options)
+      .get(`${selectedPortfolio}?per_page=6&page=1`, options)
       .then((res) => {
         if (res && res.status === 200) {
-          setPostData(res?.data);
+          setPostData(res?.data?.acf?.portfolio);
           setloader(false);
         }
       });
@@ -72,20 +71,18 @@ const Portfolio = () => {
                     <div className="mb80 mobMb30">
                     <div className="protfolioWrapper transition position-realtive d-flex justify-content-center align-items-center radius24 overflow-hidden mb-4">
                     <Link
-                              to={`/portfolio/${e?.slug}`}>
+                              to={`/portfolio/${e?.post_name}`}>
                             <GImage
                               className="scale"
                               width="100%"
                               src={
-                                e?.x_featured_media_large
-                                  ? e?.x_featured_media_large
-                                  : Img.p1
+                                e?.image ? e?.image: Img.p1
                               }
                             />
                           
                             </Link>
                             <Link
-                              to={`/portfolio/${e?.slug}`}
+                              to={`/portfolio/${e?.post_name}`}
                               className="arrowLink colorWhite hover-me position-absolute"
                             >
                               <div className="btnPortfolio transition">
@@ -99,14 +96,14 @@ const Portfolio = () => {
                           <div className="aboutPortfolio mb60 mobMb30">
                             <h6 className="fs28 tabFs18  mobFs18 mb9 mobMb10 tabMb10 colorWhite">
                               <Link
-                                to={`/portfolio/${e?.slug}`}
+                                to={`/portfolio/${e?.post_name}`}
                                 className="colorWhite"
                               >
-                                {e.acf === false ? "" : e?.acf?.project_title}
+                                {e.acf === false ? "" : e?.post_title}
                               </Link>
                             </h6>
                             <p className="colorLightBlack fs18 tabFs24 tabLgFs24 mobFs18 mb36 col-md-7 col-sm-12 col-xs-12">
-                              {e?.title?.rendered}
+                              {e?.post_excerpt}
                             </p>
                           </div>
                     </div>
