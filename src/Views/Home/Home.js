@@ -18,7 +18,6 @@ const Home = (props) => {
         <meta charSet="utf-8" />
         <title>Website Design & Development Company | Digital Agency and Ecommerce Solutions | Pixbrand</title>
         <meta name='description' content='Pixbrand is a top creative digital design agency offers complete website, strategic and ecommerce solutions, digital marketing services helping brands to grow faster.'></meta>
-        <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
       <div className="overflow-hidden">
       <BannerSlider/>

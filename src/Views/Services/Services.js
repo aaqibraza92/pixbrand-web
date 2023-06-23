@@ -19,8 +19,8 @@ const Services = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Services - Pixbrand</title>
-        <meta name="Services" content="Pixbrand Services"></meta>
+        <title>Web & Mobile Development | Ecommerce Development | Digital Marketing Services</title>
+        <meta name='description' content='Looking for complete creative agency? At PixBrand we provide complete website & mobile design development, brand strategy, digital marketing services for top brands.'></meta>
       </Helmet>
       <Title />
       <ServiceSlider />

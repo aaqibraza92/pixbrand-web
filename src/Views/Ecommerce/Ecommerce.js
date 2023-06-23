@@ -33,11 +33,8 @@ const Ecommerce = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>DigitalMarketing - Pixbrand</title>
-        <meta
-          name="DigitalMarketing"
-          content="Pixbrand DigitalMarketing"
-        ></meta>
+        <title>Ecommerce Solutions | Ecommerce Website Design and Development Company|PixBrand</title>
+        <meta name='description' content='Boost your online business with complete ecommerce services. Pixbrand is ecommerce agency provides expert ecommerce development, custom designs, strategy for brands.'></meta>
       </Helmet>
 
       <section className="ecommorceTop pt80 pb80">

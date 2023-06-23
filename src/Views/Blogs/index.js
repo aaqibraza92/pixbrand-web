@@ -68,8 +68,8 @@ const Allblogs = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Blog - Pixbrand</title>
-        <meta name="Blog" content="Pixbrand Blog"></meta>
+        <title>PixBrand Blog | Website Design & Development, Digital Marketing and Strategy Related Content </title>
+        <meta name='description' content='Stay ahead in trends with PixBrand Blog. Explore the insightful articles & expert tips to enhance your creative strategies & boost your brand'></meta>
       </Helmet>
       <Title />
       {loading ? (
