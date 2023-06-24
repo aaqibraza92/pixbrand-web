@@ -480,6 +480,12 @@ body .radiusFull {
   -o-border-radius: 50px;
   border-radius: 50px;
 }
+.radius18 {
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -o-border-radius: 18px;
+  border-radius: 18px;
+}
 .radius100 {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
