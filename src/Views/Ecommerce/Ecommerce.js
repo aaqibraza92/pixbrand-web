@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -42,7 +42,7 @@ const Ecommerce = () => {
         ></meta>
       </Helmet>
 
-      <section className="ecommorceTop pt80 pb100">
+      <section className="ecommorceTop pt80 pb100 mobPb60">
         <Container className="position-relative d-flex align-items-center justify-content-center">
           <div className="position-absolute cuttedLogo">
             <img
@@ -51,8 +51,8 @@ const Ecommerce = () => {
               className="img-fluid"
             />
           </div>
-          <Row className="mobReverse gx-5 gy-5">
-            <Col lg={12} md={12}>
+          <Row className="mobReverse gx-5 gy-5 ">
+            <Col lg={12} md={12} className="mt28">
               <h1 className="fs60 mobFs30 tabFs60 tabLgFs60 fw600 colorWhite mb0">
                 <Slide bottom>
                   Accelerate Your Business Growth through Ecommerce Development
@@ -86,7 +86,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Web design has become the first point of contact for
                             businesses of all shapes and sizes. With the
                             onslaught of digital resources for customers, good
@@ -105,7 +105,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             A nicely done web design makes for a great first
                             impression on every visitor coming over to the
                             business site.
@@ -122,7 +122,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Without a website, it will always be difficult to
                             ensure visibility amidst competition in search
                             engine results. A great web development company
@@ -140,7 +140,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             With properly designed web pages, a business can
                             create a consistent brand across the entire website
                             profile. It helps in reducing the bounce rate of the
@@ -162,7 +162,7 @@ const Ecommerce = () => {
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                           <ul className="mb0 ">
-                            <li className="colorPara mb10 fs17 tabFs15 tabLgFs15 mobFs15 ">
+                            <li className="colorPara mb10 fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                               Web design - Web design in its essence, refers to
                               the abstract aspects of a website that determine
                               its overall usability. As far as web design is
@@ -170,7 +170,7 @@ const Ecommerce = () => {
                               create varying templates for designing related
                               visual aspects within the website.
                             </li>
-                            <li className="colorPara fs17 tabFs15 tabLgFs15 mobFs15 ">
+                            <li className="colorPara fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                               Web Development - In web development, the
                               developers choose a design and then create a fully
                               functional website with the help of web creation
@@ -190,7 +190,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             At Pix Brand, we have been creating spectacular
                             mobile and web products since 2017. To ensure that
                             we create cross-platform applications and websites,
@@ -213,7 +213,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Pix Brand takes its commitment to professionalism
                             and transparency very seriously, which is why after
                             we complete your website, we take you through all
@@ -233,7 +233,7 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 ">
+                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Pix Brand takes its commitment to professionalism
                             and transparency very seriously, which is why after
                             we complete your website, we take you through all
@@ -254,7 +254,7 @@ const Ecommerce = () => {
                 <img
                   src={require("../../Assets/Img/ecommerce/ecomm1.png")}
                   alt=""
-                  className="img-fluid radius18"
+                  className="img-fluid radius18 w-100"
                 />
               </Slide>
 
@@ -298,28 +298,27 @@ const RetailSection = () => {
   const list = [
     "Seamless UI",
     "E-Catalogues",
-    "Complete security includes transactions and payment",
     "Multi-Currency",
     "Order tracking",
     "Product reviews",
     "Products Gallery",
-    "Personalised option to send offers, sale and other announcements",
     "Reports & analytics",
     "Multilingual support",
     "Store-map for holistic shopping experience",
     "Simple inventory management",
     "User-friendly app navigation",
-    "Price check, product availability, price comparison",
     "Highly secured payment methods",
     "Unlimited products & categories",
-    "Advanced products search criteria/filters",
     "Display and track shopping items",
     "Easy shopping cart administration",
+    "Complete security includes transactions and payment",
+    "Personalised option to send offers, sale and other announcements",
+    "Price check, product availability, price comparison",
   ];
   return (
     <section>
       <Container>
-        <div className="greyishBg radius20 pl40 pr40 pt60 pb60">
+        <div className="greyishBg radius20 pl40 pr40 pt60 pb60 mobPl15 mobPr15">
           <h6 className="colorRed mb20 fs16 mobFs14 tabFs14 tabLgFs14 text-uppercase">
             COMMON FEATURES
           </h6>
@@ -336,7 +335,7 @@ const RetailSection = () => {
           </p>
           <Row className="gy-3">
             {list.map((e, i) => (
-              <Col key={i} lg={4} md={6}>
+              <Col key={i} lg={4} md={6} xs={6}>
                 <div className="d-flex">
                   <span style={{ width: "25px" }}>{Svg.CircleCheck}</span>
                   <p className="colorLightGrey fs18 fw500 mobFs15 mb0 ml10">
@@ -389,7 +388,7 @@ const NeuroMarketing = () => {
 
   return (
     <>
-      <Container className="pt60 pb80 mobMb40">
+      <Container className="pt60 pb80 mobMb40 mobPt10 mobPb30">
         <section className="text-center">
           <Slide bottom>
             <h3 className="fs16 colorRed fw700 mb20 mobMb10 text-uppercase">
@@ -441,6 +440,21 @@ const NeuroMarketing = () => {
 
 // Slider
 const Slider = () => {
+
+  const[leftMargin,setLeftMargin]=useState(null);
+  const ref= useRef();
+
+  const resizeScreen = () => {
+      setLeftMargin(ref?.current?.offsetLeft+12);
+    };
+  useEffect(()=>{
+      resizeScreen();
+      window.addEventListener("resize", resizeScreen);
+      return () => {
+        window.removeEventListener("resize", resizeScreen);
+      };
+  },[ref])
+
   const [loader, setloader] = useState(true);
   const [postData, setPostData] = useState("");
   useEffect(() => {
@@ -467,10 +481,10 @@ const Slider = () => {
 
   return (
     <section className="pt0  mobPb0  mobMb60">
-      <Container>
+      <div className="container" ref={ref}>
         <section className="mb40 mobMb20">
           <Slide bottom>
-            <div className="bTopGrey pt60 pb20">
+            <div className="bTopGrey mobBorderNone pt60 pb20">
               <GAlign align="between" alignV="center" className="flex-wrap">
                 <h2 className="fs40 tabFs28 mobMb30 tabLgFs28 mobFs24 tabMb30 colorWhite width68 mobWidth100 tabWidth100 ">
                   Featured E-Commerce Work
@@ -486,14 +500,17 @@ const Slider = () => {
             </div>
           </Slide>
         </section>
-        <Swiper
+     
+      </div>
+      <div style={{marginLeft: `${leftMargin}px`}}>
+      <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
           speed={2000}
-          autoplay={true}
+          autoplay={false}
           spaceBetween={30}
           slidesPerView={4}
-          onSlideChange={() => {}}
+          onSlideChange={(e) => {setLeftMargin(0)}}
           onSwiper={() => {}}
           breakpoints={{
             // when window width is >= 640px
@@ -524,7 +541,7 @@ const Slider = () => {
             postData?.map((e, i) => {
               return (
                 <SwiperSlide key={i}>
-                  <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center pBgLightBlue radius24 overflow-hidden mb-4">
+                  <div className="protfolioWrapper position-realtive d-flex justify-content-center align-items-center radius24 overflow-hidden mb-4">
                     <GImage
                       className="scale"
                       width="100%"
@@ -560,7 +577,8 @@ const Slider = () => {
               );
             })}
         </Swiper>
-      </Container>
+      </div>
+   
     </section>
   );
 };

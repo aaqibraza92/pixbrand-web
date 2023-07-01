@@ -22,7 +22,7 @@ body .accordion__button:hover {
   right: 0px;
 }
 .accordion__panel p {
-  color: var(--colorPara);
+  color: var(--colorLightBlack);
 }
 .accordion__button[aria-expanded="true"]::before,
 .accordion__button[aria-selected="true"]::before {
