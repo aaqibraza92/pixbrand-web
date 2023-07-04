@@ -8,6 +8,7 @@ import GAlign from "../../Components/GComponents/GAlign";
 import Svg from "../../Assets/Svg/Svg";
 import "./DigitalMarketing.css";
 import Slide from "react-reveal/Slide";
+import 'swiper/css/navigation';
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import GSectionTitle from "../../Components/GComponents/GSectionTitle";
@@ -86,13 +87,16 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Web design has become the first point of contact for
                             businesses of all shapes and sizes. With the
                             onslaught of digital resources for customers, good
                             web design has become important for businesses.
                             Here’s why-
                           </p>
+                        </Slide>
+                        
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -105,11 +109,14 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             A nicely done web design makes for a great first
                             impression on every visitor coming over to the
                             business site.
                           </p>
+                        </Slide>
+                        
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -122,12 +129,15 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Without a website, it will always be difficult to
                             ensure visibility amidst competition in search
                             engine results. A great web development company
                             assists with that.
                           </p>
+                        </Slide>
+                        
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -140,7 +150,8 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             With properly designed web pages, a business can
                             create a consistent brand across the entire website
                             profile. It helps in reducing the bounce rate of the
@@ -149,6 +160,8 @@ const Ecommerce = () => {
                             web design for your business- a place where we can
                             help you out.
                           </p>
+                        </Slide>
+                        
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -161,7 +174,8 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul className="mb0 ">
+                        <Slide bottom>
+                        <ul className="mb0 ">
                             <li className="colorPara mb10 fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                               Web design - Web design in its essence, refers to
                               the abstract aspects of a website that determine
@@ -178,6 +192,8 @@ const Ecommerce = () => {
                               files and create the right website.
                             </li>
                           </ul>
+                        </Slide>
+                     
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -190,7 +206,8 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             At Pix Brand, we have been creating spectacular
                             mobile and web products since 2017. To ensure that
                             we create cross-platform applications and websites,
@@ -201,6 +218,8 @@ const Ecommerce = () => {
                             bug-free, smooth, and sticks to our Pix mantra with
                             perfection.
                           </p>
+                        </Slide>
+                       
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -213,7 +232,8 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Pix Brand takes its commitment to professionalism
                             and transparency very seriously, which is why after
                             we complete your website, we take you through all
@@ -222,6 +242,8 @@ const Ecommerce = () => {
                             there for all our clients, and that’s not just
                             client support- that’s our Pix Brand promise.
                           </p>
+                        </Slide>
+                         
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -233,7 +255,8 @@ const Ecommerce = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
+                        <Slide bottom>
+                        <p className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack">
                             Pix Brand takes its commitment to professionalism
                             and transparency very seriously, which is why after
                             we complete your website, we take you through all
@@ -242,6 +265,8 @@ const Ecommerce = () => {
                             there for all our clients, and that’s not just
                             client support- that’s our Pix Brand promise.
                           </p>
+                        </Slide>
+                        
                         </AccordionItemPanel>
                       </AccordionItem>
                     </Fade>
@@ -506,7 +531,8 @@ const Slider = () => {
       <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
-          speed={2000}
+          navigation={true}
+          speed={500}
           autoplay={false}
           spaceBetween={30}
           slidesPerView={4}

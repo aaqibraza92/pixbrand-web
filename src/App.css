@@ -898,7 +898,7 @@ border-radius: 30px;
 
   .btnPortfolio {
   
-      background: #ddd;
+      background: #fff;
       border-radius: 40px;
       display: inline-flex;
       align-items: center;
@@ -959,4 +959,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', end
   }
   .bTopGrey{
     border-top:1px solid #313235
+  }
+  .swiper-button-next, .swiper-button-prev {
+    color: var(--swiper-navigation-color,#fff) !important;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8) !important;
+  }
+  .aboutPortfolio {
+    min-height: 120px;
   }
