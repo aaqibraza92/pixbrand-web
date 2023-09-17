@@ -22,7 +22,6 @@ const Allblogs = () => {
     searchParams.get("page") ? searchParams.get("page") : 1
   );
 
-
   const dateConverter = (str) => {
     var date = new Date(str),
       mnth = ("0" + (date.getMonth() + 1)).slice(-2),
@@ -41,7 +40,6 @@ const Allblogs = () => {
     window.scrollTo(0, 0);
   };
 
-
   const loadAllPosts = async () => {
     const options = {
       method: "GET",
@@ -50,26 +48,33 @@ const Allblogs = () => {
       },
     };
 
-    await axios.get(`${allposts}?per_page=10&page=${currentPage}`, options).then((res) => {
-      if (res && res.status === 200) {
-        setPostData(res?.data);
-        setloading(false);
-        setTotalPage(res?.headers["x-wp-totalpages"]);
-        setTotalCount(res?.headers["x-wp-total"]);
-        if (currentPage !== 1) {
-          navigation(`/blogs/?page=${currentPage}`);
+    await axios
+      .get(`${allposts}?per_page=10&page=${currentPage}`, options)
+      .then((res) => {
+        if (res && res.status === 200) {
+          setPostData(res?.data);
+          setloading(false);
+          setTotalPage(res?.headers["x-wp-totalpages"]);
+          setTotalCount(res?.headers["x-wp-total"]);
+          if (currentPage !== 1) {
+            navigation(`/blogs/?page=${currentPage}`);
+          }
         }
-
-      }
-    });
+      });
   };
 
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>PixBrand Blog | Website Design & Development, Digital Marketing and Strategy Related Content </title>
-        <meta name='description' content='Stay ahead in trends with PixBrand Blog. Explore the insightful articles & expert tips to enhance your creative strategies & boost your brand'></meta>
+        <title>
+          PixBrand Blog | Website Design & Development, Digital Marketing and
+          Strategy Related Content{" "}
+        </title>
+        <meta
+          name="description"
+          content="Stay ahead in trends with PixBrand Blog. Explore the insightful articles & expert tips to enhance your creative strategies & boost your brand"
+        ></meta>
       </Helmet>
       <Title />
       {loading ? (
@@ -80,52 +85,51 @@ const Allblogs = () => {
         </div>
       ) : (
         <>
-        {
-          currentPage===1 && <Container className="mb100 mobMb60">
-            <Row className="align-items-center flexreverse gy-3">
-              <Col md={6}>
-                <div>
-                  <Link to={`/blog/${postData?.[0]?.slug}`}>
-                    <GImage
-                      radius="24px"
-                      radiusMob="15px"
-                      src={postData?.[0]?.x_featured_media_large}
-                    />
-                  </Link>
-                </div>
-              </Col>
-              <Col md={6}>
-                <section className="d-flex justify-content-between mobMl0 ml40">
+          {currentPage === 1 && (
+            <Container className="mb100 mobMb60">
+              <Row className="align-items-center flexreverse gy-3">
+                <Col md={6}>
                   <div>
-                    <p className="fs16 colorLightBlack">
-                      {dateConverter(postData?.[0]?.modified)}
-                    </p>
-                    <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                      <Link
-                        to={`/blog/${postData?.[0]?.slug}`}
-                        className="colorWhite"
-                      >
-                        {postData?.[0]?.title?.rendered}
-                      </Link>
-                    </h2>
-
-                    <div className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightBlack excerptData">
-                      {
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: postData?.[0]?.excerpt?.rendered,
-                          }}
-                        />
-                      }
-                    </div>
+                    <Link to={`/blog/${postData?.[0]?.slug}`}>
+                      <GImage
+                        radius="24px"
+                        radiusMob="15px"
+                        src={postData?.[0]?.x_featured_media_large}
+                      />
+                    </Link>
                   </div>
-                </section>
-              </Col>
-            </Row>
-     
-          </Container>
-        }
-      
+                </Col>
+                <Col md={6}>
+                  <section className="d-flex justify-content-between mobMl0 ml40">
+                    <div>
+                      <p className="fs16 colorLightBlack">
+                        {dateConverter(postData?.[0]?.modified)}
+                      </p>
+                      <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
+                        <Link
+                          to={`/blog/${postData?.[0]?.slug}`}
+                          className="colorWhite"
+                        >
+                          {postData?.[0]?.title?.rendered}
+                        </Link>
+                      </h2>
+
+                      <div className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightBlack excerptData">
+                        {
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: postData?.[0]?.excerpt?.rendered,
+                            }}
+                          />
+                        }
+                      </div>
+                    </div>
+                  </section>
+                </Col>
+              </Row>
+            </Container>
+          )}
+
           <Container>
             <Row>
               {postData.length > 0 &&
@@ -139,12 +143,11 @@ const Allblogs = () => {
             </Row>
 
             <Pagination
-          {...bootstrap5PaginationPreset}
-          current={Number(currentPage)}
-          total={Number(totalPage)}
-          onPageChange={setCurrentPageHandle}
-       
-        />
+              {...bootstrap5PaginationPreset}
+              current={Number(currentPage)}
+              total={Number(totalPage)}
+              onPageChange={setCurrentPageHandle}
+            />
           </Container>
         </>
       )}
@@ -159,19 +162,22 @@ const Title = () => {
   return (
     <section className="pt80 pb80 tabPt80 tabPb80 mobPt60 mobPb60">
       <Container>
-        <Row className="justify-content-center ">
-          <Col xl={10} lg={10} md={12}>
-            <section className="text-center mobtl">
-              <h1 className="fs80 tabFs60 tabLgFs60 mobFs45 fw600 colorWhite mb20">
-                Some Good Reads for You!
-              </h1>
-              <p className="fs24 colorWhite width70 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
+        <section className="mobtl">
+          <p className="fs24 colorWhite mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
+            Blogs
+          </p>
+          <h1 className="fs80 tabFs60 tabLgFs60 mobFs45 fw600 colorWhite mb20">
+            Some Good Reads for You!
+          </h1>
+          <Row>
+            <Col lg={6}>
+              <p className="fs24 colorWhite mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
                 Here are some of our curated blogs, fitting for a New Jersey web
                 development company like us.
               </p>
-            </section>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </section>
       </Container>
     </section>
   );
