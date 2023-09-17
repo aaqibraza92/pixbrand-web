@@ -117,6 +117,9 @@ body .posRightLeft .textMover {
 }
 
 @media only screen and (max-width: 767px) {
+  body .listTitle a {
+    line-height: 27px;
+  }
   body .mobPr15 {
     padding-right: 15px;
   }
@@ -973,11 +976,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', end
     max-height: 70px;
   }
   .dateView {
-    background: #ddd;
+    background: #e9d7ff;
     display: inline-block;
     border-radius: 30px;
     padding: 7px 18px;
-    font-weight: 600;
+    font-weight: 500;
+    color: #3c0078 !important;
   }
   .skeleton {
     background-color: #e2e5e7;
