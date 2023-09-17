@@ -52,6 +52,7 @@ const Allblogs = () => {
       .get(`${allposts}?per_page=10&page=${currentPage}`, options)
       .then((res) => {
         if (res && res.status === 200) {
+          console.log(res?.data[0]);
           setPostData(res?.data);
           setloading(false);
           setTotalPage(res?.headers["x-wp-totalpages"]);
@@ -85,60 +86,11 @@ const Allblogs = () => {
         </div>
       ) : (
         <>
-          {currentPage === 1 && (
-            <Container className="mb100 mobMb60">
-              <Row className="align-items-center flexreverse gy-3">
-                <Col md={6}>
-                  <div>
-                    <Link to={`/blog/${postData?.[0]?.slug}`}>
-                      <GImage
-                        radius="24px"
-                        radiusMob="15px"
-                        src={postData?.[0]?.x_featured_media_large}
-                      />
-                    </Link>
-                  </div>
-                </Col>
-                <Col md={6}>
-                  <section className="d-flex justify-content-between mobMl0 ml40">
-                    <div>
-                      <p className="fs16 colorLightBlack">
-                        {dateConverter(postData?.[0]?.modified)}
-                      </p>
-                      <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorWhite">
-                        <Link
-                          to={`/blog/${postData?.[0]?.slug}`}
-                          className="colorWhite"
-                        >
-                          {postData?.[0]?.title?.rendered}
-                        </Link>
-                      </h2>
-
-                      <div className="fs22 mobFs18 tabFs18 tabLgFs18 colorLightBlack excerptData">
-                        {
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: postData?.[0]?.excerpt?.rendered,
-                            }}
-                          />
-                        }
-                      </div>
-                    </div>
-                  </section>
-                </Col>
-              </Row>
-            </Container>
-          )}
-
           <Container>
             <Row>
               {postData.length > 0 &&
                 postData.map((item, ind) => {
-                  if (ind === 0) {
-                    return "";
-                  } else {
-                    return <BlogListing key={ind} data={item} />;
-                  }
+                  return <BlogListing key={ind} data={item} />;
                 })}
             </Row>
 
@@ -194,16 +146,16 @@ const BlogListing = (props) => {
   };
 
   return (
-    <Col lg={4} md={4} className="">
-      <section className="mb80 mobMb40">
+    <Col lg={6} md={6} className="">
+      <section className="mb70 mobMb30">
         <div className="mb20 mobMb10">
           {data?.x_featured_media_large ? (
             <div className="postImgWrapper mb-2">
               <Link to={`/blog/${data?.slug}`}>
                 <GImage
-                  radius="24px"
-                  radiusMob="15px"
-                  src={data?.x_featured_media_large}
+                  radius="10px"
+                  radiusMob="10px"
+                  src={data?.featured_image_url}
                 />
               </Link>
             </div>
@@ -213,10 +165,10 @@ const BlogListing = (props) => {
             </Link>
           )}
         </div>
-        <p className="fs16 colorLightBlack mb0">
+        <p className="fs16 mt10 colorLightBlack mb0 dateView">
           {dateConverter(data?.modified)}
         </p>
-        <div className="mb20 mobMb10">
+        <div className="mt20 listTitle">
           <Link
             to={`/blog/${data?.slug}`}
             className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 lh33"
@@ -224,13 +176,13 @@ const BlogListing = (props) => {
             {data?.title?.rendered}
           </Link>
         </div>
-        <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">
+        {/* <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">
           {
             <div
               dangerouslySetInnerHTML={{ __html: data?.excerpt?.rendered }}
             />
           }
-        </div>
+        </div> */}
       </section>
     </Col>
   );
