@@ -73,21 +73,26 @@ const SingleBlog = (props) => {
         <title>Blog -  {postData && postData?.title?.rendered}</title>
         <meta name="home" content="Pixbrand Home"></meta>
       </Helmet>
+    
 
-
-      <section className="pt80 pb100 tabPt80 tabPb80 mobPt60 mobPb60">
+      <section className="pt80 pb100 tabPt80 tabPb80 mobPt60 mobPb60 singleBlogData">
         <Container>
-        {
-          loader &&   <div className="text-center mb60">
-          <div className="spinner-border text-light" role="status">
-            <span className="visually-hidden">Loading...</span>
+        <Row className="justify-content-center">
+            <Col lg={10}>
+            {
+          loader &&  <div>
+          <div class="skeleton" style={{height: '40px'}}/>
+          <div class="skeleton" style={{height: '100px'}}/>
+          <div class="skeleton" style={{height: '40px'}}/>
+          <div class="skeleton" style={{height: '400px', marginTop: '100px' }}/>
           </div>
-        </div>
         }
-          <div className="text-center">
+          <div className="">
+          <Row className="justify-content-center"> 
+            <Col lg={10}>
             <Slide bottom>
               <h4 className="fs16 colorLightBlack">
-                PUBLISHED {dateConverter(postData?.modified)}
+                {dateConverter(postData?.modified)}
               </h4>
               <h1 className="fs65 tabFs60 tabLgFs60 mobFs45 mb20 mobMb10 fw500 colorWhite">
                 {postData?.title?.rendered}
@@ -95,7 +100,7 @@ const SingleBlog = (props) => {
               {/* <p className="fs22 mobFs18 tabFs18 tabLgFs18 mb40 mobMb20 colorWhite">
                 Why Branding matters to your Business
               </p> */}
-              <div className="d-flex justify-content-center mb100 mobMb60 overscrollx">
+              <div className=" mb100 mobMb60 overscrollx">
                 {allCategory.length > 0 &&
                   allCategory?.map((elem, i) => {
                     if(elem?.name==="Uncategorized"){
@@ -114,7 +119,14 @@ const SingleBlog = (props) => {
                 
                   })}
               </div>
-              <div className="mb60 mobMb30">
+         
+            </Slide>
+            </Col>
+          </Row>
+          
+          </div>
+
+          <div className="mb60 mobMb30">
                 <GImage
                   radius="24px"
                   radiusMob="15px"
@@ -125,8 +137,6 @@ const SingleBlog = (props) => {
                   }
                 />
               </div>
-            </Slide>
-          </div>
 
           {acfData.length > 0 &&
             acfData?.map((e, i) => {
@@ -142,7 +152,7 @@ const SingleBlog = (props) => {
             })}
 
           <section className="mlr80 mobMl0 mobMr0 mb100 mobMb60 position-relative">
-            <div className="social-icons ">
+            {/* <div className="social-icons ">
               <div className="mb15 mobMr10">
                 <a href="https://www.facebook.com/pixbrandme">{Svg.fb}</a>
               </div>
@@ -157,7 +167,7 @@ const SingleBlog = (props) => {
               <div className="mb15 mobMr10">
                 <a href="#">{Svg.m}</a>
               </div>
-            </div>
+            </div> */}
 
             {acfData?.length > 0 &&
               acfData?.map((el, index) => {
@@ -274,6 +284,9 @@ const SingleBlog = (props) => {
               })}
 
           </section>
+            </Col>
+        </Row>
+    
         </Container>
       </section>
     </>

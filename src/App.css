@@ -995,3 +995,18 @@ margin-bottom: 20px;
             background-position: right -40px top 0;
    }
 }
+.btn-blog {
+  border: 1px solid #767676;
+  color: var(--colorLightBlack);
+  border-radius: 30px;
+  padding: 10px 22px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.btn-blog:last-child {
+  margin-right: 0px;
+}
+.singleBlogData ul li a,.singleBlogData p a {
+  color: var(--colorRed);
+}
