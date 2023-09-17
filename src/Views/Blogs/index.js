@@ -79,11 +79,41 @@ const Allblogs = () => {
       </Helmet>
       <Title />
       {loading ? (
-        <div className="text-center mb60">
-          <div className="spinner-border text-light" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
+        <Container className="mb60">
+          <Row className="gy-5">
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+            <Col md={6}>
+              <div class="skeleton" style={{ height: "300px" }}></div>
+              <div class="skeleton" style={{ height: "30px" }}></div>
+              <div class="skeleton" style={{ height: "60px" }}></div>
+            </Col>
+          </Row>
+        </Container>
       ) : (
         <>
           <Container>
