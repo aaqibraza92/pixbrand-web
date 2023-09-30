@@ -1014,3 +1014,7 @@ margin-bottom: 20px;
 .singleBlogData ul li a,.singleBlogData p a {
   color: var(--colorRed);
 }
+.fs20 p{
+  font-size: 20px;
+  line-height: 36px;
+}

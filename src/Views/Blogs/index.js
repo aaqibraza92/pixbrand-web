@@ -23,10 +23,9 @@ const Allblogs = () => {
   );
 
   const dateConverter = (str) => {
-    var date = new Date(str),
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2);
-    return [date.getFullYear(), mnth, day].join("-");
+    var date = new Date(str);
+    var options = {  year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString("en-US", options)
   };
 
   const [loading, setloading] = useState(true);
@@ -169,10 +168,9 @@ const BlogListing = (props) => {
   const { data } = props;
 
   const dateConverter = (str) => {
-    var date = new Date(str),
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2);
-    return [date.getFullYear(), mnth, day].join("-");
+    var date = new Date(str);
+    var options = {  year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString("en-US", options)
   };
 
   return (

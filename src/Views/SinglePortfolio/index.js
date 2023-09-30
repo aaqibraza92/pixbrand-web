@@ -76,7 +76,7 @@ const SinglePortfolio = () => {
                   {postData?.acf?.project_title}
                 </h4>
                 <h1 className="fs60 mobMb10 mb30 mobFs45 tabFs60  colorWhite">
-                  {postData?.title?.rendered} -
+                  {postData?.title?.rendered}
                 </h1>
 
                 {postData?.acf?.single_featured_image && (

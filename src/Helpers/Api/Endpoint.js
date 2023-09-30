@@ -1,5 +1,5 @@
-const domainName="https://thekingsaga.com/pixbrandlive/wp-json/wp/v2/";
-export const homeUrl="https://thekingsaga.com/pixbrandlive/";
+const domainName="https://www.pixbrand.agency/agency/wp-json/wp/v2/";
+export const homeUrl="https://www.pixbrand.agency/agency/";
 
 export const allposts=domainName+"posts/";
 export const allportfolio=domainName+"portfolio/";

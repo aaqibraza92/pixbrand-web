@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Slide } from "react-reveal";
 import { Link,useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../Assets/Img/Img";
@@ -61,8 +60,6 @@ const SingleBlog = (props) => {
 
   const dateConverter = (str) => {
     var date = new Date(str);
- 
-
     var options = {  year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString("en-US", options)
   };
@@ -93,7 +90,6 @@ const SingleBlog = (props) => {
           <div className="">
           <Row className="justify-content-center"> 
             <Col lg={10}>
-            <Slide bottom>
               <h4 className="fs16 colorLightBlack">
                 {dateConverter(postData?.modified)}
               </h4>
@@ -122,8 +118,6 @@ const SingleBlog = (props) => {
                 
                   })}
               </div>
-         
-            </Slide>
             </Col>
           </Row>
           
@@ -191,7 +185,7 @@ const SingleBlog = (props) => {
                             );
                           } else {
                             return (
-                              <div  className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10"  key={i} dangerouslySetInnerHTML={{ __html: e.para }} />
+                              <div  className="fs20 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10"  key={i} dangerouslySetInnerHTML={{ __html: e.para }} />
                             
                             );
                           }
@@ -206,13 +200,13 @@ const SingleBlog = (props) => {
                     <section className="mb-5">
                       {
                         el?.repeater?.map((e,i)=>(
-                          <Slide bottom key={i}>
+                          <div key={i}>
                           <GImage
                             radius="24px"
                             radiusMob="15px"
                             src={e?.image?.url}
                           />
-                        </Slide>
+                        </div>
                         ))
                       }
                       </section>
@@ -232,23 +226,19 @@ const SingleBlog = (props) => {
                             >
                               <Row className="align-items-center">
                                 <Col lg={6}>
-                                  <Slide bottom>
-                                    <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite width80 mobWidth100 tabWidth100 tabLgWidth100 ">
+                                    <h3 className="fs36 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite width80 mobWidth100 tabWidth100 tabLgWidth100 ">
                                       {e.title}
                                     </h3>
                                     <div className="fs18 colorWhite width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
                                  
-                                  </Slide>
                                 </Col>
                                 <Col lg={6}>
                                   <div>
-                                    <Slide bottom>
                                       <GImage
                                         radius="24px"
                                         radiusMob="15px"
                                         src={e?.image?.url}
                                       />
-                                    </Slide>
                                   </div>
                                 </Col>
                               </Row>
@@ -267,24 +257,20 @@ const SingleBlog = (props) => {
                               <Row className="align-items-center flexreverse">
                                 <Col md={6}>
                                   <div>
-                                    <Slide bottom>
                                       <GImage
                                         radius="24px"
                                         radiusMob="15px"
                                         src={e?.image?.url}
                                       />
-                                    </Slide>
                                   </div>
                                 </Col>
                                 <Col md={6}>
                                   <section className="ml40 mobMl0 mobMb10">
-                                    <Slide bottom>
-                                      <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
+                                      <h3 className="fs36 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                         {e.title}
-                                      </h2>
-                                      <div className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
+                                      </h3>
+                                      <div className="fs20 tabFs15 tabLgFs15 mobFs15 mb0 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
                                  
-                                    </Slide>
                                   </section>
                                 </Col>
                               </Row>
@@ -305,13 +291,11 @@ const SingleBlog = (props) => {
                           <Col lg={10}>
                           <section key={i} className="mobMl0 mobMr0">
                             <div className="mb30 mobMb30">
-                              <Slide bottom>
-                                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
+                                <h3 className="fs36 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                   {e.title}
-                                </h2>
-                                <div className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph}} />
+                                </h3>
+                                <div className="fs20 tabFs15 tabLgFs15 mobFs15 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph}} />
                               
-                              </Slide>
                             </div>
                           </section>
                           </Col>
