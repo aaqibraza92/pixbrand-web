@@ -93,9 +93,7 @@ const SingleBlog = (props) => {
               <h4 className="fs16 colorLightBlack">
                 {dateConverter(postData?.modified)}
               </h4>
-              <h1 className="fs65 tabFs60 tabLgFs60 mobFs45 mb20 mobMb10 fw500 colorWhite">
-                {postData?.title?.rendered}
-              </h1>
+              <h1 className="fs65 tabFs60 tabLgFs60 mobFs45 mb20 mobMb10 fw500 colorWhite" dangerouslySetInnerHTML={{ __html: postData?.title?.rendered}} />
               {/* <p className="fs22 mobFs18 tabFs18 tabLgFs18 mb40 mobMb20 colorWhite">
                 Why Branding matters to your Business
               </p> */}

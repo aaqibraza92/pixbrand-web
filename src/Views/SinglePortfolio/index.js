@@ -72,12 +72,8 @@ const SinglePortfolio = () => {
           <div className="position-relative">
             <section className="single_portfolio_title pt80">
               <Container>
-                <h4 className="fs16 colorWhite">
-                  {postData?.acf?.project_title}
-                </h4>
-                <h1 className="fs60 mobMb10 mb30 mobFs45 tabFs60  colorWhite">
-                  {postData?.title?.rendered}
-                </h1>
+                <h4 className="fs16 colorWhite" dangerouslySetInnerHTML={{ __html: postData?.acf?.project_title}} />
+                <h1 className="fs60 mobMb10 mb30 mobFs45 tabFs60  colorWhite" dangerouslySetInnerHTML={{ __html: postData?.title?.rendered}} />
 
                 {postData?.acf?.single_featured_image && (
                   <Slide bottom>
