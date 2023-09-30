@@ -90,7 +90,7 @@ const SinglePortfolio = () => {
                 )}
 
                 <div
-                  className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
+                  className="fs16 'Manrope', sans-serif colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100"
                   dangerouslySetInnerHTML={{
                     __html: postData?.content?.rendered,
                   }}

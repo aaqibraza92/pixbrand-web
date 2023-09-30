@@ -60,11 +60,14 @@ const SingleBlog = (props) => {
   };
 
   const dateConverter = (str) => {
-    var date = new Date(str),
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2);
-    return [date.getFullYear(), mnth, day].join("-");
+    var date = new Date(str);
+ 
+
+    var options = {  year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString("en-US", options)
   };
+
+  
 
   return (
     <>
@@ -126,7 +129,7 @@ const SingleBlog = (props) => {
           
           </div>
 
-          <div className="mb60 mobMb30">
+          <div className="mb30 mobMb30">
                 <GImage
                   radius="24px"
                   radiusMob="15px"
@@ -144,8 +147,11 @@ const SingleBlog = (props) => {
                 e.paragraph.length > 0 &&
                   e.paragraph?.map((elem, ind) => {
                     return (
-                 
+                      <Row className="justify-content-center"> 
+                      <Col lg={10}>
                       <div key={ind} className="fs22 mobFs18 tabFs18 tabLgFs18 mobFs16 colorWhite " dangerouslySetInnerHTML={{ __html: elem && elem.para }} />
+                      </Col>
+                      </Row>
                     );
                   });
               }
@@ -173,6 +179,8 @@ const SingleBlog = (props) => {
               acfData?.map((el, index) => {
                 if (el.acf_fc_layout === "paragraph") {
                   return (
+                    <Row className="justify-content-center"> 
+                    <Col lg={10}>
                     <section key={"parent" + index} className="mb-5">
                       {el.acf_fc_layout === "paragraph" &&
                         el?.paragraph?.map((e, i) => {
@@ -183,19 +191,41 @@ const SingleBlog = (props) => {
                             );
                           } else {
                             return (
-                              <div  className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack mb20 mobMb10"  key={i} dangerouslySetInnerHTML={{ __html: e.para }} />
+                              <div  className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10"  key={i} dangerouslySetInnerHTML={{ __html: e.para }} />
                             
                             );
                           }
                         })}
                     </section>
+                    </Col>
+                    </Row>
                   );
-                } else if (el.acf_fc_layout === "image_and_paragraph") {
+                }
+                else if (el.acf_fc_layout === "image_full"){
+                  return(
+                    <section className="mb-5">
+                      {
+                        el?.repeater?.map((e,i)=>(
+                          <Slide bottom key={i}>
+                          <GImage
+                            radius="24px"
+                            radiusMob="15px"
+                            src={e?.image?.url}
+                          />
+                        </Slide>
+                        ))
+                      }
+                      </section>
+                  )
+                }
+                else if (el.acf_fc_layout === "image_and_paragraph") {
                   return (
                     <section className="mb-5">
                       {el?.repeater?.map((e, i) => {
                         if (i % 2) {
                           return (
+                            <Row className="justify-content-center"> 
+                            <Col lg={10}>
                             <section
                               key={i}
                               className="mobMl0 mobMr0 mb100 mobMb60"
@@ -206,7 +236,7 @@ const SingleBlog = (props) => {
                                     <h3 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite width80 mobWidth100 tabWidth100 tabLgWidth100 ">
                                       {e.title}
                                     </h3>
-                                    <div className="fs18 colorLightBlack width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
+                                    <div className="fs18 colorWhite width85 mobWidth100 tabWidth100 tabLgWidth100 mb0 mobMb10" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
                                  
                                   </Slide>
                                 </Col>
@@ -223,9 +253,13 @@ const SingleBlog = (props) => {
                                 </Col>
                               </Row>
                             </section>
+                            </Col>
+                            </Row>
                           );
                         } else {
                           return (
+                            <Row className="justify-content-center"> 
+                            <Col lg={10}>
                             <section
                               key={i}
                               className="mobMl0 mobMr0 mb100 mobMb60"
@@ -248,13 +282,15 @@ const SingleBlog = (props) => {
                                       <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                         {e.title}
                                       </h2>
-                                      <div className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorLightBlack" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
+                                      <div className="fs17 tabFs15 tabLgFs15 mobFs15 mb0 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph }} />
                                  
                                     </Slide>
                                   </section>
                                 </Col>
                               </Row>
                             </section>
+                            </Col>
+                            </Row>
                           );
                         }
                       })}
@@ -265,17 +301,21 @@ const SingleBlog = (props) => {
                     <section className="mb-5">
                       {el?.repeater?.map((e, i) => {
                         return (
+                          <Row className="justify-content-center"> 
+                          <Col lg={10}>
                           <section key={i} className="mobMl0 mobMr0">
-                            <div className="mb60 mobMb30">
+                            <div className="mb30 mobMb30">
                               <Slide bottom>
                                 <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                                   {e.title}
                                 </h2>
-                                <div className="fs17 tabFs15 tabLgFs15 mobFs15 colorLightBlack" dangerouslySetInnerHTML={{ __html: e.paragraph}} />
+                                <div className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite" dangerouslySetInnerHTML={{ __html: e.paragraph}} />
                               
                               </Slide>
                             </div>
                           </section>
+                          </Col>
+                          </Row>
                         );
                       })}
                     </section>

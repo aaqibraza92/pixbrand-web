@@ -97,7 +97,7 @@ const ImageTab = () => {
               <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 mb20 mobMb10 colorWhite">
                 <Slide bottom>Technical Soundness</Slide>
               </h2>
-              <p className="fs18 colorWhite mb40 mobMb20 fThin width76 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
+              <p className="fs18 colorWhite mb40 mobMb20 'Manrope', sans-serif width76 mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
                 <Slide bottom>
                   At Pixbrand, we know everything there is to know about
                   technologies that are driving innovation in the present market

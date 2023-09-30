@@ -136,7 +136,7 @@ const DigitalMarketingSlider1 = () => {
                 <h4 className="fs17 tabFs15 tabLgFs15 mobFs15 colorWhite mb20 mobMb10">
                   Gamezania
                 </h4>
-                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack fThin mb0 mobMb10">
+                <h2 className="fs40 tabFs28 tabLgFs28 mobFs24 colorLightBlack 'Manrope', sans-serif mb0 mobMb10">
                   AR games get you moving, but don't
                 </h2>
               </div>

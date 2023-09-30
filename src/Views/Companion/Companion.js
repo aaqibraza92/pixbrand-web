@@ -26,7 +26,7 @@ const Title = () => {
           <h1 className="fs60 mobMb10 mobFs45 tabFs60  colorWhite">
             Find Your Best Companion App
           </h1>
-          <p className="fs16 fThin colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100">
+          <p className="fs16 'Manrope', sans-serif colorWhite width50 mobWidth100 tabWidth100 tabLgWidth100">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
             explicabo eligendi repellendus quo? Sed provident laudantium, alias
             asperiores dolore volupt

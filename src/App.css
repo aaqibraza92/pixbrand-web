@@ -1,11 +1,11 @@
-@font-face {
-  font-family: fMedium;
+/* @font-face {
+  font-family: 'Manrope', sans-serif;
   src: url(./Assets/Fonts/lota-regular.otf);
 }
 @font-face {
-  font-family: fThin;
+  font-family: 'Manrope', sans-serif;
   src: url(./Assets/Fonts/lota-thin.otf);
-}
+} */
 
 body,
 *,
@@ -15,7 +15,7 @@ div,
 a,
 header,
 footer {
-  font-family: fMedium;
+  font-family: 'Manrope', sans-serif;
 }
 body {
   background: #111111;
@@ -39,8 +39,8 @@ body {
 .bB {
   border-bottom: 1px solid var(--borderColor);
 }
-.fThin {
-  font-family: fThin;
+.'Manrope', sans-serif {
+  font-family: 'Manrope', sans-serif;
 }
 
 * {
@@ -1003,7 +1003,7 @@ margin-bottom: 20px;
   border: 1px solid #767676;
   color: var(--colorLightBlack);
   border-radius: 30px;
-  padding: 10px 22px;
+  padding: 8px 22px;
   display: inline-block;
   text-align: center;
   margin-bottom: 10px;

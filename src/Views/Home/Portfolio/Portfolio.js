@@ -139,7 +139,7 @@ const Portfolio = () => {
                   <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                     Servalley
                   </h6>
-                  <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                  <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                     Everyday services <br /> for peace of mind.
                   </h3>
                 </Slide>
@@ -177,7 +177,7 @@ const Portfolio = () => {
                     <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                       Pepbasket
                     </h6>
-                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                       Daily needs,
                       <br /> seamless ordering.
                     </h3>
@@ -232,7 +232,7 @@ const Portfolio = () => {
                     <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                       Spotslot
                     </h6>
-                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                       Easy service bookings <br /> for more freedom.
                     </h3>
                   </Slide>
@@ -273,7 +273,7 @@ const Portfolio = () => {
                     <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                       Osama
                     </h6>
-                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                    <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                       Making real-estate <br />
                       dealings simple.
                     </h3>
@@ -310,7 +310,7 @@ const Portfolio = () => {
                       <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                         Markabat
                       </h6>
-                      <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                      <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                         Truck hiring services, <br /> completely simplified.
                       </h3>
                     </div>
@@ -352,7 +352,7 @@ const Portfolio = () => {
                       <h6 className="fs17 tabFs13 tabLgFs13 mobFs13 mb20 mobMb10 tabMb10 colorWhite">
                         Onkout
                       </h6>
-                      <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 fThin mb36">
+                      <h3 className="colorLightBlack fs32 tabFs24 tabLgFs24 mobFs20 'Manrope', sans-serif mb36">
                         Financial suite for <br />
                         managed economies.
                       </h3>

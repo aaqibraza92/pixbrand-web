@@ -233,7 +233,7 @@ const TabAndContent = ({
                       <div className="mb10 colorWhite fs20">{contenttitle}</div>
                       <p
                         style={{ color: "#7D7D7D" }}
-                        className="colorWhite fs17 tabFs15 mobFs15 fThin lh25"
+                        className="colorWhite fs17 tabFs15 mobFs15 'Manrope', sans-serif lh25"
                       >
                         {verticaldataresult5}
                       </p>
@@ -247,7 +247,7 @@ const TabAndContent = ({
                       <div className="mb10 colorWhite fs20">{contenttitle}</div>
                       <p
                         style={{ color: "#7D7D7D" }}
-                        className="colorWhite fs17 tabFs15 mobFs15 fThin lh25"
+                        className="colorWhite fs17 tabFs15 mobFs15 'Manrope', sans-serif lh25"
                       >
                         {verticaldataresult6}
                       </p>
@@ -261,7 +261,7 @@ const TabAndContent = ({
                       <div className="mb10 colorWhite fs20">{contenttitle}</div>
                       <p
                         style={{ color: "#7D7D7D" }}
-                        className="colorWhite fs17 tabFs15 mobFs15 fThin lh25"
+                        className="colorWhite fs17 tabFs15 mobFs15 'Manrope', sans-serif lh25"
                       >
                         {verticaldataresult7}
                       </p>
