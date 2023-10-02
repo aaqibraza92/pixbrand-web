@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="558" height="444" viewBox="0 0 558 444">
+  <g id="Group_53401" data-name="Group 53401" transform="translate(-113 -3583.906)">
+    <g id="Group_53397" data-name="Group 53397" transform="translate(231.101 3583.906)">
+      <rect id="Rectangle_13029" data-name="Rectangle 13029" width="440" height="87" rx="8" transform="translate(-0.101)" fill="#e8e49b"/>
+      <text id="Visual_research" data-name="Visual research" transform="translate(216.898 51)" fill="#111" font-size="20" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-68.58" y="0">Visual research</tspan></text>
+    </g>
+    <g id="Group_53398" data-name="Group 53398" transform="translate(113 3703.09)">
+      <rect id="Rectangle_13029-2" data-name="Rectangle 13029" width="440" height="87" rx="8" transform="translate(0 -0.186)" fill="#ff7b7b"/>
+      <text id="Prototyping" transform="translate(218 50.815)" fill="#111" font-size="20" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-54.74" y="0">Prototyping</tspan></text>
+    </g>
+    <g id="Group_53399" data-name="Group 53399" transform="translate(113 3822.275)">
+      <rect id="Rectangle_13029-3" data-name="Rectangle 13029" width="440" height="87" rx="8" transform="translate(0 -0.368)" fill="#f9e8ea"/>
+      <text id="Usability_testing" data-name="Usability testing" transform="translate(220 51.631)" fill="#111" font-size="20" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-74.77" y="0">Usability testing</tspan></text>
+    </g>
+    <g id="Group_53400" data-name="Group 53400" transform="translate(231.101 3941.46)">
+      <rect id="Rectangle_13029-4" data-name="Rectangle 13029" width="440" height="86" rx="8" transform="translate(-0.101 0.446)" fill="#84d6d7"/>
+      <text id="UX_Audit" data-name="UX Audit" transform="translate(219.898 52.446)" fill="#111" font-size="20" font-family="LotaGrotesqueAlt3-SemiBold, 'Lota Grotesque Alt \33 '" font-weight="600"><tspan x="-39.53" y="0">UX Audit</tspan></text>
+    </g>
+  </g>
+</svg>
