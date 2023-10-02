@@ -51,7 +51,6 @@ const Allblogs = () => {
       .get(`${allposts}?per_page=10&page=${currentPage}`, options)
       .then((res) => {
         if (res && res.status === 200) {
-          console.log(res?.data[0]);
           setPostData(res?.data);
           setloading(false);
           setTotalPage(res?.headers["x-wp-totalpages"]);
@@ -145,13 +144,13 @@ const Title = () => {
       <Container>
         <section className="mobtl">
           <p className="fs24 colorWhite mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
-            Blogs
+            Blog
           </p>
           <h1 className="fs80 tabFs60 tabLgFs60 mobFs45 fw600 colorWhite mb20">
             Some Good Reads for You!
           </h1>
           <Row>
-            <Col lg={6}>
+            <Col lg={12}>
               <p className="fs24 colorWhite mobWidth100 tabWidth100 tabLgWidth100 mx-auto">
                 Here are some of our curated blogs, fitting for a New Jersey web
                 development company like us.
@@ -175,7 +174,7 @@ const BlogListing = (props) => {
 
   return (
     <Col lg={6} md={6} className="">
-      <section className="mb70 mobMb30">
+      <section className="mb70 mobMb30 blogList">
         <div className="mb20 mobMb10">
           {data?.x_featured_media_large ? (
             <div className="postImgWrapper mb-2">
@@ -193,7 +192,7 @@ const BlogListing = (props) => {
             </Link>
           )}
         </div>
-        <p className="fs16 mt10 colorLightBlack mb0 dateView">
+        <p className="fs16 mt10 colorLightBlack mb0 dateView" style={{backgroundColor: data?.acf?.date_button_bg_color, color: data?.acf?.date_button_text_color}}>
           {dateConverter(data?.modified)}
         </p>
         <div className="mt20 listTitle">
@@ -201,7 +200,9 @@ const BlogListing = (props) => {
             to={`/blog/${data?.slug}`}
             className="colorWhite fs28 tabFs20 tabLgFs20 mobFs18 lh33"
           >
-            {data?.title?.rendered}
+            <div
+              dangerouslySetInnerHTML={{ __html: data?.title?.rendered}}
+            />
           </Link>
         </div>
         {/* <div className="fs20 colorLightBlack mobFs16 mb0 excerptData">

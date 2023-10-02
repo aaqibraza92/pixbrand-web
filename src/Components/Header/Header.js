@@ -262,7 +262,7 @@ const DesktopMenu = () => {
       </li>
       <li className="mr30">
         <Link
-          to="/blogs"
+          to="/blog"
           className="fw500 fs15 colorWhite position-relative text-capitalize"
         >
           Blog

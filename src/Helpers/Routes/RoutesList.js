@@ -78,7 +78,7 @@ let RouterList = [
     element: (
       <GetRoute isprivate={false} role="Default" page={Pages.GoodReads} />
     ),
-    path: "/blogs",
+    path: "/blog",
     isAdmin: false,
   },
   {

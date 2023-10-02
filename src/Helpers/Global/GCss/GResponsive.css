@@ -1,5 +1,9 @@
 /*All Mobile*/
 @media only screen and (max-width: 767px) {
+  body .fs20 p {
+    font-size: 16px;
+    line-height: 28px;
+  }
   body .brick-grid {
     column-count: 1;
   }
@@ -97,6 +101,9 @@
   }
   body .mobMb30 {
     margin-bottom: 30px;
+  }
+  body .blogList.mobMb30 {
+    margin-bottom: 40px;
   }
   body .mobMb0 {
     margin-bottom: 0px;
