@@ -192,7 +192,7 @@ const BlogListing = (props) => {
             </Link>
           )}
         </div>
-        <p className="fs16 mt10 colorLightBlack mb0 dateView" style={{backgroundColor: data?.acf?.date_button_bg_color, color: data?.acf?.date_button_text_color}}>
+        <p className="fs16 mt10  mb0 dateView" style={{backgroundColor: data?.acf?.date_button_bg_color, color: data?.acf?.date_button_text_color}}>
           {dateConverter(data?.modified)}
         </p>
         <div className="mt20 listTitle">
